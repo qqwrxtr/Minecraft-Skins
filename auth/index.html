@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login & Register - TurboDraft.org</title>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+            rel="stylesheet">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Minecraft&family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet">
+        <script src="../assets/js/auth.js"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        backgroundImage: {
+                            'pattern': "url('assets/images/pattern.png')",
+                        },
+                        animation: {
+                            'float': 'float 6s ease-in-out infinite',
+                            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                            'bounce-slow': 'bounce 3s infinite',
+                        },
+                        keyframes: {
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-20px)' },
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    
+    <body class="bg-black text-gray-200 font-sans">
+        <!-- Mobile Nav Menu (Hidden by default) -->
+<div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-95 z-50 transform transition-transform duration-300 translate-x-full">
+    <div class="container mx-auto px-4 py-6">
+        <div class="flex justify-between items-center mb-6">
+            <div class="flex items-center">
+                <div class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3">
+                    <span class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">T</span>
+                </div>
+                <span class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">TurboDraft<span class="text-red-500">.org</span></span>
+            </div>
+            <button id="closeMenu" class="text-white focus:outline-none">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile menu user section will be inserted here by JS when logged in -->
+        
+        <div class="flex flex-col space-y-6 text-center">
+            <a href="../" class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Home</a>
+            <a href="../skins/" class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Skins</a>
+            <a href="../premium/" class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Premium</a>
+            <a href="../features/" class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Features</a>
+            <a href="../tutorials/" class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Tutorials</a>
+            <a href="../about/" class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">About</a>
+            <a href="../subscribe/" class="mt-4 bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg">Subscribe Now</a>
+        </div>
+        
+        <div class="mt-10 flex justify-center space-x-6">
+            <a href="https://discord.gg/turbodraft" target="_blank" class="text-red-200 hover:text-white transition-colors duration-300">
+                <i class="fab fa-discord text-2xl"></i>
+            </a>
+            <a href="https://twitter.com/TurboDraft" target="_blank" class="text-red-200 hover:text-white transition-colors duration-300">
+                <i class="fab fa-twitter text-2xl"></i>
+            </a>
+            <a href="https://instagram.com/TurboDraft" target="_blank" class="text-red-200 hover:text-white transition-colors duration-300">
+                <i class="fab fa-instagram text-2xl"></i>
+            </a>
+            <a href="https://youtube.com/TurboDraft" target="_blank" class="text-red-200 hover:text-white transition-colors duration-300">
+                <i class="fab fa-youtube text-2xl"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<nav class="fixed w-full z-40 py-4 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg transition-all duration-300">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:transform hover:scale-110">
+                    <span class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">T</span>
+                </div>
+                <span class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">TurboDraft<span class="text-red-500">.org</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="../" class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                <a href="../skins/" class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Skins</a>
+                <a href="../premium/" class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Premium</a>
+                <a href="../features/" class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Features</a>
+                <a href="../tutorials/" class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Tutorials</a>
+                <a href="../about/" class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">About</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <!-- User section will be dynamically populated by auth.js -->
+                <div id="navUserSection" class="flex items-center">
+                    <!-- Default content shown before JS loads -->
+                    <a href="../auth/" class="text-white hover:text-red-300 transition-colors duration-300">Login</a>
+                    <a href="../subscribe/" class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800">Subscribe</a>
+                </div>
+            </div>
+            <div class="md:hidden">
+                <button id="openMenu" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+        <!-- Main Content -->
+        <section class="pt-32 pb-24 min-h-screen" id="authSection">
+            <div class="container mx-auto px-4">
+                <!-- User Dashboard (hidden by default) -->
+<div id="userDashboard" class="hidden max-w-4xl mx-auto bg-gray-900 rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
+    <!-- Dashboard Header -->
+    <div class="bg-gradient-to-r from-red-900 to-black p-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <div class="bg-gray-900 bg-opacity-30 h-14 w-14 rounded-full flex items-center justify-center mr-4 border-2 border-red-500">
+                    <i class="fas fa-user text-2xl text-white"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                        <span id="dashboardUsername">Username</span>
+                    </h2>
+                    <p class="text-red-300" id="dashboardAccountType">Free Account</p>
+                </div>
+            </div>
+            <div class="flex space-x-3">
+                <a href="../" class="bg-red-800 hover:bg-red-700 text-white py-2 px-4 rounded-lg transition-colors duration-300 flex items-center">
+                    <i class="fas fa-home mr-2"></i> Home
+                </a>
+                <button onclick="logout()" class="bg-black bg-opacity-50 hover:bg-opacity-70 text-white py-2 px-4 rounded-lg transition-colors duration-300 flex items-center">
+                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Navigation -->
+    <div class="border-b border-gray-800">
+        <div class="flex overflow-x-auto">
+            <button class="dashboard-tab active-tab px-6 py-3 text-white font-semibold focus:outline-none" data-tab="account">
+                Account Settings
+            </button>
+            <button class="dashboard-tab px-6 py-3 text-gray-400 hover:text-white font-semibold focus:outline-none" data-tab="subscription">
+                Subscription
+            </button>
+            <button class="dashboard-tab px-6 py-3 text-gray-400 hover:text-white font-semibold focus:outline-none" data-tab="downloads">
+                Downloads
+            </button>
+            <button class="dashboard-tab px-6 py-3 text-gray-400 hover:text-white font-semibold focus:outline-none" data-tab="favorites">
+                Favorites
+            </button>
+        </div>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="p-6">
+        <!-- Account Settings Tab (default visible) -->
+        <div id="account-tab" class="dashboard-content">
+            <h3 class="text-xl text-white mb-6" style="font-family: 'Minecraft', sans-serif;">Account Settings</h3>
+            
+            <!-- Update Username Section -->
+            <div class="mb-8 bg-gray-800 bg-opacity-50 rounded-lg p-6">
+                <h4 class="text-lg text-white mb-4">Change Username</h4>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-gray-300 mb-2">Current Username</label>
+                        <input type="text" id="currentUsername" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-red-500 transition-colors duration-300" disabled>
+                    </div>
+                    <div>
+                        <label class="block text-gray-300 mb-2">New Username</label>
+                        <input type="text" id="newUsername" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-red-500 transition-colors duration-300" placeholder="Enter new username">
+                    </div>
+                    <div>
+                        <button id="updateUsernameBtn" class="bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">
+                            Update Username
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Update Password Section -->
+            <div class="bg-gray-800 bg-opacity-50 rounded-lg p-6">
+                <h4 class="text-lg text-white mb-4">Change Password</h4>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-gray-300 mb-2">Current Password</label>
+                        <div class="relative">
+                            <input type="password" id="currentPassword" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-red-500 transition-colors duration-300" placeholder="Enter current password">
+                            <button id="toggleCurrentPassword" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-300 mb-2">New Password</label>
+                        <div class="relative">
+                            <input type="password" id="newPassword" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-red-500 transition-colors duration-300" placeholder="Enter new password">
+                            <button id="toggleNewPassword" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors duration-300">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="mt-1">
+                            <div class="h-1 bg-gray-700 rounded-full overflow-hidden mt-2" id="newPasswordStrength">
+                                <div class="h-full bg-red-700 w-0 transition-all duration-300" id="newPasswordStrengthBar"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1" id="newPasswordStrengthText">Password strength</p>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-300 mb-2">Confirm New Password</label>
+                        <input type="password" id="confirmNewPassword" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-red-500 transition-colors duration-300" placeholder="Confirm new password">
+                    </div>
+                    <div>
+                        <button id="updatePasswordBtn" class="bg-red-800 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">
+                            Update Password
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subscription Tab -->
+        <div id="subscription-tab" class="dashboard-content hidden">
+            <h3 class="text-xl text-white mb-6" style="font-family: 'Minecraft', sans-serif;">Subscription Details</h3>
+            
+            <!-- Free Account Section -->
+            <div id="freeAccountSection" class="mb-8 bg-gray-800 bg-opacity-50 rounded-lg p-6">
+                <div class="text-center py-6">
+                    <div class="w-20 h-20 mx-auto bg-gray-700 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-user text-4xl text-gray-400"></i>
+                    </div>
+                    <h4 class="text-lg text-white mb-2">Free Account</h4>
+                    <p class="text-gray-400 mb-6">You're currently using a free account with limited features.</p>
+                    <a href="subscribe" class="inline-flex items-center bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-crown mr-2"></i>
+                        <span>Upgrade to Premium</span>
+                    </a>
+                </div>
+                <div class="border-t border-gray-700 pt-6 mt-6">
+                    <h5 class="text-white mb-3">Free Account Features:</h5>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Access to 1,000+ free skins</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span class="text-gray-300">Basic account functionality</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mt-1 mr-2"></i>
+                            <span class="text-gray-500">Premium skins (400+)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mt-1 mr-2"></i>
+                            <span class="text-gray-500">Custom skin requests</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mt-1 mr-2"></i>
+                            <span class="text-gray-500">Early access to new skins</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Premium Account Section -->
+            <div id="premiumAccountSection" class="hidden mb-8 bg-gray-800 bg-opacity-50 rounded-lg p-6">
+                <div class="text-center py-6">
+                    <div class="w-20 h-20 mx-auto bg-yellow-600 bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-crown text-4xl text-yellow-500"></i>
+                    </div>
+                    <h4 class="text-lg text-white mb-2">Premium Account</h4>
+                    <p class="text-gray-300 mb-2">You're enjoying all premium features and benefits!</p>
+                    <div class="inline-flex items-center bg-yellow-600 bg-opacity-20 text-yellow-300 px-3 py-1 rounded-full text-sm mb-6">
+                        <i class="fas fa-star mr-1"></i> <span id="subscriptionPlanBadge">Annual Plan</span>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <span class="text-gray-400">Plan Type:</span>
+                        <span class="text-white font-bold" id="subscriptionPlanType">Annual</span>
+                    </div>
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <span class="text-gray-400">Status:</span>
+                        <span class="text-green-500 font-bold" id="subscriptionStatus">Active</span>
+                    </div>
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <span class="text-gray-400">Next Billing:</span>
+                        <span class="text-white" id="subscriptionNextBilling">May 19, 2026</span>
+                    </div>
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-700">
+                        <span class="text-gray-400">Custom Requests:</span>
+                        <span class="text-white" id="subscriptionCustomRequests">2 available</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-400">Payment Method:</span>
+                        <span class="text-white flex items-center"><i class="fab fa-cc-visa mr-2"></i> •••• 4242</span>
+                    </div>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-700 flex flex-col sm:flex-row gap-3">
+                    <a href="subscribe" class="flex-1 bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg transition-colors duration-300 text-center">
+                        Manage Subscription
+                    </a>
+                    <button id="cancelSubscriptionBtn" class="flex-1 bg-red-900 hover:bg-red-800 text-white py-2 px-4 rounded-lg transition-colors duration-300">
+                        Cancel Subscription
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Downloads Tab -->
+        <div id="downloads-tab" class="dashboard-content hidden">
+            <h3 class="text-xl text-white mb-6" style="font-family: 'Minecraft', sans-serif;">Your Downloads</h3>
+            
+            <div class="mb-6">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h4 class="text-white mb-1">Recent Downloads</h4>
+                        <p class="text-gray-400 text-sm">Your download history from the past 30 days</p>
+                    </div>
+                    <div>
+                        <select class="bg-gray-800 border border-gray-700 rounded-lg py-2 px-3 text-white focus:outline-none focus:border-red-500">
+                            <option>All Downloads</option>
+                            <option>Free Skins</option>
+                            <option>Premium Skins</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="noDownloadsMessage" class="text-center py-12 bg-gray-800 bg-opacity-50 rounded-lg">
+                <div class="w-16 h-16 mx-auto bg-gray-700 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-download text-2xl text-gray-500"></i>
+                </div>
+                <h4 class="text-gray-300 mb-2">No Downloads Yet</h4>
+                <p class="text-gray-500 mb-4">You haven't downloaded any skins recently.</p>
+                <a href="skins" class="inline-flex items-center bg-red-800 hover:bg-red-700 text-white py-2 px-4 rounded-lg transition-colors duration-300">
+                    <i class="fas fa-search mr-2"></i> Browse Skins
+                </a>
+            </div>
+            
+            <div id="downloadsGrid" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+                <!-- Download items will be generated dynamically -->
+            </div>
+        </div>
+
+        <!-- Favorites Tab -->
+        <div id="favorites-tab" class="dashboard-content hidden">
+            <h3 class="text-xl text-white mb-6" style="font-family: 'Minecraft', sans-serif;">Your Favorites</h3>
+            
+            <div id="noFavoritesMessage" class="text-center py-12 bg-gray-800 bg-opacity-50 rounded-lg">
+                <div class="w-16 h-16 mx-auto bg-gray-700 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-heart text-2xl text-gray-500"></i>
+                </div>
+                <h4 class="text-gray-300 mb-2">No Favorites Yet</h4>
+                <p class="text-gray-500 mb-4">You haven't saved any skins to your favorites yet.</p>
+                <a href="skins" class="inline-flex items-center bg-red-800 hover:bg-red-700 text-white py-2 px-4 rounded-lg transition-colors duration-300">
+                    <i class="fas fa-search mr-2"></i> Browse Skins
+                </a>
+            </div>
+            
+            <div id="favoritesGrid" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+                <!-- Favorite items will be generated dynamically -->
+            </div>
+        </div>
+    </div>
+</div>
+
+                <!-- Auth Forms Container -->
+                <div id="authFormsContainer" class="max-w-4xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 bg-gray-900 rounded-xl overflow-hidden shadow-2xl">
+                        <!-- Left Side - Illustration -->
+                        <div class="relative bg-gradient-to-br from-red-900 to-black p-8 flex flex-col justify-center items-center">
+                            <div class="absolute top-0 left-0 w-full h-full opacity-10">
+                                <div class="absolute top-10 left-10 w-16 h-16 bg-red-500 rounded animate-float" style="animation-delay: 0s;"></div>
+                                <div class="absolute bottom-20 right-10 w-12 h-12 bg-red-600 rounded animate-float" style="animation-delay: 1s;"></div>
+                                <div class="absolute top-1/2 left-1/3 w-8 h-8 bg-red-700 rounded animate-float" style="animation-delay: 1.5s;"></div>
+                            </div>
+                            <div class="relative mb-6">
+                                <div class="absolute -inset-4 bg-red-500 opacity-30 blur-xl rounded-full animate-pulse-slow"></div>
+                                <div class="relative z-10">
+                                    <div class="bg-red-900 h-20 w-20 flex items-center justify-center rounded-2xl shadow-lg mb-3 mx-auto">
+                                        <span class="text-4xl text-white" style="font-family: 'Minecraft', sans-serif;">T</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2 class="text-2xl text-white mb-4 text-center relative z-10" style="font-family: 'Minecraft', sans-serif;">Welcome to TurboDraft</h2>
+                            <p class="text-red-100 text-center mb-6 relative z-10">Join our community of Minecraft enthusiasts and unlock premium skins!</p>
+                            <div class="bg-black bg-opacity-30 rounded-lg p-4 w-full max-w-xs relative z-10">
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span class="text-gray-300">Access to 1,000+ free skins</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span class="text-gray-300">Save favorites & track downloads</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span class="text-gray-300">Premium subscription option</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Right Side - Auth Forms -->
+                        <div class="bg-gray-900 p-8">
+                            <!-- Toggle Buttons -->
+                            <div class="flex mb-8 bg-gray-800 rounded-lg p-1">
+                                <button id="loginToggle" class="w-1/2 py-2 rounded-lg font-semibold text-white bg-red-800 transition-all duration-300">
+                                    Login
+                                </button>
+                                <button id="registerToggle" class="w-1/2 py-2 rounded-lg font-semibold text-gray-400 transition-all duration-300">
+                                    Register
+                                </button>
+                            </div>
+
+                            <!-- Login Form -->
+                            <div id="loginForm" class="transition-all duration-300">
+                                <h3 class="text-xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Login to Your Account</h3>
+                                
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-gray-300 mb-2">Username or Email</label>
+                                        <input 
+                                            type="text" 
+                                            id="loginUsername" 
+                                            class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-red-500 transition-colors duration-300" 
+                                            placeholder="Enter your username or email"
+                                        >
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-gray-300 mb-2">Password</label>
+                                        <div class="relative">
+                                            <input 
+                                                type="password" 
+                                                id="loginPassword" 
+                                                class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-red-500 transition-colors duration-300" 
+                                                placeholder="Enter your password"
+                                            >
+                                            <button id="toggleLoginPassword" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors duration-300">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex justify-between items-center">
+                                        <label class="flex items-center">
+                                            <input type="checkbox" class="form-checkbox bg-gray-800 border border-gray-700 rounded text-red-700 focus:ring-0 focus:ring-offset-0">
+                                            <span class="ml-2 text-gray-400 text-sm">Remember me</span>
+                                        </label>
+                                        <a href="forgot-password" class="text-red-500 hover:text-red-400 text-sm transition-colors duration-300">Forgot password?</a>
+                                    </div>
+                                    
+                                    <div class="pt-2">
+                                        <button id="loginButton" class="w-full bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300">
+                                            Login
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="relative flex items-center pt-8 mt-8">
+                                    <div class="flex-grow border-t border-gray-800"></div>
+                                    <span class="flex-shrink mx-4 text-gray-500">or login with</span>
+                                    <div class="flex-grow border-t border-gray-800"></div>
+                                </div>
+
+                                <div class="grid grid-cols-3 gap-3 mt-6">
+                                    <button class="bg-blue-600 hover:bg-blue-700 py-2 rounded-lg transition-colors duration-300 flex items-center justify-center">
+                                        <i class="fab fa-facebook-f text-white"></i>
+                                    </button>
+                                    <button class="bg-blue-500 hover:bg-blue-600 py-2 rounded-lg transition-colors duration-300 flex items-center justify-center">
+                                        <i class="fab fa-twitter text-white"></i>
+                                    </button>
+                                    <button class="bg-white hover:bg-gray-200 py-2 rounded-lg transition-colors duration-300 flex items-center justify-center">
+                                        <i class="fab fa-google text-red-600"></i>
+                                    </button>
+                                </div>
+
+                                <p class="text-center text-gray-500 text-sm mt-8 md:hidden">Don't have an account? <button id="mobileRegisterToggle" class="text-red-500 hover:text-red-400">Create one</button></p>
+                            </div>
+
+                            <!-- Register Form (Hidden by default) -->
+                            <div id="registerForm" class="hidden transition-all duration-300">
+                                <h3 class="text-xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Create New Account</h3>
+                                
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-gray-300 mb-2">Username</label>
+                                        <input 
+                                            type="text" 
+                                            id="registerUsername" 
+                                            class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-red-500 transition-colors duration-300" 
+                                            placeholder="Choose a username"
+                                        >
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-gray-300 mb-2">Email Address</label>
+                                        <input 
+                                            type="email" 
+                                            id="registerEmail" 
+                                            class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-red-500 transition-colors duration-300" 
+                                            placeholder="Enter your email"
+                                        >
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-gray-300 mb-2">Password</label>
+                                        <div class="relative">
+                                            <input 
+                                                type="password" 
+                                                id="registerPassword" 
+                                                class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-red-500 transition-colors duration-300" 
+                                                placeholder="Create a password"
+                                            >
+                                            <button id="toggleRegisterPassword" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors duration-300">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="mt-1">
+                                            <div class="h-1 bg-gray-800 rounded-full overflow-hidden mt-2" id="passwordStrength">
+                                                <div class="h-full bg-red-700 w-0 transition-all duration-300" id="passwordStrengthBar"></div>
+                                            </div>
+                                            <p class="text-xs text-gray-500 mt-1" id="passwordStrengthText">Password strength</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-gray-300 mb-2">Confirm Password</label>
+                                        <div class="relative">
+                                            <input 
+                                                type="password" 
+                                                id="registerConfirmPassword" 
+                                                class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-red-500 transition-colors duration-300" 
+                                                placeholder="Confirm your password"
+                                            >
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="flex items-center">
+                                            <input type="checkbox" id="termsCheckbox" class="form-checkbox bg-gray-800 border border-gray-700 rounded text-red-700 focus:ring-0 focus:ring-offset-0">
+                                            <span class="ml-2 text-gray-400 text-sm">I agree to the <a href="terms" class="text-red-500 hover:text-red-400">Terms of Service</a> and <a href="privacy" class="text-red-500 hover:text-red-400">Privacy Policy</a></span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="pt-2">
+                                        <button id="registerButton" class="w-full bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300">
+                                            Create Account
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <p class="text-center text-gray-500 text-sm mt-8 md:hidden">Already have an account? <button id="mobileLoginToggle" class="text-red-500 hover:text-red-400">Login</button></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading Modal -->
+        <div id="loadingModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex flex-col items-center justify-center transform transition-opacity duration-300 opacity-0 pointer-events-none">
+            <div class="bg-gray-900 border border-gray-800 rounded-xl p-8 max-w-md w-full text-center">
+                <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-red-500 mx-auto mb-6"></div>
+                <h3 class="text-xl text-white mb-2" style="font-family: 'Minecraft', sans-serif;" id="loadingModalTitle">Processing</h3>
+                <p class="text-gray-400" id="loadingModalText">Please wait...</p>
+            </div>
+        </div>
+
+        <!-- Error Modal -->
+        <div id="errorModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex flex-col items-center justify-center transform transition-opacity duration-300 opacity-0 pointer-events-none">
+            <div class="bg-gray-900 border border-gray-800 rounded-xl p-8 max-w-md w-full text-center">
+                <div class="w-20 h-20 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-exclamation-circle text-5xl text-red-500"></i>
+                </div>
+                <h3 class="text-xl text-white mb-2" style="font-family: 'Minecraft', sans-serif;">Error</h3>
+                <p class="text-gray-400 mb-6" id="errorModalText">An error occurred.</p>
+                <button id="errorModalClose" class="bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300">
+                    Close
+                </button>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex flex-col items-center justify-center transform transition-opacity duration-300 opacity-0 pointer-events-none">
+            <div class="bg-gray-900 border border-gray-800 rounded-xl p-8 max-w-md w-full text-center">
+                <div class="w-20 h-20 bg-green-800 bg-opacity-30 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check-circle text-5xl text-green-500"></i>
+                </div>
+                <h3 class="text-2xl text-white mb-2" style="font-family: 'Minecraft', sans-serif;" id="successModalTitle">Success!</h3>
+                <p class="text-gray-400 mb-6" id="successModalText">Your action was successful.</p>
+                <button id="successModalButton" class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg text-center transition-all duration-300 transform hover:scale-105">
+                    Continue
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between">
+                    <div class="mb-8 md:mb-0">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:scale-110">
+                                <span class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">T</span>
+                            </div>
+                            <span class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">TurboDraft<span class="text-red-500">.org</span></span>
+                        </div>
+                        <p class="max-w-xs">Premium Minecraft skins for everyone. Free and subscription options available for all players.</p>
+                        <p class="mt-4 text-sm">© 2025 TurboDraft. Not affiliated with Mojang.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Quick Links</h3>
+                            <ul class="space-y-2">
+                                <li><a href="index" class="hover:text-red-400 transition-colors duration-300">Home</a></li>
+                                <li><a href="skins" class="hover:text-red-400 transition-colors duration-300">Skins</a></li>
+                                <li><a href="premium" class="hover:text-red-400 transition-colors duration-300">Premium</a></li>
+                                <li><a href="features" class="hover:text-red-400 transition-colors duration-300">Features</a></li>
+                                <li><a href="about" class="hover:text-red-400 transition-colors duration-300">About Us</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Resources</h3>
+                            <ul class="space-y-2">
+                                <li><a href="tutorials" class="hover:text-red-400 transition-colors duration-300">Tutorials</a></li>
+                                <li><a href="faq" class="hover:text-red-400 transition-colors duration-300">FAQ</a></li>
+                                <li><a href="support" class="hover:text-red-400 transition-colors duration-300">Support</a></li>
+                                <li><a href="terms" class="hover:text-red-400 transition-colors duration-300">Terms of Service</a></li>
+                                <li><a href="privacy" class="hover:text-red-400 transition-colors duration-300">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Community</h3>
+                            <ul class="space-y-2">
+                                <li><a href="https://discord.gg/turbodraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">Discord Server</a></li>
+                                <li><a href="https://twitter.com/TurboDraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">Twitter</a></li>
+                                <li><a href="https://instagram.com/TurboDraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">Instagram</a></li>
+                                <li><a href="https://youtube.com/TurboDraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">YouTube</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Contact</h3>
+                            <ul class="space-y-2">
+                                <li><a href="mailto:info@turbodraft.org" class="hover:text-red-400 transition-colors duration-300">info@turbodraft.org</a></li>
+                                <li><a href="contact" class="hover:text-red-400 transition-colors duration-300">Contact Form</a></li>
+                                <li><a href="advertise" class="hover:text-red-400 transition-colors duration-300">Advertise</a></li>
+                                <li><a href="careers" class="hover:text-red-400 transition-colors duration-300">Careers</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+                    <p class="mb-4">Made with ❤️ for the Minecraft community. TurboDraft.org - bringing your Minecraft characters to life.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="terms" class="text-gray-500 hover:text-red-400 transition-colors duration-300">Terms</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="privacy" class="text-gray-500 hover:text-red-400 transition-colors duration-300">Privacy</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="cookies" class="text-gray-500 hover:text-red-400 transition-colors duration-300">Cookies</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="sitemap" class="text-gray-500 hover:text-red-400 transition-colors duration-300">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+        <script>
+            // Main authentication and dashboard functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Add CSS for the active tab
+    document.head.insertAdjacentHTML('beforeend', `
+        <style>
+            .active-tab {
+                color: white;
+                position: relative;
+            }
+            .active-tab::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(to right, #b91c1c, #7f1d1d);
+            }
+        </style>
+    `);
+
+    // Initialize functionality
+    setupMobileMenu();
+    checkAuth();
+    setupNavbarScroll();
+});
+
+// Mobile menu handling
+function setupMobileMenu() {
+    const openMenu = document.getElementById('openMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (openMenu) {
+        openMenu.addEventListener('click', function() {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+    }
+    
+    if (closeMenu) {
+        closeMenu.addEventListener('click', function() {
+            mobileMenu.classList.add('translate-x-full');
+        });
+    }
+}
+
+// Navbar scroll effect
+function setupNavbarScroll() {
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            navbar.classList.add('py-2', 'shadow-lg');
+            navbar.classList.remove('py-4', 'bg-opacity-80');
+        } else {
+            navbar.classList.remove('py-2', 'shadow-lg');
+            navbar.classList.add('py-4', 'bg-opacity-80');
+        }
+    });
+}
+
+// Main authentication check
+function checkAuth() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const username = localStorage.getItem('username');
+    const isPremium = localStorage.getItem('isPremium') === 'true';
+    const navUserSection = document.getElementById('navUserSection');
+    
+    console.log("Auth check - Logged in:", isLoggedIn, "Username:", username, "Premium:", isPremium);
+    
+    // Update navigation
+    if (navUserSection) {
+        if (isLoggedIn && username) {
+            navUserSection.innerHTML = `
+                <a href="../auth/" class="flex items-center">
+                    ${isPremium ? '<i class="fas fa-crown text-yellow-400 mr-2"></i>' : ''}
+                    <span class="text-white mr-3">${username}</span>
+                </a>
+            `;
+        } else {
+            navUserSection.innerHTML = `
+                <a href="auth" class="text-white hover:text-red-300 transition-colors duration-300">Login</a>
+                <a href="auth" class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800">Register</a>
+            `;
+        }
+    }
+
+    // Handle login/dashboard display on auth page
+    const userDashboard = document.getElementById('userDashboard');
+    const authFormsContainer = document.getElementById('authFormsContainer');
+    
+    if (userDashboard && authFormsContainer) {
+        if (isLoggedIn && username) {
+            // User is logged in, show dashboard
+            authFormsContainer.classList.add('hidden');
+            initDashboard();
+        } else {
+            // User is not logged in, show auth forms
+            userDashboard.classList.add('hidden');
+            authFormsContainer.classList.remove('hidden');
+            
+            // Setup auth form toggle
+            setupAuthForms();
+        }
+    }
+
+    // Handle subscription page
+    const subscribeSection = document.getElementById('subscribeSection');
+    const alreadySubscribedSection = document.getElementById('alreadySubscribedSection');
+    const redirectingModal = document.getElementById('redirectingModal');
+    
+    if (subscribeSection || alreadySubscribedSection) {
+        if (!isLoggedIn) {
+            // Not logged in, redirect to auth
+            if (redirectingModal) {
+                redirectingModal.classList.remove('opacity-0', 'pointer-events-none');
+                
+                // Countdown
+                let counter = 3;
+                const redirectCounter = document.getElementById('redirectCounter');
+                if (redirectCounter) {
+                    const countdownInterval = setInterval(() => {
+                        counter--;
+                        redirectCounter.textContent = counter;
+                        if (counter <= 0) {
+                            clearInterval(countdownInterval);
+                            window.location.href = 'auth';
+                        }
+                    }, 1000);
+                }
+            }
+        } else if (isPremium) {
+            // Logged in and premium
+            if (alreadySubscribedSection) {
+                alreadySubscribedSection.classList.remove('hidden');
+                
+                // Set subscription details
+                const planType = localStorage.getItem('planType') || 'Annual';
+                const nextBillingDate = localStorage.getItem('nextBillingDate') || 'May 19, 2026';
+                const customRequests = localStorage.getItem('customRequests') || '2 available';
+                
+                const currentPlanType = document.getElementById('currentPlanType');
+                const nextBillingDateElem = document.getElementById('nextBillingDate');
+                const customRequestsAvailable = document.getElementById('customRequestsAvailable');
+                
+                if (currentPlanType) currentPlanType.textContent = planType;
+                if (nextBillingDateElem) nextBillingDateElem.textContent = nextBillingDate;
+                if (customRequestsAvailable) customRequestsAvailable.textContent = customRequests;
+            }
+        } else {
+            // Logged in but not premium
+            if (subscribeSection) {
+                subscribeSection.classList.remove('hidden');
+                setupSubscriptionHandlers();
+            }
+        }
+    }
+}
+
+// Initialize dashboard
+function initDashboard() {
+    console.log("Initializing dashboard");
+    const userDashboard = document.getElementById('userDashboard');
+    
+    if (!userDashboard) {
+        console.error("Dashboard element not found");
+        return;
+    }
+    
+    userDashboard.classList.remove('hidden');
+    
+    // Get user data
+    const username = localStorage.getItem('username');
+    const isPremium = localStorage.getItem('isPremium') === 'true';
+    
+    // Update dashboard UI elements
+    const dashboardUsername = document.getElementById('dashboardUsername');
+    const dashboardAccountType = document.getElementById('dashboardAccountType');
+    const currentUsername = document.getElementById('currentUsername');
+    const freeAccountSection = document.getElementById('freeAccountSection');
+    const premiumAccountSection = document.getElementById('premiumAccountSection');
+    
+    if (dashboardUsername) dashboardUsername.textContent = username;
+    
+    if (dashboardAccountType) {
+        dashboardAccountType.textContent = isPremium ? 'Premium Account' : 'Free Account';
+        if (isPremium) dashboardAccountType.classList.add('text-yellow-300');
+    }
+    
+    if (currentUsername) currentUsername.value = username;
+    
+    // Show appropriate subscription section
+    if (isPremium) {
+        if (freeAccountSection) freeAccountSection.classList.add('hidden');
+        if (premiumAccountSection) premiumAccountSection.classList.remove('hidden');
+        
+        // Set subscription details
+        const planType = localStorage.getItem('planType') || 'Annual';
+        const nextBillingDate = localStorage.getItem('nextBillingDate') || 'May 19, 2026';
+        const customRequests = localStorage.getItem('customRequests') || '2 available';
+        
+        const subscriptionPlanBadge = document.getElementById('subscriptionPlanBadge');
+        const subscriptionPlanType = document.getElementById('subscriptionPlanType');
+        const subscriptionNextBilling = document.getElementById('subscriptionNextBilling');
+        const subscriptionCustomRequests = document.getElementById('subscriptionCustomRequests');
+        
+        if (subscriptionPlanBadge) subscriptionPlanBadge.textContent = `${planType} Plan`;
+        if (subscriptionPlanType) subscriptionPlanType.textContent = planType;
+        if (subscriptionNextBilling) subscriptionNextBilling.textContent = nextBillingDate;
+        if (subscriptionCustomRequests) subscriptionCustomRequests.textContent = customRequests;
+    } else {
+        if (freeAccountSection) freeAccountSection.classList.remove('hidden');
+        if (premiumAccountSection) premiumAccountSection.classList.add('hidden');
+    }
+    
+    // Setup dashboard tabs
+    setupDashboardTabs();
+    
+    // Setup password strength meter
+    setupPasswordMeter();
+    
+    // Setup password toggles
+    setupPasswordToggles();
+    
+    // Setup username update
+    setupUsernameUpdate();
+    
+    // Setup password update
+    setupPasswordUpdate();
+    
+    // Setup subscription cancellation
+    setupCancelSubscription();
+}
+
+// Setup dashboard tabs
+function setupDashboardTabs() {
+    const dashboardTabs = document.querySelectorAll('.dashboard-tab');
+    const dashboardContents = document.querySelectorAll('.dashboard-content');
+    
+    dashboardTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs
+            dashboardTabs.forEach(t => {
+                t.classList.remove('active-tab', 'text-white');
+                t.classList.add('text-gray-400');
+            });
+            
+            // Add active class to clicked tab
+            tab.classList.add('active-tab', 'text-white');
+            tab.classList.remove('text-gray-400');
+            
+            // Hide all content
+            dashboardContents.forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Show selected content
+            const tabId = tab.getAttribute('data-tab');
+            const tabContent = document.getElementById(`${tabId}-tab`);
+            if (tabContent) tabContent.classList.remove('hidden');
+        });
+    });
+}
+
+// Setup password strength meter
+function setupPasswordMeter() {
+    const newPassword = document.getElementById('newPassword');
+    const newPasswordStrengthBar = document.getElementById('newPasswordStrengthBar');
+    const newPasswordStrengthText = document.getElementById('newPasswordStrengthText');
+    
+    if (newPassword && newPasswordStrengthBar && newPasswordStrengthText) {
+        newPassword.addEventListener('input', function() {
+            const password = this.value;
+            let strength = 0;
+            
+            // Length check
+            if (password.length >= 8) strength += 25;
+            
+            // Uppercase check
+            if (/[A-Z]/.test(password)) strength += 25;
+            
+            // Lowercase check
+            if (/[a-z]/.test(password)) strength += 25;
+            
+            // Number or special char check
+            if (/[0-9!@#$%^&*(),.?":{}|<>]/.test(password)) strength += 25;
+            
+            // Update strength bar
+            newPasswordStrengthBar.style.width = `${strength}%`;
+            
+            // Update color and text
+            if (strength <= 25) {
+                newPasswordStrengthBar.className = 'h-full bg-red-700 transition-all duration-300';
+                newPasswordStrengthText.textContent = 'Weak password';
+                newPasswordStrengthText.className = 'text-xs text-red-500 mt-1';
+            } else if (strength <= 50) {
+                newPasswordStrengthBar.className = 'h-full bg-yellow-600 transition-all duration-300';
+                newPasswordStrengthText.textContent = 'Fair password';
+                newPasswordStrengthText.className = 'text-xs text-yellow-500 mt-1';
+            } else if (strength <= 75) {
+                newPasswordStrengthBar.className = 'h-full bg-yellow-400 transition-all duration-300';
+                newPasswordStrengthText.textContent = 'Good password';
+                newPasswordStrengthText.className = 'text-xs text-yellow-400 mt-1';
+            } else {
+                newPasswordStrengthBar.className = 'h-full bg-green-500 transition-all duration-300';
+                newPasswordStrengthText.textContent = 'Strong password';
+                newPasswordStrengthText.className = 'text-xs text-green-500 mt-1';
+            }
+        });
+    }
+}
+
+// Setup password toggles
+function setupPasswordToggles() {
+    const toggleCurrentPassword = document.getElementById('toggleCurrentPassword');
+    const currentPassword = document.getElementById('currentPassword');
+    const toggleNewPassword = document.getElementById('toggleNewPassword');
+    const newPassword = document.getElementById('newPassword');
+    
+    if (toggleCurrentPassword && currentPassword) {
+        toggleCurrentPassword.addEventListener('click', function() {
+            const type = currentPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            currentPassword.setAttribute('type', type);
+            
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-eye');
+            icon.classList.toggle('fa-eye-slash');
+        });
+    }
+    
+    if (toggleNewPassword && newPassword) {
+        toggleNewPassword.addEventListener('click', function() {
+            const type = newPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            newPassword.setAttribute('type', type);
+            
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-eye');
+            icon.classList.toggle('fa-eye-slash');
+        });
+    }
+}
+
+// Setup username update
+function setupUsernameUpdate() {
+    const updateUsernameBtn = document.getElementById('updateUsernameBtn');
+    
+    if (updateUsernameBtn) {
+        updateUsernameBtn.addEventListener('click', function() {
+            const currentUsername = document.getElementById('currentUsername').value;
+            const newUsername = document.getElementById('newUsername').value.trim();
+            
+            // Validation
+            if (!newUsername) {
+                showErrorModal('Please enter a new username.');
+                return;
+            }
+            
+            if (newUsername === currentUsername) {
+                showErrorModal('New username must be different from current username.');
+                return;
+            }
+            
+            // Check if username already exists
+            const users = getUsers();
+            if (users.some(user => user.username.toLowerCase() === newUsername.toLowerCase())) {
+                showErrorModal('Username already exists. Please choose a different one.');
+                return;
+            }
+            
+            // Show loading modal
+            showLoadingModal('Updating Username', 'Please wait while we update your username...');
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Update username in localStorage
+                localStorage.setItem('username', newUsername);
+                
+                // Update username in users array
+                const userId = localStorage.getItem('userId');
+                const users = getUsers();
+                const userIndex = users.findIndex(user => user.id.toString() === userId);
+                
+                if (userIndex !== -1) {
+                    users[userIndex].username = newUsername;
+                    saveUsers(users);
+                }
+                
+                // Hide loading modal
+                hideLoadingModal();
+                
+                // Show success modal
+                showSuccessModal('Username Updated!', 'Your username has been updated successfully.', 'Continue', () => {
+                    document.getElementById('successModal').classList.add('opacity-0', 'pointer-events-none');
+                    
+                    // Update UI
+                    document.getElementById('dashboardUsername').textContent = newUsername;
+                    document.getElementById('currentUsername').value = newUsername;
+                    document.getElementById('newUsername').value = '';
+                    
+                    // Update nav
+                    const isPremium = localStorage.getItem('isPremium') === 'true';
+                    const navUserSection = document.getElementById('navUserSection');
+                    if (navUserSection) {
+                        navUserSection.innerHTML = `
+                            <a href="../auth" class="flex items-center">
+                                ${isPremium ? '<i class="fas fa-crown text-yellow-400 mr-2"></i>' : ''}
+                                <span class="text-white mr-3">${newUsername}</span>
+                            </a>
+                        `;
+                    }
+                });
+            }, 1000);
+        });
+    }
+}
+
+// Setup password update
+function setupPasswordUpdate() {
+    const updatePasswordBtn = document.getElementById('updatePasswordBtn');
+    
+    if (updatePasswordBtn) {
+        updatePasswordBtn.addEventListener('click', function() {
+            const currentPasswordValue = document.getElementById('currentPassword').value;
+            const newPasswordValue = document.getElementById('newPassword').value;
+            const confirmNewPasswordValue = document.getElementById('confirmNewPassword').value;
+            
+            // Validation
+            if (!currentPasswordValue) {
+                showErrorModal('Please enter your current password.');
+                return;
+            }
+            
+            if (!newPasswordValue) {
+                showErrorModal('Please enter a new password.');
+                return;
+            }
+            
+            if (newPasswordValue.length < 8) {
+                showErrorModal('New password must be at least 8 characters long.');
+                return;
+            }
+            
+            if (newPasswordValue === currentPasswordValue) {
+                showErrorModal('New password must be different from current password.');
+                return;
+            }
+            
+            if (newPasswordValue !== confirmNewPasswordValue) {
+                showErrorModal('New passwords do not match.');
+                return;
+            }
+            
+            // Check if current password is correct
+            const userId = localStorage.getItem('userId');
+            const users = getUsers();
+            const user = users.find(user => user.id.toString() === userId);
+            
+            if (!user || user.password !== currentPasswordValue) {
+                showErrorModal('Current password is incorrect.');
+                return;
+            }
+            
+            // Show loading modal
+            showLoadingModal('Updating Password', 'Please wait while we update your password...');
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Update password in users array
+                const userIndex = users.findIndex(user => user.id.toString() === userId);
+                
+                if (userIndex !== -1) {
+                    users[userIndex].password = newPasswordValue;
+                    saveUsers(users);
+                }
+                
+                // Hide loading modal
+                hideLoadingModal();
+                
+                // Show success modal
+                showSuccessModal('Password Updated!', 'Your password has been updated successfully.', 'Continue', () => {
+                    document.getElementById('successModal').classList.add('opacity-0', 'pointer-events-none');
+                    
+                    // Clear form
+                    document.getElementById('currentPassword').value = '';
+                    document.getElementById('newPassword').value = '';
+                    document.getElementById('confirmNewPassword').value = '';
+                    
+                    // Reset strength meter
+                    const newPasswordStrengthBar = document.getElementById('newPasswordStrengthBar');
+                    const newPasswordStrengthText = document.getElementById('newPasswordStrengthText');
+                    
+                    if (newPasswordStrengthBar) newPasswordStrengthBar.style.width = '0%';
+                    if (newPasswordStrengthText) {
+                        newPasswordStrengthText.textContent = 'Password strength';
+                        newPasswordStrengthText.className = 'text-xs text-gray-500 mt-1';
+                    }
+                });
+            }, 1000);
+        });
+    }
+}
+
+// Setup subscription cancellation
+function setupCancelSubscription() {
+    const cancelSubscriptionBtn = document.getElementById('cancelSubscriptionBtn');
+    
+    if (cancelSubscriptionBtn) {
+        cancelSubscriptionBtn.addEventListener('click', function() {
+            // Confirm cancellation
+            if (confirm('Are you sure you want to cancel your subscription? You will lose access to premium features at the end of your current billing period.')) {
+                // Show loading modal
+                showLoadingModal('Canceling Subscription', 'Please wait while we process your request...');
+                
+                // Simulate API call
+                setTimeout(() => {
+                    // Update subscription status in localStorage
+                    
+                    // Option 1: Keep premium until "billing period ends" (simulation)
+                    // Mark as canceled but keep premium access temporarily
+                    localStorage.setItem('subscriptionStatus', 'canceled');
+                    
+                    // Option 2: Immediately remove premium access (uncomment to use this option instead)
+                    localStorage.removeItem('isPremium');
+                    localStorage.removeItem('planType');
+                    localStorage.removeItem('nextBillingDate');
+                    localStorage.removeItem('customRequests');
+                    
+                    // Also update the user in the users array
+                    const userId = localStorage.getItem('userId');
+                    if (userId) {
+                        const users = getUsers();
+                        const userIndex = users.findIndex(user => user.id.toString() === userId);
+                        
+                        if (userIndex !== -1) {
+                            users[userIndex].isPremium = false;
+                            saveUsers(users);
+                        }
+                    }
+                    
+                    // Update UI
+                    const subscriptionStatus = document.getElementById('subscriptionStatus');
+                    
+                    if (subscriptionStatus) {
+                        subscriptionStatus.textContent = 'Canceled';
+                        subscriptionStatus.classList.remove('text-green-500');
+                        subscriptionStatus.classList.add('text-red-500');
+                    }
+                    
+                    // Disable cancel button
+                    cancelSubscriptionBtn.disabled = true;
+                    cancelSubscriptionBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                    cancelSubscriptionBtn.textContent = 'Subscription Canceled';
+                    
+                    // Hide loading modal
+                    hideLoadingModal();
+                    
+                    // Show success modal
+                    showSuccessModal('Subscription Canceled', 'Your subscription has been canceled. You will lose access to premium features shortly.', 'OK', function() {
+                        // Reload page to refresh all premium-related UI elements
+                        window.location.reload();
+                    });
+                }, 1500);
+            }
+        });
+    }
+}
+
+// Helper function to get users from localStorage
+function getUsers() {
+    const users = localStorage.getItem('users');
+    return users ? JSON.parse(users) : [];
+}
+
+// Helper function to save users to localStorage
+function saveUsers(users) {
+    localStorage.setItem('users', JSON.stringify(users));
+}
+
+// Setup authentication forms
+function setupAuthForms() {
+    const loginToggle = document.getElementById('loginToggle');
+    const registerToggle = document.getElementById('registerToggle');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const mobileLoginToggle = document.getElementById('mobileLoginToggle');
+    const mobileRegisterToggle = document.getElementById('mobileRegisterToggle');
+    const registerButton = document.getElementById('registerButton');
+    const loginButton = document.getElementById('loginButton');
+    
+    // Form toggle functions
+    function showLoginForm() {
+        if (loginToggle && registerToggle && loginForm && registerForm) {
+            loginToggle.classList.add('bg-red-800', 'text-white');
+            loginToggle.classList.remove('text-gray-400');
+            registerToggle.classList.remove('bg-red-800', 'text-white');
+            registerToggle.classList.add('text-gray-400');
+            loginForm.classList.remove('hidden');
+            registerForm.classList.add('hidden');
+        }
+    }
+    
+    function showRegisterForm() {
+        if (loginToggle && registerToggle && loginForm && registerForm) {
+            registerToggle.classList.add('bg-red-800', 'text-white');
+            registerToggle.classList.remove('text-gray-400');
+            loginToggle.classList.remove('bg-red-800', 'text-white');
+            loginToggle.classList.add('text-gray-400');
+            registerForm.classList.remove('hidden');
+            loginForm.classList.add('hidden');
+        }
+    }
+    
+    // Form toggle event listeners
+    if (loginToggle) loginToggle.addEventListener('click', showLoginForm);
+    if (registerToggle) registerToggle.addEventListener('click', showRegisterForm);
+    if (mobileLoginToggle) mobileLoginToggle.addEventListener('click', showLoginForm);
+    if (mobileRegisterToggle) mobileRegisterToggle.addEventListener('click', showRegisterForm);
+    
+    // Password toggles
+    const toggleLoginPassword = document.getElementById('toggleLoginPassword');
+    const loginPassword = document.getElementById('loginPassword');
+    const toggleRegisterPassword = document.getElementById('toggleRegisterPassword');
+    const registerPassword = document.getElementById('registerPassword');
+    
+    if (toggleLoginPassword && loginPassword) {
+        toggleLoginPassword.addEventListener('click', function() {
+            const type = loginPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            loginPassword.setAttribute('type', type);
+            
+            const icon = this.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-eye');
+                icon.classList.toggle('fa-eye-slash');
+            }
+        });
+    }
+    
+    if (toggleRegisterPassword && registerPassword) {
+        toggleRegisterPassword.addEventListener('click', function() {
+            const type = registerPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            registerPassword.setAttribute('type', type);
+            
+            const icon = this.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-eye');
+                icon.classList.toggle('fa-eye-slash');
+            }
+        });
+    }
+    
+    // Password strength meter
+    const passwordStrengthBar = document.getElementById('passwordStrengthBar');
+    const passwordStrengthText = document.getElementById('passwordStrengthText');
+    
+    if (registerPassword && passwordStrengthBar && passwordStrengthText) {
+        registerPassword.addEventListener('input', function() {
+            const password = this.value;
+            let strength = 0;
+            
+            // Length check
+            if (password.length >= 8) strength += 25;
+            
+            // Uppercase check
+            if (/[A-Z]/.test(password)) strength += 25;
+            
+            // Lowercase check
+            if (/[a-z]/.test(password)) strength += 25;
+            
+            // Number or special char check
+            if (/[0-9!@#$%^&*(),.?":{}|<>]/.test(password)) strength += 25;
+            
+            // Update strength bar
+            passwordStrengthBar.style.width = `${strength}%`;
+            
+            // Update color and text
+            if (strength <= 25) {
+                passwordStrengthBar.className = 'h-full bg-red-700 transition-all duration-300';
+                passwordStrengthText.textContent = 'Weak password';
+                passwordStrengthText.className = 'text-xs text-red-500 mt-1';
+            } else if (strength <= 50) {
+                passwordStrengthBar.className = 'h-full bg-yellow-600 transition-all duration-300';
+                passwordStrengthText.textContent = 'Fair password';
+                passwordStrengthText.className = 'text-xs text-yellow-500 mt-1';
+            } else if (strength <= 75) {
+                passwordStrengthBar.className = 'h-full bg-yellow-400 transition-all duration-300';
+                passwordStrengthText.textContent = 'Good password';
+                passwordStrengthText.className = 'text-xs text-yellow-400 mt-1';
+            } else {
+                passwordStrengthBar.className = 'h-full bg-green-500 transition-all duration-300';
+                passwordStrengthText.textContent = 'Strong password';
+                passwordStrengthText.className = 'text-xs text-green-500 mt-1';
+            }
+        });
+    }
+    
+    // Register functionality
+    if (registerButton) {
+        registerButton.addEventListener('click', function() {
+            const username = document.getElementById('registerUsername').value.trim();
+            const email = document.getElementById('registerEmail').value.trim();
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('registerConfirmPassword').value;
+            const termsCheckbox = document.getElementById('termsCheckbox').checked;
+            
+            // Validation
+            if (!username) {
+                showErrorModal('Please enter a username.');
+                return;
+            }
+            
+            if (!email) {
+                showErrorModal('Please enter an email address.');
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                showErrorModal('Please enter a valid email address.');
+                return;
+            }
+            
+            if (!password) {
+                showErrorModal('Please enter a password.');
+                return;
+            }
+            
+            if (password.length < 8) {
+                showErrorModal('Password must be at least 8 characters long.');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                showErrorModal('Passwords do not match.');
+                return;
+            }
+            
+            if (!termsCheckbox) {
+                showErrorModal('You must agree to the Terms of Service and Privacy Policy.');
+                return;
+            }
+            
+            // Get existing users
+            const users = getUsers();
+            
+            // Check if username already exists
+            if (users.some(user => user.username.toLowerCase() === username.toLowerCase())) {
+                showErrorModal('Username already exists. Please choose a different one.');
+                return;
+            }
+            
+            // Check if email already exists
+            if (users.some(user => user.email.toLowerCase() === email.toLowerCase())) {
+                showErrorModal('Email address already in use. Please use a different one or login.');
+                return;
+            }
+            
+            // Show loading modal
+            showLoadingModal('Creating Account', 'Please wait while we create your account...');
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Generate unique ID
+                const userId = Date.now().toString();
+                
+                // Create new user
+                const newUser = {
+                    id: userId,
+                    username,
+                    email,
+                    password,
+                    createdAt: new Date().toISOString(),
+                    isPremium: false
+                };
+                
+                // Add user to array
+                users.push(newUser);
+                
+                // Save updated users array
+                saveUsers(users);
+                
+                // Hide loading modal
+                hideLoadingModal();
+                
+                // Show success modal
+                showSuccessModal('Account Created!', 'Your account has been created successfully. You can now log in.', 'Login Now', () => {
+                    document.getElementById('successModal').classList.add('opacity-0', 'pointer-events-none');
+                    
+                    // Switch to login form
+                    showLoginForm();
+                    
+                    // Pre-fill login form
+                    const loginUsername = document.getElementById('loginUsername');
+                    if (loginUsername) loginUsername.value = username;
+                });
+            }, 1500);
+        });
+    }
+    
+    // Login functionality
+    if (loginButton) {
+        loginButton.addEventListener('click', function() {
+            const username = document.getElementById('loginUsername').value.trim();
+            const password = document.getElementById('loginPassword').value;
+            
+            // Validation
+            if (!username) {
+                showErrorModal('Please enter your username or email.');
+                return;
+            }
+            
+            if (!password) {
+                showErrorModal('Please enter your password.');
+                return;
+            }
+            
+            // Show loading modal
+            showLoadingModal('Logging In', 'Please wait while we verify your credentials...');
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Get users
+                const users = getUsers();
+                
+                // Find user by username or email
+                const user = users.find(u => 
+                    u.username.toLowerCase() === username.toLowerCase() || 
+                    u.email.toLowerCase() === username.toLowerCase()
+                );
+                
+                // Check if user exists and password matches
+                if (!user || user.password !== password) {
+                    hideLoadingModal();
+                    showErrorModal('Invalid username/email or password. Please try again.');
+                    return;
+                }
+                
+                // Set login info in localStorage
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('username', user.username);
+                localStorage.setItem('userId', user.id);
+                
+                // Set premium status if applicable
+                if (user.isPremium) {
+                    localStorage.setItem('isPremium', 'true');
+                }
+                
+                // Hide loading modal
+                hideLoadingModal();
+                
+                // Show success modal and redirect
+                const returnUrl = new URLSearchParams(window.location.search).get('returnUrl');
+                
+                if (returnUrl) {
+                    showSuccessModal('Login Successful!', 'You have been logged in successfully.', 'Continue', () => {
+                        window.location.href = returnUrl;
+                    });
+                } else {
+                    showSuccessModal('Login Successful!', 'You have been logged in successfully.', 'Go to Homepage', () => {
+                        window.location.href = 'index';
+                    });
+                }
+            }, 1500);
+        });
+    }
+}
+
+// Setup subscription handlers
+function setupSubscriptionHandlers() {
+    // FAQ toggles
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const icon = this.querySelector('i');
+            
+            answer.classList.toggle('hidden');
+            if (icon) {
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+            }
+        });
+    });
+    
+    // Plan selection
+    document.querySelectorAll('.plan-select-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const plan = this.getAttribute('data-plan');
+            const price = this.getAttribute('data-price');
+            
+            // Update payment modal
+            const planName = document.getElementById('planName');
+            const planPrice = document.getElementById('planPrice');
+            const planSummary = document.getElementById('planSummary');
+            
+            let planNameText = 'Monthly Plan';
+            if (plan === 'annual') planNameText = 'Annual Plan';
+            if (plan === 'lifetime') planNameText = 'Lifetime Plan';
+            
+            if (planName) planName.textContent = planNameText;
+            if (planPrice) planPrice.textContent = `$${price}`;
+            
+            if (planSummary) {
+                if (plan === 'monthly') {
+                    planSummary.textContent = `Monthly Subscription - $${price}`;
+                } else if (plan === 'annual') {
+                    planSummary.textContent = `Annual Subscription - $${price}`;
+                } else {
+                    planSummary.textContent = `Lifetime Access - $${price}`;
+                }
+            }
+            
+            // Store selected plan for later
+            localStorage.setItem('selectedPlan', plan);
+            localStorage.setItem('selectedPrice', price);
+            
+            // Show payment modal
+            const paymentModal = document.getElementById('paymentModal');
+            if (paymentModal) {
+                paymentModal.classList.remove('opacity-0', 'pointer-events-none');
+            }
+        });
+    });
+    
+    // Format credit card number with spaces
+    const cardNumberInput = document.getElementById('cardNumber');
+    if (cardNumberInput) {
+        cardNumberInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+            let formattedValue = '';
+            
+            for (let i = 0; i < value.length; i++) {
+                if (i > 0 && i % 4 === 0) {
+                    formattedValue += ' ';
+                }
+                formattedValue += value[i];
+            }
+            
+            e.target.value = formattedValue;
+        });
+    }
+    
+    // Format expiry date
+    const expiryDateInput = document.getElementById('expiryDate');
+    if (expiryDateInput) {
+        expiryDateInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length > 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+            
+            e.target.value = value;
+        });
+    }
+    
+    // Close payment modal
+    const closePaymentModal = document.getElementById('closePaymentModal');
+    if (closePaymentModal) {
+        closePaymentModal.addEventListener('click', function() {
+            const paymentModal = document.getElementById('paymentModal');
+            if (paymentModal) {
+                paymentModal.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+    }
+    
+    // Process payment
+    const processPayment = document.getElementById('processPayment');
+    if (processPayment) {
+        processPayment.addEventListener('click', function() {
+            // Get form values
+            const cardNumber = document.getElementById('cardNumber')?.value;
+            const expiryDate = document.getElementById('expiryDate')?.value;
+            const cvc = document.getElementById('cvc')?.value;
+            const cardName = document.getElementById('cardName')?.value;
+            
+            // Validation
+            if (!cardNumber || !expiryDate || !cvc || !cardName) {
+                alert('Please fill in all payment details');
+                return;
+            }
+            
+            // Hide payment modal
+            const paymentModal = document.getElementById('paymentModal');
+            if (paymentModal) {
+                paymentModal.classList.add('opacity-0', 'pointer-events-none');
+            }
+            
+            // Show processing modal
+            const processingModal = document.getElementById('processingModal');
+            if (processingModal) {
+                processingModal.classList.remove('opacity-0', 'pointer-events-none');
+            }
+            
+            // Simulate processing
+            setTimeout(() => {
+                if (processingModal) {
+                    processingModal.classList.add('opacity-0', 'pointer-events-none');
+                }
+                
+                // Set premium status in localStorage
+                localStorage.setItem('isPremium', 'true');
+                
+                // Store plan details
+                const plan = localStorage.getItem('selectedPlan');
+                if (plan === 'monthly') {
+                    localStorage.setItem('planType', 'Monthly');
+                    localStorage.setItem('nextBillingDate', getNextMonthDate());
+                    localStorage.setItem('customRequests', '0 available');
+                } else if (plan === 'annual') {
+                    localStorage.setItem('planType', 'Annual');
+                    localStorage.setItem('nextBillingDate', getNextYearDate());
+                    localStorage.setItem('customRequests', '2 available');
+                } else {
+                    localStorage.setItem('planType', 'Lifetime');
+                    localStorage.setItem('nextBillingDate', 'Never');
+                    localStorage.setItem('customRequests', 'Unlimited');
+                }
+                
+                // Also update the user in the users array
+                const userId = localStorage.getItem('userId');
+                if (userId) {
+                    const users = getUsers();
+                    const userIndex = users.findIndex(user => user.id.toString() === userId);
+                    
+                    if (userIndex !== -1) {
+                        users[userIndex].isPremium = true;
+                        saveUsers(users);
+                    }
+                }
+                
+                // Show success modal
+                const successModal = document.getElementById('successModal');
+                if (successModal) {
+                    successModal.classList.remove('opacity-0', 'pointer-events-none');
+                    
+                    // Auto-close success modal after 3 seconds
+                    setTimeout(() => {
+                        successModal.classList.add('opacity-0', 'pointer-events-none');
+                        
+                        // Reload the page to show the "already subscribed" view
+                        window.location.reload();
+                    }, 3000);
+                }
+            }, 2000);
+        });
+    }
+}
+
+// Modal utility functions
+function showLoadingModal(title, text) {
+    const loadingModal = document.getElementById('loadingModal');
+    const loadingModalTitle = document.getElementById('loadingModalTitle');
+    const loadingModalText = document.getElementById('loadingModalText');
+    
+    if (loadingModal) {
+        if (loadingModalTitle) loadingModalTitle.textContent = title || 'Processing';
+        if (loadingModalText) loadingModalText.textContent = text || 'Please wait...';
+        
+        loadingModal.classList.remove('opacity-0', 'pointer-events-none');
+    }
+}
+
+function hideLoadingModal() {
+    const loadingModal = document.getElementById('loadingModal');
+    if (loadingModal) {
+        loadingModal.classList.add('opacity-0', 'pointer-events-none');
+    }
+}
+
+function showErrorModal(text) {
+    const errorModal = document.getElementById('errorModal');
+    const errorModalText = document.getElementById('errorModalText');
+    
+    if (errorModal) {
+        if (errorModalText) errorModalText.textContent = text || 'An error occurred.';
+        
+        errorModal.classList.remove('opacity-0', 'pointer-events-none');
+        
+        // Setup close button
+        const errorModalClose = document.getElementById('errorModalClose');
+        if (errorModalClose) {
+            errorModalClose.onclick = function() {
+                errorModal.classList.add('opacity-0', 'pointer-events-none');
+            };
+        }
+    }
+}
+
+function showSuccessModal(title, text, buttonText, callback) {
+    const successModal = document.getElementById('successModal');
+    const successModalTitle = document.getElementById('successModalTitle');
+    const successModalText = document.getElementById('successModalText');
+    const successModalButton = document.getElementById('successModalButton');
+    
+    if (successModal) {
+        if (successModalTitle) successModalTitle.textContent = title || 'Success!';
+        if (successModalText) successModalText.textContent = text || 'Your action was successful.';
+        if (successModalButton) {
+            successModalButton.textContent = buttonText || 'Continue';
+            successModalButton.onclick = callback || function() {
+                successModal.classList.add('opacity-0', 'pointer-events-none');
+            };
+        }
+        
+        successModal.classList.remove('opacity-0', 'pointer-events-none');
+    }
+}
+
+// Helper functions
+function getUsers() {
+    const users = localStorage.getItem('users');
+    return users ? JSON.parse(users) : [];
+}
+
+function saveUsers(users) {
+    localStorage.setItem('users', JSON.stringify(users));
+}
+
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email.toLowerCase());
+}
+
+function getNextMonthDate() {
+    const date = new Date();
+    date.setMonth(date.getMonth() + 1);
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function getNextYearDate() {
+    const date = new Date();
+    date.setFullYear(date.getFullYear() + 1);
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+// Logout function (global for onclick access)
+window.logout = function() {
+    // Show loading modal
+    showLoadingModal('Logging Out', 'Please wait...');
+    
+    // Simulate API call
+    setTimeout(() => {
+        // Clear auth data from localStorage
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('username');
+        localStorage.removeItem('userId');
+        localStorage.removeItem('isPremium');
+        localStorage.removeItem('planType');
+        localStorage.removeItem('nextBillingDate');
+        localStorage.removeItem('customRequests');
+        localStorage.removeItem('selectedPlan');
+        localStorage.removeItem('selectedPrice');
+        
+        // Hide loading modal
+        hideLoadingModal();
+        
+        // Reload page
+        window.location.href = 'index';
+    }, 1000);
+}
+
+// Ensure AOS is initialized
+if (typeof AOS !== 'undefined') {
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+}
+        </script>
+
+    </body>
+</html>

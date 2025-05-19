@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TurboDraft.org - Premium Minecraft Skins</title>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+            rel="stylesheet">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Minecraft&family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet">
+        <script src="assets/js/auth.js"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        backgroundImage: {
+                            'card': "url('assets/images/bg_card.jpg')",
+                            'pattern': "url('assets/images/pattern.png')",
+                        },
+                        animation: {
+                            'float': 'float 6s ease-in-out infinite',
+                            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                            'bounce-slow': 'bounce 3s infinite',
+                        },
+                        keyframes: {
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-20px)' },
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+
+    <body class="bg-black text-gray-200 font-sans">
+        <!-- Mobile Nav Menu (Hidden by default) -->
+        <div id="mobileMenu"
+            class="fixed inset-0 bg-black bg-opacity-95 z-50 transform transition-transform duration-300 translate-x-full">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex justify-between items-center mb-6">
+                    <div class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </div>
+                    <button id="closeMenu"
+                        class="text-white focus:outline-none">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile menu user section will be inserted here by JS when logged in -->
+
+                <div class="flex flex-col space-y-6 text-center">
+                    <a href="./"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Home</a>
+                    <a href="skins/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Skins</a>
+                    <a href="premium/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Premium</a>
+                    <a href="features/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Features</a>
+                    <a href="tutorials/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Tutorials</a>
+                    <a href="about/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">About</a>
+                    <a href="subscribe/"
+                        class="mt-4 bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg">Subscribe
+                        Now</a>
+                </div>
+
+                <div class="mt-10 flex justify-center space-x-6">
+                    <a href="https://discord.gg/turbodraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://instagram.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://youtube.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav
+            class="fixed w-full z-40 py-4 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg transition-all duration-300">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:transform hover:scale-110">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="./"
+                            class="relative text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-red-500 after:transition-all after:duration-300">Home</a>
+                        <a href="skins/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Skins</a>
+                        <a href="premium/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Premium</a>
+                        <a href="features/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Features</a>
+                        <a href="tutorials/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Tutorials</a>
+                        <a href="about/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">About</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-4">
+                        <!-- User section will be dynamically populated by auth.js -->
+                        <div id="navUserSection" class="flex items-center">
+                            <!-- Default content shown before JS loads -->
+                            <a href="auth/"
+                                class="text-white hover:text-red-300 transition-colors duration-300">Login</a>
+                            <a href="subscribe/"
+                                class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800">Subscribe</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="openMenu"
+                            class="text-white focus:outline-none">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section
+            class="pt-32 pb-24 relative overflow-hidden bg-gradient-to-br from-black to-red-900">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(#4a0000 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+            <!-- Floating blocks animation -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div
+                    class="absolute top-20 left-10 w-16 h-16 bg-red-900 bg-opacity-20 animate-float"
+                    style="animation-delay: 0s;"></div>
+                <div
+                    class="absolute top-40 right-20 w-12 h-12 bg-red-800 bg-opacity-20 animate-float"
+                    style="animation-delay: 1s;"></div>
+                <div
+                    class="absolute bottom-20 left-1/4 w-20 h-20 bg-red-700 bg-opacity-20 animate-float"
+                    style="animation-delay: 2s;"></div>
+                <div
+                    class="absolute top-1/2 right-1/3 w-10 h-10 bg-red-600 bg-opacity-20 animate-float"
+                    style="animation-delay: 1.5s;"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right"
+                        data-aos-duration="1000">
+                        <div
+                            class="mb-4 inline-block bg-red-900 bg-opacity-50 rounded-full px-4 py-1 transform transition-transform duration-300 hover:scale-105">
+                            <span
+                                class="text-xs font-semibold text-red-100">PREMIUM
+                                MINECRAFT SKINS</span>
+                        </div>
+                        <h1
+                            class="text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight"
+                            style="font-family: 'Minecraft', sans-serif;">Level
+                            Up Your <span class="text-red-500">Minecraft</span>
+                            Experience</h1>
+                        <p
+                            class="text-lg md:text-xl mb-8 text-gray-300 max-w-xl">Download
+                            high-quality custom skins and stand out on any
+                            server. Both free and premium skins available –
+                            subscribe for exclusive content!</p>
+                        <div
+                            class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="skins/"
+                                class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:from-red-600 hover:to-red-800 flex items-center justify-center">
+                                <i class="fas fa-cube mr-2"></i>
+                                <span>Browse Skins</span>
+                            </a>
+                            <a href="subscribe/"
+                                class="bg-transparent border-2 border-red-700 text-red-100 font-bold py-3 px-8 rounded-lg hover:bg-red-900 hover:border-red-600 transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center">
+                                <i class="fas fa-crown mr-2"></i>
+                                <span>Go Premium</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center relative"
+                        data-aos="fade-left" data-aos-duration="1000">
+                        <div class="relative">
+                            <div
+                                class="absolute -inset-4 bg-red-500 rounded-full opacity-20 blur-xl animate-pulse-slow"></div>
+                            <img src="assets/images/Steve_(Minecraft).png"
+                                alt="Minecraft Character"
+                                class="relative h-64 md:h-80 lg:h-96 z-10 transition-transform duration-500 transform hover:scale-105 animate-float"
+                                style="animation-delay: 0.5s;" />
+                        </div>
+                        <div
+                            class="absolute -bottom-4 -right-4 bg-black bg-opacity-80 p-4 rounded-lg shadow-lg border border-red-900 transition-all duration-300 hover:border-red-600 transform hover:scale-105">
+                            <div class="flex items-center">
+                                <div class="flex -space-x-2 mr-3">
+                                    <div
+                                        class="h-8 w-8 rounded-full bg-red-700 flex items-center justify-center text-xs font-bold">5</div>
+                                    <div
+                                        class="h-8 w-8 rounded-full bg-red-800 flex items-center justify-center text-xs font-bold">4</div>
+                                    <div
+                                        class="h-8 w-8 rounded-full bg-red-900 flex items-center justify-center text-xs font-bold">3</div>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400">Total
+                                        Downloads</p>
+                                    <p class="font-bold text-white">92,814</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Premium badge -->
+                        <div
+                            class="absolute top-0 left-0 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold py-2 px-4 rounded-br-lg shadow-lg transform -rotate-12 translate-y-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-crown mr-2"></i>
+                                <span>PREMIUM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl text-white mb-4"
+                        data-aos="fade-up"
+                        style="font-family: 'Minecraft', sans-serif;">Why Choose
+                        TurboDraft?</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto"
+                        data-aos="fade-up" data-aos-delay="100">We're more than
+                        just a skin repository - we're your gateway to a more
+                        personalized Minecraft experience.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-gray-900 border border-gray-800 p-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:border-red-900"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div
+                            class="w-12 h-12 bg-red-900 rounded-lg flex items-center justify-center mb-4 text-white transition-all duration-300 hover:bg-red-700">
+                            <i class="fas fa-bolt text-xl"></i>
+                        </div>
+                        <h3 class="text-xl mb-3 text-white"
+                            style="font-family: 'Minecraft', sans-serif;">Free &
+                            Premium Options</h3>
+                        <p class="text-gray-400 mb-4">Choose from our free
+                            collection or unlock premium skins with exclusive
+                            designs, animations, and HD quality textures.</p>
+                        <div class="flex items-center">
+                            <span
+                                class="h-2 w-2 bg-red-500 rounded-full mr-2"></span>
+                            <span class="text-sm text-gray-400">Something for
+                                everyone</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gray-900 border border-gray-800 p-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:border-red-900"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="w-12 h-12 bg-red-900 rounded-lg flex items-center justify-center mb-4 text-white transition-all duration-300 hover:bg-red-700">
+                            <i class="fas fa-paint-brush text-xl"></i>
+                        </div>
+                        <h3 class="text-xl mb-3 text-white"
+                            style="font-family: 'Minecraft', sans-serif;">Original
+                            Designs</h3>
+                        <p class="text-gray-400 mb-4">Our carefully crafted
+                            skins are unique and original. Stand out from the
+                            crowd with something truly special.</p>
+                        <div class="flex items-center">
+                            <span
+                                class="h-2 w-2 bg-red-500 rounded-full mr-2"></span>
+                            <span class="text-sm text-gray-400">Handcrafted by
+                                our team</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gray-900 border border-gray-800 p-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:border-red-900"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div
+                            class="w-12 h-12 bg-red-900 rounded-lg flex items-center justify-center mb-4 text-white transition-all duration-300 hover:bg-red-700">
+                            <i class="fas fa-check-circle text-xl"></i>
+                        </div>
+                        <h3 class="text-xl mb-3 text-white"
+                            style="font-family: 'Minecraft', sans-serif;">Game
+                            Compatible</h3>
+                        <p class="text-gray-400 mb-4">Our skins work with both
+                            Java and Bedrock editions of Minecraft. Download
+                            once, use everywhere.</p>
+                        <div class="flex items-center">
+                            <span
+                                class="h-2 w-2 bg-red-500 rounded-full mr-2"></span>
+                            <span class="text-sm text-gray-400">All Minecraft
+                                versions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="mt-16 bg-gray-900 border border-gray-800 rounded-xl p-6 md:p-8 transition-all duration-300 hover:border-red-900"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-2/3 mb-6 md:mb-0 md:pr-8">
+                            <h3 class="text-2xl text-white mb-3"
+                                style="font-family: 'Minecraft', sans-serif;">Weekly
+                                Skin Drops</h3>
+                            <p class="text-gray-400 mb-4">We're constantly
+                                adding new skins to our collection. Check back
+                                every week for fresh designs!</p>
+                            <div class="flex flex-wrap gap-3">
+                                <span
+                                    class="bg-red-900 text-white rounded-full px-3 py-1 text-sm font-semibold transition-all duration-300 hover:bg-red-700 transform hover:scale-105">Free</span>
+                                <span
+                                    class="bg-yellow-600 text-black rounded-full px-3 py-1 text-sm font-semibold transition-all duration-300 hover:bg-yellow-500 transform hover:scale-105">Premium</span>
+                                <span
+                                    class="bg-red-900 text-white rounded-full px-3 py-1 text-sm font-semibold transition-all duration-300 hover:bg-red-700 transform hover:scale-105">Trending</span>
+                                <span
+                                    class="bg-purple-700 text-white rounded-full px-3 py-1 text-sm font-semibold transition-all duration-300 hover:bg-purple-600 transform hover:scale-105">Exclusive</span>
+                            </div>
+                        </div>
+                        <div class="md:w-1/3">
+                            <div
+                                class="bg-black p-4 rounded-lg border border-gray-800 transition-all duration-300 hover:border-red-900">
+                                <div
+                                    class="flex justify-between items-center mb-2">
+                                    <span class="text-gray-400 text-sm">Next
+                                        drop in:</span>
+                                    <div class="flex items-center">
+                                        <div
+                                            class="bg-gray-800 px-2 py-1 rounded mr-1">2</div>
+                                        <div
+                                            class="bg-gray-800 px-2 py-1 rounded mr-1">days</div>
+                                        <div
+                                            class="bg-gray-800 px-2 py-1 rounded">6</div>
+                                        <div
+                                            class="bg-gray-800 px-2 py-1 rounded ml-1">hrs</div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-red-700 to-red-500 w-3/5 animate-pulse"></div>
+                                </div>
+                                <div
+                                    class="flex justify-between items-center mt-2">
+                                    <span class="text-gray-500 text-xs">Last
+                                        update: 4 days ago</span>
+                                    <button
+                                        class="text-xs text-red-400 hover:text-red-300 transition-colors duration-300 flex items-center">
+                                        <i class="fas fa-bell mr-1"></i> Notify
+                                        me
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Benefits Section (New) -->
+        <section class="py-20 bg-black relative">
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(#4a0000 1px, transparent 1px); background-size: 20px 20px; opacity: 0.05;"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16">
+                    <div
+                        class="inline-flex items-center bg-yellow-600 bg-opacity-20 rounded-full px-4 py-1 mb-4">
+                        <i class="fas fa-crown text-yellow-400 mr-2"></i>
+                        <span class="text-yellow-300 font-semibold">PREMIUM
+                            BENEFITS</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl text-white mb-4"
+                        data-aos="fade-up"
+                        style="font-family: 'Minecraft', sans-serif;">Unlock The
+                        Full Experience</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto"
+                        data-aos="fade-up" data-aos-delay="100">Subscribers get
+                        access to exclusive features and content that take your
+                        Minecraft adventure to the next level.</p>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-500 group"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div
+                            class="h-3 bg-gradient-to-r from-yellow-400 to-yellow-600"></div>
+                        <div class="p-6">
+                            <div
+                                class="bg-yellow-600 bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-5 group-hover:bg-opacity-20 transition-all duration-300">
+                                <i
+                                    class="fas fa-unlock-alt text-2xl text-yellow-400"></i>
+                            </div>
+                            <h3 class="text-white text-xl mb-3"
+                                style="font-family: 'Minecraft', sans-serif;">Exclusive
+                                Skins</h3>
+                            <p class="text-gray-400">Access 400+ premium skins
+                                not available to free users, including unique
+                                themes and special editions.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-500 group"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="h-3 bg-gradient-to-r from-yellow-400 to-yellow-600"></div>
+                        <div class="p-6">
+                            <div
+                                class="bg-yellow-600 bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-5 group-hover:bg-opacity-20 transition-all duration-300">
+                                <i
+                                    class="fas fa-calendar-alt text-2xl text-yellow-400"></i>
+                            </div>
+                            <h3 class="text-white text-xl mb-3"
+                                style="font-family: 'Minecraft', sans-serif;">Early
+                                Access</h3>
+                            <p class="text-gray-400">Get new skin packs 7 days
+                                before everyone else and be the first to
+                                showcase new designs.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-500 group"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div
+                            class="h-3 bg-gradient-to-r from-yellow-400 to-yellow-600"></div>
+                        <div class="p-6">
+                            <div
+                                class="bg-yellow-600 bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-5 group-hover:bg-opacity-20 transition-all duration-300">
+                                <i
+                                    class="fas fa-download text-2xl text-yellow-400"></i>
+                            </div>
+                            <h3 class="text-white text-xl mb-3"
+                                style="font-family: 'Minecraft', sans-serif;">Unlimited
+                                Downloads</h3>
+                            <p class="text-gray-400">No daily download limits.
+                                Get as many skins as you want, whenever you
+                                want.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-yellow-500 group"
+                        data-aos="fade-up" data-aos-delay="400">
+                        <div
+                            class="h-3 bg-gradient-to-r from-yellow-400 to-yellow-600"></div>
+                        <div class="p-6">
+                            <div
+                                class="bg-yellow-600 bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-5 group-hover:bg-opacity-20 transition-all duration-300">
+                                <i
+                                    class="fas fa-magic text-2xl text-yellow-400"></i>
+                            </div>
+                            <h3 class="text-white text-xl mb-3"
+                                style="font-family: 'Minecraft', sans-serif;">Custom
+                                Requests</h3>
+                            <p class="text-gray-400">Request custom skins
+                                designed just for you. Our artists will bring
+                                your ideas to life.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12" data-aos="fade-up"
+                    data-aos-delay="500">
+                    <a href="subscribe/"
+                        class="inline-flex items-center bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-crown mr-2"></i>
+                        <span>Get Premium Now</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skins Showcase Section -->
+        <section id="skins" class="py-20 bg-gray-900 relative">
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(#4a0000 1px, transparent 1px); background-size: 20px 20px; opacity: 0.05;"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl text-white mb-4"
+                        data-aos="fade-up"
+                        style="font-family: 'Minecraft', sans-serif;">Our Skin
+                        Collection</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto mb-8"
+                        data-aos="fade-up" data-aos-delay="100">Browse our
+                        handcrafted selection of Minecraft skins and find your
+                        perfect style.</p>
+
+                    <div
+                        class="max-w-3xl mx-auto flex flex-col sm:flex-row gap-4 mb-8"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative flex-grow">
+                            <input type="text" id="skinSearch"
+                                placeholder="Search skins..."
+                                class="w-full py-3 px-4 pl-12 rounded-lg bg-gray-900 border-2 border-gray-800 text-white focus:outline-none focus:border-red-700 transition-colors duration-300" />
+                            <div
+                                class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="bg-red-800 text-white py-3 px-4 rounded-lg hover:bg-red-700 transition-colors duration-300 active-filter"
+                                data-filter="all">
+                                All
+                            </button>
+                            <button
+                                class="bg-gray-800 text-white py-3 px-4 rounded-lg hover:bg-red-700 transition-colors duration-300"
+                                data-filter="free">
+                                Free
+                            </button>
+                            <button
+                                class="bg-gray-800 text-white py-3 px-4 rounded-lg hover:bg-red-700 transition-colors duration-300"
+                                data-filter="premium">
+                                Premium
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="skinsContainer"
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Skin cards will be generated dynamically -->
+                </div>
+
+                <!-- Pagination Controls -->
+                <div class="flex justify-center mt-12" data-aos="fade-up"
+                    id="paginationContainer">
+                    <div class="flex flex-wrap justify-center gap-2"
+                        id="paginationControls">
+                        <!-- Pagination will be generated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-20 bg-black">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl text-white mb-4"
+                        data-aos="fade-up"
+                        style="font-family: 'Minecraft', sans-serif;">How It
+                        Works</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto"
+                        data-aos="fade-up" data-aos-delay="100">Get your new
+                        Minecraft look in just three simple steps!</p>
+                </div>
+
+                <div
+                    class="flex flex-col md:flex-row items-stretch space-y-8 md:space-y-0 md:space-x-8 relative">
+                    <!-- Connection line -->
+                    <div
+                        class="hidden md:block absolute top-32 left-0 right-0 h-1 bg-gradient-to-r from-red-900 via-red-700 to-red-900 z-0"></div>
+
+                    <div
+                        class="flex-1 bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:border-red-900 transform hover:scale-105 z-10"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div
+                            class="h-40 bg-gradient-to-br from-red-900 to-red-800 flex items-center justify-center">
+                            <i class="fas fa-search text-6xl text-red-100"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div
+                                    class="h-10 w-10 rounded-full bg-red-800 flex items-center justify-center text-white font-bold mr-3 transition-all duration-300 hover:bg-red-700">1</div>
+                                <h3 class="text-xl text-white"
+                                    style="font-family: 'Minecraft', sans-serif;">Find
+                                    a Skin</h3>
+                            </div>
+                            <p class="text-gray-400 mb-4">Browse our collection
+                                and find the perfect skin that matches your
+                                style and personality.</p>
+                            <div
+                                class="flex items-center text-gray-500 text-sm">
+                                <i
+                                    class="fas fa-lightbulb mr-2 text-yellow-500"></i>
+                                <span>Use the search bar to find specific skin
+                                    types</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex-1 bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:border-red-900 transform hover:scale-105 z-10"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="h-40 bg-gradient-to-br from-red-900 to-red-800 flex items-center justify-center">
+                            <i
+                                class="fas fa-download text-6xl text-red-100"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div
+                                    class="h-10 w-10 rounded-full bg-red-800 flex items-center justify-center text-white font-bold mr-3 transition-all duration-300 hover:bg-red-700">2</div>
+                                <h3 class="text-xl text-white"
+                                    style="font-family: 'Minecraft', sans-serif;">Download
+                                    It</h3>
+                            </div>
+                            <p class="text-gray-400 mb-4">Click the download
+                                button and save the skin file (.png) to your
+                                computer. Premium skins require a
+                                subscription.</p>
+                            <div
+                                class="flex items-center text-gray-500 text-sm">
+                                <i class="fas fa-bolt mr-2 text-yellow-500"></i>
+                                <span>All downloads are instant - no
+                                    waiting!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex-1 bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:border-red-900 transform hover:scale-105 z-10"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div
+                            class="h-40 bg-gradient-to-br from-red-900 to-red-800 flex items-center justify-center">
+                            <i
+                                class="fas fa-user-astronaut text-6xl text-red-100"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div
+                                    class="h-10 w-10 rounded-full bg-red-800 flex items-center justify-center text-white font-bold mr-3 transition-all duration-300 hover:bg-red-700">3</div>
+                                <h3 class="text-xl text-white"
+                                    style="font-family: 'Minecraft', sans-serif;">Apply
+                                    In-Game</h3>
+                            </div>
+                            <p class="text-gray-400 mb-4">Upload the skin to
+                                your Minecraft profile and show off your new
+                                look!</p>
+                            <div
+                                class="flex items-center text-gray-500 text-sm">
+                                <i
+                                    class="fas fa-check-circle mr-2 text-green-500"></i>
+                                <span>Works with both Java and Bedrock
+                                    editions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorials Section (New) -->
+        <section id="tutorials" class="py-20 bg-gray-900 relative">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl text-white mb-4"
+                        data-aos="fade-up"
+                        style="font-family: 'Minecraft', sans-serif;">Helpful
+                        Tutorials</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto"
+                        data-aos="fade-up" data-aos-delay="100">Learn how to use
+                        our skins and get the most out of your Minecraft
+                        experience.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-red-900"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative h-64 bg-black">
+                            <img
+                                src="assets/images/how_to_install_java_skins.jpg"
+                                alt="Tutorial thumbnail"
+                                class="w-full h-full object-cover" />
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl text-white mb-2"
+                                style="font-family: 'Minecraft', sans-serif;">How
+                                to Install Skins in Java Edition</h3>
+                            <p class="text-gray-400 text-sm mb-3">Learn how to
+                                install custom skins in Minecraft Java Edition
+                                in just a few simple steps.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500 text-xs"><i
+                                        class="far fa-clock mr-1"></i>
+                                    4:30</span>
+                                <a href="tutorials/java-edition/"
+                                    class="text-red-400 hover:text-red-300 text-sm transition-colors duration-300">Tutorial
+                                    <i class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-red-900"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative h-64 bg-black">
+                            <img
+                                src="assets/images/how_to_install_bedrock_skins.jpg"
+                                alt="Tutorial thumbnail"
+                                class="w-full h-full object-cover" />
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl text-white mb-2"
+                                style="font-family: 'Minecraft', sans-serif;">How
+                                to Install Skins in Bedrock Edition</h3>
+                            <p class="text-gray-400 text-sm mb-3">Follow this
+                                guide to add custom skins to Minecraft Bedrock
+                                on any platform.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500 text-xs"><i
+                                        class="far fa-clock mr-1"></i>
+                                    5:15</span>
+                                <a href="tutorials/bedrock-edition/"
+                                    class="text-red-400 hover:text-red-300 text-sm transition-colors duration-300">Tutorial
+                                    <i class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-red-900"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative h-64 bg-black">
+                            <img src="assets/images/custom_skins.jpg"
+                                alt="Tutorial thumbnail"
+                                class="w-full h-full object-cover" />
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl text-white mb-2"
+                                style="font-family: 'Minecraft', sans-serif;">Creating
+                                Custom Skins</h3>
+                            <p class="text-gray-400 text-sm mb-3">Learn the
+                                basics of skin creation and how to design your
+                                own unique Minecraft character.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500 text-xs"><i
+                                        class="far fa-clock mr-1"></i>
+                                    12:45</span>
+                                <a href="tutorials/create-skins/"
+                                    class="text-red-400 hover:text-red-300 text-sm transition-colors duration-300">Tutorial
+                                    <i class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12" data-aos="fade-up">
+                    <a href="tutorials/"
+                        class="inline-flex items-center bg-red-800 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-all duration-300">
+                        <span>View All Tutorials</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section (New) -->
+        <section class="py-20 bg-black relative">
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(#4a0000 1px, transparent 1px); background-size: 20px 20px; opacity: 0.05;"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl text-white mb-4"
+                        data-aos="fade-up"
+                        style="font-family: 'Minecraft', sans-serif;">What Our
+                        Users Say</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto"
+                        data-aos="fade-up" data-aos-delay="100">Join thousands
+                        of satisfied Minecraft players who've transformed their
+                        game experience.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-gray-900 border border-gray-800 rounded-xl p-6 transition-all duration-300 hover:border-red-900 hover:shadow-xl"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center">
+                                <div
+                                    class="h-12 w-12 rounded-full bg-red-800 flex items-center justify-center text-white font-bold mr-3">
+                                    A
+                                </div>
+                                <div>
+                                    <h4
+                                        class="text-white font-semibold">Alex_MinecraftPro</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <i
+                                class="fas fa-quote-right text-3xl text-red-800 opacity-50"></i>
+                        </div>
+                        <p
+                            class="text-gray-400 mb-4">"The premium skins are absolutely worth it! I've gotten so many compliments on my custom skin. The quality is amazing and the design is unique."</p>
+                        <div class="pt-4 border-t border-gray-800">
+                            <span class="text-gray-500 text-xs">Premium User • 6
+                                months ago</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gray-900 border border-gray-800 rounded-xl p-6 transition-all duration-300 hover:border-red-900 hover:shadow-xl"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center">
+                                <div
+                                    class="h-12 w-12 rounded-full bg-red-800 flex items-center justify-center text-white font-bold mr-3">
+                                    S
+                                </div>
+                                <div>
+                                    <h4
+                                        class="text-white font-semibold">ShadowGamer2023</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <i
+                                class="fas fa-quote-right text-3xl text-red-800 opacity-50"></i>
+                        </div>
+                        <p
+                            class="text-gray-400 mb-4">"Even the free skins are better than most paid ones I've found elsewhere. I eventually upgraded to premium because I wanted access to the exclusive collections."</p>
+                        <div class="pt-4 border-t border-gray-800">
+                            <span class="text-gray-500 text-xs">Premium User • 3
+                                months ago</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-gray-900 border border-gray-800 rounded-xl p-6 transition-all duration-300 hover:border-red-900 hover:shadow-xl"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center">
+                                <div
+                                    class="h-12 w-12 rounded-full bg-red-800 flex items-center justify-center text-white font-bold mr-3">
+                                    E
+                                </div>
+                                <div>
+                                    <h4
+                                        class="text-white font-semibold">EnderQueen</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <i
+                                class="fas fa-quote-right text-3xl text-red-800 opacity-50"></i>
+                        </div>
+                        <p
+                            class="text-gray-400 mb-4">"The custom skin request feature is amazing! I sent in my idea and got a perfectly designed skin back in just 3 days. Absolutely incredible service!"</p>
+                        <div class="pt-4 border-t border-gray-800">
+                            <span class="text-gray-500 text-xs">Premium User • 2
+                                weeks ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section id="about"
+            class="py-20 bg-gradient-to-br from-red-900 to-black relative overflow-hidden">
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 20px 20px;"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right">
+                        <h2 class="text-3xl md:text-4xl text-white mb-6"
+                            style="font-family: 'Minecraft', sans-serif;">Join
+                            Our Community</h2>
+                        <p class="text-red-100 mb-8 max-w-lg">Get notified about
+                            new skin releases, Minecraft tips, and exclusive
+                            content. We never spam or share your email.</p>
+
+                        <form class="flex flex-col sm:flex-row gap-4 mb-8">
+                            <input type="email" placeholder="Your email address"
+                                class="py-3 px-4 rounded-lg bg-black border border-red-900 text-white placeholder-red-200 placeholder-opacity-50 flex-grow focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent transition-all duration-300" />
+                            <button type="submit"
+                                class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800 flex items-center justify-center">
+                                <span>Subscribe</span>
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </form>
+
+                        <div class="flex space-x-6">
+                            <a href="https://discord.gg/turbodraft"
+                                target="_blank"
+                                class="text-red-200 hover:text-white transition-colors duration-300 transform hover:scale-110">
+                                <i class="fab fa-discord text-2xl"></i>
+                            </a>
+                            <a href="https://twitter.com/TurboDraft"
+                                target="_blank"
+                                class="text-red-200 hover:text-white transition-colors duration-300 transform hover:scale-110">
+                                <i class="fab fa-twitter text-2xl"></i>
+                            </a>
+                            <a href="https://instagram.com/TurboDraft"
+                                target="_blank"
+                                class="text-red-200 hover:text-white transition-colors duration-300 transform hover:scale-110">
+                                <i class="fab fa-instagram text-2xl"></i>
+                            </a>
+                            <a href="https://youtube.com/TurboDraft"
+                                target="_blank"
+                                class="text-red-200 hover:text-white transition-colors duration-300 transform hover:scale-110">
+                                <i class="fab fa-youtube text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2 md:pl-12 flex justify-center"
+                        data-aos="fade-left">
+                        <div class="relative">
+                            <div
+                                class="absolute -inset-4 bg-red-500 rounded-xl opacity-20 blur-xl animate-pulse"></div>
+                            <div
+                                class="relative bg-black rounded-xl p-6 border border-red-900 max-w-md">
+                                <div class="flex space-x-4 mb-6">
+                                    <div
+                                        class="h-3 w-3 rounded-full bg-red-500"></div>
+                                    <div
+                                        class="h-3 w-3 rounded-full bg-yellow-500"></div>
+                                    <div
+                                        class="h-3 w-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <div
+                                    class="space-y-4 font-mono text-sm text-gray-300">
+                                    <p><span
+                                            class="text-red-400">user@turbodraft</span>:<span
+                                            class="text-red-300">~</span>$ find
+                                        awesome-skins</p>
+                                    <p class="pl-4">Searching for cool Minecraft
+                                        skins...</p>
+                                    <p class="pl-4">Found 13398 results!</p>
+                                    <p><span
+                                            class="text-red-400">user@turbodraft</span>:<span
+                                            class="text-red-300">~</span>$
+                                        download all</p>
+                                    <p class="pl-4 text-yellow-400">Access
+                                        denied: 8254 premium skins require
+                                        subscription</p>
+                                    <p class="pl-4 text-green-400">5144 free
+                                        skins downloaded successfully!</p>
+                                    <p class="pl-4">Upgrade to premium for all
+                                        content :)</p>
+                                    <p><span
+                                            class="text-red-400">user@turbodraft</span>:<span
+                                            class="text-red-300">~</span>$ <span
+                                            class="animate-pulse">_</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between">
+                    <div class="mb-8 md:mb-0">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:scale-110">
+                                <span class="text-2xl text-white"
+                                    style="font-family: 'Minecraft', sans-serif;">T</span>
+                            </div>
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                    class="text-red-500">.org</span></span>
+                        </div>
+                        <p class="max-w-xs">Premium Minecraft skins for
+                            everyone. Free and subscription options available
+                            for all players.</p>
+                        <p class="mt-4 text-sm">© 2025 TurboDraft. Not
+                            affiliated with Mojang.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Quick
+                                Links</h3>
+                            <ul class="space-y-2">
+                                <li><a href="./"
+                                        class="hover:text-red-400 transition-colors duration-300">Home</a></li>
+                                <li><a href="skins/"
+                                        class="hover:text-red-400 transition-colors duration-300">Skins</a></li>
+                                <li><a href="premium/"
+                                        class="hover:text-red-400 transition-colors duration-300">Premium</a></li>
+                                <li><a href="features/"
+                                        class="hover:text-red-400 transition-colors duration-300">Features</a></li>
+                                <li><a href="about/"
+                                        class="hover:text-red-400 transition-colors duration-300">About
+                                        Us</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Resources</h3>
+                            <ul class="space-y-2">
+                                <li><a href="tutorials/"
+                                        class="hover:text-red-400 transition-colors duration-300">Tutorials</a></li>
+                                <li><a href="faq/"
+                                        class="hover:text-red-400 transition-colors duration-300">FAQ</a></li>
+                                <li><a href="support/"
+                                        class="hover:text-red-400 transition-colors duration-300">Support</a></li>
+                                <li><a href="terms/"
+                                        class="hover:text-red-400 transition-colors duration-300">Terms
+                                        of Service</a></li>
+                                <li><a href="privacy/"
+                                        class="hover:text-red-400 transition-colors duration-300">Privacy
+                                        Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Community</h3>
+                            <ul class="space-y-2">
+                                <li><a href="https://discord.gg/turbodraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">Discord
+                                        Server</a></li>
+                                <li><a href="https://twitter.com/TurboDraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">Twitter</a></li>
+                                <li><a href="https://instagram.com/TurboDraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">Instagram</a></li>
+                                <li><a href="https://youtube.com/TurboDraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">YouTube</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Contact</h3>
+                            <ul class="space-y-2">
+                                <li><a href="mailto:info@turbodraft.org"
+                                        class="hover:text-red-400 transition-colors duration-300">info@turbodraft.org</a></li>
+                                <li><a href="contact/"
+                                        class="hover:text-red-400 transition-colors duration-300">Contact
+                                        Form</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+                    <p class="mb-4">Made with ❤️ for the Minecraft community.
+                        TurboDraft.org - bringing your Minecraft characters to
+                        life.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="terms/"
+                            class="text-gray-500 hover:text-red-400 transition-colors duration-300">Terms</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="privacy/"
+                            class="text-gray-500 hover:text-red-400 transition-colors duration-300">Privacy</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="cookies/"
+                            class="text-gray-500 hover:text-red-400 transition-colors duration-300">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Premium Skin Modal -->
+        <div id="premiumModal"
+            class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center transform transition-opacity duration-300 opacity-0 pointer-events-none">
+            <div
+                class="bg-gray-900 border border-red-800 rounded-xl max-w-md w-full p-6 relative">
+                <button id="closeModal"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="text-center mb-6">
+                    <div
+                        class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-600 bg-opacity-20 mb-4">
+                        <i class="fas fa-crown text-yellow-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl text-white mb-2"
+                        style="font-family: 'Minecraft', sans-serif;">Premium
+                        Content</h3>
+                    <p class="text-gray-400">This skin is exclusive to our
+                        premium subscribers.</p>
+                </div>
+                <div
+                    class="bg-black bg-opacity-50 border border-gray-800 rounded-lg p-4 mb-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <p class="text-gray-300">Access 400+ premium skins</p>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <p class="text-gray-300">Custom skin requests</p>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <p class="text-gray-300">Early access to new
+                            releases</p>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-3">
+                    <a href="subscribe/"
+                        class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold py-3 px-6 rounded-lg text-center transition-all duration-300 transform hover:scale-105">
+                        Subscribe Now
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+        <script>
+            // Initialize AOS animation library
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+
+            // Global variables for pagination
+            let currentPage = 1;
+            const itemsPerPage = 8;
+            let allSkins = [];
+            let filteredSkins = [];
+            let currentFilter = 'all';
+
+            // Mobile menu handling
+            document.getElementById('openMenu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.remove('translate-x-full');
+            });
+
+            document.getElementById('closeMenu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.add('translate-x-full');
+            });
+
+            // Modal handling
+            function openPremiumModal() {
+                const modal = document.getElementById('premiumModal');
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closePremiumModal() {
+                const modal = document.getElementById('premiumModal');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'auto';
+            }
+
+            document.getElementById('closeModal').addEventListener('click', closePremiumModal);
+
+            // Function to load skins from the folder structure
+            async function loadSkins() {
+                const skinsContainer = document.getElementById('skinsContainer');
+                
+                try {
+                    // These are the folder names based on your screenshot
+                const skinFolders = [
+                'abyss',
+                'ariel',
+                'autumn',
+                'bother_me',
+                'don-t-bother-me',
+                'dusk_rider',
+                'dusty',
+                'eclipse',
+                'endstone',
+                'endstone_warrior',
+                'flames',
+                'gray_wallibear',
+                'jasmine',
+                'jellybeans',
+                'jellyfish',
+                'medusa',
+                'motive',
+                'neon_skeleton',
+                'numb',
+                'oren-alien',
+                'outclass',
+                'polar_bear',
+                'racoon',
+                'rose_petals',
+                'sadie',
+                'school_library',
+                'spring',
+                'strawberry',
+                'summer',
+                'sunny_day',
+                'sweet',
+                'sweet_talks_base',
+                'thrift-club',
+                'winter',
+                'yuhhh'
+                ];
+
+                    
+            const formatName = str =>
+            str
+                // uppercase first character
+                .replace(/^([a-zA-Z])/, (_, c) => c.toUpperCase())
+                // remove "_" and "-" and uppercase the next letter
+                .replace(/[_-]([a-zA-Z])/g, (_, c) => ' ' + c.toUpperCase());
+
+            allSkins = skinFolders.map((folderName, index) => {
+                // Randomly assign premium status to about 40-50% of skins
+                const isPremium = Math.random() < 0.45;
+                return {
+                    id: index + 1,
+                    folderName,
+                    name: formatName(folderName),
+                    previewPath: `assets/skins/${folderName}/preview.png`,
+                    skinPath: `assets/skins/${folderName}/skin.png`,
+                    downloads: Math.floor(Math.random() * 10000) + 1000,
+                    rating: (Math.random() * (5 - 4) + 4).toFixed(1),
+                    createdAt: new Date(Date.now() - Math.floor(Math.random() * 1e10)),
+                    fileSize: `${Math.floor(Math.random() * 100) + 10}KB`,
+                    type: ['Cool', 'Funny', 'Custom', 'Unique'][Math.floor(Math.random() * 4)],
+                    isPremium: isPremium,
+                    categoryTags: ['Casual', 'Hero', 'Villain', 'Fantasy', 'Sci-Fi', 'Anime', 'Game', 'Movie', 'Holiday'][Math.floor(Math.random() * 9)]
+                };
+            });
+
+                    
+                    // Set filtered skins to all skins initially
+                    filteredSkins = [...allSkins];
+                    
+                    // Display skins
+                    displaySkins();
+                    setupPagination();
+
+                    // Set up filter buttons
+                    setupFilterButtons();
+                    
+                } catch (error) {
+                    console.error('Error loading skins:', error);
+                }
+            }
+
+            // Function to setup filter buttons
+            function setupFilterButtons() {
+                const filterButtons = document.querySelectorAll('[data-filter]');
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const filter = this.getAttribute('data-filter');
+                        filterSkins(filter);
+                        
+                        // Update active state
+                        filterButtons.forEach(btn => btn.classList.remove('bg-red-800', 'active-filter'));
+                        filterButtons.forEach(btn => btn.classList.add('bg-gray-800'));
+                        this.classList.remove('bg-gray-800');
+                        this.classList.add('bg-red-800', 'active-filter');
+                    });
+                });
+            }
+
+            // Function to filter skins
+            function filterSkins(filter) {
+                currentFilter = filter;
+                currentPage = 1;
+                
+                if (filter === 'all') {
+                    filteredSkins = [...allSkins];
+                } else if (filter === 'free') {
+                    filteredSkins = allSkins.filter(skin => !skin.isPremium);
+                } else if (filter === 'premium') {
+                    filteredSkins = allSkins.filter(skin => skin.isPremium);
+                }
+                
+                // Apply search filter if there's a search term
+                const searchInput = document.getElementById('skinSearch');
+                if (searchInput && searchInput.value.trim() !== '') {
+                    const searchTerm = searchInput.value.toLowerCase().trim();
+                    filteredSkins = filteredSkins.filter(skin => 
+                        skin.name.toLowerCase().includes(searchTerm) ||
+                        skin.categoryTags.toLowerCase().includes(searchTerm)
+                    );
+                }
+                
+                displaySkins();
+                setupPagination();
+            }
+
+            // Function to display skins for the current page
+function displaySkins() {
+    const skinsContainer = document.getElementById('skinsContainer');
+    if (!skinsContainer) return;
+    
+    // Clear previous content
+    skinsContainer.innerHTML = '';
+    
+    // Check user premium status upfront
+    const isUserPremium = localStorage.getItem('isPremium') === 'true';
+    
+    // Calculate pagination
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const skinsToShow = filteredSkins.slice(startIndex, endIndex);
+    
+    // Check if no skins to display
+    if (skinsToShow.length === 0) {
+        const noResults = document.createElement('div');
+        noResults.className = 'col-span-full text-center py-12';
+        noResults.innerHTML = `
+            <div class="bg-gray-900 p-8 rounded-xl max-w-md mx-auto">
+                <i class="fas fa-search mb-4 text-5xl text-gray-600"></i>
+                <h3 class="text-xl text-white mb-2" style="font-family: 'Minecraft', sans-serif;">No skins found</h3>
+                <p class="text-gray-400">Try a different search term or browse our categories.</p>
+                <button class="mt-4 bg-red-800 hover:bg-red-700 text-white py-2 px-4 rounded transition-all duration-300" onclick="document.getElementById('skinSearch').value = ''; handleSearch();">
+                    Show all skins
+                </button>
+            </div>
+        `;
+        skinsContainer.appendChild(noResults);
+        return;
+    }
+    
+    // Create and append skin cards
+    skinsToShow.forEach((skin, index) => {
+        const card = document.createElement('div');
+        // Add `relative group` so children can react to hover on the parent
+        card.className = `
+            bg-gray-900 border border-gray-800 rounded-xl
+            overflow-hidden transition-all duration-300
+            transform hover:scale-105 hover:shadow-xl hover:border-red-700
+            relative group
+        `;
+        card.setAttribute('data-aos', 'fade-up');
+        card.setAttribute('data-aos-delay', (index * 50).toString());
+        
+        // Create premium badge if the skin is premium
+        const premiumBadge = skin.isPremium ? `
+            <div class="premium-indicator absolute top-3 left-3 ${isUserPremium ? 'bg-gradient-to-r from-green-500 to-green-600' : 'bg-gradient-to-r from-yellow-500 to-yellow-600'} text-${isUserPremium ? 'white' : 'black'} text-xs font-bold rounded-full py-1 px-3 shadow-lg transition-transform duration-300 hover:scale-110 z-20">
+                ${isUserPremium ? '<i class="fas fa-unlock mr-1"></i> UNLOCKED' : '<i class="fas fa-crown mr-1"></i> PREMIUM'}
+            </div>
+        ` : '';
+        
+        // Create category tag
+        const categoryTag = `
+            <div class="absolute top-3 right-3 bg-black bg-opacity-70 text-white text-xs rounded-full px-2 py-1 z-20">
+                ${skin.categoryTags}
+            </div>
+        `;
+        
+        // Create the button based on whether the skin is premium or free
+        const buttonHtml = skin.isPremium 
+            ? isUserPremium
+                ? `<button
+                    class="download-btn bg-purple-600 hover:bg-purple-500 text-white text-sm
+                            py-1 px-3 rounded transition-all duration-300 transform hover:scale-105 flex items-center"
+                    data-folder="${skin.folderName}"
+                    data-premium="true"
+                >
+                    <i class="fas fa-crown mr-1"></i> Premium Download
+                </button>`
+                : `<button
+                    class="download-btn bg-yellow-600 hover:bg-yellow-500 text-black text-sm
+                            py-1 px-3 rounded transition-all duration-300 transform hover:scale-105 flex items-center"
+                    data-folder="${skin.folderName}"
+                    data-premium="true"
+                >
+                    <i class="fas fa-crown mr-1"></i> Subscribe
+                </button>`
+            : `<button
+                class="download-btn bg-red-800 hover:bg-red-700 text-white text-sm
+                        py-1 px-3 rounded transition-all duration-300 transform hover:scale-105 flex items-center"
+                data-folder="${skin.folderName}"
+                data-premium="false"
+            >
+                <i class="fas fa-download mr-1"></i> Download
+            </button>`;
+        
+        card.innerHTML = `
+            <div class="relative overflow-hidden h-64 bg-card bg-cover bg-center">
+                ${premiumBadge}
+                ${categoryTag}
+                
+                <!-- Skin preview image -->
+                <img
+                    src="${skin.previewPath}"
+                    alt="${skin.name} Preview"
+                    class="w-full h-full transition-transform duration-500 hover:scale-110 p-6 object-contain ${skin.isPremium && !isUserPremium ? 'cursor-pointer' : ''}"
+                    data-premium="${skin.isPremium}"
+                />
+                
+                <!-- Gradient info bar -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-t via-transparent
+                        to-transparent from-black opacity-100
+                        flex flex-col justify-end p-4 transition-opacity duration-300"
+                >
+                    <div class="flex items-center space-x-2">
+                        <span class="bg-red-900 text-white text-xs rounded-full px-2 py-1">${skin.type}</span>
+                        <span class="bg-black bg-opacity-70 text-white text-xs rounded-full px-2 py-1 flex items-center">
+                            <i class="fas fa-download mr-1"></i> ${skin.downloads.toLocaleString()}
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Rating badge -->
+                <div
+                    class="absolute bottom-3 right-3 bg-red-700 text-white text-xs
+                        font-bold rounded-full py-1 px-3 shadow-lg
+                        transition-transform duration-300 hover:scale-110 z-20"
+                >
+                    ${skin.rating} <i class="fas fa-star ml-1 text-yellow-300"></i>
+                </div>
+            </div>
+            
+            <!-- Card body -->
+            <div class="p-5">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="text-lg text-white font-bold">${skin.name}</h3>
+                    <span class="text-xs bg-gray-800 text-gray-300 py-1 px-2 rounded-full">
+                        ${skin.fileSize}
+                    </span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-400 text-sm">
+                        <i class="far fa-calendar-alt mr-1"></i> ${skin.createdAt.toLocaleDateString()}
+                    </span>
+                    ${buttonHtml}
+                </div>
+            </div>
+        `;
+        
+        skinsContainer.appendChild(card);
+    });
+    
+    // Add download and premium event listeners
+    document.querySelectorAll('.download-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const folderName = this.getAttribute('data-folder');
+            const isSkinPremium = this.getAttribute('data-premium') === 'true';
+            const isUserPremium = localStorage.getItem('isPremium') === 'true';
+            
+            // If skin is premium but user is not premium, show modal
+            if (isSkinPremium && !isUserPremium) {
+                openPremiumModal();
+            } else {
+                // Either skin is free or user has premium access
+                downloadSkin(folderName);
+                
+                // Animation feedback
+                this.classList.add('scale-110');
+                if (isSkinPremium) {
+                    this.innerHTML = '<i class="fas fa-check mr-1"></i> Premium Downloaded!';
+                } else {
+                    this.innerHTML = '<i class="fas fa-check mr-1"></i> Downloaded!';
+                }
+                
+                setTimeout(() => {
+                    this.classList.remove('scale-110');
+                    if (isSkinPremium) {
+                        this.innerHTML = '<i class="fas fa-crown mr-1"></i> Premium Download';
+                    } else {
+                        this.innerHTML = '<i class="fas fa-download mr-1"></i> Download';
+                    }
+                }, 1500);
+            }
+        });
+    });
+    
+    // Add click event for premium skin images
+    document.querySelectorAll('img[data-premium="true"]').forEach(img => {
+        img.addEventListener('click', function() {
+            const isUserPremium = localStorage.getItem('isPremium') === 'true';
+            
+            // Only show premium modal if user doesn't have premium
+            if (!isUserPremium) {
+                openPremiumModal();
+            }
+            // If user has premium, don't do anything special when clicking the image
+        });
+    });
+}
+
+            // Function to download a skin
+            function downloadSkin(folderName) {
+                const skin = allSkins.find(s => s.folderName === folderName);
+                if (!skin) return;
+                
+                // Create an anchor element and trigger download
+                const a = document.createElement('a');
+                a.href = skin.skinPath;
+                a.download = `${folderName}.png`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                
+                // Update download count
+                skin.downloads += 1;
+            }
+
+            // Function to setup pagination controls
+            function setupPagination() {
+                const paginationControls = document.getElementById('paginationControls');
+                if (!paginationControls) return;
+                
+                // Clear previous pagination
+                paginationControls.innerHTML = '';
+                
+                // Calculate total pages
+                const totalPages = Math.ceil(filteredSkins.length / itemsPerPage);
+                
+                // Don't show pagination if only one page
+                if (totalPages <= 1) return;
+                
+                // Add previous button
+                const prevButton = document.createElement('button');
+                prevButton.className = `w-10 h-10 flex items-center justify-center rounded-full ${currentPage === 1 ? 'bg-gray-800 text-gray-500' : 'bg-gray-900 text-white hover:bg-red-800'} transition-all duration-300`;
+                prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                prevButton.disabled = currentPage === 1;
+                prevButton.addEventListener('click', () => {
+                    if (currentPage > 1) {
+                        currentPage--;
+                        displaySkins();
+                        setupPagination();
+                        window.scrollTo({top: document.getElementById('skins').offsetTop - 100, behavior: 'smooth'});
+                    }
+                });
+                paginationControls.appendChild(prevButton);
+                
+                // Determine which page buttons to show
+                let startPage = Math.max(1, currentPage - 2);
+                let endPage = Math.min(totalPages, startPage + 4);
+                
+                // Adjust if we're near the end
+                if (endPage - startPage < 4) {
+                    startPage = Math.max(1, endPage - 4);
+                }
+                
+                // Add page buttons
+                for (let i = startPage; i <= endPage; i++) {
+                    const pageButton = document.createElement('button');
+                    pageButton.className = `w-10 h-10 flex items-center justify-center rounded-full ${i === currentPage ? 'bg-red-800 text-white' : 'bg-gray-900 text-white hover:bg-red-800'} transition-all duration-300 transform hover:scale-110`;
+                    pageButton.textContent = i.toString();
+                    pageButton.addEventListener('click', () => {
+                        currentPage = i;
+                        displaySkins();
+                        setupPagination();
+                        window.scrollTo({top: document.getElementById('skins').offsetTop - 100, behavior: 'smooth'});
+                    });
+                    paginationControls.appendChild(pageButton);
+                }
+                
+                // Add next button
+                const nextButton = document.createElement('button');
+                nextButton.className = `w-10 h-10 flex items-center justify-center rounded-full ${currentPage === totalPages ? 'bg-gray-800 text-gray-500' : 'bg-gray-900 text-white hover:bg-red-800'} transition-all duration-300`;
+                nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                nextButton.disabled = currentPage === totalPages;
+                nextButton.addEventListener('click', () => {
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        displaySkins();
+                        setupPagination();
+                        window.scrollTo({top: document.getElementById('skins').offsetTop - 100, behavior: 'smooth'});
+                    }
+                });
+                paginationControls.appendChild(nextButton);
+            }
+
+            // Function to handle search
+            function handleSearch() {
+                const searchInput = document.getElementById('skinSearch');
+                if (!searchInput) return;
+                
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                
+                // Apply current filter first
+                if (currentFilter === 'all') {
+                    filteredSkins = [...allSkins];
+                } else if (currentFilter === 'free') {
+                    filteredSkins = allSkins.filter(skin => !skin.isPremium);
+                } else if (currentFilter === 'premium') {
+                    filteredSkins = allSkins.filter(skin => skin.isPremium);
+                }
+                
+                // Then apply search filter
+                if (searchTerm !== '') {
+                    filteredSkins = filteredSkins.filter(skin => 
+                        skin.name.toLowerCase().includes(searchTerm) ||
+                        skin.categoryTags.toLowerCase().includes(searchTerm)
+                    );
+                }
+                
+                currentPage = 1;
+                displaySkins();
+                setupPagination();
+            }
+
+            // Initialize everything when DOM is loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                // Load skins
+                loadSkins();
+                
+                // Handle search
+                const searchInput = document.getElementById('skinSearch');
+                if (searchInput) {
+                    searchInput.addEventListener('input', handleSearch);
+                    searchInput.addEventListener('keypress', function(e) {
+                        if (e.key === 'Enter') {
+                            handleSearch();
+                        }
+                    });
+                }
+                
+                // Add navbar scroll effect
+                window.addEventListener('scroll', function() {
+                    const navbar = document.querySelector('nav');
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('py-2');
+                        navbar.classList.add('shadow-lg');
+                        navbar.classList.remove('py-4');
+                        navbar.classList.remove('bg-opacity-80');
+                    } else {
+                        navbar.classList.remove('py-2');
+                        navbar.classList.remove('shadow-lg');
+                        navbar.classList.add('py-4');
+                        navbar.classList.add('bg-opacity-80');
+                    }
+                });
+                
+                // Add smooth scrolling for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (!targetElement) return;
+                        
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TurboDraft.org - Premium Minecraft Skins</title>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+            rel="stylesheet">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Minecraft&family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet">
+        <script src="../assets/js/auth.js"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        backgroundImage: {
+                            'card': "url('../assets/images/bg_card.jpg')",
+                            'pattern': "url('../assets/images/pattern.png')",
+                        },
+                        animation: {
+                            'float': 'float 6s ease-in-out infinite',
+                            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                            'bounce-slow': 'bounce 3s infinite',
+                        },
+                        keyframes: {
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-20px)' },
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+
+    <body class="bg-black text-gray-200 font-sans">
+        <!-- Mobile Nav Menu (Hidden by default) -->
+        <div id="mobileMenu"
+            class="fixed inset-0 bg-black bg-opacity-95 z-50 transform transition-transform duration-300 translate-x-full">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex justify-between items-center mb-6">
+                    <div class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </div>
+                    <button id="closeMenu"
+                        class="text-white focus:outline-none">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile menu user section will be inserted here by JS when logged in -->
+
+                <div class="flex flex-col space-y-6 text-center">
+                    <a href="../"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Home</a>
+                    <a href="./"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Skins</a>
+                    <a href="../premium/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Premium</a>
+                    <a href="../features/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Features</a>
+                    <a href="../tutorials/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Tutorials</a>
+                    <a href="../about/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">About</a>
+                    <a href="../subscribe/"
+                        class="mt-4 bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg">Subscribe
+                        Now</a>
+                </div>
+
+                <div class="mt-10 flex justify-center space-x-6">
+                    <a href="https://discord.gg/turbodraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://instagram.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://youtube.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav
+            class="fixed w-full z-40 py-4 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg transition-all duration-300">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:transform hover:scale-110">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="../"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                        <a href="./"
+                            class="relative text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-red-500 after:transition-all after:duration-300">Skins</a>
+                        <a href="../premium/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Premium</a>
+                        <a href="../features/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Features</a>
+                        <a href="../tutorials/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Tutorials</a>
+                        <a href="../about/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">About</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-4">
+                        <!-- User section will be dynamically populated by auth.js -->
+                        <div id="navUserSection" class="flex items-center">
+                            <!-- Default content shown before JS loads -->
+                            <a href="../auth/"
+                                class="text-white hover:text-red-300 transition-colors duration-300">Login</a>
+                            <a href="../subscribe/"
+                                class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800">Subscribe</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="openMenu"
+                            class="text-white focus:outline-none">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <section class="pt-32 pb-16 relative overflow-hidden bg-gradient-to-br from-black to-red-900">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(#4a0000 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center">
+                    <div
+                        class="mb-4 inline-block bg-red-900 bg-opacity-50 rounded-full px-4 py-1 transform transition-transform duration-300 hover:scale-105">
+                        <span
+                            class="text-xs font-semibold text-red-100">PREMIUM & FREE MINECRAFT SKINS</span>
+                    </div>
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight"
+                        style="font-family: 'Minecraft', sans-serif;">Browse Our <span class="text-red-500">Skin</span> Collection</h1>
+                    <p
+                        class="text-lg md:text-xl mb-8 text-gray-300 max-w-3xl mx-auto">Discover hundreds of unique and high-quality Minecraft skins for every style and preference. From heroes to villains, casual to fantasy - we've got you covered.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skin Browser with Advanced Filters Section -->
+        <section id="skin-browser" class="py-16 bg-gray-900 relative">
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(#4a0000 1px, transparent 1px); background-size: 20px 20px; opacity: 0.05;"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <!-- Advanced Search & Filter UI -->
+                <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 mb-12" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                        <h2 class="text-2xl text-white mb-4 md:mb-0" style="font-family: 'Minecraft', sans-serif;">
+                            Find Your Perfect Skin
+                        </h2>
+                        <div class="flex space-x-2">
+                            <button id="gridViewBtn" class="bg-red-800 text-white p-2 rounded-lg hover:bg-red-700 transition-colors duration-300">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button id="listViewBtn" class="bg-gray-800 text-white p-2 rounded-lg hover:bg-red-700 transition-colors duration-300">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Search and Main Filters -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6">
+                        <div class="relative md:col-span-6">
+                            <input type="text" id="skinSearch" placeholder="Search skins by name, type, category..." 
+                                class="w-full py-3 px-4 pl-12 rounded-lg bg-gray-900 border-2 border-gray-800 text-white focus:outline-none focus:border-red-700 transition-colors duration-300" />
+                            <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="md:col-span-3">
+                            <select id="typeFilter" class="w-full py-3 px-4 rounded-lg bg-gray-900 border-2 border-gray-800 text-white focus:outline-none focus:border-red-700 transition-colors duration-300">
+                                <option value="all">All Categories</option>
+                                <option value="Casual">Casual</option>
+                                <option value="Hero">Hero</option>
+                                <option value="Villain">Villain</option>
+                                <option value="Fantasy">Fantasy</option>
+                                <option value="Sci-Fi">Sci-Fi</option>
+                                <option value="Anime">Anime</option>
+                                <option value="Game">Game</option>
+                                <option value="Movie">Movie</option>
+                                <option value="Holiday">Holiday</option>
+                            </select>
+                        </div>
+                        
+                        <div class="md:col-span-3">
+                            <select id="sortBy" class="w-full py-3 px-4 rounded-lg bg-gray-900 border-2 border-gray-800 text-white focus:outline-none focus:border-red-700 transition-colors duration-300">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="popular">Most Popular</option>
+                                <option value="rating">Highest Rated</option>
+                                <option value="name">Name (A-Z)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Access Type Filter -->
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <button class="bg-red-800 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-300 active-filter" data-filter="all">
+                            All Skins
+                        </button>
+                        <button class="bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-300" data-filter="free">
+                            Free Skins
+                        </button>
+                        <button class="bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-300" data-filter="premium">
+                            Premium Only
+                        </button>
+                    </div>
+                    
+                    <!-- Advanced Filters (Collapsible) -->
+                    <div class="mb-2">
+                        <button id="advancedFiltersToggle" class="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fas fa-sliders-h"></i>
+                            <span>Advanced Filters</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                    </div>
+                    
+                    <div id="advancedFiltersPanel" class="hidden mt-4 p-4 bg-black bg-opacity-40 rounded-lg border border-gray-800">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Style Tags -->
+                            <div>
+                                <h3 class="text-white text-sm font-semibold mb-2">Style Tags</h3>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <label class="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300">
+                                        <input type="checkbox" class="styleTag" value="Colorful">
+                                        <span>Colorful</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300">
+                                        <input type="checkbox" class="styleTag" value="Dark">
+                                        <span>Dark</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300">
+                                        <input type="checkbox" class="styleTag" value="Cute">
+                                        <span>Cute</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300">
+                                        <input type="checkbox" class="styleTag" value="Realistic">
+                                        <span>Realistic</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300">
+                                        <input type="checkbox" class="styleTag" value="Minimalist">
+                                        <span>Minimalist</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300">
+                                        <input type="checkbox" class="styleTag" value="Epic">
+                                        <span>Epic</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Rating Filter -->
+                            <div>
+                                <h3 class="text-white text-sm font-semibold mb-2">Minimum Rating</h3>
+                                <div class="flex items-center space-x-2">
+                                    <input type="range" id="minRating" min="1" max="5" step="0.5" value="0" 
+                                        class="w-full h-2 bg-gray-800 rounded-lg appearance-none cursor-pointer">
+                                    <span id="ratingValue" class="text-white text-sm">All</span>
+                                </div>
+                                <div class="flex justify-between mt-1 text-xs text-gray-500">
+                                    <span>All</span>
+                                    <span>5★</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Date Added Filter -->
+                            <div>
+                                <h3 class="text-white text-sm font-semibold mb-2">Date Added</h3>
+                                <select id="dateFilter" class="w-full py-2 px-3 rounded-lg bg-gray-900 border border-gray-800 text-white text-sm focus:outline-none focus:border-red-700 transition-colors duration-300">
+                                    <option value="all">All Time</option>
+                                    <option value="week">Last Week</option>
+                                    <option value="month">Last Month</option>
+                                    <option value="quarter">Last 3 Months</option>
+                                    <option value="year">Last Year</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-end mt-6">
+                            <button id="resetFilters" class="bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-300 mr-3">
+                                Reset Filters
+                            </button>
+                            <button id="applyFilters" class="bg-red-800 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-300">
+                                Apply Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Active Filters Display -->
+                <div id="activeFiltersContainer" class="mb-8 hidden">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="text-gray-400">Active Filters:</span>
+                        <div id="activeFiltersList" class="flex flex-wrap gap-2">
+                            <!-- Active filters will be added here dynamically -->
+                        </div>
+                        <button id="clearAllFilters" class="text-red-400 hover:text-red-300 text-sm transition-colors duration-300 ml-2">
+                            Clear All
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Results Stats -->
+                <div class="flex justify-between items-center mb-6">
+                    <p class="text-gray-400"><span id="resultCount">0</span> skins found</p>
+                    <div class="flex items-center">
+                        <span class="text-gray-400 mr-2">Show:</span>
+                        <select id="perPage" class="bg-gray-900 border border-gray-800 text-white rounded-lg px-2 py-1 focus:outline-none focus:border-red-700 transition-colors duration-300">
+                            <option value="12">12</option>
+                            <option value="24" selected>24</option>
+                            <option value="48">48</option>
+                            <option value="96">96</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Skins Grid Container -->
+                <div id="skinsContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+                    <!-- Skin cards will be generated dynamically -->
+                </div>
+
+                <!-- Pagination Controls -->
+                <div class="flex justify-center mt-12" data-aos="fade-up" id="paginationContainer">
+                    <div class="flex flex-wrap justify-center gap-2" id="paginationControls">
+                        <!-- Pagination will be generated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Skin Promotion -->
+        <section class="py-16 bg-gradient-to-br from-red-900 to-black relative overflow-hidden">
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 20px 20px;"></div>
+            
+            <!-- Floating blocks animation -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-20 left-10 w-16 h-16 bg-red-900 bg-opacity-20 animate-float"
+                    style="animation-delay: 0s;"></div>
+                <div class="absolute top-40 right-20 w-12 h-12 bg-red-800 bg-opacity-20 animate-float"
+                    style="animation-delay: 1s;"></div>
+                <div class="absolute bottom-20 left-1/4 w-20 h-20 bg-red-700 bg-opacity-20 animate-float"
+                    style="animation-delay: 2s;"></div>
+                <div class="absolute top-1/2 right-1/3 w-10 h-10 bg-red-600 bg-opacity-20 animate-float"
+                    style="animation-delay: 1.5s;"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right">
+                        <div class="inline-flex items-center bg-yellow-600 bg-opacity-20 rounded-full px-4 py-1 mb-6">
+                            <i class="fas fa-crown text-yellow-400 mr-2"></i>
+                            <span class="text-yellow-300 font-semibold">PREMIUM ACCESS</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl text-white mb-6" 
+                            style="font-family: 'Minecraft', sans-serif;">Unlock All Premium Skins</h2>
+                        <p class="text-red-100 mb-8 max-w-lg">Get unlimited access to our entire collection of premium skins. Stand out on any server with exclusive designs that only premium members can use.</p>
+                        
+                        <div class="bg-black bg-opacity-30 border border-red-900 rounded-lg p-5 mb-8">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
+                                <p class="text-white">Access <span class="font-bold">400+</span> premium skins</p>
+                            </div>
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
+                                <p class="text-white">Early access to new releases</p>
+                            </div>
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
+                                <p class="text-white">Request custom skin designs</p>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
+                                <p class="text-white">No download limits or restrictions</p>
+                            </div>
+                        </div>
+                        
+                        <a href="../subscribe/" class="inline-flex items-center bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-crown mr-2"></i>
+                            <span>Get Premium Now</span>
+                        </a>
+                    </div>
+                    
+                    <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-yellow-500 rounded-full opacity-20 blur-xl animate-pulse-slow"></div>
+                            <img src="../assets/images/Steve_(Minecraft).png" alt="Premium Skins Showcase" 
+                                class="relative z-10 max-w-full lg:max-w-xl xl:max-w-2xl rounded-lg border-2 border-yellow-600 shadow-2xl" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between">
+                    <div class="mb-8 md:mb-0">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:scale-110">
+                                <span class="text-2xl text-white"
+                                    style="font-family: 'Minecraft', sans-serif;">T</span>
+                            </div>
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                    class="text-red-500">.org</span></span>
+                        </div>
+                        <p class="max-w-xs">Premium Minecraft skins for
+                            everyone. Free and subscription options available
+                            for all players.</p>
+                        <p class="mt-4 text-sm">© 2025 TurboDraft. Not
+                            affiliated with Mojang.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Quick
+                                Links</h3>
+                            <ul class="space-y-2">
+                                <li><a href="../"
+                                        class="hover:text-red-400 transition-colors duration-300">Home</a></li>
+                                <li><a href="./"
+                                        class="hover:text-red-400 transition-colors duration-300">Skins</a></li>
+                                <li><a href="../premium/"
+                                        class="hover:text-red-400 transition-colors duration-300">Premium</a></li>
+                                <li><a href="../features/"
+                                        class="hover:text-red-400 transition-colors duration-300">Features</a></li>
+                                <li><a href="../about/"
+                                        class="hover:text-red-400 transition-colors duration-300">About
+                                        Us</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Resources</h3>
+                            <ul class="space-y-2">
+                                <li><a href="../tutorials/"
+                                        class="hover:text-red-400 transition-colors duration-300">Tutorials</a></li>
+                                <li><a href="../faq/"
+                                        class="hover:text-red-400 transition-colors duration-300">FAQ</a></li>
+                                <li><a href="../support/"
+                                        class="hover:text-red-400 transition-colors duration-300">Support</a></li>
+                                <li><a href="../terms/"
+                                        class="hover:text-red-400 transition-colors duration-300">Terms
+                                        of Service</a></li>
+                                <li><a href="../privacy/"
+                                        class="hover:text-red-400 transition-colors duration-300">Privacy
+                                        Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Community</h3>
+                            <ul class="space-y-2">
+                                <li><a href="https://discord.gg/turbodraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">Discord
+                                        Server</a></li>
+                                <li><a href="https://twitter.com/TurboDraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">Twitter</a></li>
+                                <li><a href="https://instagram.com/TurboDraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">Instagram</a></li>
+                                <li><a href="https://youtube.com/TurboDraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">YouTube</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Contact</h3>
+                            <ul class="space-y-2">
+                                <li><a href="mailto:info@turbodraft.org"
+                                        class="hover:text-red-400 transition-colors duration-300">info@turbodraft.org</a></li>
+                                <li><a href="../contact/"
+                                        class="hover:text-red-400 transition-colors duration-300">Contact
+                                        Form</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+                    <p class="mb-4">Made with ❤️ for the Minecraft community.
+                        TurboDraft.org - bringing your Minecraft characters to
+                        life.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="../terms/"
+                            class="text-gray-500 hover:text-red-400 transition-colors duration-300">Terms</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="../privacy/"
+                            class="text-gray-500 hover:text-red-400 transition-colors duration-300">Privacy</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="../cookies/"
+                            class="text-gray-500 hover:text-red-400 transition-colors duration-300">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Premium Skin Modal -->
+        <div id="premiumModal"
+            class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center transform transition-opacity duration-300 opacity-0 pointer-events-none">
+            <div
+                class="bg-gray-900 border border-red-800 rounded-xl max-w-md w-full p-6 relative">
+                <button id="closeModal"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="text-center mb-6">
+                    <div
+                        class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-600 bg-opacity-20 mb-4">
+                        <i class="fas fa-crown text-yellow-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl text-white mb-2"
+                        style="font-family: 'Minecraft', sans-serif;">Premium
+                        Content</h3>
+                    <p class="text-gray-400">This skin is exclusive to our
+                        premium subscribers.</p>
+                </div>
+                <div
+                    class="bg-black bg-opacity-50 border border-gray-800 rounded-lg p-4 mb-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <p class="text-gray-300">Access 400+ premium skins</p>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <p class="text-gray-300">Custom skin requests</p>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <p class="text-gray-300">Early access to new
+                            releases</p>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-3">
+                    <a href="../subscribe/"
+                        class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold py-3 px-6 rounded-lg text-center transition-all duration-300 transform hover:scale-105">
+                        Subscribe Now
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Preview Modal -->
+        <div id="previewModal"
+            class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center transform transition-opacity duration-300 opacity-0 pointer-events-none">
+            <div
+                class="bg-gray-900 border border-gray-800 rounded-xl max-w-4xl w-full p-6 relative">
+                <button id="closePreviewModal"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-300">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2">
+                        <div class="relative h-80 bg-black rounded-lg overflow-hidden mb-4">
+                            <img id="previewModalImage" src="" alt="Skin Preview" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2">
+                        <h3 id="previewModalTitle" class="text-2xl text-white mb-2" style="font-family: 'Minecraft', sans-serif;">
+                            Skin Name
+                        </h3>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span id="previewModalCategory" class="bg-red-900 text-white text-xs rounded-full px-3 py-1">
+                                Category
+                            </span>
+                            <span id="previewModalType" class="bg-gray-800 text-white text-xs rounded-full px-3 py-1">
+                                Type
+                            </span>
+                            <span id="previewModalAccess" class="bg-yellow-600 text-black text-xs rounded-full px-3 py-1">
+                                Premium
+                            </span>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-center mb-1">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span id="previewModalRating" class="text-white">4.5/5</span>
+                                <span class="text-gray-500 mx-2">|</span>
+                                <span id="previewModalDownloads" class="text-gray-400">
+                                    <i class="fas fa-download mr-1"></i> 5,243 downloads
+                                </span>
+                            </div>
+                            <p id="previewModalDate" class="text-gray-500 text-sm">
+                                Added: March 15, 2025
+                            </p>
+                        </div>
+                        
+                        <div class="bg-black bg-opacity-50 rounded-lg p-4 mb-6 border border-gray-800">
+                            <h4 class="text-white text-lg mb-2">Description</h4>
+                            <p id="previewModalDescription" class="text-gray-400">
+                                This skin features a detailed design with custom texturing and shading. Perfect for players who want to stand out on any server with a unique look.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-col space-y-3">
+                            <button id="previewModalDownloadBtn" class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                                <i class="fas fa-download mr-2"></i>
+                                <span>Download Skin</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+        <script>
+            // Initialize AOS animation library
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+
+            // Global variables for pagination and filtering
+            let currentPage = 1;
+            let itemsPerPage = 24;
+            let allSkins = [];
+            let filteredSkins = [];
+            let currentFilter = 'all';
+            let currentView = 'grid';
+            let currentSort = 'newest';
+            let currentCategory = 'all';
+            let currentStyleTags = [];
+            let currentMinRating = 0;
+            let currentDateFilter = 'all';
+
+            // Mobile menu handling
+            document.getElementById('openMenu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.remove('translate-x-full');
+            });
+
+            document.getElementById('closeMenu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.add('translate-x-full');
+            });
+
+            // Toggle advanced filters panel
+            document.getElementById('advancedFiltersToggle').addEventListener('click', function() {
+                const panel = document.getElementById('advancedFiltersPanel');
+                const chevron = this.querySelector('.fa-chevron-down');
+                
+                if (panel.classList.contains('hidden')) {
+                    panel.classList.remove('hidden');
+                    chevron.classList.add('transform', 'rotate-180');
+                } else {
+                    panel.classList.add('hidden');
+                    chevron.classList.remove('transform', 'rotate-180');
+                }
+            });
+
+            // View toggle (grid vs list)
+            document.getElementById('gridViewBtn').addEventListener('click', function() {
+                if (currentView !== 'grid') {
+                    currentView = 'grid';
+                    document.getElementById('gridViewBtn').classList.remove('bg-gray-800');
+                    document.getElementById('gridViewBtn').classList.add('bg-red-800');
+                    document.getElementById('listViewBtn').classList.remove('bg-red-800');
+                    document.getElementById('listViewBtn').classList.add('bg-gray-800');
+                    
+                    const skinsContainer = document.getElementById('skinsContainer');
+                    skinsContainer.classList.remove('grid-cols-1');
+                    skinsContainer.classList.add('grid-cols-1', 'sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4', 'xl:grid-cols-6');
+                    
+                    displaySkins();
+                }
+            });
+
+            document.getElementById('listViewBtn').addEventListener('click', function() {
+                if (currentView !== 'list') {
+                    currentView = 'list';
+                    document.getElementById('listViewBtn').classList.remove('bg-gray-800');
+                    document.getElementById('listViewBtn').classList.add('bg-red-800');
+                    document.getElementById('gridViewBtn').classList.remove('bg-red-800');
+                    document.getElementById('gridViewBtn').classList.add('bg-gray-800');
+                    
+                    const skinsContainer = document.getElementById('skinsContainer');
+                    skinsContainer.classList.remove('sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4', 'xl:grid-cols-6');
+                    skinsContainer.classList.add('grid-cols-1');
+                    
+                    displaySkins();
+                }
+            });
+
+            // Per page selector
+            document.getElementById('perPage').addEventListener('change', function() {
+                itemsPerPage = parseInt(this.value);
+                currentPage = 1;
+                displaySkins();
+                setupPagination();
+            });
+
+            // Rating slider
+            const ratingSlider = document.getElementById('minRating');
+            const ratingValue = document.getElementById('ratingValue');
+            
+            ratingSlider.addEventListener('input', function() {
+                const val = parseFloat(this.value);
+                if (val === 0) {
+                    ratingValue.textContent = 'All';
+                } else {
+                    ratingValue.textContent = val + '★+';
+                }
+                currentMinRating = val;
+            });
+
+            // Modal handling
+            function openPremiumModal() {
+                const modal = document.getElementById('premiumModal');
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closePremiumModal() {
+                const modal = document.getElementById('premiumModal');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'auto';
+            }
+
+            document.getElementById('closeModal').addEventListener('click', closePremiumModal);
+
+            // Preview Modal Handling
+            function openPreviewModal(skin) {
+                const modal = document.getElementById('previewModal');
+                
+                // Set modal content
+                document.getElementById('previewModalImage').src = skin.previewPath;
+                document.getElementById('previewModalTitle').textContent = skin.name;
+                document.getElementById('previewModalCategory').textContent = skin.categoryTags;
+                document.getElementById('previewModalType').textContent = skin.type;
+                document.getElementById('previewModalRating').textContent = skin.rating + '/5';
+                document.getElementById('previewModalDownloads').innerHTML = `<i class="fas fa-download mr-1"></i> ${skin.downloads.toLocaleString()} downloads`;
+                document.getElementById('previewModalDate').textContent = `Added: ${skin.createdAt.toLocaleDateString()}`;
+                
+                // Set access badge
+                const accessBadge = document.getElementById('previewModalAccess');
+                if (skin.isPremium) {
+                    accessBadge.textContent = 'Premium';
+                    accessBadge.classList.remove('bg-red-900');
+                    accessBadge.classList.add('bg-yellow-600', 'text-black');
+                    
+                    // Configure download button
+                    const isUserPremium = localStorage.getItem('isPremium') === 'true';
+                    const downloadBtn = document.getElementById('previewModalDownloadBtn');
+                    
+                    if (isUserPremium) {
+                        downloadBtn.innerHTML = `<i class="fas fa-crown mr-2"></i><span>Download Premium Skin</span>`;
+                        downloadBtn.classList.remove('from-yellow-500', 'to-yellow-600', 'text-black');
+                        downloadBtn.classList.add('from-purple-600', 'to-purple-800', 'text-white');
+                        downloadBtn.onclick = function() { downloadSkin(skin.folderName); };
+                    } else {
+                        downloadBtn.innerHTML = `<i class="fas fa-crown mr-2"></i><span>Subscribe to Download</span>`;
+                        downloadBtn.classList.remove('from-red-700', 'to-red-900', 'text-white');
+                        downloadBtn.classList.add('from-yellow-500', 'to-yellow-600', 'text-black');
+                        downloadBtn.onclick = function() { 
+                            closePreviewModal();
+                            openPremiumModal(); 
+                        };
+                    }
+                } else {
+                    accessBadge.textContent = 'Free';
+                    accessBadge.classList.remove('bg-yellow-600', 'text-black');
+                    accessBadge.classList.add('bg-red-900', 'text-white');
+                    
+                    // Configure download button
+                    const downloadBtn = document.getElementById('previewModalDownloadBtn');
+                    downloadBtn.innerHTML = `<i class="fas fa-download mr-2"></i><span>Download Free Skin</span>`;
+                    downloadBtn.classList.remove('from-yellow-500', 'to-yellow-600', 'text-black', 'from-purple-600', 'to-purple-800');
+                    downloadBtn.classList.add('from-red-700', 'to-red-900', 'text-white');
+                    downloadBtn.onclick = function() { downloadSkin(skin.folderName); };
+                }
+                
+                // Show the modal
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closePreviewModal() {
+                const modal = document.getElementById('previewModal');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'auto';
+            }
+
+            document.getElementById('closePreviewModal').addEventListener('click', closePreviewModal);
+
+            // Function to generate a lot more skins for the skins page
+            async function loadSkins() {
+                const skinsContainer = document.getElementById('skinsContainer');
+                
+                try {
+                    // Define categories first so they're available throughout the function
+                    const categories = ['Casual', 'Hero', 'Villain', 'Fantasy', 'Sci-Fi', 'Anime', 'Game', 'Movie', 'Holiday'];
+                    
+                    // These are the folder names based on your screenshot
+                    const skinFolders = [
+                    'abyss',
+                    'ariel',
+                    'autumn',
+                    'bother_me',
+                    'don-t-bother-me',
+                    'dusk_rider',
+                    'dusty',
+                    'eclipse',
+                    'endstone',
+                    'endstone_warrior',
+                    'flames',
+                    'gray_wallibear',
+                    'jasmine',
+                    'jellybeans',
+                    'jellyfish',
+                    'medusa',
+                    'motive',
+                    'neon_skeleton',
+                    'numb',
+                    'oren-alien',
+                    'outclass',
+                    'polar_bear',
+                    'racoon',
+                    'rose_petals',
+                    'sadie',
+                    'school_library',
+                    'spring',
+                    'strawberry',
+                    'summer',
+                    'sunny_day',
+                    'sweet',
+                    'sweet_talks_base',
+                    'thrift-club',
+                    'winter',
+                    'yuhhh'
+                    ];
+                    // Generate many more skins for the skins page by repeating and modifying these names
+                    const extendedSkinFolders = [];
+                    const prefixes = ['awesome', 'epic', 'cool', 'cute', 'dark', 'mystical', 'royal', 'cyber', 'elemental'];
+                    const suffixes = ['pro', 'master', 'warrior', 'hunter', 'slayer', 'knight', 'ninja', 'legend', 'guardian'];
+                    
+                    // First, add all original folders
+                    for (const folder of skinFolders) {
+                        extendedSkinFolders.push(folder);
+                    }
+                    
+                    // Then, add variants using prefixes and suffixes
+                    for (const folder of skinFolders) {
+                        // Add some prefix variants
+                        if (Math.random() < 0.7) {
+                            const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+                            extendedSkinFolders.push(`${prefix}_${folder}`);
+                        }
+                        
+                        // Add some suffix variants
+                        if (Math.random() < 0.7) {
+                            const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
+                            extendedSkinFolders.push(`${folder}_${suffix}`);
+                        }
+                        
+                        // Add a few with both prefix and suffix
+                        if (Math.random() < 0.3) {
+                            const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+                            const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
+                            extendedSkinFolders.push(`${prefix}_${folder}_${suffix}`);
+                        }
+                    }
+                    
+                    // Also, add completely new skin names
+                    const newNames = [
+                        'dragon_rider', 'space_explorer', 'jungle_adventurer', 'medieval_knight', 'cyber_samurai',
+                        'frost_mage', 'royal_guard', 'desert_nomad', 'pirate_captain', 'ninja_assassin',
+                        'steampunk_engineer', 'forest_ranger', 'cosmic_wizard', 'galactic_trooper', 'undead_hunter',
+                        'demon_slayer', 'viking_berserker', 'atlantean_warrior', 'elven_archer', 'dwarven_smith',
+                        'plague_doctor', 'shadow_rogue', 'mystic_sage', 'void_traveler', 'celestial_guardian',
+                        'nether_demon', 'end_overlord', 'wither_knight', 'emerald_golem', 'twilight_ranger',
+                        'crimson_warlock', 'azure_mage', 'obsidian_paladin', 'golden_archer', 'runic_wizard',
+                        'starlight_sorcerer', 'thunderstorm_shaman', 'lava_warrior', 'ocean_druid', 'sandstorm_nomad',
+                        'snowfield_tracker', 'mushroom_fairy', 'swamp_witch', 'mountain_giant', 'valley_elf',
+                        'jungle_trickster', 'volcano_berserker', 'night_stalker', 'dawn_cleric', 'dusk_necromancer'
+                    ];
+                    
+                    for (const name of newNames) {
+                        extendedSkinFolders.push(name);
+                    }
+                    
+                    // Function to format skin name for display
+                    const formatName = str =>
+                        str
+                            // uppercase first character
+                            .replace(/^([a-zA-Z])/, (_, c) => c.toUpperCase())
+                            // remove "_" and "-" and uppercase the next letter
+                            .replace(/[_-]([a-zA-Z])/g, (_, c) => ' ' + c.toUpperCase());
+
+                    // Create skin objects with randomized properties
+                    allSkins = extendedSkinFolders.map((folderName, index) => {
+                        // Assign premium status - make approximately 40-45% of skins premium
+                        const isPremium = Math.random() < 0.45;
+                        
+                        // Assign a random category 
+                        const categoryTag = categories[Math.floor(Math.random() * categories.length)];
+                        
+                        // Assign random style tags
+                        const styleTags = [];
+                        const possibleStyleTags = ['Colorful', 'Dark', 'Cute', 'Realistic', 'Minimalist', 'Epic'];
+                        const numTags = Math.floor(Math.random() * 3) + 1; // 1-3 style tags
+                        
+                        for (let i = 0; i < numTags; i++) {
+                            const tag = possibleStyleTags[Math.floor(Math.random() * possibleStyleTags.length)];
+                            if (!styleTags.includes(tag)) {
+                                styleTags.push(tag);
+                            }
+                        }
+                        
+                        // Assign skin type (Cool, Funny, Custom, Unique)
+                        const skinType = ['Cool', 'Funny', 'Custom', 'Unique'][Math.floor(Math.random() * 4)];
+                        
+                        // Create a random date in the past 2 years
+                        const twoYearsAgo = new Date();
+                        twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
+                        const randomDate = new Date(twoYearsAgo.getTime() + Math.random() * (Date.now() - twoYearsAgo.getTime()));
+                        
+                        // Random file size between 10KB and 120KB
+                        const fileSize = `${Math.floor(Math.random() * 110) + 10}KB`;
+                        
+                        // Random number of downloads (more for older skins)
+                        const daysSinceCreation = (Date.now() - randomDate.getTime()) / (1000 * 60 * 60 * 24);
+                        const baseDownloads = Math.floor(Math.random() * 2000) + 500;
+                        const timeBonus = Math.floor(daysSinceCreation / 10) * Math.floor(Math.random() * 100);
+                        const downloads = baseDownloads + timeBonus;
+                        
+                        // Premium skins tend to have slightly higher ratings
+                        const baseRating = Math.random() * (5 - 3.5) + 3.5;
+                        const premiumBonus = isPremium ? Math.random() * 0.5 : 0;
+                        const rating = Math.min(5, (baseRating + premiumBonus)).toFixed(1);
+                        
+                        // Generate a description based on the skin name and properties
+                        const descriptions = [
+                            `This ${categoryTag.toLowerCase()} skin features a detailed ${isPremium ? 'premium' : 'handcrafted'} design with ${styleTags[0].toLowerCase()} elements. Perfect for players who enjoy ${skinType.toLowerCase()} skins.`,
+                            `Stand out on any server with this unique ${categoryTag.toLowerCase()} skin. Features ${styleTags.join(' and ').toLowerCase()} styling for a truly ${skinType.toLowerCase()} look.`,
+                            `A ${isPremium ? 'premium quality' : 'high quality'} skin perfect for ${categoryTag.toLowerCase()} lovers. Carefully designed with attention to detail and ${styleTags[0].toLowerCase()} aesthetics.`,
+                            `This ${skinType.toLowerCase()} skin offers a fresh take on the ${categoryTag.toLowerCase()} theme with ${styleTags.join(' and ').toLowerCase()} elements that will make you stand out.`,
+                            `Expertly crafted ${categoryTag.toLowerCase()} skin with ${styleTags[0].toLowerCase()} styling. ${isPremium ? 'One of our premium exclusive designs' : 'One of our community favorites'}!`
+                        ];
+                        
+                        const description = descriptions[Math.floor(Math.random() * descriptions.length)];
+                        
+                        // Return the complete skin object
+                        return {
+                            id: index + 1,
+                            folderName,
+                            name: formatName(folderName),
+                            previewPath: `../assets/skins/${skinFolders[index % skinFolders.length]}/preview.png`, // Reuse images cyclically
+                            skinPath: `../assets/skins/${skinFolders[index % skinFolders.length]}/skin.png`, // Reuse images cyclically
+                            downloads,
+                            rating,
+                            createdAt: randomDate,
+                            fileSize,
+                            type: skinType,
+                            isPremium,
+                            categoryTags: categoryTag,
+                            styleTags: styleTags,
+                            description: description
+                        };
+                    });
+
+                    // Set filtered skins to all skins initially
+                    filteredSkins = [...allSkins];
+                    
+                    // Display skins
+                    displaySkins();
+                    setupPagination();
+
+                    // Set up filter buttons
+                    setupFilterButtons();
+                    
+                    // Update result count
+                    document.getElementById('resultCount').textContent = filteredSkins.length;
+                    
+                } catch (error) {
+                    console.error('Error loading skins:', error);
+                }
+            }
+
+            // Function to setup filter buttons
+            function setupFilterButtons() {
+                const filterButtons = document.querySelectorAll('[data-filter]');
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const filter = this.getAttribute('data-filter');
+                        currentFilter = filter;
+                        applyFilters();
+                        
+                        // Update active state
+                        filterButtons.forEach(btn => btn.classList.remove('bg-red-800', 'active-filter'));
+                        filterButtons.forEach(btn => btn.classList.add('bg-gray-800'));
+                        this.classList.remove('bg-gray-800');
+                        this.classList.add('bg-red-800', 'active-filter');
+                    });
+                });
+                
+                // Set up category filter
+                document.getElementById('typeFilter').addEventListener('change', function() {
+                    currentCategory = this.value;
+                    applyFilters();
+                });
+                
+                // Set up sort by
+                document.getElementById('sortBy').addEventListener('change', function() {
+                    currentSort = this.value;
+                    applyFilters();
+                });
+                
+                // Set up date filter
+                document.getElementById('dateFilter').addEventListener('change', function() {
+                    currentDateFilter = this.value;
+                    applyFilters();
+                });
+                
+                // Apply filters button
+                document.getElementById('applyFilters').addEventListener('click', function() {
+                    // Get all checked style tags
+                    currentStyleTags = [];
+                    document.querySelectorAll('.styleTag:checked').forEach(checkbox => {
+                        currentStyleTags.push(checkbox.value);
+                    });
+                    
+                    // Apply all filters
+                    applyFilters();
+                    
+                    // Show active filters container if we have filters
+                    updateActiveFiltersDisplay();
+                });
+                
+                // Reset filters button
+                document.getElementById('resetFilters').addEventListener('click', function() {
+                    // Reset all filters to default
+                    document.querySelectorAll('.styleTag').forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+                    
+                    document.getElementById('minRating').value = 0;
+                    document.getElementById('ratingValue').textContent = 'All';
+                    currentMinRating = 0;
+                    
+                    document.getElementById('dateFilter').value = 'all';
+                    currentDateFilter = 'all';
+                    
+                    // Reset style tags
+                    currentStyleTags = [];
+                    
+                    // Apply filters (effectively resetting to just the main filter)
+                    applyFilters();
+                    
+                    // Update active filters display
+                    updateActiveFiltersDisplay();
+                });
+                
+                // Clear all filters
+                document.getElementById('clearAllFilters').addEventListener('click', function() {
+                    // Reset all filters including main ones
+                    document.querySelectorAll('.styleTag').forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+                    
+                    document.getElementById('minRating').value = 0;
+                    document.getElementById('ratingValue').textContent = 'All';
+                    currentMinRating = 0;
+                    
+                    document.getElementById('dateFilter').value = 'all';
+                    currentDateFilter = 'all';
+                    
+                    document.getElementById('typeFilter').value = 'all';
+                    currentCategory = 'all';
+                    
+                    document.getElementById('skinSearch').value = '';
+                    
+                    // Reset filter buttons
+                    filterButtons.forEach(btn => btn.classList.remove('bg-red-800', 'active-filter'));
+                    filterButtons.forEach(btn => btn.classList.add('bg-gray-800'));
+                    document.querySelector('[data-filter="all"]').classList.remove('bg-gray-800');
+                    document.querySelector('[data-filter="all"]').classList.add('bg-red-800', 'active-filter');
+                    
+                    // Reset to defaults
+                    currentFilter = 'all';
+                    currentStyleTags = [];
+                    
+                    // Apply filters
+                    applyFilters();
+                    
+                    // Hide active filters
+                    document.getElementById('activeFiltersContainer').classList.add('hidden');
+                });
+                
+                // Handle search
+                document.getElementById('skinSearch').addEventListener('input', debounce(function() {
+                    applyFilters();
+                    updateActiveFiltersDisplay();
+                }, 300));
+            }
+
+            // Function to apply all filters
+            function applyFilters() {
+                currentPage = 1;
+                
+                // Start with all skins
+                let result = [...allSkins];
+                
+                // Apply access type filter (free/premium)
+                if (currentFilter === 'free') {
+                    result = result.filter(skin => !skin.isPremium);
+                } else if (currentFilter === 'premium') {
+                    result = result.filter(skin => skin.isPremium);
+                }
+                
+                // Apply category filter
+                if (currentCategory !== 'all') {
+                    result = result.filter(skin => skin.categoryTags === currentCategory);
+                }
+                
+                // Apply search filter
+                const searchTerm = document.getElementById('skinSearch').value.toLowerCase().trim();
+                if (searchTerm !== '') {
+                    result = result.filter(skin => 
+                        skin.name.toLowerCase().includes(searchTerm) ||
+                        skin.categoryTags.toLowerCase().includes(searchTerm) ||
+                        skin.type.toLowerCase().includes(searchTerm) ||
+                        skin.description.toLowerCase().includes(searchTerm)
+                    );
+                }
+                
+                // Apply style tags filter
+                if (currentStyleTags.length > 0) {
+                    result = result.filter(skin => 
+                        currentStyleTags.some(tag => skin.styleTags.includes(tag))
+                    );
+                }
+                
+                // Apply minimum rating filter
+                if (currentMinRating > 0) {
+                    result = result.filter(skin => parseFloat(skin.rating) >= currentMinRating);
+                }
+                
+                // Apply date filter
+                if (currentDateFilter !== 'all') {
+                    const now = new Date();
+                    let cutoffDate = new Date();
+                    
+                    switch(currentDateFilter) {
+                        case 'week':
+                            cutoffDate.setDate(now.getDate() - 7);
+                            break;
+                        case 'month':
+                            cutoffDate.setMonth(now.getMonth() - 1);
+                            break;
+                        case 'quarter':
+                            cutoffDate.setMonth(now.getMonth() - 3);
+                            break;
+                        case 'year':
+                            cutoffDate.setFullYear(now.getFullYear() - 1);
+                            break;
+                    }
+                    
+                    result = result.filter(skin => skin.createdAt >= cutoffDate);
+                }
+                
+                // Apply sorting
+                result = sortSkins(result, currentSort);
+                
+                // Update filtered skins
+                filteredSkins = result;
+                
+                // Update the result count
+                document.getElementById('resultCount').textContent = filteredSkins.length;
+                
+                // Display skins and update pagination
+                displaySkins();
+                setupPagination();
+            }
+
+            // Function to update active filters display
+            function updateActiveFiltersDisplay() {
+                const container = document.getElementById('activeFiltersContainer');
+                const filtersList = document.getElementById('activeFiltersList');
+                
+                // Clear previous filters
+                filtersList.innerHTML = '';
+                
+                let hasFilters = false;
+                
+                // Add filter badges for each active filter
+                if (currentFilter !== 'all') {
+                    addFilterBadge(filtersList, `${currentFilter === 'premium' ? 'Premium Only' : 'Free Only'}`, () => {
+                        document.querySelector('[data-filter="all"]').click();
+                    });
+                    hasFilters = true;
+                }
+                
+                if (currentCategory !== 'all') {
+                    addFilterBadge(filtersList, `Category: ${currentCategory}`, () => {
+                        document.getElementById('typeFilter').value = 'all';
+                        currentCategory = 'all';
+                        applyFilters();
+                    });
+                    hasFilters = true;
+                }
+                
+                const searchTerm = document.getElementById('skinSearch').value.trim();
+                if (searchTerm !== '') {
+                    addFilterBadge(filtersList, `Search: ${searchTerm}`, () => {
+                        document.getElementById('skinSearch').value = '';
+                        applyFilters();
+                    });
+                    hasFilters = true;
+                }
+                
+                currentStyleTags.forEach(tag => {
+                    addFilterBadge(filtersList, `Style: ${tag}`, () => {
+                        // Find checkbox and uncheck it
+                        document.querySelector(`.styleTag[value="${tag}"]`).checked = false;
+                        // Remove from array
+                        currentStyleTags = currentStyleTags.filter(t => t !== tag);
+                        applyFilters();
+                    });
+                    hasFilters = true;
+                });
+                
+                if (currentMinRating > 0) {
+                    addFilterBadge(filtersList, `Rating: ${currentMinRating}★+`, () => {
+                        document.getElementById('minRating').value = 0;
+                        document.getElementById('ratingValue').textContent = 'All';
+                        currentMinRating = 0;
+                        applyFilters();
+                    });
+                    hasFilters = true;
+                }
+                
+                if (currentDateFilter !== 'all') {
+                    const dateLabels = {
+                        'week': 'Last Week',
+                        'month': 'Last Month',
+                        'quarter': 'Last 3 Months',
+                        'year': 'Last Year'
+                    };
+                    
+                    addFilterBadge(filtersList, `Date: ${dateLabels[currentDateFilter]}`, () => {
+                        document.getElementById('dateFilter').value = 'all';
+                        currentDateFilter = 'all';
+                        applyFilters();
+                    });
+                    hasFilters = true;
+                }
+                
+                // Show or hide the filters container
+                if (hasFilters) {
+                    container.classList.remove('hidden');
+                } else {
+                    container.classList.add('hidden');
+                }
+            }
+
+            // Helper to add a filter badge
+            function addFilterBadge(container, text, onRemove) {
+                const badge = document.createElement('div');
+                badge.className = 'bg-gray-800 text-white text-xs px-3 py-1 rounded-full flex items-center';
+                badge.innerHTML = `
+                    <span>${text}</span>
+                    <button class="ml-2 text-gray-400 hover:text-white">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                
+                badge.querySelector('button').addEventListener('click', onRemove);
+                container.appendChild(badge);
+            }
+
+            // Function to sort skins
+            function sortSkins(skins, sortBy) {
+                switch(sortBy) {
+                    case 'newest':
+                        return [...skins].sort((a, b) => b.createdAt - a.createdAt);
+                    case 'oldest':
+                        return [...skins].sort((a, b) => a.createdAt - b.createdAt);
+                    case 'popular':
+                        return [...skins].sort((a, b) => b.downloads - a.downloads);
+                    case 'rating':
+                        return [...skins].sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
+                    case 'name':
+                        return [...skins].sort((a, b) => a.name.localeCompare(b.name));
+                    default:
+                        return skins;
+                }
+            }
+
+            // Function to display skins for the current page
+            function displaySkins() {
+                const skinsContainer = document.getElementById('skinsContainer');
+                if (!skinsContainer) return;
+                
+                // Clear previous content
+                skinsContainer.innerHTML = '';
+                
+                // Check user premium status upfront
+                const isUserPremium = localStorage.getItem('isPremium') === 'true';
+                
+                // Calculate pagination
+                const startIndex = (currentPage - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+                const skinsToShow = filteredSkins.slice(startIndex, endIndex);
+                
+                // Check if no skins to display
+                if (skinsToShow.length === 0) {
+                    const noResults = document.createElement('div');
+                    noResults.className = 'col-span-full text-center py-12';
+                    noResults.innerHTML = `
+                        <div class="bg-gray-900 p-8 rounded-xl max-w-md mx-auto">
+                            <i class="fas fa-search mb-4 text-5xl text-gray-600"></i>
+                            <h3 class="text-xl text-white mb-2" style="font-family: 'Minecraft', sans-serif;">No skins found</h3>
+                            <p class="text-gray-400">Try different search terms or filters.</p>
+                            <button id="resetSearchBtn" class="mt-4 bg-red-800 hover:bg-red-700 text-white py-2 px-4 rounded transition-all duration-300">
+                                Clear Filters
+                            </button>
+                        </div>
+                    `;
+                    skinsContainer.appendChild(noResults);
+                    
+                    // Add event listener to reset button
+                    document.getElementById('resetSearchBtn').addEventListener('click', function() {
+                        document.getElementById('clearAllFilters').click();
+                    });
+                    
+                    return;
+                }
+                
+                // Create and append skin cards based on current view mode
+                if (currentView === 'grid') {
+                    // Grid view
+                    skinsToShow.forEach((skin, index) => createGridCard(skin, index, skinsContainer, isUserPremium));
+                } else {
+                    // List view
+                    skinsToShow.forEach((skin, index) => createListCard(skin, index, skinsContainer, isUserPremium));
+                }
+            }
+
+            // Function to create a grid card
+            function createGridCard(skin, index, container, isUserPremium) {
+                const card = document.createElement('div');
+                card.className = `
+                    bg-gray-900 border border-gray-800 rounded-xl
+                    overflow-hidden transition-all duration-300
+                    transform hover:scale-105 hover:shadow-xl hover:border-red-700
+                    relative group
+                `;
+                card.setAttribute('data-aos', 'fade-up');
+                card.setAttribute('data-aos-delay', (index * 50).toString());
+                
+                // Create premium badge if the skin is premium
+                const premiumBadge = skin.isPremium ? `
+                    <div class="premium-indicator absolute top-3 left-3 ${isUserPremium ? 'bg-gradient-to-r from-green-500 to-green-600' : 'bg-gradient-to-r from-yellow-500 to-yellow-600'} text-${isUserPremium ? 'white' : 'black'} text-xs font-bold rounded-full py-1 px-3 shadow-lg transition-transform duration-300 hover:scale-110 z-20">
+                        ${isUserPremium ? '<i class="fas fa-unlock mr-1"></i> UNLOCKED' : '<i class="fas fa-crown mr-1"></i> PREMIUM'}
+                    </div>
+                ` : '';
+                
+                // Create category tag
+                const categoryTag = `
+                    <div class="absolute top-3 right-3 bg-black bg-opacity-70 text-white text-xs rounded-full px-2 py-1 z-20">
+                        ${skin.categoryTags}
+                    </div>
+                `;
+                
+                // Create the button based on whether the skin is premium or free
+                const buttonHtml = skin.isPremium 
+                    ? isUserPremium
+                        ? `<button
+                            class="download-btn bg-purple-600 hover:bg-purple-500 text-white text-sm
+                                    py-1 px-3 rounded transition-all duration-300 transform hover:scale-105 flex items-center w-full text-center justify-center"
+                            data-folder="${skin.folderName}"
+                            data-premium="true"
+                        >
+                            <i class="fas fa-crown mr-1"></i> Premium Download
+                        </button>`
+                        : `<button
+                            class="download-btn bg-yellow-600 hover:bg-yellow-500 text-black text-sm
+                                    py-1 px-3 rounded transition-all duration-300 transform hover:scale-105 flex items-center"
+                            data-folder="${skin.folderName}"
+                            data-premium="true"
+                        >
+                            <i class="fas fa-crown mr-1"></i> Subscribe
+                        </button>`
+                    : `<button
+                        class="download-btn bg-red-800 hover:bg-red-700 text-white text-sm
+                                py-1 px-3 rounded transition-all duration-300 transform hover:scale-105 flex items-center justify-center w-full"
+                        data-folder="${skin.folderName}"
+                        data-premium="false"
+                    >
+                        <i class="fas fa-download mr-1"></i> Download
+                    </button>`;
+                
+                card.innerHTML = `
+                    <div class="relative overflow-hidden h-48 bg-card bg-cover bg-center cursor-pointer" data-skin-id="${skin.id}">
+                        ${premiumBadge}
+                        ${categoryTag}
+                        
+                        <!-- Skin preview image -->
+                        <img
+                            src="${skin.previewPath}"
+                            alt="${skin.name} Preview"
+                            class="w-full h-full object-contain p-3"
+                            data-premium="${skin.isPremium}"
+                            data-skin-id="${skin.id}"
+                        />
+                        
+                        <!-- Quick preview overlay -->
+                        <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="bg-red-700 hover:bg-red-600 text-white px-4 py-2 rounded-lg transform transition-transform duration-300 hover:scale-110 preview-btn" data-skin-id="${skin.id}">
+                                <i class="fas fa-eye mr-2"></i> Quick View
+                            </button>
+                        </div>
+                        
+                        <!-- Rating badge -->
+                        <div
+                            class="absolute bottom-3 right-3 bg-red-700 text-white text-xs
+                                font-bold rounded-full py-1 px-3 shadow-lg
+                                transition-transform duration-300 hover:scale-110 z-20"
+                        >
+                            ${skin.rating} <i class="fas fa-star ml-1 text-yellow-300"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Card body -->
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-md text-white font-bold">${skin.name}</h3>
+                        </div>
+                        <div class="flex w-full">
+                            ${buttonHtml}
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(card);
+                
+                // Add preview event handlers
+                card.querySelectorAll('.preview-btn, [data-skin-id]').forEach(el => {
+                    el.addEventListener('click', function() {
+                        const skinId = this.getAttribute('data-skin-id');
+                        if (skinId) {
+                            const skin = allSkins.find(s => s.id === parseInt(skinId));
+                            if (skin) {
+                                openPreviewModal(skin);
+                            }
+                        }
+                    });
+                });
+            }
+
+            // Function to create a list card
+            function createListCard(skin, index, container, isUserPremium) {
+                const card = document.createElement('div');
+                card.className = `
+                    bg-gray-900 border border-gray-800 rounded-xl
+                    overflow-hidden transition-all duration-300 
+                    hover:border-red-700 hover:shadow-xl
+                    relative group col-span-full
+                `;
+                card.setAttribute('data-aos', 'fade-up');
+                card.setAttribute('data-aos-delay', (index * 50).toString());
+                
+                // Create premium badge if the skin is premium
+                const premiumBadge = skin.isPremium ? `
+                    <div class="premium-indicator absolute top-4 left-4 ${isUserPremium ? 'bg-gradient-to-r from-green-500 to-green-600' : 'bg-gradient-to-r from-yellow-500 to-yellow-600'} text-${isUserPremium ? 'white' : 'black'} text-xs font-bold rounded-full py-1 px-3 shadow-lg z-20">
+                        ${isUserPremium ? '<i class="fas fa-unlock mr-1"></i> UNLOCKED' : '<i class="fas fa-crown mr-1"></i> PREMIUM'}
+                    </div>
+                ` : '';
+                
+                // Create the button based on whether the skin is premium or free
+                const buttonHtml = skin.isPremium 
+                    ? isUserPremium
+                        ? `<button
+                            class="download-btn bg-purple-600 hover:bg-purple-500 text-white
+                                    py-2 px-4 rounded transition-all duration-300 transform hover:scale-105 flex items-center"
+                            data-folder="${skin.folderName}"
+                            data-premium="true"
+                        >
+                            <i class="fas fa-crown mr-1"></i> Premium Download
+                        </button>`
+                        : `<button
+                            class="download-btn bg-yellow-600 hover:bg-yellow-500 text-black
+                                    py-2 px-4 rounded transition-all duration-300 transform hover:scale-105 flex items-center"
+                            data-folder="${skin.folderName}"
+                            data-premium="true"
+                        >
+                            <i class="fas fa-crown mr-1"></i> Subscribe
+                        </button>`
+                    : `<button
+                        class="download-btn bg-red-800 hover:bg-red-700 text-white
+                                py-2 px-4 rounded transition-all duration-300 transform hover:scale-105 flex items-center"
+                        data-folder="${skin.folderName}"
+                        data-premium="false"
+                    >
+                        <i class="fas fa-download mr-1"></i> Download
+                    </button>`;
+                
+                card.innerHTML = `
+                    <div class="flex flex-col md:flex-row">
+                        <div class="relative md:w-48 h-48 bg-card bg-cover bg-center cursor-pointer" data-skin-id="${skin.id}">
+                            ${premiumBadge}
+                            
+                            <!-- Skin preview image -->
+                            <img
+                                src="${skin.previewPath}"
+                                alt="${skin.name} Preview"
+                                class="w-full h-full object-contain p-3"
+                                data-premium="${skin.isPremium}"
+                                data-skin-id="${skin.id}"
+                            />
+                            
+                            <!-- Quick preview overlay -->
+                            <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <button class="bg-red-700 hover:bg-red-600 text-white px-4 py-2 rounded-lg transform transition-transform duration-300 hover:scale-110 preview-btn" data-skin-id="${skin.id}">
+                                    <i class="fas fa-eye mr-2"></i> Quick View
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <h3 class="text-xl text-white font-bold">${skin.name}</h3>
+                                        <div class="flex flex-wrap gap-2 mt-1">
+                                            <span class="bg-red-900 text-white text-xs rounded-full px-2 py-1">
+                                                ${skin.type}
+                                            </span>
+                                            <span class="bg-gray-800 text-white text-xs rounded-full px-2 py-1">
+                                                ${skin.categoryTags}
+                                            </span>
+                                            ${skin.styleTags.map(tag => `
+                                                <span class="bg-gray-800 text-white text-xs rounded-full px-2 py-1">
+                                                    ${tag}
+                                                </span>
+                                            `).join('')}
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="text-yellow-400 mr-2">
+                                            <i class="fas fa-star"></i>
+                                            <span class="ml-1">${skin.rating}</span>
+                                        </div>
+                                        <span class="text-xs bg-gray-800 text-gray-300 py-1 px-2 rounded-full">
+                                            ${skin.fileSize}
+                                        </span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-400 text-sm mb-4 line-clamp-2">${skin.description}</p>
+                            </div>
+                            
+                            <div class="flex flex-wrap justify-between items-center">
+                                <div>
+                                    <span class="text-gray-500 text-sm">
+                                        <i class="far fa-calendar-alt mr-1"></i> ${skin.createdAt.toLocaleDateString()}
+                                    </span>
+                                    <span class="text-gray-500 text-sm ml-4">
+                                        <i class="fas fa-download mr-1"></i> ${skin.downloads.toLocaleString()}
+                                    </span>
+                                </div>
+                                <div class="flex space-x-2 mt-2 md:mt-0">
+                                    <button class="bg-gray-800 hover:bg-gray-700 text-white py-2 px-3 rounded transition-all duration-300 preview-btn" data-skin-id="${skin.id}">
+                                        <i class="fas fa-eye mr-1"></i> Preview
+                                    </button>
+                                    ${buttonHtml}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(card);
+                
+                // Add preview event handlers
+                card.querySelectorAll('.preview-btn, [data-skin-id]').forEach(el => {
+                    el.addEventListener('click', function() {
+                        const skinId = this.getAttribute('data-skin-id');
+                        if (skinId) {
+                            const skin = allSkins.find(s => s.id === parseInt(skinId));
+                            if (skin) {
+                                openPreviewModal(skin);
+                            }
+                        }
+                    });
+                });
+            }
+
+            // Function to download a skin
+            function downloadSkin(folderName) {
+                const skin = allSkins.find(s => s.folderName === folderName);
+                if (!skin) return;
+                
+                // Create an anchor element and trigger download
+                const a = document.createElement('a');
+                a.href = skin.skinPath;
+                a.download = `${folderName}.png`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                
+                // Update download count
+                skin.downloads += 1;
+                
+                // If in preview modal, update the download count display
+                const downloadsElement = document.getElementById('previewModalDownloads');
+                if (downloadsElement) {
+                    downloadsElement.innerHTML = `<i class="fas fa-download mr-1"></i> ${skin.downloads.toLocaleString()} downloads`;
+                }
+                
+                // Close preview modal if open
+                closePreviewModal();
+            }
+
+            // Function to setup pagination controls
+            function setupPagination() {
+                const paginationControls = document.getElementById('paginationControls');
+                if (!paginationControls) return;
+                
+                // Clear previous pagination
+                paginationControls.innerHTML = '';
+                
+                // Calculate total pages
+                const totalPages = Math.ceil(filteredSkins.length / itemsPerPage);
+                
+                // Don't show pagination if only one page
+                if (totalPages <= 1) return;
+                
+                // Add previous button
+                const prevButton = document.createElement('button');
+                prevButton.className = `w-10 h-10 flex items-center justify-center rounded-full ${currentPage === 1 ? 'bg-gray-800 text-gray-500' : 'bg-gray-900 text-white hover:bg-red-800'} transition-all duration-300`;
+                prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                prevButton.disabled = currentPage === 1;
+                prevButton.addEventListener('click', () => {
+                    if (currentPage > 1) {
+                        currentPage--;
+                        displaySkins();
+                        setupPagination();
+                        window.scrollTo({top: document.getElementById('skin-browser').offsetTop - 100, behavior: 'smooth'});
+                    }
+                });
+                paginationControls.appendChild(prevButton);
+                
+                // Determine which page buttons to show
+                let startPage = Math.max(1, currentPage - 2);
+                let endPage = Math.min(totalPages, startPage + 4);
+                
+                // Adjust if we're near the end
+                if (endPage - startPage < 4) {
+                    startPage = Math.max(1, endPage - 4);
+                }
+                
+                // Show first page and ellipsis if needed
+                if (startPage > 1) {
+                    const firstPageBtn = document.createElement('button');
+                    firstPageBtn.className = `w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 text-white hover:bg-red-800 transition-all duration-300`;
+                    firstPageBtn.textContent = '1';
+                    firstPageBtn.addEventListener('click', () => {
+                        currentPage = 1;
+                        displaySkins();
+                        setupPagination();
+                        window.scrollTo({top: document.getElementById('skin-browser').offsetTop - 100, behavior: 'smooth'});
+                    });
+                    paginationControls.appendChild(firstPageBtn);
+                    
+                    if (startPage > 2) {
+                        const ellipsis = document.createElement('div');
+                        ellipsis.className = 'w-10 h-10 flex items-center justify-center text-gray-500';
+                        ellipsis.textContent = '...';
+                        paginationControls.appendChild(ellipsis);
+                    }
+                }
+                
+                // Add page buttons
+                for (let i = startPage; i <= endPage; i++) {
+                    const pageButton = document.createElement('button');
+                    pageButton.className = `w-10 h-10 flex items-center justify-center rounded-full ${i === currentPage ? 'bg-red-800 text-white' : 'bg-gray-900 text-white hover:bg-red-800'} transition-all duration-300 transform hover:scale-110`;
+                    pageButton.textContent = i.toString();
+                    pageButton.addEventListener('click', () => {
+                        currentPage = i;
+                        displaySkins();
+                        setupPagination();
+                        window.scrollTo({top: document.getElementById('skin-browser').offsetTop - 100, behavior: 'smooth'});
+                    });
+                    paginationControls.appendChild(pageButton);
+                }
+                
+                // Show last page and ellipsis if needed
+                if (endPage < totalPages) {
+                    if (endPage < totalPages - 1) {
+                        const ellipsis = document.createElement('div');
+                        ellipsis.className = 'w-10 h-10 flex items-center justify-center text-gray-500';
+                        ellipsis.textContent = '...';
+                        paginationControls.appendChild(ellipsis);
+                    }
+                    
+                    const lastPageBtn = document.createElement('button');
+                    lastPageBtn.className = `w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 text-white hover:bg-red-800 transition-all duration-300`;
+                    lastPageBtn.textContent = totalPages.toString();
+                    lastPageBtn.addEventListener('click', () => {
+                        currentPage = totalPages;
+                        displaySkins();
+                        setupPagination();
+                        window.scrollTo({top: document.getElementById('skin-browser').offsetTop - 100, behavior: 'smooth'});
+                    });
+                    paginationControls.appendChild(lastPageBtn);
+                }
+                
+                // Add next button
+                const nextButton = document.createElement('button');
+                nextButton.className = `w-10 h-10 flex items-center justify-center rounded-full ${currentPage === totalPages ? 'bg-gray-800 text-gray-500' : 'bg-gray-900 text-white hover:bg-red-800'} transition-all duration-300`;
+                nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                nextButton.disabled = currentPage === totalPages;
+                nextButton.addEventListener('click', () => {
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        displaySkins();
+                        setupPagination();
+                        window.scrollTo({top: document.getElementById('skin-browser').offsetTop - 100, behavior: 'smooth'});
+                    }
+                });
+                paginationControls.appendChild(nextButton);
+            }
+
+            // Debounce function to limit how often a function is called
+            function debounce(func, wait) {
+                let timeout;
+                return function(...args) {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => func.apply(this, args), wait);
+                };
+            }
+
+            // Add event listeners to the download buttons dynamically after they're created
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.download-btn')) {
+                    const btn = e.target.closest('.download-btn');
+                    const folderName = btn.getAttribute('data-folder');
+                    const isSkinPremium = btn.getAttribute('data-premium') === 'true';
+                    const isUserPremium = localStorage.getItem('isPremium') === 'true';
+                    
+                    // If skin is premium but user is not premium, show modal
+                    if (isSkinPremium && !isUserPremium) {
+                        openPremiumModal();
+                    } else {
+                        // Either skin is free or user has premium access
+                        downloadSkin(folderName);
+                        
+                        // Animation feedback
+                        btn.classList.add('scale-110');
+                        if (isSkinPremium) {
+                            btn.innerHTML = '<i class="fas fa-check mr-1"></i> Premium Downloaded!';
+                        } else {
+                            btn.innerHTML = '<i class="fas fa-check mr-1"></i> Downloaded!';
+                        }
+                        
+                        setTimeout(() => {
+                            btn.classList.remove('scale-110');
+                            if (isSkinPremium) {
+                                btn.innerHTML = '<i class="fas fa-crown mr-1"></i> Premium Download';
+                            } else {
+                                btn.innerHTML = '<i class="fas fa-download mr-1"></i> Download';
+                            }
+                        }, 1500);
+                    }
+                }
+            });
+
+            // Initialize everything when DOM is loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                // Load skins
+                loadSkins();
+                
+                // Add navbar scroll effect
+                window.addEventListener('scroll', function() {
+                    const navbar = document.querySelector('nav');
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('py-2');
+                        navbar.classList.add('shadow-lg');
+                        navbar.classList.remove('py-4');
+                        navbar.classList.remove('bg-opacity-80');
+                    } else {
+                        navbar.classList.remove('py-2');
+                        navbar.classList.remove('shadow-lg');
+                        navbar.classList.add('py-4');
+                        navbar.classList.add('bg-opacity-80');
+                    }
+                });
+                
+                // Add smooth scrolling for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (!targetElement) return;
+                        
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
