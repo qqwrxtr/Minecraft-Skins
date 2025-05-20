@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://turbodraft.org/sitemap.xml
+Sitemap: https://minecraftmods.store/sitemap.xml

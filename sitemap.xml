@@ -1,107 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://turbodraft.org/</loc>
+    <loc>https://minecraftmods.store/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/about/</loc>
+    <loc>https://minecraftmods.store/about/</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/assets/</loc>
+    <loc>https://minecraftmods.store/assets/</loc>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/auth/</loc>
+    <loc>https://minecraftmods.store/auth/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/contact/</loc>
+    <loc>https://minecraftmods.store/contact/</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/cookies/</loc>
+    <loc>https://minecraftmods.store/cookies/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/faq/</loc>
+    <loc>https://minecraftmods.store/faq/</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/features/</loc>
+    <loc>https://minecraftmods.store/features/</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/premium/</loc>
+    <loc>https://minecraftmods.store/premium/</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/privacy/</loc>
+    <loc>https://minecraftmods.store/privacy/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/skins/</loc>
+    <loc>https://minecraftmods.store/skins/</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/subscribe/</loc>
+    <loc>https://minecraftmods.store/subscribe/</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/terms/</loc>
+    <loc>https://minecraftmods.store/terms/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/tutorials/</loc>
+    <loc>https://minecraftmods.store/tutorials/</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/tutorials/3d-modeling/</loc>
+    <loc>https://minecraftmods.store/tutorials/3d-modeling/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/tutorials/bedrock-edition/</loc>
+    <loc>https://minecraftmods.store/tutorials/bedrock-edition/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/tutorials/color-theory/</loc>
+    <loc>https://minecraftmods.store/tutorials/color-theory/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/tutorials/console-edition/</loc>
+    <loc>https://minecraftmods.store/tutorials/console-edition/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/tutorials/create-skins/</loc>
+    <loc>https://minecraftmods.store/tutorials/create-skins/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/tutorials/custom-animations/</loc>
+    <loc>https://minecraftmods.store/tutorials/custom-animations/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/tutorials/hd-skins/</loc>
+    <loc>https://minecraftmods.store/tutorials/hd-skins/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/tutorials/java-edition/</loc>
+    <loc>https://minecraftmods.store/tutorials/java-edition/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/tutorials/mobile-installation/</loc>
+    <loc>https://minecraftmods.store/tutorials/mobile-installation/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/tutorials/pixel-art-basics/</loc>
+    <loc>https://minecraftmods.store/tutorials/pixel-art-basics/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/tutorials/skin-templates/</loc>
+    <loc>https://minecraftmods.store/tutorials/skin-templates/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://turbodraft.org/tutorials/skin-troubleshooting/</loc>
+    <loc>https://minecraftmods.store/tutorials/skin-troubleshooting/</loc>
     <priority>0.7</priority>
   </url>
 </urlset>
