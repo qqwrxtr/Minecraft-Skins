@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TurboDraft.org - Creating HD Skins</title>
+        <meta name="description" content="TurboDraft.org offers premium Minecraft skins for Java and Bedrock editions. Browse our collection of free and premium custom skins, download instantly, and stand out on any server. Visit TurboDraft.org for original designs and weekly skin drops.">
+        <meta name="keywords" content="TurboDraft.org, Minecraft skins, premium Minecraft skins, custom skins, Minecraft character, Java edition skins, Bedrock edition skins, free Minecraft skins, gaming skins, Minecraft customization, TurboDraft premium, skin downloads, weekly skin drops">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Minecraft&family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet">
+        <script src="../../assets/js/auth.js"></script>
+        <link rel="icon" href="../../assets/icon.webp">
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        backgroundImage: {
+                            'card': "url('../../assets/images/bg_card.jpg')",
+                        },
+                    }
+                }
+            }
+        </script>
+    </head>
+
+    <body class="bg-black text-gray-200 font-sans">
+        <!-- Mobile Nav Menu (Hidden by default) -->
+        <div id="mobileMenu"
+            class="fixed inset-0 bg-black bg-opacity-95 z-50 transform transition-transform duration-300 translate-x-full">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex justify-between items-center mb-6">
+                    <div class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </div>
+                    <button id="closeMenu"
+                        class="text-white focus:outline-none">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+
+                <div class="flex flex-col space-y-6 text-center">
+                    <a href="../../"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Home</a>
+                    <a href="../../skins/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Skins</a>
+                    <a href="../../premium/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Premium</a>
+                    <a href="../../features/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Features</a>
+                    <a href="../"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Tutorials</a>
+                    <a href="../../about/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">About</a>
+                    <a href="../../subscribe/"
+                        class="mt-4 bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg">Subscribe
+                        Now</a>
+                </div>
+
+                <div class="mt-10 flex justify-center space-x-6">
+                    <a href="https://discord.gg/turbodraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://instagram.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://youtube.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav
+            class="fixed w-full z-40 py-4 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg transition-all duration-300">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:transform hover:scale-110">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="../../"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                        <a href="../../skins/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Skins</a>
+                        <a href="../../premium/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Premium</a>
+                        <a href="../../features/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Features</a>
+                        <a href="../"
+                            class="relative text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-red-500 after:transition-all after:duration-300">Tutorials</a>
+                        <a href="../../about/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">About</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-4">
+                        <!-- User section will be dynamically populated by auth.js -->
+                        <div id="navUserSection" class="flex items-center">
+                            <!-- Default content shown before JS loads -->
+                            <a href="../../auth/"
+                                class="text-white hover:text-red-300 transition-colors duration-300">Login</a>
+                            <a href="../../subscribe/"
+                                class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800">Subscribe</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="openMenu"
+                            class="text-white focus:outline-none">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Tutorial Header -->
+        <section class="pt-32 pb-10 bg-gradient-to-br from-black to-red-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl mb-4 text-white"
+                        style="font-family: 'Minecraft', sans-serif;">Creating <span class="text-red-500">HD Skins</span></h1>
+                    <p class="text-lg md:text-xl mb-4 text-gray-300 max-w-3xl mx-auto">Learn advanced techniques for creating high-definition Minecraft skins with enhanced details and textures</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorial Topics Navigation -->
+        <section class="py-6 bg-gray-900 border-b border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <a href="#understanding" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                        <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                            <i class="fas fa-book text-lg"></i>
+                        </div>
+                        <span>Understanding HD Skins</span>
+                    </a>
+                    <a href="#techniques" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                        <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                            <i class="fas fa-paint-brush text-lg"></i>
+                        </div>
+                        <span>HD Texturing Techniques</span>
+                    </a>
+                    <a href="#resources" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                        <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                            <i class="fas fa-tools text-lg"></i>
+                        </div>
+                        <span>Tools & Resources</span>
+                    </a>
+                    <a href="#compatibility" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                        <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                            <i class="fas fa-puzzle-piece text-lg"></i>
+                        </div>
+                        <span>Compatibility & Mods</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="py-10 bg-black">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    
+                    <!-- Prerequisites Notice -->
+                    <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 mb-8">
+                        <h3 class="text-white font-bold mb-2">Before you begin:</h3>
+                        <p class="text-gray-300 mb-2">This is an <span class="text-red-400 font-bold">advanced tutorial</span> that assumes you already have:</p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-300">
+                            <li>Experience creating standard Minecraft skins</li>
+                            <li>Familiarity with image editing software like Photoshop, GIMP, or Aseprite</li>
+                            <li>Understanding of basic pixel art techniques</li>
+                            <li>Knowledge of Minecraft skin file structure</li>
+                        </ul>
+                        <p class="mt-2 text-gray-300">If you're new to skin creation, we recommend starting with our <a href="../create-skins/" class="text-red-400 hover:text-red-300 underline">basic skin creation tutorial</a> first.</p>
+                    </div>
+
+                    <!-- Understanding HD Skins -->
+                    <div id="understanding" class="mb-10 scroll-mt-20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                                <i class="fas fa-book text-lg"></i>
+                            </div>
+                            <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                                Understanding HD Skins
+                            </h2>
+                        </div>
+                        
+                        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                            <p class="text-gray-300 mb-4">HD (High Definition) skins push the boundaries of Minecraft's character customization by using advanced techniques to create the illusion of higher resolution and more detailed textures within the standard skin format.</p>
+                            
+                            <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800 mb-6">
+                                <h3 class="text-white font-bold mb-3">What Makes a Skin "HD"?</h3>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                                    <div>
+                                        <h4 class="text-white font-bold mb-2">Standard Skins:</h4>
+                                        <ul class="space-y-1 text-gray-300">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-square text-gray-500 mt-1 mr-2"></i>
+                                                <span>64x64 pixel resolution</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-square text-gray-500 mt-1 mr-2"></i>
+                                                <span>Simple textures and details</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-square text-gray-500 mt-1 mr-2"></i>
+                                                <span>Limited by pixel constraints</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-square text-gray-500 mt-1 mr-2"></i>
+                                                <span>Basic color blending</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-bold mb-2">HD Skins:</h4>
+                                        <ul class="space-y-1 text-gray-300">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-square text-red-500 mt-1 mr-2"></i>
+                                                <span>Still 64x64 pixels but with advanced techniques</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-square text-red-500 mt-1 mr-2"></i>
+                                                <span>Creates illusion of higher resolution</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-square text-red-500 mt-1 mr-2"></i>
+                                                <span>Sophisticated dithering and anti-aliasing</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-square text-red-500 mt-1 mr-2"></i>
+                                                <span>Advanced shading and texture techniques</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                <h3 class="text-white font-bold mb-3">Key Concepts of HD Skins</h3>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                        <div>
+                                            <h4 class="text-white font-bold">Working Within Constraints</h4>
+                                            <p class="text-gray-300">HD skins still use the standard 64x64 pixel format, but they utilize advanced techniques to create the illusion of higher resolution. The trick is working within these constraints while maximizing detail.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                        <div>
+                                            <h4 class="text-white font-bold">Optical Illusions</h4>
+                                            <p class="text-gray-300">HD skins use techniques to trick the eye into seeing more detail than is actually present. This includes strategic color choices, precise shading, and clever placement of pixels to suggest texture.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                        <div>
+                                            <h4 class="text-white font-bold">Dual Compatibility</h4>
+                                            <p class="text-gray-300">The best HD skins look good in both vanilla Minecraft and when used with HD skin mods or resource packs. This requires careful attention to how the skin renders in different environments.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">4</div>
+                                        <div>
+                                            <h4 class="text-white font-bold">Texture Integration</h4>
+                                            <p class="text-gray-300">HD skins often incorporate advanced texturing methods to represent materials like fabric, metal, or leather with much higher fidelity than normal skins can achieve.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-yellow-900 mt-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-lightbulb text-yellow-500 text-2xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h3 class="text-white font-bold mb-1">When to Use HD Skins</h3>
+                                        <p class="text-gray-300">HD skins are particularly effective for:</p>
+                                        <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+                                            <li>Characters with intricate clothing or armor</li>
+                                            <li>Skins that require detailed facial expressions</li>
+                                            <li>Designs with complex textures like scales, fur, or technological elements</li>
+                                            <li>Creating realistic or cinematic character appearances</li>
+                                            <li>Showcasing your advanced skin creation skills</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HD Texturing Techniques -->
+                    <div id="techniques" class="mb-10 scroll-mt-20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                                <i class="fas fa-paint-brush text-lg"></i>
+                            </div>
+                            <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                                HD Texturing Techniques
+                            </h2>
+                        </div>
+                        
+                        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                            <p class="text-gray-300 mb-4">The following advanced techniques will help you create the illusion of high-definition textures and details within the standard Minecraft skin format:</p>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Technique 1: Dithering</h3>
+                                    
+                                    <div class="grid grid-cols-1 gap-6 mb-4">
+                                        <div>
+                                            <p class="text-gray-300 mb-3">Dithering is a technique that creates the illusion of additional colors by placing pixels of different colors in patterns. This helps create smooth transitions and textures using limited pixels.</p>
+                                            
+                                            <h4 class="text-white font-bold mb-2">How to Apply:</h4>
+                                            <ol class="space-y-1 text-gray-300 list-decimal list-inside pl-4">
+                                                <li>Choose two colors for your transition</li>
+                                                <li>Create a checkerboard or pattern of alternating pixels</li>
+                                                <li>Gradually adjust the ratio of colors to create a gradient</li>
+                                                <li>View from a distance to check the blending effect</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Technique 2: Anti-Aliasing</h3>
+                                    
+                                    <div class="grid grid-cols-1 gap-6 mb-4">
+                                        <div>
+                                            <p class="text-gray-300 mb-3">Anti-aliasing softens jagged edges by adding intermediary colored pixels along diagonal lines and curves, creating the illusion of smoother edges in pixel art.</p>
+                                            
+                                            <h4 class="text-white font-bold mb-2">How to Apply:</h4>
+                                            <ol class="space-y-1 text-gray-300 list-decimal list-inside pl-4">
+                                                <li>Identify diagonal or curved edges in your design</li>
+                                                <li>Add intermediate colored pixels that blend between the edge color and the background</li>
+                                                <li>Use increasingly transparent or color-blended pixels as you move away from the edge</li>
+                                                <li>Apply selectively to avoid blurring important details</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Technique 3: Advanced Shading</h3>
+                                    
+                                    <div class="grid grid-cols-1 gap-6 mb-4">
+                                        <div>
+                                            <p class="text-gray-300 mb-3">Advanced shading goes beyond basic shadows and highlights by incorporating multiple light sources, ambient occlusion, and reflected light to create depth and realism.</p>
+                                            
+                                            <h4 class="text-white font-bold mb-2">How to Apply:</h4>
+                                            <ol class="space-y-1 text-gray-300 list-decimal list-inside pl-4">
+                                                <li>Establish a primary light source direction</li>
+                                                <li>Add highlights on surfaces facing the light</li>
+                                                <li>Create shadows in recessed areas and where objects block light</li>
+                                                <li>Add ambient occlusion in tight corners and crevices</li>
+                                                <li>Include subtle reflected light on the shadow sides</li>
+                                                <li>Use color temperature variations between light and shadow</li>
+                                            </ol>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Technique 4: Texture Mapping</h3>
+                                    
+                                    <div class="grid grid-cols-1 gap-6 mb-4">
+                                        <div>
+                                            <p class="text-gray-300 mb-3">Texture mapping involves creating the illusion of complex textures like fabric weaves, metal surfaces, or leather using carefully arranged pixel patterns.</p>
+                                            
+                                            <h4 class="text-white font-bold mb-2">Common Texture Patterns:</h4>
+                                            <ul class="space-y-1 text-gray-300 list-disc list-inside pl-4">
+                                                <li><strong>Leather:</strong> Subtle color variations with small cracks</li>
+                                                <li><strong>Metal:</strong> Smooth gradients with sharp highlights</li>
+                                                <li><strong>Fabric:</strong> Repeating patterns of crossing lines</li>
+                                                <li><strong>Wood:</strong> Linear streaks with occasional knots</li>
+                                                <li><strong>Stone:</strong> Irregular speckles and cracks</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Technique 5: Strategic Detail Placement</h3>
+                                    
+                                    <p class="text-gray-300 mb-3">With limited pixels available, the strategic placement of details makes a significant difference in HD skins. Focus details where they'll have the most impact.</p>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                                        <div>
+                                            <h4 class="text-white font-bold mb-2">High-Priority Areas:</h4>
+                                            <ul class="space-y-1 text-gray-300 list-disc list-inside pl-4">
+                                                <li><strong>Face:</strong> Focus on eyes, mouth, and expression</li>
+                                                <li><strong>Front torso:</strong> Most visible when viewed head-on</li>
+                                                <li><strong>Arms:</strong> Visible during animations and in first-person</li>
+                                                <li><strong>Material transitions:</strong> Where different textures meet</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-white font-bold mb-2">Low-Priority Areas:</h4>
+                                            <ul class="space-y-1 text-gray-300 list-disc list-inside pl-4">
+                                                <li><strong>Back of head:</strong> Rarely seen in normal gameplay</li>
+                                                <li><strong>Bottom of feet:</strong> Almost never visible</li>
+                                                <li><strong>Inside surfaces:</strong> Only visible in specific poses</li>
+                                                <li><strong>Large uniform areas:</strong> Can use simpler texturing</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bg-gray-800 p-3 rounded-lg">
+                                        <p class="text-white text-sm font-bold">Pro Tip:</p>
+                                        <p class="text-gray-300 text-sm">A common mistake is spreading details too evenly. Instead, create focal points with concentrated detail, then let the eye fill in the rest. This creates the illusion of overall higher detail.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Technique 6: Overlay Layer Optimization</h3>
+                                    
+                                    <div class="grid grid-cols-1 gap-6 mb-4">
+                                        <div>
+                                            <p class="text-gray-300 mb-3">Minecraft skins have two layers - the base layer and overlay layer. HD skins use both layers together strategically to double the effective detail.</p>
+                                            
+                                            <h4 class="text-white font-bold mb-2">Overlay Layer Strategies:</h4>
+                                            <ul class="space-y-1 text-gray-300 list-disc list-inside pl-4">
+                                                <li>Use for fine details that appear to float above the base</li>
+                                                <li>Create semi-transparent elements with careful color choice</li>
+                                                <li>Layer different textures to create complex materials</li>
+                                                <li>Add highlights and accent details that stand out</li>
+                                                <li>Create the illusion of embossed or engraved designs</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-green-800 mt-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 text-2xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h3 class="text-white font-bold mb-1">Practice Makes Perfect</h3>
+                                        <p class="text-gray-300">These HD techniques require practice and experimentation. Start by applying one technique at a time to parts of your skin, then gradually combine them as you gain experience. Study HD skins created by experts to understand how these techniques can be combined effectively.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Resources -->
+                    <div id="resources" class="mb-10 scroll-mt-20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                                <i class="fas fa-tools text-lg"></i>
+                            </div>
+                            <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                                Tools & Resources
+                            </h2>
+                        </div>
+                        
+                        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                            <p class="text-gray-300 mb-4">Creating HD skins requires more sophisticated tools than basic skin editors. Here are the recommended tools and resources:</p>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Professional Image Editors</h3>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                        <div class="bg-gray-800 p-3 rounded-lg">
+                                            <h4 class="text-white font-bold mb-2 flex items-center">
+                                                <i class="fas fa-file-photoshop text-blue-400 mr-2"></i>
+                                                Adobe Photoshop
+                                            </h4>
+                                            <p class="text-gray-300 text-sm mb-2">Industry standard with powerful tools for detailed work.</p>
+                                            <ul class="text-gray-300 text-xs space-y-1">
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Advanced layer system</li>
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Precise color control</li>
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Filter effects</li>
+                                                <li><i class="fas fa-minus text-red-500 mr-1"></i> Expensive subscription</li>
+                                            </ul>
+                                            <a href="https://www.adobe.com/products/photoshop.html" target="_blank" class="text-red-400 hover:text-red-300 text-xs inline-flex items-center mt-2">
+                                                <span>Official Site</span>
+                                                <i class="fas fa-external-link-alt ml-1"></i>
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="bg-gray-800 p-3 rounded-lg">
+                                            <h4 class="text-white font-bold mb-2 flex items-center">
+                                                <i class="fas fa-paint-brush text-orange-400 mr-2"></i>
+                                                GIMP
+                                            </h4>
+                                            <p class="text-gray-300 text-sm mb-2">Free open-source alternative with comparable features.</p>
+                                            <ul class="text-gray-300 text-xs space-y-1">
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Completely free</li>
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Powerful tools</li>
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Plugin support</li>
+                                                <li><i class="fas fa-minus text-red-500 mr-1"></i> Steeper learning curve</li>
+                                            </ul>
+                                            <a href="https://www.gimp.org/" target="_blank" class="text-red-400 hover:text-red-300 text-xs inline-flex items-center mt-2">
+                                                <span>Official Site</span>
+                                                <i class="fas fa-external-link-alt ml-1"></i>
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="bg-gray-800 p-3 rounded-lg">
+                                            <h4 class="text-white font-bold mb-2 flex items-center">
+                                                <i class="fas fa-pencil-alt text-purple-400 mr-2"></i>
+                                                Aseprite
+                                            </h4>
+                                            <p class="text-gray-300 text-sm mb-2">Pixel art focused software ideal for detailed skins.</p>
+                                            <ul class="text-gray-300 text-xs space-y-1">
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Optimized for pixel art</li>
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Animation support</li>
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Intuitive interface</li>
+                                                <li><i class="fas fa-minus text-red-500 mr-1"></i> One-time purchase</li>
+                                            </ul>
+                                            <a href="https://www.aseprite.org/" target="_blank" class="text-red-400 hover:text-red-300 text-xs inline-flex items-center mt-2">
+                                                <span>Official Site</span>
+                                                <i class="fas fa-external-link-alt ml-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bg-gray-800 p-3 rounded-lg">
+                                        <p class="text-white text-sm font-bold">Why Advanced Editors?</p>
+                                        <p class="text-gray-300 text-sm">HD skinning requires precise control over individual pixels, advanced layer management, and custom brushes. Basic online skin editors lack these advanced features needed for HD techniques.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">HD Skin Templates</h3>
+                                    
+                                    <p class="text-gray-300 mb-3">Starting with a specialized HD template can significantly improve your results. Our premium HD templates include:</p>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                        <div class="bg-gray-800 p-3 rounded-lg">
+                                            <h4 class="text-white font-bold mb-2">HD Base Templates</h4>
+                                            <ul class="text-gray-300 text-sm space-y-1">
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Pre-aligned grid for precision work</li>
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Body part mapping with labels</li>
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Separate layers for base and overlay</li>
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Available for both Classic and Slim models</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="bg-gray-800 p-3 rounded-lg">
+                                            <h4 class="text-white font-bold mb-2">Material Reference Templates</h4>
+                                            <ul class="text-gray-300 text-sm space-y-1">
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Sample textures for common materials</li>
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Pre-made dithering patterns</li>
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Shading reference guides</li>
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Color palette suggestions</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex flex-col md:flex-row items-center justify-between bg-black bg-opacity-40 p-3 rounded-lg">
+                                        <div class="mb-4 md:mb-0">
+                                            <h4 class="text-white font-bold">Premium HD Template Pack</h4>
+                                            <p class="text-gray-300 text-sm">Get our complete HD template collection with PSD, XCF, and ASE formats plus texture libraries.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">3D Preview Tools</h3>
+                                    
+                                    <p class="text-gray-300 mb-3">Testing your HD skin as you work is crucial. These tools provide advanced previewing capabilities:</p>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                        <div class="bg-gray-800 p-3 rounded-lg">
+                                            <h4 class="text-white font-bold mb-2 flex items-center">
+                                                <i class="fas fa-cube text-blue-400 mr-2"></i>
+                                                Blockbench
+                                            </h4>
+                                            <p class="text-gray-300 text-sm mb-2">3D modeling program that supports Minecraft models.</p>
+                                            <ul class="text-gray-300 text-xs space-y-1">
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Real-time 3D preview</li>
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Pose editing</li>
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Free to use</li>
+                                            </ul>
+                                            <a href="https://www.blockbench.net/" target="_blank" class="text-red-400 hover:text-red-300 text-xs inline-flex items-center mt-2">
+                                                <span>Download</span>
+                                                <i class="fas fa-external-link-alt ml-1"></i>
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="bg-gray-800 p-3 rounded-lg">
+                                            <h4 class="text-white font-bold mb-2 flex items-center">
+                                                <i class="fas fa-eye text-green-400 mr-2"></i>
+                                                Advanced Skin Viewer
+                                            </h4>
+                                            <p class="text-gray-300 text-sm mb-2">Web-based viewer with lighting controls and poses.</p>
+                                            <ul class="text-gray-300 text-xs space-y-1">
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Multiple lighting environments</li>
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Animation testing</li>
+                                                <li><i class="fas fa-plus text-green-500 mr-1"></i> Customizable backgrounds</li>
+                                            </ul>
+                                            <a href="https://www.minecraftskins.com/skin-viewer/" target="_blank" class="text-red-400 hover:text-red-300 text-xs inline-flex items-center mt-2">
+                                                <span>Open Viewer</span>
+                                                <i class="fas fa-external-link-alt ml-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Learning Resources</h3>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                        <div class="bg-gray-800 p-3 rounded-lg">
+                                            <h4 class="text-white font-bold mb-2">HD Skin Tutorial Videos</h4>
+                                            <p class="text-gray-300 text-sm">Watch our advanced video tutorials:</p>
+                                            <ul class="text-gray-300 text-xs space-y-1 mt-2">
+                                                <li><a href="../../tutorials/videos/dithering-techniques/" class="text-red-400 hover:text-red-300">Mastering Dithering Techniques</a></li>
+                                                <li><a href="../../tutorials/videos/advanced-shading/" class="text-red-400 hover:text-red-300">Advanced Shading for Realism</a></li>
+                                                <li><a href="../../tutorials/videos/material-textures/" class="text-red-400 hover:text-red-300">Creating Material Textures</a></li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="bg-gray-800 p-3 rounded-lg">
+                                            <h4 class="text-white font-bold mb-2">Pixel Art Communities</h4>
+                                            <p class="text-gray-300 text-sm">Join these communities for feedback:</p>
+                                            <ul class="text-gray-300 text-xs space-y-1 mt-2">
+                                                <li><a href="https://discord.gg/turbodraft" target="_blank" class="text-red-400 hover:text-red-300">TurboDraft Discord</a></li>
+                                                <li><a href="https://www.reddit.com/r/PixelArt/" target="_blank" class="text-red-400 hover:text-red-300">r/PixelArt on Reddit</a></li>
+                                                <li><a href="https://www.planetminecraft.com/forums/" target="_blank" class="text-red-400 hover:text-red-300">Planet Minecraft Forums</a></li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="bg-gray-800 p-3 rounded-lg">
+                                            <h4 class="text-white font-bold mb-2">Reference Libraries</h4>
+                                            <p class="text-gray-300 text-sm">Study these resources for inspiration:</p>
+                                            <ul class="text-gray-300 text-xs space-y-1 mt-2">
+                                                <li><a href="../../gallery/hd-showcase/" class="text-red-400 hover:text-red-300">HD Skin Showcase Gallery</a></li>
+                                                <li><a href="../../resources/texture-library/" class="text-red-400 hover:text-red-300">Material Texture Library</a></li>
+                                                <li><a href="../../resources/color-palettes/" class="text-red-400 hover:text-red-300">HD Skin Color Palettes</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Compatibility & Mods -->
+                    <div id="compatibility" class="mb-10 scroll-mt-20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                                <i class="fas fa-puzzle-piece text-lg"></i>
+                            </div>
+                            <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                                Compatibility & Mods
+                            </h2>
+                        </div>
+                        
+                        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                            <p class="text-gray-300 mb-4">While HD skins look impressive in vanilla Minecraft, they can be enhanced further with mods and resource packs that support higher resolution textures:</p>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Dual Compatibility Approach</h3>
+                                    
+                                    <p class="text-gray-300 mb-3">The best HD skins should look good in both vanilla Minecraft and with mods. Here's how to design for both:</p>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                        <div class="bg-gray-800 p-3 rounded-lg">
+                                            <h4 class="text-white font-bold mb-2">Vanilla Compatibility</h4>
+                                            <ul class="text-gray-300 text-sm space-y-1">
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Use standard 64x64 format</li>
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Ensure main features are recognizable</li>
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Check appearance in default Minecraft</li>
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Maintain readability at normal zoom</li>
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Balance details for standard rendering</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="bg-gray-800 p-3 rounded-lg">
+                                            <h4 class="text-white font-bold mb-2">Mod Enhancement</h4>
+                                            <ul class="text-gray-300 text-sm space-y-1">
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Include extra micro-details that shine with mods</li>
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Use techniques that benefit from shaders</li>
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Design with reflective surfaces in mind</li>
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Add subtle normal map suggestions</li>
+                                                <li><i class="fas fa-check text-green-500 mr-1"></i> Test with popular HD mods</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Recommended Mods & Resource Packs</h3>
+                                    
+                                    <div class="space-y-4">
+                                        <div class="flex items-start">
+                                            <div class="w-8 h-8 rounded-full bg-blue-900 bg-opacity-50 flex items-center justify-center mr-3 text-blue-400 text-sm flex-shrink-0 mt-0.5">
+                                                <i class="fas fa-cube"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-white font-bold">OptiFine</h4>
+                                                <p class="text-gray-300 text-sm mb-1">Improves Minecraft's rendering engine and adds support for HD textures and connected textures.</p>
+                                                <a href="https://optifine.net/home" target="_blank" class="text-red-400 hover:text-red-300 text-xs inline-flex items-center">
+                                                    <span>Download OptiFine</span>
+                                                    <i class="fas fa-external-link-alt ml-1"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-start">
+                                            <div class="w-8 h-8 rounded-full bg-blue-900 bg-opacity-50 flex items-center justify-center mr-3 text-blue-400 text-sm flex-shrink-0 mt-0.5">
+                                                <i class="fas fa-sun"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-white font-bold">Shader Packs</h4>
+                                                <p class="text-gray-300 text-sm mb-1">Add advanced lighting, shadows, and reflections that enhance the appearance of HD skins.</p>
+                                                <div class="flex flex-wrap gap-2 mt-1">
+                                                    <a href="https://shaders.fandom.com/wiki/SEUS_PTGI" target="_blank" class="text-red-400 hover:text-red-300 text-xs inline-flex items-center">
+                                                        <span>SEUS PTGI</span>
+                                                        <i class="fas fa-external-link-alt ml-1"></i>
+                                                    </a>
+                                                    <span class="text-gray-500">•</span>
+                                                    <a href="https://www.complementary.dev/" target="_blank" class="text-red-400 hover:text-red-300 text-xs inline-flex items-center">
+                                                        <span>Complementary</span>
+                                                        <i class="fas fa-external-link-alt ml-1"></i>
+                                                    </a>
+                                                    <span class="text-gray-500">•</span>
+                                                        <a href="https://www.curseforge.com/minecraft/customization/bsl-shaders" target="_blank" class="text-red-400 hover:text-red-300 text-xs inline-flex items-center">
+                                                       <span>BSL Shaders</span>
+                                                       <i class="fas fa-external-link-alt ml-1"></i>
+                                                   </a>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-blue-900 bg-opacity-50 flex items-center justify-center mr-3 text-blue-400 text-sm flex-shrink-0 mt-0.5">
+                                               <i class="fas fa-user"></i>
+                                           </div>
+                                           <div>
+                                               <h4 class="text-white font-bold">More Player Models</h4>
+                                               <p class="text-gray-300 text-sm mb-1">Enhances player models with additional functionality, poses, and animation options.</p>
+                                               <a href="https://www.curseforge.com/minecraft/mc-mods/more-player-models" target="_blank" class="text-red-400 hover:text-red-300 text-xs inline-flex items-center">
+                                                   <span>Get MPM Mod</span>
+                                                   <i class="fas fa-external-link-alt ml-1"></i>
+                                               </a>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-blue-900 bg-opacity-50 flex items-center justify-center mr-3 text-blue-400 text-sm flex-shrink-0 mt-0.5">
+                                               <i class="fas fa-camera"></i>
+                                           </div>
+                                           <div>
+                                               <h4 class="text-white font-bold">Camera Studio</h4>
+                                               <p class="text-gray-300 text-sm mb-1">Create cinematic views of your HD skins with advanced camera controls and effects.</p>
+                                               <a href="https://www.curseforge.com/minecraft/mc-mods/camera-studio" target="_blank" class="text-red-400 hover:text-red-300 text-xs inline-flex items-center">
+                                                   <span>Get Camera Studio</span>
+                                                   <i class="fas fa-external-link-alt ml-1"></i>
+                                               </a>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Testing Your HD Skin</h3>
+                                   
+                                   <p class="text-gray-300 mb-3">Follow this testing checklist to ensure your HD skin works well in different environments:</p>
+                                   
+                                   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                       <div class="bg-gray-800 p-3 rounded-lg">
+                                           <h4 class="text-white font-bold mb-2">Vanilla Testing</h4>
+                                           <ul class="text-gray-300 text-sm space-y-1">
+                                               <li><i class="fas fa-check text-green-500 mr-1"></i> View in default Minecraft</li>
+                                               <li><i class="fas fa-check text-green-500 mr-1"></i> Check in different lighting conditions</li>
+                                               <li><i class="fas fa-check text-green-500 mr-1"></i> Test with various armor pieces</li>
+                                               <li><i class="fas fa-check text-green-500 mr-1"></i> View at different distances</li>
+                                               <li><i class="fas fa-check text-green-500 mr-1"></i> Check during movement animations</li>
+                                           </ul>
+                                       </div>
+                                       
+                                       <div class="bg-gray-800 p-3 rounded-lg">
+                                           <h4 class="text-white font-bold mb-2">Modded Testing</h4>
+                                           <ul class="text-gray-300 text-sm space-y-1">
+                                               <li><i class="fas fa-check text-green-500 mr-1"></i> Test with OptiFine installed</li>
+                                               <li><i class="fas fa-check text-green-500 mr-1"></i> View with shader packs enabled</li>
+                                               <li><i class="fas fa-check text-green-500 mr-1"></i> Check with HD resource packs</li>
+                                               <li><i class="fas fa-check text-green-500 mr-1"></i> Test special poses with model mods</li>
+                                               <li><i class="fas fa-check text-green-500 mr-1"></i> Create screenshots in cinematic mode</li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                                   
+                                   <div class="bg-gray-800 p-3 rounded-lg">
+                                       <p class="text-white text-sm font-bold">Testing Workflow:</p>
+                                       <ol class="list-decimal list-inside text-gray-300 text-sm space-y-1">
+                                           <li>Start with vanilla Minecraft for baseline testing</li>
+                                           <li>Add OptiFine to check enhanced textures</li>
+                                           <li>Enable shaders to see lighting effects</li>
+                                           <li>Add model mods for final testing</li>
+                                           <li>Create screenshots for comparison</li>
+                                       </ol>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-yellow-900">
+                                   <div class="flex items-start">
+                                       <i class="fas fa-exclamation-triangle text-yellow-500 text-2xl mr-3 mt-1"></i>
+                                       <div>
+                                           <h3 class="text-white font-bold mb-1">Compatibility Note</h3>
+                                           <p class="text-gray-300">Always prioritize vanilla compatibility. While mods can enhance the look of your HD skin, remember that many players will see your skin in vanilla Minecraft. A well-designed HD skin should look impressive even without mods, with mod support being a bonus enhancement.</p>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Showcase & Examples -->
+                   <div class="mb-10">
+                       <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">
+                           HD Skin Examples
+                       </h2>
+                       
+                       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                           <p class="text-gray-300 mb-4">Study these examples of HD skins to see how the techniques discussed are applied in practice:</p>
+                           
+                           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                               <div class="bg-black bg-opacity-40 rounded-lg overflow-hidden">
+                                   <div class="p-3 bg-gray-800">
+                                       <h3 class="text-white font-bold">HD Knight</h3>
+                                       <p class="text-gray-300 text-xs mt-1">Features advanced metal texturing and detailed armor plate designs.</p>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg overflow-hidden">
+                                   <div class="p-3 bg-gray-800">
+                                       <h3 class="text-white font-bold">Cyberpunk Character</h3>
+                                       <p class="text-gray-300 text-xs mt-1">Demonstrates neon effects and tech details with clever overlay usage.</p>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg overflow-hidden">
+                                   <div class="p-3 bg-gray-800">
+                                       <h3 class="text-white font-bold">HD Wizard</h3>
+                                       <p class="text-gray-300 text-xs mt-1">Shows fabric texturing and magical effect techniques using dithering.</p>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg overflow-hidden">
+                                   <div class="p-3 bg-gray-800">
+                                       <h3 class="text-white font-bold">HD Explorer</h3>
+                                       <p class="text-gray-300 text-xs mt-1">Features leather and cloth texturing with detailed equipment.</p>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg overflow-hidden">
+                                   <div class="p-3 bg-gray-800">
+                                       <h3 class="text-white font-bold">Dragon Hybrid</h3>
+                                       <p class="text-gray-300 text-xs mt-1">Demonstrates scale texturing and creative use of the overlay layer.</p>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg overflow-hidden">
+                                   <div class="p-3 bg-gray-800">
+                                       <h3 class="text-white font-bold">Steampunk Engineer</h3>
+                                       <p class="text-gray-300 text-xs mt-1">Shows brass texturing and mechanical details with strategic highlights.</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Troubleshooting -->
+                   <div class="mb-10">
+                       <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Common HD Skin Challenges</h2>
+                       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                           <p class="text-gray-300 mb-4">Even experienced skin artists encounter challenges when creating HD skins. Here are solutions to common problems:</p>
+                           
+                           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <div class="flex items-start mb-3">
+                                       <i class="fas fa-exclamation-triangle text-yellow-500 text-xl mr-3 mt-1"></i>
+                                       <h3 class="text-white font-bold">Overdetailing</h3>
+                                   </div>
+                                   <p class="text-gray-300 mb-2"><strong>Problem:</strong> Adding too many details makes the skin look busy and unreadable at normal game scale.</p>
+                                   <p class="text-gray-300"><strong>Solution:</strong> Focus on creating focal points with concentrated detail, then use simpler areas elsewhere. Step back regularly to view your skin at game scale during creation.</p>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <div class="flex items-start mb-3">
+                                       <i class="fas fa-times-circle text-red-500 text-xl mr-3 mt-1"></i>
+                                       <h3 class="text-white font-bold">Inconsistent Lighting</h3>
+                                   </div>
+                                   <p class="text-gray-300 mb-2"><strong>Problem:</strong> Shadows and highlights don't follow a consistent light source direction.</p>
+                                   <p class="text-gray-300"><strong>Solution:</strong> Decide on a primary light source direction before starting (typically top-left). Create a simple reference arrow to remind you of your light direction.</p>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <div class="flex items-start mb-3">
+                                       <i class="fas fa-question-circle text-blue-500 text-xl mr-3 mt-1"></i>
+                                       <h3 class="text-white font-bold">Layer Alignment Issues</h3>
+                                   </div>
+                                   <p class="text-gray-300 mb-2"><strong>Problem:</strong> Base and overlay layers don't line up properly in-game.</p>
+                                   <p class="text-gray-300"><strong>Solution:</strong> Use a tool that shows both layers simultaneously during editing. Work with a template that has clear alignment markers. Test frequently in 3D viewers.</p>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <div class="flex items-start mb-3">
+                                       <i class="fas fa-bug text-purple-500 text-xl mr-3 mt-1"></i>
+                                       <h3 class="text-white font-bold">Color Banding</h3>
+                                   </div>
+                                   <p class="text-gray-300 mb-2"><strong>Problem:</strong> Gradients look unnatural with visible "steps" between colors.</p>
+                                   <p class="text-gray-300"><strong>Solution:</strong> Use dithering between color transitions. Add slight noise or texture to break up solid color areas. Consider using fewer, more intentional color transitions.</p>
+                               </div>
+                           </div>
+                           
+                           <div class="mt-6 bg-black bg-opacity-60 p-4 rounded-lg border border-blue-900">
+                               <div class="flex items-start">
+                                   <i class="fas fa-info-circle text-blue-500 text-2xl mr-3 mt-1"></i>
+                                   <div>
+                                       <h3 class="text-white font-bold mb-1">The Importance of Iteration</h3>
+                                       <p class="text-gray-300">HD skin creation is an iterative process. Don't expect to get it perfect on your first try. Create, test, and refine. Save multiple versions as you work so you can track your progress and revert if needed. Remember that even simple improvements can dramatically enhance your skin's overall quality.</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Related Tutorials -->
+                   <div>
+                       <h2 class="text-2xl text-white mb-6" style="font-family: 'Minecraft', sans-serif;">Related Tutorials</h2>
+                       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                           <a href="../pixel-art-basics/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+                               <div class="relative h-40 overflow-hidden">
+                                   <img src="../../assets/images/pixel_art_basics.webp" alt="Pixel Art Basics" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                   <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                                   <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+                                       Technique
+                                   </div>
+                               </div>
+                               <div class="p-4">
+                                   <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">Pixel Art Basics</h3>
+                                   <p class="text-gray-400 text-sm">Master the fundamental pixel art techniques needed for creating great Minecraft skins.</p>
+                               </div>
+                           </a>
+                           
+                           <a href="../skin-templates/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+                               <div class="relative h-40 overflow-hidden">
+                                   <img src="../../assets/images/skin_templates.jpg" alt="Skin Templates" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                   <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                                   <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+                                       Creation
+                                   </div>
+                               </div>
+                               <div class="p-4">
+                                   <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">Using Skin Templates</h3>
+                                   <p class="text-gray-400 text-sm">Download and use our free templates to create your own custom Minecraft skins.</p>
+                               </div>
+                           </a>
+                           
+                           <a href="../3d-modeling/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+                               <div class="relative h-40 overflow-hidden">
+                                   <img src="../../assets/images/3d_modeling.jpeg" alt="Advanced Shading" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                   <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                                   <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+                                       3D Modeling for Minecraft Skins
+                                   </div>
+                               </div>
+                               <div class="p-4">
+                                   <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">3D Modeling for Minecraft Skins</h3>
+                                   <p class="text-gray-400 text-sm">Learn how to use 3D modeling software to design and visualize Minecraft skins before creating the final pixel version.</p>
+                               </div>
+                           </a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <!-- CTA Banner -->
+       <section class="py-10 bg-gradient-to-br from-red-900 to-black">
+           <div class="container mx-auto px-4">
+               <div class="max-w-4xl mx-auto bg-black bg-opacity-50 p-6 rounded-lg border border-red-800">
+                   <div class="flex flex-col md:flex-row items-center">
+                       <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                           <img src="../../assets/images/premium_skin_preview.png" alt="Premium HD Skins" class="h-36 object-contain transform transition-transform duration-500 hover:scale-110" />
+                       </div>
+                       <div class="md:w-2/3 text-center md:text-left md:pl-6">
+                           <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">
+                               Elevate Your Minecraft Experience
+                           </h2>
+                           <p class="text-gray-300 mb-6">
+                               Get access to our exclusive collection of premium HD skins, advanced templates, and texture libraries to create stunning custom characters!
+                           </p>
+                           <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                               <a href="../../premium/"
+                                   class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800 flex items-center justify-center">
+                                   <i class="fas fa-crown mr-2"></i>
+                                   <span>Get Premium Access</span>
+                               </a>
+                               <a href="../../skins/hd-collection/"
+                                   class="bg-transparent border-2 border-red-700 text-red-100 font-bold py-3 px-6 rounded-lg hover:bg-red-900 hover:border-red-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                                   <i class="fas fa-th-large mr-2"></i>
+                                   <span>Browse HD Skins</span>
+                               </a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <!-- Footer -->
+       <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+           <div class="container mx-auto px-4">
+               <div class="flex flex-col md:flex-row justify-between">
+                   <div class="mb-8 md:mb-0">
+                       <div class="flex items-center mb-4">
+                           <div
+                               class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:scale-110">
+                               <span class="text-2xl text-white"
+                                   style="font-family: 'Minecraft', sans-serif;">T</span>
+                           </div>
+                           <span class="text-2xl text-white"
+                               style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                   class="text-red-500">.org</span></span>
+                       </div>
+                       <p class="max-w-xs">Premium Minecraft skins for
+                           everyone. Free and subscription options available
+                           for all players.</p>
+                       <p class="mt-4 text-sm">© 2025 TurboDraft. Not
+                           affiliated with Mojang.</p>
+                   </div>
+
+                   <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                       <div>
+                           <h3 class="text-white text-lg mb-4"
+                               style="font-family: 'Minecraft', sans-serif;">Quick
+                               Links</h3>
+                           <ul class="space-y-2">
+                               <li><a href="../../"
+                                       class="hover:text-red-400 transition-colors duration-300">Home</a></li>
+                               <li><a href="../../skins/"
+                                       class="hover:text-red-400 transition-colors duration-300">Skins</a></li>
+                               <li><a href="../../premium/"
+                                       class="hover:text-red-400 transition-colors duration-300">Premium</a></li>
+                               <li><a href="../../features/"
+                                       class="hover:text-red-400 transition-colors duration-300">Features</a></li>
+                               <li><a href="../../about/"
+                                       class="hover:text-red-400 transition-colors duration-300">About
+                                       Us</a></li>
+                           </ul>
+                       </div>
+
+                       <div>
+                           <h3 class="text-white text-lg mb-4"
+                               style="font-family: 'Minecraft', sans-serif;">Resources</h3>
+                           <ul class="space-y-2">
+                               <li><a href="../"
+                                       class="hover:text-red-400 transition-colors duration-300">Tutorials</a></li>
+                               <li><a href="../../faq/"
+                                       class="hover:text-red-400 transition-colors duration-300">FAQ</a></li>
+                               <li><a href="../../contact/"
+                                       class="hover:text-red-400 transition-colors duration-300">Support</a></li>
+                               <li><a href="../../terms/"
+                                       class="hover:text-red-400 transition-colors duration-300">Terms
+                                       of Service</a></li>
+                               <li><a href="../../privacy/"
+                                       class="hover:text-red-400 transition-colors duration-300">Privacy
+                                       Policy</a></li>
+                           </ul>
+                       </div>
+
+                       <div>
+                           <h3 class="text-white text-lg mb-4"
+                               style="font-family: 'Minecraft', sans-serif;">Community</h3>
+                           <ul class="space-y-2">
+                               <li><a href="https://discord.gg/turbodraft"
+                                       target="_blank"
+                                       class="hover:text-red-400 transition-colors duration-300">Discord
+                                       Server</a></li>
+                               <li><a href="https://twitter.com/TurboDraft"
+                                       target="_blank"
+                                       class="hover:text-red-400 transition-colors duration-300">Twitter</a></li>
+                               <li><a href="https://instagram.com/TurboDraft"
+                                       target="_blank"
+                                       class="hover:text-red-400 transition-colors duration-300">Instagram</a></li>
+                               <li><a href="https://youtube.com/TurboDraft"
+                                       target="_blank"
+                                       class="hover:text-red-400 transition-colors duration-300">YouTube</a></li>
+                           </ul>
+                       </div>
+
+                       <div>
+                           <h3 class="text-white text-lg mb-4"
+                               style="font-family: 'Minecraft', sans-serif;">Contact</h3>
+                           <ul class="space-y-2">
+                               <li><a href="mailto:info@turbodraft.org"
+                                       class="hover:text-red-400 transition-colors duration-300">info@turbodraft.org</a></li>
+                               <li><a href="../../contact/"
+                                       class="hover:text-red-400 transition-colors duration-300">Contact
+                                       Form</a></li>
+                               
+                               
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+                   <p class="mb-4">Made with ❤️ for the Minecraft community.
+                       TurboDraft.org - bringing your Minecraft characters to
+                       life.</p>
+                   <div class="flex justify-center space-x-4">
+                       <a href="../../terms/"
+                           class="text-gray-500 hover:text-red-400 transition-colors duration-300">Terms</a>
+                       <span class="text-gray-700">•</span>
+                       <a href="../../privacy/"
+                           class="text-gray-500 hover:text-red-400 transition-colors duration-300">Privacy</a>
+                       <span class="text-gray-700">•</span>
+                       <a href="../../cookies/"
+                           class="text-gray-500 hover:text-red-400 transition-colors duration-300">Cookies</a>
+                   </div>
+               </div>
+           </div>
+       </footer>
+
+       <!-- JavaScript -->
+       <script>
+           // Mobile menu handling
+           document.getElementById('openMenu').addEventListener('click', function() {
+               const mobileMenu = document.getElementById('mobileMenu');
+               mobileMenu.classList.remove('translate-x-full');
+           });
+
+           document.getElementById('closeMenu').addEventListener('click', function() {
+               const mobileMenu = document.getElementById('mobileMenu');
+               mobileMenu.classList.add('translate-x-full');
+           });
+
+           // Add navbar scroll effect
+           window.addEventListener('scroll', function() {
+               const navbar = document.querySelector('nav');
+               if (window.scrollY > 50) {
+                   navbar.classList.add('py-2');
+                   navbar.classList.add('shadow-lg');
+                   navbar.classList.remove('py-4');
+                   navbar.classList.remove('bg-opacity-80');
+               } else {
+                   navbar.classList.remove('py-2');
+                   navbar.classList.remove('shadow-lg');
+                   navbar.classList.add('py-4');
+                   navbar.classList.add('bg-opacity-80');
+               }
+           });
+
+           // Smooth scrolling for anchor links
+           document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+               anchor.addEventListener('click', function(e) {
+                   e.preventDefault();
+                   
+                   const targetId = this.getAttribute('href');
+                   if (targetId === '#') return;
+                   
+                   const targetElement = document.querySelector(targetId);
+                   if (!targetElement) return;
+                   
+                   window.scrollTo({
+                       top: targetElement.offsetTop - 80,
+                       behavior: 'smooth'
+                   });
+               });
+           });
+       </script>
+   </body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cookies Policy - TurboDraft.org</title>
+        <meta name="description" content="TurboDraft.org offers premium Minecraft skins for Java and Bedrock editions. Browse our collection of free and premium custom skins, download instantly, and stand out on any server. Visit TurboDraft.org for original designs and weekly skin drops.">
+        <meta name="keywords" content="TurboDraft.org, Minecraft skins, premium Minecraft skins, custom skins, Minecraft character, Java edition skins, Bedrock edition skins, free Minecraft skins, gaming skins, Minecraft customization, TurboDraft premium, skin downloads, weekly skin drops">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+            rel="stylesheet">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Minecraft&family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet">
+        <script src="../assets/js/auth.js"></script>
+        <link rel="icon" href="../assets/icon.webp">
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        backgroundImage: {
+                            'pattern': "url('../assets/images/pattern.png')",
+                        },
+                        animation: {
+                            'float': 'float 6s ease-in-out infinite',
+                            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                            'bounce-slow': 'bounce 3s infinite',
+                        },
+                        keyframes: {
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-20px)' },
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    
+    <body class="bg-black text-gray-200 font-sans">
+        <!-- Mobile Nav Menu (Hidden by default) -->
+        <div id="mobileMenu"
+            class="fixed inset-0 bg-black bg-opacity-95 z-50 transform transition-transform duration-300 translate-x-full">
+            <div class="container mx-auto px-4 py-6">
+                <a href="../" class="flex justify-between items-center mb-6">
+                    <div class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </div>
+                    <button id="closeMenu"
+                        class="text-white focus:outline-none">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </a>
+                
+                <!-- Mobile menu user section will be inserted here by JS when logged in -->
+                
+                <div class="flex flex-col space-y-6 text-center">
+                    <a href="../"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Home</a>
+                    <a href="../skins/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Skins</a>
+                    <a href="../premium/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Premium</a>
+                    <a href="../features/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Features</a>
+                    <a href="../tutorials/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Tutorials</a>
+                    <a href="../about/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">About</a>
+                    <a href="../subscribe/"
+                        class="mt-4 bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg">Subscribe
+                        Now</a>
+                </div>
+                
+                <div class="mt-10 flex justify-center space-x-6">
+                    <a href="https://discord.gg/turbodraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://instagram.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://youtube.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav
+            class="fixed w-full z-40 py-4 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg transition-all duration-300">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <a href="../" class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:transform hover:scale-110">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </a>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="../"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                        <a href="../skins/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Skins</a>
+                        <a href="../premium/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Premium</a>
+                        <a href="../features/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Features</a>
+                        <a href="../tutorials/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Tutorials</a>
+                        <a href="../about/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">About</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-4">
+                        <!-- User section will be dynamically populated by auth.js -->
+                        <div id="navUserSection" class="flex items-center">
+                            <!-- Default content shown before JS loads -->
+                            <a href="../auth/"
+                                class="text-white hover:text-red-300 transition-colors duration-300">Login</a>
+                            <a href="../subscribe/"
+                                class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800 ml-3">Subscribe</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="openMenu"
+                            class="text-white focus:outline-none">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="pt-32 pb-16 relative overflow-hidden bg-gradient-to-br from-black to-red-900">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(#4a0000 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+            <!-- Floating blocks animation -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-20 left-10 w-16 h-16 bg-red-900 bg-opacity-20 animate-float"
+                    style="animation-delay: 0s;"></div>
+                <div class="absolute top-40 right-20 w-12 h-12 bg-red-800 bg-opacity-20 animate-float"
+                    style="animation-delay: 1s;"></div>
+                <div class="absolute bottom-20 left-1/4 w-20 h-20 bg-red-700 bg-opacity-20 animate-float"
+                    style="animation-delay: 2s;"></div>
+                <div class="absolute top-1/2 right-1/3 w-10 h-10 bg-red-600 bg-opacity-20 animate-float"
+                    style="animation-delay: 1.5s;"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center">
+                    <div class="mb-4 inline-block bg-red-900 bg-opacity-50 rounded-full px-4 py-1 transform transition-transform duration-300 hover:scale-105">
+                        <span class="text-xs font-semibold text-red-100">LEGAL INFORMATION</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight"
+                        style="font-family: 'Minecraft', sans-serif;">Cookies <span class="text-red-500">Policy</span></h1>
+                    <p class="text-lg md:text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
+                        Learn how we use cookies and similar technologies to enhance your browsing experience.
+                    </p>
+                    <div class="text-sm text-gray-400">
+                        Last Updated: May 15, 2025
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cookies Policy Content -->
+        <section class="py-16 bg-black relative">
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 20px 20px;"></div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="mx-auto">
+                    <!-- Introduction -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Introduction</h2>
+                                <p class="text-gray-300 mb-4">
+                                    This Cookies Policy explains how TurboDraft.org ("we," "our," or "us") uses cookies and similar technologies to recognize you when you visit our website at TurboDraft.org ("Website"). It explains what these technologies are and why we use them, as well as your rights to control our use of them.
+                                </p>
+                                <p class="text-gray-300 mb-4">
+                                    By continuing to browse or use our Website, you agree to our use of cookies and similar technologies as described in this policy.
+                                </p>
+                                <p class="text-gray-300 mb-4">
+                                    This policy may change from time to time, so please check this page occasionally to ensure that you are happy with any changes. By using our Website, you are agreeing to be bound by this policy in respect of the information collected about you.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- What are Cookies -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">What Are Cookies?</h2>
+                                <p class="text-gray-300 mb-4">
+                                    Cookies are small data files that are placed on your computer or mobile device when you visit a website. Cookies are widely used by website owners to make their websites work, or to work more efficiently, as well as to provide reporting information.
+                                </p>
+                                <p class="text-gray-300 mb-4">
+                                    Cookies set by the website owner (in this case, TurboDraft.org) are called "first-party cookies." Cookies set by parties other than the website owner are called "third-party cookies." Third-party cookies enable third-party features or functionality to be provided on or through the website (e.g., advertising, interactive content, and analytics). The parties that set these third-party cookies can recognize your computer both when it visits the website in question and also when it visits certain other websites.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Why We Use Cookies -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="150">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Why We Use Cookies</h2>
+                                <p class="text-gray-300 mb-4">
+                                    We use cookies for several reasons. Some cookies are required for technical reasons in order for our Website to operate, and we refer to these as "essential" or "strictly necessary" cookies. Other cookies enable us to track and target the interests of our users to enhance the experience on our Website. Third parties may also serve cookies through our Website for advertising, analytics, and other purposes.
+                                </p>
+                                <p class="text-gray-300 mb-4">
+                                    The specific types of first and third-party cookies served through our Website and the purposes they perform are described below:
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Types of Cookies We Use -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Types of Cookies We Use</h2>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Essential Cookies</h3>
+                                <p class="text-gray-300 mb-4">
+                                    These cookies are strictly necessary to provide you with services available through our Website and to use some of its features, such as access to secure areas. Because these cookies are strictly necessary to deliver the Website, you cannot refuse them without impacting how our Website functions.
+                                </p>
+                                <div class="bg-black bg-opacity-50 p-4 rounded-lg mb-6">
+                                    <h4 class="text-white font-semibold mb-2">Examples:</h4>
+                                    <ul class="text-gray-300 list-disc pl-6 space-y-2">
+                                        <li>Session cookies for managing user sessions</li>
+                                        <li>Authentication cookies to identify logged-in users</li>
+                                        <li>Security cookies to prevent cross-site request forgery</li>
+                                    </ul>
+                                </div>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Functionality Cookies</h3>
+                                <p class="text-gray-300 mb-4">
+                                    These cookies allow our Website to remember choices you make when you use our Website, such as remembering your login details or language preference. The purpose of these cookies is to provide you with a more personal experience and to avoid you having to re-enter your preferences every time you visit our Website.
+                                </p>
+                                <div class="bg-black bg-opacity-50 p-4 rounded-lg mb-6">
+                                    <h4 class="text-white font-semibold mb-2">Examples:</h4>
+                                    <ul class="text-gray-300 list-disc pl-6 space-y-2">
+                                        <li>Language preference cookies</li>
+                                        <li>Theme or display preference cookies</li>
+                                        <li>Remember-me functionality cookies</li>
+                                    </ul>
+                                </div>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Analytics Cookies</h3>
+                                <p class="text-gray-300 mb-4">
+                                    These cookies collect information that is used either in aggregate form to help us understand how our Website is being used or how effective our marketing campaigns are, or to help us customize our Website for you. We use analytics cookies to gather information about the number of visitors to our Website, which pages are most popular, and how users navigate through the site.
+                                </p>
+                                <div class="bg-black bg-opacity-50 p-4 rounded-lg mb-6">
+                                    <h4 class="text-white font-semibold mb-2">Examples:</h4>
+                                    <ul class="text-gray-300 list-disc pl-6 space-y-2">
+                                        <li>Google Analytics cookies</li>
+                                        <li>Session behavior tracking cookies</li>
+                                        <li>Site performance measurement cookies</li>
+                                    </ul>
+                                </div>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Marketing Cookies</h3>
+                                <p class="text-gray-300 mb-4">
+                                    These cookies are used to track browsing habits and activity. We use these cookies to enable us and our advertising partners to serve relevant advertisements that may be of interest to you based on your browsing history and preferences.
+                                </p>
+                                <div class="bg-black bg-opacity-50 p-4 rounded-lg mb-6">
+                                    <h4 class="text-white font-semibold mb-2">Examples:</h4>
+                                    <ul class="text-gray-300 list-disc pl-6 space-y-2">
+                                        <li>Retargeting cookies for displaying relevant ads</li>
+                                        <li>Social media sharing cookies</li>
+                                        <li>Conversion tracking cookies for measuring ad effectiveness</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Third-Party Cookies -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="250">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Third-Party Cookies</h2>
+                                <p class="text-gray-300 mb-4">
+                                    In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the Service, deliver advertisements on and through the Service, and so on.
+                                </p>
+                                
+                                <div class="bg-black bg-opacity-50 p-4 rounded-lg mb-6">
+                                    <h4 class="text-white font-semibold mb-2">Third-party services we use that may place cookies:</h4>
+                                    <ul class="text-gray-300 list-disc pl-6 space-y-2">
+                                        <li>Google Analytics for website analytics</li>
+                                        <li>Payment processors like Stripe and PayPal</li>
+                                        <li>Social media platforms (Twitter, Facebook, Discord, Instagram)</li>
+                                        <li>Advertising networks for displaying relevant ads</li>
+                                    </ul>
+                                </div>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    Each of these third-party providers maintains its own privacy policy and terms of service, which we encourage you to review if you want to learn more about how these companies use your information.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How to Control Cookies -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="300">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">How to Control Cookies</h2>
+                                <p class="text-gray-300 mb-4">
+                                    You have the right to decide whether to accept or reject cookies. You can set or amend your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our Website, though your access to some functionality and areas of our Website may be restricted.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Browser Controls</h3>
+                                <p class="text-gray-300 mb-4">
+                                    Most web browsers allow you to manage your cookie preferences. You can set your browser to refuse cookies or delete certain cookies. Generally, you can also manage similar technologies in the same way that you manage cookies using your browser's preferences.
+                                </p>
+                                
+                                <div class="bg-black bg-opacity-50 p-4 rounded-lg mb-6">
+                                    <h4 class="text-white font-semibold mb-2">Here are links to instructions for managing cookies in common browsers:</h4>
+                                    <ul class="text-gray-300 list-disc pl-6 space-y-2">
+                                        <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" class="text-red-400 hover:text-red-300">Google Chrome</a></li>
+                                        <li><a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" target="_blank" class="text-red-400 hover:text-red-300">Mozilla Firefox</a></li>
+                                        <li><a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac" target="_blank" class="text-red-400 hover:text-red-300">Apple Safari</a></li>
+                                        <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" class="text-red-400 hover:text-red-300">Microsoft Edge</a></li>
+                                        <li><a href="https://support.microsoft.com/en-us/windows/delete-and-manage-cookies-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" class="text-red-400 hover:text-red-300">Internet Explorer</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Do Not Track</h3>
+                                <p class="text-gray-300 mb-4">
+                                    Some browsers have a "Do Not Track" feature that signals to websites that you visit that you do not want your online activity to be tracked. This is different from blocking cookies as browsers with the "Do Not Track" feature may still accept cookies. Our Website does not currently respond to "Do Not Track" signals.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Opt-Out of Specific Cookies</h3>
+                                <p class="text-gray-300 mb-4">
+                                    For more information about specific cookies used for advertising or analytics and how to opt out, please refer to the privacy policies of the third-party services listed above.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cookie Consent Banner -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="350">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Cookie Consent</h2>
+                                <p class="text-gray-300 mb-4">
+                                    When you first visit our Website, you will be presented with a cookie consent banner that allows you to accept or decline the use of non-essential cookies. You can change your cookie preferences at any time by clicking on the "Cookie Settings" link in the footer of our Website.
+                                </p>
+                                <p class="text-gray-300 mb-4">
+                                    Essential cookies, which are necessary for the functioning of our Website, will be set regardless of your consent choice. By clicking "Accept All Cookies" on the banner, you consent to the use of all cookies described in this policy.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other Tracking Technologies -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="400">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Other Tracking Technologies</h2>
+                                <p class="text-gray-300 mb-4">
+                                    In addition to cookies, we may use other similar technologies to collect information about how you use our Website:
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Web Beacons</h3>
+                                <p class="text-gray-300 mb-4">
+                                    Web beacons (also known as clear gifs, pixel tags, and single-pixel gifs) are small electronic files contained on pages of our Website that permit us to count users who have visited those pages and for other related website statistics (for example, recording the popularity of certain website content and verifying system and server integrity).
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Local Storage</h3>
+                                <p class="text-gray-300 mb-4">
+                                    Local storage, such as HTML5 Local Storage and Local Shared Objects, are data files placed on your device to collect information about your use of our Website. These technologies allow us to store information locally on your device, without creating a cookie, and to track and record your activity on our Website.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Session Replays</h3>
+                                <p class="text-gray-300 mb-4">
+                                    We may use session replay technologies to record your interactions with our Website, such as mouse movements, clicks, typing, and scrolling. This information helps us understand how users navigate our Website and identify potential usability issues. No personally identifiable information is collected through these technologies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Updates to This Policy -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="450">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Updates to This Policy</h2>
+                                <p class="text-gray-300 mb-4">
+                                    We may update this Cookies Policy from time to time in order to reflect changes to the cookies we use or for other operational, legal, or regulatory reasons. Please therefore re-visit this Cookies Policy regularly to stay informed about our use of cookies and related technologies.
+                                </p>
+                                <p class="text-gray-300 mb-4">
+                                    The date at the top of this Cookies Policy indicates when it was last updated.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Us -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="500">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Contact Us</h2>
+                                <p class="text-gray-300 mb-4">
+                                    If you have any questions about our use of cookies or other technologies, please contact us at:
+                                </p>
+                                
+                                <div class="bg-black bg-opacity-50 p-5 rounded-lg mt-4 inline-block">
+                                    <p class="text-white mb-1">Email: privacy@turbodraft.org</p>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <a href="../contact/" class="inline-flex items-center bg-red-700 hover:bg-red-600 text-white py-2 px-5 rounded-lg transition-colors duration-300">
+                                        <i class="fas fa-envelope mr-2"></i>
+                                        <span>Contact Us</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between">
+                    <div class="mb-8 md:mb-0">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:scale-110">
+                                <span class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">T</span>
+                            </div>
+                            <span class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">TurboDraft<span class="text-red-500">.org</span></span>
+                        </div>
+                        <p class="max-w-xs">Premium Minecraft skins for everyone. Free and subscription options available for all players.</p>
+                        <p class="mt-4 text-sm">© 2025 TurboDraft. Not affiliated with Mojang.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Quick Links</h3>
+                            <ul class="space-y-2">
+                                <li><a href="../" class="hover:text-red-400 transition-colors duration-300">Home</a></li>
+                                <li><a href="../skins/" class="hover:text-red-400 transition-colors duration-300">Skins</a></li>
+                                <li><a href="../premium/" class="hover:text-red-400 transition-colors duration-300">Premium</a></li>
+                                <li><a href="../features/" class="hover:text-red-400 transition-colors duration-300">Features</a></li>
+                                <li><a href="../about/" class="hover:text-red-400 transition-colors duration-300">About Us</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Resources</h3>
+                            <ul class="space-y-2">
+                                <li><a href="../tutorials/" class="hover:text-red-400 transition-colors duration-300">Tutorials</a></li>
+                                <li><a href="../faq/" class="hover:text-red-400 transition-colors duration-300">FAQ</a></li>
+                                <li><a href="../contact/" class="hover:text-red-400 transition-colors duration-300">Support</a></li>
+                                <li><a href="../terms/" class="hover:text-red-400 transition-colors duration-300">Terms of Service</a></li>
+                                <li><a href="../privacy/" class="hover:text-red-400 transition-colors duration-300">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Community</h3>
+                            <ul class="space-y-2">
+                                <li><a href="https://discord.gg/turbodraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">Discord Server</a></li>
+                                <li><a href="https://twitter.com/TurboDraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">Twitter</a></li>
+                                <li><a href="https://instagram.com/TurboDraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">Instagram</a></li>
+                                <li><a href="https://youtube.com/TurboDraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">YouTube</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Contact</h3>
+                            <ul class="space-y-2">
+                                <li><a href="mailto:info@turbodraft.org" class="hover:text-red-400 transition-colors duration-300">info@turbodraft.org</a></li>
+                                <li><a href="../contact/" class="hover:text-red-400 transition-colors duration-300">Contact Form</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+                    <p class="mb-4">Made with ❤️ for the Minecraft community. TurboDraft.org - bringing your Minecraft characters to life.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="../terms/" class="text-gray-500 hover:text-red-400 transition-colors duration-300">Terms</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="../privacy/" class="text-gray-500 hover:text-red-400 transition-colors duration-300">Privacy</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="../cookies/" class="text-gray-500 hover:text-red-400 transition-colors duration-300">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+        <script>
+            // Initialize AOS animation library
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+
+            // Mobile menu handling
+            document.getElementById('openMenu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.remove('translate-x-full');
+            });
+
+            document.getElementById('closeMenu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.add('translate-x-full');
+            });
+
+            // Add navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('py-2');
+                    navbar.classList.add('shadow-lg');
+                    navbar.classList.remove('py-4');
+                    navbar.classList.remove('bg-opacity-80');
+                } else {
+                    navbar.classList.remove('py-2');
+                    navbar.classList.remove('shadow-lg');
+                    navbar.classList.add('py-4');
+                    navbar.classList.add('bg-opacity-80');
+                }
+            });
+        </script>
+    </body>
+</html>

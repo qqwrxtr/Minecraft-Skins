@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ - TurboDraft.org Premium Minecraft Skins</title>
+        <meta name="description" content="TurboDraft.org offers premium Minecraft skins for Java and Bedrock editions. Browse our collection of free and premium custom skins, download instantly, and stand out on any server. Visit TurboDraft.org for original designs and weekly skin drops.">
+        <meta name="keywords" content="TurboDraft.org, Minecraft skins, premium Minecraft skins, custom skins, Minecraft character, Java edition skins, Bedrock edition skins, free Minecraft skins, gaming skins, Minecraft customization, TurboDraft premium, skin downloads, weekly skin drops">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+            rel="stylesheet">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Minecraft&family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet">
+        <script src="../assets/js/auth.js"></script>
+        <link rel="icon" href="../assets/icon.webp">
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        backgroundImage: {
+                            'card': "url('../assets/images/bg_card.jpg')",
+                            'pattern': "url('../assets/images/pattern.png')",
+                        },
+                        animation: {
+                            'float': 'float 6s ease-in-out infinite',
+                            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                            'bounce-slow': 'bounce 3s infinite',
+                        },
+                        keyframes: {
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-20px)' },
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+
+    <body class="bg-black text-gray-200 font-sans">
+        <!-- Mobile Nav Menu (Hidden by default) -->
+        <div id="mobileMenu"
+            class="fixed inset-0 bg-black bg-opacity-95 z-50 transform transition-transform duration-300 translate-x-full">
+            <div class="container mx-auto px-4 py-6">
+                <a href="../" class="flex justify-between items-center mb-6">
+                    <div class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </div>
+                    <button id="closeMenu"
+                        class="text-white focus:outline-none">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </a>
+
+                <!-- Mobile menu user section will be inserted here by JS when logged in -->
+
+                <div class="flex flex-col space-y-6 text-center">
+                    <a href="../"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Home</a>
+                    <a href="../skins/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Skins</a>
+                    <a href="../premium/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Premium</a>
+                    <a href="../features/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Features</a>
+                    <a href="../tutorials/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Tutorials</a>
+                    <a href="../about/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">About</a>
+                    <a href="../subscribe/"
+                        class="mt-4 bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg">Subscribe
+                        Now</a>
+                </div>
+
+                <div class="mt-10 flex justify-center space-x-6">
+                    <a href="https://discord.gg/turbodraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://instagram.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://youtube.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav
+            class="fixed w-full z-40 py-4 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg transition-all duration-300">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <a href="../" class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:transform hover:scale-110">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </a>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="../"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                        <a href="../skins/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Skins</a>
+                        <a href="../premium/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Premium</a>
+                        <a href="../features/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Features</a>
+                        <a href="../tutorials/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Tutorials</a>
+                        <a href="../about/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">About</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-4">
+                        <!-- User section will be dynamically populated by auth.js -->
+                        <div id="navUserSection" class="flex items-center">
+                            <!-- Default content shown before JS loads -->
+                            <a href="../auth/"
+                                class="text-white hover:text-red-300 transition-colors duration-300">Login</a>
+                            <a href="../subscribe/"
+                                class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800">Subscribe</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="openMenu"
+                            class="text-white focus:outline-none">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="pt-32 pb-24 relative overflow-hidden bg-gradient-to-br from-black to-red-900">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(#4a0000 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+            <!-- Floating blocks animation -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-20 left-10 w-16 h-16 bg-red-900 bg-opacity-20 animate-float"
+                    style="animation-delay: 0s;"></div>
+                <div class="absolute top-40 right-20 w-12 h-12 bg-red-800 bg-opacity-20 animate-float"
+                    style="animation-delay: 1s;"></div>
+                <div class="absolute bottom-20 left-1/4 w-20 h-20 bg-red-700 bg-opacity-20 animate-float"
+                    style="animation-delay: 2s;"></div>
+                <div class="absolute top-1/2 right-1/3 w-10 h-10 bg-red-600 bg-opacity-20 animate-float"
+                    style="animation-delay: 1.5s;"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="mb-4 inline-block bg-red-900 bg-opacity-50 rounded-full px-4 py-1 transform transition-transform duration-300 hover:scale-105">
+                            <span class="text-xs font-semibold text-red-100">HELP CENTER</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight"
+                            style="font-family: 'Minecraft', sans-serif;">Frequently Asked <span class="text-red-500">Questions</span></h1>
+                        <p class="text-lg md:text-xl mb-8 text-gray-300 max-w-xl">Get answers to the most common questions about TurboDraft and our premium Minecraft skins.</p>
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="#faq-categories"
+                                class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:from-red-600 hover:to-red-800 flex items-center justify-center">
+                                <i class="fas fa-question-circle mr-2"></i>
+                                <span>Browse FAQs</span>
+                            </a>
+                            <a href="../contact/"
+                                class="bg-transparent border-2 border-red-700 text-red-100 font-bold py-3 px-8 rounded-lg hover:bg-red-900 hover:border-red-600 transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center">
+                                <i class="fas fa-envelope mr-2"></i>
+                                <span>Contact Support</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center relative" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-red-500 rounded-full opacity-20 blur-xl animate-pulse-slow"></div>
+                            <img src="../assets/images/Steve_(Minecraft).png"
+                                alt="FAQ Illustration"
+                                class="relative h-64 md:h-80 lg:h-96 z-10 transition-transform duration-500 transform hover:scale-105 animate-float"
+                                style="animation-delay: 0.5s;" />
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-black bg-opacity-80 p-4 rounded-lg shadow-lg border border-red-900 transition-all duration-300 hover:border-red-600 transform hover:scale-105">
+                            <div class="flex items-center">
+                                <div class="flex -space-x-2 mr-3">
+                                    <div class="h-8 w-8 rounded-full bg-red-700 flex items-center justify-center text-xs font-bold">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <div class="h-8 w-8 rounded-full bg-red-800 flex items-center justify-center text-xs font-bold">
+                                        <i class="fas fa-question"></i>
+                                    </div>
+                                    <div class="h-8 w-8 rounded-full bg-red-900 flex items-center justify-center text-xs font-bold">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400">Find Answers</p>
+                                    <p class="font-bold text-white">Fast & Easy</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Search Section -->
+        <section class="py-12 bg-gray-900 border-b border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto" data-aos="fade-up">
+                    <div class="relative">
+                        <input type="text" id="faqSearch" placeholder="Search for answers..."
+                            class="w-full py-4 px-5 pl-12 rounded-lg bg-black border-2 border-gray-800 text-white focus:outline-none focus:border-red-700 transition-colors duration-300" />
+                        <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Categories -->
+        <section id="faq-categories" class="py-16 bg-black relative">
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 20px 20px;"></div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl text-white mb-4" data-aos="fade-up"
+                        style="font-family: 'Minecraft', sans-serif;">Browse by Category</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                        Find answers faster by exploring these commonly asked topics
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    <!-- Category 1: General -->
+                    <div class="bg-gradient-to-br from-gray-900 to-black rounded-xl border border-gray-800 transition-all duration-300 hover:border-red-700 hover:scale-105 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-2 bg-gradient-to-r from-red-700 to-red-900"></div>
+                        <div class="p-6 text-center">
+                            <div class="bg-red-900 bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-info-circle text-red-500 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl text-white mb-3" style="font-family: 'Minecraft', sans-serif;">General</h3>
+                            <p class="text-gray-400 mb-4">Basic information about TurboDraft and our services</p>
+                            <a href="#general" class="inline-block text-red-400 hover:text-red-300 transition-colors duration-300">
+                                View Questions <i class="fas fa-chevron-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Accounts & Billing -->
+                    <div class="bg-gradient-to-br from-gray-900 to-black rounded-xl border border-gray-800 transition-all duration-300 hover:border-red-700 hover:scale-105 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-2 bg-gradient-to-r from-red-700 to-red-900"></div>
+                        <div class="p-6 text-center">
+                            <div class="bg-red-900 bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-user-circle text-red-500 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl text-white mb-3" style="font-family: 'Minecraft', sans-serif;">Accounts & Billing</h3>
+                            <p class="text-gray-400 mb-4">Questions about subscriptions, payments, and account management</p>
+                            <a href="#accounts" class="inline-block text-red-400 hover:text-red-300 transition-colors duration-300">
+                                View Questions <i class="fas fa-chevron-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Skins & Downloads -->
+                    <div class="bg-gradient-to-br from-gray-900 to-black rounded-xl border border-gray-800 transition-all duration-300 hover:border-red-700 hover:scale-105 overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                        <div class="h-2 bg-gradient-to-r from-red-700 to-red-900"></div>
+                        <div class="p-6 text-center">
+                            <div class="bg-red-900 bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-download text-red-500 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl text-white mb-3" style="font-family: 'Minecraft', sans-serif;">Skins & Downloads</h3>
+                            <p class="text-gray-400 mb-4">Information about downloading and using our Minecraft skins</p>
+                            <a href="#skins" class="inline-block text-red-400 hover:text-red-300 transition-colors duration-300">
+                                View Questions <i class="fas fa-chevron-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-6">
+                    <!-- Category 4: Technical Issues -->
+                    <div class="bg-gradient-to-br from-gray-900 to-black rounded-xl border border-gray-800 transition-all duration-300 hover:border-red-700 hover:scale-105 overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                        <div class="h-2 bg-gradient-to-r from-red-700 to-red-900"></div>
+                        <div class="p-6 text-center">
+                            <div class="bg-red-900 bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-wrench text-red-500 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl text-white mb-3" style="font-family: 'Minecraft', sans-serif;">Technical Issues</h3>
+                            <p class="text-gray-400 mb-4">Troubleshooting common technical problems and bugs</p>
+                            <a href="#technical" class="inline-block text-red-400 hover:text-red-300 transition-colors duration-300">
+                                View Questions <i class="fas fa-chevron-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Category 5: Custom Requests -->
+                    <div class="bg-gradient-to-br from-gray-900 to-black rounded-xl border border-gray-800 transition-all duration-300 hover:border-red-700 hover:scale-105 overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                        <div class="h-2 bg-gradient-to-r from-red-700 to-red-900"></div>
+                        <div class="p-6 text-center">
+                            <div class="bg-red-900 bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-paint-brush text-red-500 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl text-white mb-3" style="font-family: 'Minecraft', sans-serif;">Custom Requests</h3>
+                            <p class="text-gray-400 mb-4">Information about our custom skin design service</p>
+                            <a href="#custom" class="inline-block text-red-400 hover:text-red-300 transition-colors duration-300">
+                                View Questions <i class="fas fa-chevron-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Main Content -->
+        <section class="py-20 bg-gray-900 relative">
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(#4a0000 1px, transparent 1px); background-size: 20px 20px; opacity: 0.05;"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <!-- General Questions -->
+                <div id="general" class="max-w-3xl mx-auto mb-16">
+                    <div class="flex items-center mb-8" data-aos="fade-up">
+                        <div class="bg-red-900 bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-info-circle text-red-500 text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl text-white" style="font-family: 'Minecraft', sans-serif;">General Questions</h2>
+                    </div>
+
+                    <!-- FAQ Items -->
+                    <div class="space-y-6">
+                        <!-- Question 1 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">What is TurboDraft.org?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">TurboDraft.org is a platform dedicated to providing high-quality Minecraft skins for players around the world. We offer both free and premium skins, with new designs added regularly. Our goal is to help Minecraft players express themselves with unique character appearances that stand out in the game.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">Is TurboDraft affiliated with Mojang or Microsoft?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">No, TurboDraft is not affiliated with, endorsed by, or connected to Mojang, Microsoft, or any official Minecraft entities. We are an independent platform created by Minecraft enthusiasts who are passionate about skin design. All Minecraft-related trademarks belong to their respective owners.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">Do I need to create an account to download skins?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">Basic users can download a limited number of free skins without creating an account. However, we recommend creating a free account to track your downloads, save favorite skins, and receive updates about new releases. For premium skins and additional features, you'll need to create an account and subscribe to one of our premium plans.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">How often do you add new skins?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">We add new skins to our collection every week. Premium members get early access to new releases (7 days before they're available to free users). We also release themed collections monthly and special seasonal skins during holidays and special events. You can follow our social media accounts to stay updated on new releases.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">How can I contact customer support?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">You can reach our customer support team through several channels:</p>
+                                <ul class="list-disc list-inside mt-2 text-gray-400">
+                                    <li>Email: support@turbodraft.org</li>
+                                    <li>Contact form: Available on our <a href="../contact/" class="text-red-400 hover:underline">Contact page</a></li>
+                                    <li>Discord: Join our <a href="https://discord.gg/turbodraft" class="text-red-400 hover:underline">Discord server</a> and use the #support channel</li>
+                                </ul>
+                                <p class="mt-2 text-gray-400">Premium members receive priority support with faster response times.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accounts & Billing -->
+                <div id="accounts" class="max-w-3xl mx-auto mb-16">
+                    <div class="flex items-center mb-8" data-aos="fade-up">
+                        <div class="bg-red-900 bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user-circle text-red-500 text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl text-white" style="font-family: 'Minecraft', sans-serif;">Accounts & Billing</h2>
+                    </div>
+
+                    <!-- FAQ Items -->
+                    <div class="space-y-6">
+                        <!-- Question 1 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">What are the different subscription plans?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">We offer three different subscription plans:</p>
+                                <ul class="list-disc list-inside mt-2 space-y-2 text-gray-400">
+                                    <li><span class="text-white font-semibold">Monthly ($4.99/month)</span>: Access to all premium skins, unlimited downloads, and early access to new releases.</li>
+                                    <li><span class="text-white font-semibold">Annual ($39.99/year)</span>: Same features as the monthly plan plus priority support and 3 custom skin requests per year. Save 33% compared to monthly billing.</li>
+                                    <li><span class="text-white font-semibold">Lifetime ($99.99 one-time payment)</span>: One-time payment for lifetime access to all premium features, including 5 custom skin requests, VIP support, and all future content.</li>
+                                </ul>
+                                <p class="mt-2 text-gray-400">For more details, visit our <a href="../premium/" class="text-red-400 hover:underline">Premium page</a>.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">How do I cancel my subscription?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">You can cancel your subscription at any time through your account settings:</p>
+                                <ol class="list-decimal list-inside mt-2 space-y-2 text-gray-400">
+                                    <li>Log in to your TurboDraft account</li>
+                                    <li>Go to "Account Settings"</li>
+                                    <li>Select "Subscriptions"</li>
+                                    <li>Click on "Cancel Subscription" and follow the prompts</li>
+                                </ol>
+                                <p class="mt-2 text-gray-400">If you cancel, you'll continue to have access to premium features until the end of your current billing period. We don't provide partial refunds for unused subscription time, but the features will remain available until the subscription expires.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">What payment methods do you accept?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">We accept the following payment methods:</p>
+                                <ul class="list-disc list-inside mt-2 text-gray-400">
+                                    <li>All major credit cards (Visa, Mastercard, American Express, Discover)</li>
+                                    <li>PayPal</li>
+                                    <li>Various cryptocurrency options (Bitcoin, Ethereum, etc.)</li>
+                                </ul>
+                                <p class="mt-2 text-gray-400">All payments are processed securely through trusted payment processors. We do not store your full payment information on our servers.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">Do you offer refunds?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">Yes, we offer a 7-day money-back guarantee for new subscribers. If you're not satisfied with our premium service for any reason, contact our support team within 7 days of your initial purchase for a full refund.</p>
+                                <p class="mt-2 text-gray-400">For refund requests after 7 days, we review each case individually. We typically don't provide refunds for subscriptions that have been active for more than 7 days, unless there are exceptional circumstances or technical issues on our end.</p>
+                                <p class="mt-2 text-gray-400">To request a refund, please contact our support team at support@turbodraft.org with your account details and reason for the refund.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">How do I update my account information?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">You can update your account information by following these steps:</p>
+                                <ol class="list-decimal list-inside mt-2 space-y-2 text-gray-400">
+                                    <li>Log in to your TurboDraft account</li>
+                                    <li>Go to "Account Settings" from the dropdown menu</li>
+                                    <li>Here you can update your:
+                                        <ul class="list-disc list-inside ml-5 mt-1 text-gray-400">
+                                            <li>Profile information (username, email, password)</li>
+                                            <li>Payment methods</li>
+                                            <li>Notification preferences</li>
+                                        </ul>
+                                    </li>
+                                    <li>Make your changes and click "Save" or "Update"</li>
+                                </ol>
+                                <p class="mt-2 text-gray-400">If you need to change the email associated with your account, you'll receive a verification link to confirm the new email address.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skins & Downloads -->
+                <div id="skins" class="max-w-3xl mx-auto mb-16">
+                    <div class="flex items-center mb-8" data-aos="fade-up">
+                        <div class="bg-red-900 bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-download text-red-500 text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl text-white" style="font-family: 'Minecraft', sans-serif;">Skins & Downloads</h2>
+                    </div>
+
+                    <!-- FAQ Items -->
+                    <div class="space-y-6">
+                        <!-- Question 1 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">How do I download skins from TurboDraft?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">Downloading skins from TurboDraft is simple:</p>
+                                <ol class="list-decimal list-inside mt-2 space-y-2 text-gray-400">
+                                    <li>Browse or search our skin collection</li>
+                                    <li>Click on a skin to view its details</li>
+                                    <li>Click the "Download" button</li>
+                                    <li>Choose your Minecraft version (Java or Bedrock) to get the correct format</li>
+                                    <li>Save the file to your computer</li>
+                                </ol>
+                                <p class="mt-2 text-gray-400">Free users have a daily download limit, while premium subscribers can download unlimited skins. For detailed instructions on installing skins in Minecraft, check our <a href="../tutorials/" class="text-red-400 hover:underline">Tutorials section</a>.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">Are your skins compatible with both Java and Bedrock editions?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">Yes! All our skins are compatible with both Java Edition and Bedrock Edition of Minecraft. When downloading a skin, you'll be able to choose which version you need, and the system will provide the appropriate file format:</p>
+                                <ul class="list-disc list-inside mt-2 text-gray-400">
+                                    <li><span class="text-white font-semibold">Java Edition</span>: PNG format with specific dimensions</li>
+                                    <li><span class="text-white font-semibold">Bedrock Edition</span>: Compatible format for Windows 10, mobile, and console versions</li>
+                                </ul>
+                                <p class="mt-2 text-gray-400">If you play on multiple platforms, you can download the skin in both formats from your account dashboard.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">What's the difference between free and premium skins?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">While all our skins meet high-quality standards, premium skins offer several advantages:</p>
+                                <ul class="list-disc list-inside mt-2 space-y-2 text-gray-400">
+                                    <li><span class="text-white font-semibold">Higher detail</span>: Premium skins feature more intricate textures and advanced shading techniques</li>
+                                    <li><span class="text-white font-semibold">Exclusivity</span>: Premium skins are only available to subscribers, making them more unique</li>
+                                    <li><span class="text-white font-semibold">Special themes</span>: Many of our themed collections and special designs are premium-only</li>
+                                    <li><span class="text-white font-semibold">Advanced features</span>: Some premium skins include special overlay effects, dynamic elements, and more complex designs</li>
+                                </ul>
+                                <p class="mt-2 text-gray-400">Premium members also get early access to new skin releases (7 days before they're available to free users) and can download unlimited skins without daily restrictions.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">How many skins can I download per day?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">The download limits are as follows:</p>
+                                <ul class="list-disc list-inside mt-2 space-y-2 text-gray-400">
+                                    <li><span class="text-white font-semibold">Free users (without account)</span>: 3 free skins per day</li>
+                                    <li><span class="text-white font-semibold">Free users (with account)</span>: 5 free skins per day</li>
+                                    <li><span class="text-white font-semibold">Premium subscribers</span>: Unlimited downloads of both free and premium skins</li>
+                                </ul>
+                                <p class="mt-2 text-gray-400">Download limits reset daily at midnight UTC. Premium subscribers never have to worry about download limits.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">Can I modify the skins I download?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">Yes, you can modify skins downloaded from TurboDraft for your personal use in Minecraft. However, please note the following:</p>
+                                <ul class="list-disc list-inside mt-2 space-y-2 text-gray-400">
+                                    <li>The modifications should be for your personal use only</li>
+                                    <li>You may not redistribute modified versions of our skins on other platforms or claim them as your own original work</li>
+                                    <li>Commercial use of our skins or their modifications is not permitted without explicit written permission</li>
+                                </ul>
+                                <p class="mt-2 text-gray-400">For skin editing tutorials and tips, check out our <a href="../tutorials/create-skins/" class="text-red-400 hover:underline">Skin Creation Guide</a> in the Tutorials section.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Issues -->
+                <div id="technical" class="max-w-3xl mx-auto mb-16">
+                    <div class="flex items-center mb-8" data-aos="fade-up">
+                        <div class="bg-red-900 bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-wrench text-red-500 text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl text-white" style="font-family: 'Minecraft', sans-serif;">Technical Issues</h2>
+                    </div>
+
+                    <!-- FAQ Items -->
+                    <div class="space-y-6">
+                        <!-- Question 1 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">I can't log in to my account. What should I do?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">If you're having trouble logging in, try these steps:</p>
+                                <ol class="list-decimal list-inside mt-2 space-y-2 text-gray-400">
+                                    <li>Check that you're using the correct email and password</li>
+                                    <li>Make sure Caps Lock is turned off</li>
+                                    <li>Clear your browser cache and cookies</li>
+                                    <li>Try using a different browser</li>
+                                    <li>Use the "Forgot Password" option to reset your password</li>
+                                </ol>
+                                <p class="mt-2 text-gray-400">If you still can't log in after trying these steps, please contact our support team at support@turbodraft.org with your account email and a description of the issue.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">The skin isn't working in my game. How can I fix this?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">If your skin isn't appearing in Minecraft, try these troubleshooting steps:</p>
+                                <ul class="list-disc list-inside mt-2 space-y-2 text-gray-400">
+                                    <li>Make sure you downloaded the correct version (Java or Bedrock) for your game</li>
+                                    <li>Verify that the skin file wasn't corrupted during download (try downloading again)</li>
+                                    <li>Check that you're following the correct installation procedure for your game version</li>
+                                    <li>Restart the game after installing the skin</li>
+                                    <li>Make sure you're logged into your Minecraft account (skins are tied to accounts)</li>
+                                </ul>
+                                <p class="mt-2 text-gray-400">For detailed troubleshooting guides specific to your Minecraft version, check our <a href="../tutorials/skin-troubleshooting/" class="text-red-400 hover:underline">Skin Installation Troubleshooting</a> tutorial.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">The website is loading slowly or not at all. What can I do?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">If you're experiencing slow loading times or connection issues, try these solutions:</p>
+                                <ol class="list-decimal list-inside mt-2 space-y-2 text-gray-400">
+                                    <li>Check your internet connection</li>
+                                    <li>Clear your browser cache and cookies</li>
+                                    <li>Disable any ad blockers or VPNs that might be interfering</li>
+                                    <li>Try using a different browser</li>
+                                    <li>Restart your device</li>
+                                </ol>
+                                <p class="mt-2 text-gray-400">If the problem persists, it might be a temporary issue on our end. Please try again later or contact support if the issue continues for more than a few hours.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">My payment was processed, but I don't have premium access. What should I do?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">If your payment was processed but your account hasn't been upgraded to premium, please follow these steps:</p>
+                                <ol class="list-decimal list-inside mt-2 space-y-2 text-gray-400">
+                                    <li>Wait a few minutes – sometimes there's a short delay between payment and account activation</li>
+                                    <li>Log out and log back in to refresh your account status</li>
+                                    <li>Check your email for a payment confirmation or account upgrade notification</li>
+                                    <li>Verify that the payment was actually completed (check your bank or PayPal statement)</li>
+                                </ol>
+                                <p class="mt-2 text-gray-400">If you've confirmed that payment was processed but still don't have premium access after trying these steps, please contact our support team immediately at support@turbodraft.org. Include your account email, the date and amount of payment, and the payment method used.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">I found a bug on the website. How do I report it?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">We appreciate bug reports as they help us improve the TurboDraft experience. To report a bug:</p>
+                                <ol class="list-decimal list-inside mt-2 space-y-2 text-gray-400">
+                                    <li>Email us at bugs@turbodraft.org</li>
+                                    <li>Use our <a href="../contact/" class="text-red-400 hover:underline">Contact form</a> and select "Bug Report" from the dropdown menu</li>
+                                    <li>Join our <a href="https://discord.gg/turbodraft" class="text-red-400 hover:underline">Discord server</a> and report the bug in the #bug-reports channel</li>
+                                </ol>
+                                <p class="mt-2 text-gray-400">When reporting a bug, please include:</p>
+                                <ul class="list-disc list-inside mt-2 space-y-1 text-gray-400">
+                                    <li>A clear description of the issue</li>
+                                    <li>Steps to reproduce the bug</li>
+                                    <li>Your device and browser information</li>
+                                    <li>Screenshots (if applicable)</li>
+                                </ul>
+                                <p class="mt-2 text-gray-400">We review all bug reports and prioritize fixes based on severity and impact.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Requests -->
+                <div id="custom" class="max-w-3xl mx-auto mb-16">
+                    <div class="flex items-center mb-8" data-aos="fade-up">
+                        <div class="bg-red-900 bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-paint-brush text-red-500 text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl text-white" style="font-family: 'Minecraft', sans-serif;">Custom Skin Requests</h2>
+                    </div>
+
+                    <!-- FAQ Items -->
+                    <div class="space-y-6">
+                        <!-- Question 1 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">How do custom skin requests work?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">Custom skin requests allow premium subscribers to request personalized Minecraft skins designed specifically for them. Here's how it works:</p>
+                                <ol class="list-decimal list-inside mt-2 space-y-2 text-gray-400">
+                                    <li>Login to your premium account</li>
+                                    <li>Go to "Custom Requests" in your dashboard</li>
+                                    <li>Fill out the request form with your design ideas, references, and requirements</li>
+                                    <li>Submit your request</li>
+                                    <li>Our designers will create a custom skin based on your specifications</li>
+                                    <li>You'll receive the completed skin within 3-7 business days (depending on complexity)</li>
+                                    <li>You can request revisions if needed</li>
+                                </ol>
+                                <p class="mt-2 text-gray-400">Annual premium members receive 3 custom skin requests per year, while Lifetime members get 5 requests total. Monthly subscribers do not have access to custom requests.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">How long does it take to receive a custom skin?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">The typical turnaround time for custom skin requests is 3-7 business days, depending on:</p>
+                                <ul class="list-disc list-inside mt-2 space-y-2 text-gray-400">
+                                    <li>The complexity of your design</li>
+                                    <li>Current request volume</li>
+                                    <li>Your subscription type (Lifetime members receive priority)</li>
+                                </ul>
+                                <p class="mt-2 text-gray-400">After submitting your request, you'll receive an estimated completion date. We'll keep you updated on the progress of your skin via email and notifications in your account dashboard.</p>
+                                <p class="mt-2 text-gray-400">During busy periods (like major Minecraft updates or holidays), turnaround times may be slightly longer. We appreciate your patience and always strive to deliver high-quality custom skins worth the wait.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">What information should I include in my custom skin request?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">To help our designers create the perfect skin for you, include as much detail as possible:</p>
+                                <ul class="list-disc list-inside mt-2 space-y-2 text-gray-400">
+                                    <li><span class="text-white font-semibold">Character concept</span>: Describe the character, theme, or style you want (e.g., warrior, wizard, futuristic, medieval, etc.)</li>
+                                    <li><span class="text-white font-semibold">Color scheme</span>: Specify your preferred colors or color palette</li>
+                                    <li><span class="text-white font-semibold">Reference images</span>: Upload or link to images that inspire your vision (characters, outfits, color schemes)</li>
+                                    <li><span class="text-white font-semibold">Special details</span>: Mention any specific elements you want included (scars, accessories, patterns, etc.)</li>
+                                    <li><span class="text-white font-semibold">Minecraft version</span>: Specify whether you need the skin for Java or Bedrock edition</li>
+                                </ul>
+                                <p class="mt-2 text-gray-400">The more specific you are, the better our designers can match your vision. Feel free to include sketches or mockups if you have them!</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">Can I request revisions to my custom skin?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">Yes, we want you to be completely satisfied with your custom skin. Each custom request includes up to 2 rounds of revisions at no extra cost. Here's how it works:</p>
+                                <ol class="list-decimal list-inside mt-2 space-y-2 text-gray-400">
+                                    <li>Once we deliver your skin, you have 7 days to request revisions</li>
+                                    <li>Submit your revision requests through the same dashboard where you received the skin</li>
+                                    <li>Be specific about the changes you want (e.g., "Make the hair darker," "Add more details to the armor," etc.)</li>
+                                    <li>We'll implement your requested changes and deliver the revised skin within 2-3 business days</li>
+                                </ol>
+                                <p class="mt-2 text-gray-400">If you need more than 2 rounds of revisions, additional charges may apply, or it may count as a new custom request. Major concept changes after the initial design is delivered may also count as a new request.</p>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="bg-black rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-red-700" data-aos="fade-up">
+                            <button class="faq-toggle w-full text-left px-6 py-4 flex justify-between items-center">
+                                <span class="text-white font-bold">Are there any restrictions on what I can request?</span>
+                                <i class="fas fa-chevron-down text-red-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-6 py-4 border-t border-gray-800">
+                                <p class="text-gray-400">We aim to accommodate most custom skin requests, but there are a few limitations:</p>
+                                <ul class="list-disc list-inside mt-2 space-y-2 text-gray-400">
+                                    <li>We cannot create skins that violate Minecraft's community guidelines</li>
+                                    <li>We don't create skins with offensive, hateful, or explicit content</li>
+                                    <li>We can't create exact replicas of copyrighted characters (though we can make inspired designs)</li>
+                                    <li>Technical limitations of Minecraft's skin system apply (e.g., limitations in dimensions and transparent areas)</li>
+                                </ul>
+                                <p class="mt-2 text-gray-400">If your request falls outside our guidelines, we'll contact you to discuss alternatives. We're committed to creating original, creative designs that comply with all relevant policies while still capturing your vision.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Still have questions -->
+                <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+                    <div class="bg-black p-8 rounded-xl border border-gray-800">
+                        <div class="bg-red-900 bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-envelope text-red-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Still Have Questions?</h3>
+                        <p class="text-gray-400 mb-6">
+                            Can't find what you're looking for? Our support team is here to help with any questions you might have.
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="../contact/" class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800 flex items-center justify-center">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                <span>Contact Support</span>
+                            </a>
+                            <a href="https://discord.gg/turbodraft" target="_blank" class="bg-transparent border-2 border-red-700 text-red-100 font-bold py-3 px-6 rounded-lg hover:bg-red-900 hover:border-red-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                                <i class="fab fa-discord mr-2"></i>
+                                <span>Join Our Discord</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black text-gray-400 py-12 border-t border-gray-800 mt-20">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between">
+                    <div class="mb-8 md:mb-0">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:scale-110">
+                                <span class="text-2xl text-white"
+                                    style="font-family: 'Minecraft', sans-serif;">T</span>
+                            </div>
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                    class="text-red-500">.org</span></span>
+                        </div>
+                        <p class="max-w-xs">Premium Minecraft skins for
+                            everyone. Free and subscription options available
+                            for all players.</p>
+                        <p class="mt-4 text-sm">© 2025 TurboDraft. Not
+                            affiliated with Mojang.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Quick
+                                Links</h3>
+                            <ul class="space-y-2">
+                                <li><a href="../"
+                                        class="hover:text-red-400 transition-colors duration-300">Home</a></li>
+                                <li><a href="../skins/"
+                                        class="hover:text-red-400 transition-colors duration-300">Skins</a></li>
+                                <li><a href="../premium/"
+                                        class="hover:text-red-400 transition-colors duration-300">Premium</a></li>
+                                <li><a href="../features/"
+                                        class="hover:text-red-400 transition-colors duration-300">Features</a></li>
+                                <li><a href="../about/"
+                                        class="hover:text-red-400 transition-colors duration-300">About
+                                        Us</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Resources</h3>
+                            <ul class="space-y-2">
+                                <li><a href="../tutorials/"
+                                        class="hover:text-red-400 transition-colors duration-300">Tutorials</a></li>
+                                <li><a href="./"
+                                        class="hover:text-red-400 transition-colors duration-300">FAQ</a></li>
+                                <li><a href="../contact/"
+                                        class="hover:text-red-400 transition-colors duration-300">Support</a></li>
+                                <li><a href="../terms/"
+                                        class="hover:text-red-400 transition-colors duration-300">Terms
+                                        of Service</a></li>
+                                <li><a href="../privacy/"
+                                        class="hover:text-red-400 transition-colors duration-300">Privacy
+                                        Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Community</h3>
+                            <ul class="space-y-2">
+                                <li><a href="https://discord.gg/turbodraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">Discord
+                                        Server</a></li>
+                                <li><a href="https://twitter.com/TurboDraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">Twitter</a></li>
+                                <li><a href="https://instagram.com/TurboDraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">Instagram</a></li>
+                                <li><a href="https://youtube.com/TurboDraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">YouTube</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Contact</h3>
+                            <ul class="space-y-2">
+                                <li><a href="mailto:info@turbodraft.org"
+                                        class="hover:text-red-400 transition-colors duration-300">info@turbodraft.org</a></li>
+                                <li><a href="../contact/"
+                                        class="hover:text-red-400 transition-colors duration-300">Contact
+                                        Form</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+                    <p class="mb-4">Made with ❤️ for the Minecraft community.
+                        TurboDraft.org - bringing your Minecraft characters to
+                        life.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="../terms/"
+                            class="text-gray-500 hover:text-red-400 transition-colors duration-300">Terms</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="../privacy/"
+                            class="text-gray-500 hover:text-red-400 transition-colors duration-300">Privacy</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="../cookies/"
+                            class="text-gray-500 hover:text-red-400 transition-colors duration-300">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+        <script>
+            // Initialize AOS animation library
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+
+            // Mobile menu handling
+            document.getElementById('openMenu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.remove('translate-x-full');
+            });
+
+            document.getElementById('closeMenu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.add('translate-x-full');
+            });
+
+            // FAQ toggle functionality
+            document.querySelectorAll('.faq-toggle').forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Toggle content visibility
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        icon.classList.add('transform', 'rotate-180');
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('transform', 'rotate-180');
+                    }
+                });
+            });
+
+            // FAQ search functionality
+            document.getElementById('faqSearch').addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                const faqToggles = document.querySelectorAll('.faq-toggle');
+                
+                if (searchTerm === '') {
+                    // If search is empty, show all categories and reset FAQs
+                    document.querySelectorAll('[id^="general"], [id^="accounts"], [id^="skins"], [id^="technical"], [id^="custom"]').forEach(section => {
+                        section.style.display = 'block';
+                    });
+                    
+                    faqToggles.forEach(toggle => {
+                        const content = toggle.nextElementSibling;
+                        const icon = toggle.querySelector('i');
+                        
+                        content.classList.add('hidden');
+                        icon.classList.remove('transform', 'rotate-180');
+                        
+                        toggle.parentElement.style.display = 'block';
+                    });
+                    return;
+                }
+                
+                // Hide all faq items first
+                faqToggles.forEach(toggle => {
+                    toggle.parentElement.style.display = 'none';
+                });
+                
+                // Show matching faq items
+                let hasResults = false;
+                faqToggles.forEach(toggle => {
+                    const question = toggle.querySelector('span').textContent.toLowerCase();
+                    const content = toggle.nextElementSibling.textContent.toLowerCase();
+                    
+                    if (question.includes(searchTerm) || content.includes(searchTerm)) {
+                        toggle.parentElement.style.display = 'block';
+                        
+                        // Expand the matching FAQ
+                        const contentDiv = toggle.nextElementSibling;
+                        const icon = toggle.querySelector('i');
+                        
+                        contentDiv.classList.remove('hidden');
+                        icon.classList.add('transform', 'rotate-180');
+                        
+                        hasResults = true;
+                    }
+                });
+                
+                // Show/hide categories based on whether they have visible FAQs
+                document.querySelectorAll('[id^="general"], [id^="accounts"], [id^="skins"], [id^="technical"], [id^="custom"]').forEach(section => {
+                    const visibleFAQs = section.querySelectorAll('.faq-toggle[style="display: block"]').length > 0;
+                    section.style.display = visibleFAQs ? 'block' : 'none';
+                });
+                
+                // If no results found, show a message
+                if (!hasResults) {
+                    // Could add a no results message here
+                }
+            });
+
+            // Add navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('py-2');
+                    navbar.classList.add('shadow-lg');
+                    navbar.classList.remove('py-4');
+                    navbar.classList.remove('bg-opacity-80');
+                } else {
+                    navbar.classList.remove('py-2');
+                    navbar.classList.remove('shadow-lg');
+                    navbar.classList.add('py-4');
+                    navbar.classList.add('bg-opacity-80');
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (!targetElement) return;
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>TurboDraft.org - Color Theory for Minecraft Skins</title>
+        <meta name="description" content="TurboDraft.org offers premium Minecraft skins for Java and Bedrock editions. Browse our collection of free and premium custom skins, download instantly, and stand out on any server. Visit TurboDraft.org for original designs and weekly skin drops.">
+        <meta name="keywords" content="TurboDraft.org, Minecraft skins, premium Minecraft skins, custom skins, Minecraft character, Java edition skins, Bedrock edition skins, free Minecraft skins, gaming skins, Minecraft customization, TurboDraft premium, skin downloads, weekly skin drops">
+       <link
+           href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+           rel="stylesheet">
+       <script src="https://cdn.tailwindcss.com"></script>
+       <link
+           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+           rel="stylesheet">
+       <link
+           href="https://fonts.googleapis.com/css2?family=Minecraft&family=Montserrat:wght@400;600;700&display=swap"
+           rel="stylesheet">
+       <script src="../../assets/js/auth.js"></script>
+        <link rel="icon" href="../../assets/icon.webp">
+       <script>
+           tailwind.config = {
+               theme: {
+                   extend: {
+                       backgroundImage: {
+                           'card': "url('../../assets/images/bg_card.jpg')",
+                       },
+                   }
+               }
+           }
+       </script>
+   </head>
+
+   <body class="bg-black text-gray-200 font-sans">
+       <!-- Mobile Nav Menu (Hidden by default) -->
+       <div id="mobileMenu"
+           class="fixed inset-0 bg-black bg-opacity-95 z-50 transform transition-transform duration-300 translate-x-full">
+           <div class="container mx-auto px-4 py-6">
+               <div class="flex justify-between items-center mb-6">
+                   <div class="flex items-center">
+                       <div
+                           class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3">
+                           <span class="text-2xl text-white"
+                               style="font-family: 'Minecraft', sans-serif;">T</span>
+                       </div>
+                       <span class="text-2xl text-white"
+                           style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                               class="text-red-500">.org</span></span>
+                   </div>
+                   <button id="closeMenu"
+                       class="text-white focus:outline-none">
+                       <i class="fas fa-times text-2xl"></i>
+                   </button>
+               </div>
+
+               <div class="flex flex-col space-y-6 text-center">
+                   <a href="../../"
+                       class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Home</a>
+                   <a href="../../skins/"
+                       class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Skins</a>
+                   <a href="../../premium/"
+                       class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Premium</a>
+                   <a href="../../features/"
+                       class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Features</a>
+                   <a href="../"
+                       class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Tutorials</a>
+                   <a href="../../about/"
+                       class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">About</a>
+                   <a href="../../subscribe/"
+                       class="mt-4 bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg">Subscribe
+                       Now</a>
+               </div>
+
+               <div class="mt-10 flex justify-center space-x-6">
+                   <a href="https://discord.gg/turbodraft" target="_blank"
+                       class="text-red-200 hover:text-white transition-colors duration-300">
+                       <i class="fab fa-discord text-2xl"></i>
+                   </a>
+                   <a href="https://twitter.com/TurboDraft" target="_blank"
+                       class="text-red-200 hover:text-white transition-colors duration-300">
+                       <i class="fab fa-twitter text-2xl"></i>
+                   </a>
+                   <a href="https://instagram.com/TurboDraft" target="_blank"
+                       class="text-red-200 hover:text-white transition-colors duration-300">
+                       <i class="fab fa-instagram text-2xl"></i>
+                   </a>
+                   <a href="https://youtube.com/TurboDraft" target="_blank"
+                       class="text-red-200 hover:text-white transition-colors duration-300">
+                       <i class="fab fa-youtube text-2xl"></i>
+                   </a>
+               </div>
+           </div>
+       </div>
+
+       <!-- Navigation -->
+       <nav
+           class="fixed w-full z-40 py-4 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg transition-all duration-300">
+           <div class="container mx-auto px-4">
+               <div class="flex justify-between items-center">
+                   <div class="flex items-center">
+                       <div
+                           class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:transform hover:scale-110">
+                           <span class="text-2xl text-white"
+                               style="font-family: 'Minecraft', sans-serif;">T</span>
+                       </div>
+                       <span class="text-2xl text-white"
+                           style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                               class="text-red-500">.org</span></span>
+                   </div>
+                   <div class="hidden md:flex space-x-8">
+                       <a href="../../"
+                           class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                       <a href="../../skins/"
+                           class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Skins</a>
+                       <a href="../../premium/"
+                           class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Premium</a>
+                       <a href="../../features/"
+                           class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Features</a>
+                       <a href="../"
+                           class="relative text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-red-500 after:transition-all after:duration-300">Tutorials</a>
+                       <a href="../../about/"
+                           class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">About</a>
+                   </div>
+                   <div class="hidden md:flex items-center space-x-4">
+                       <!-- User section will be dynamically populated by auth.js -->
+                       <div id="navUserSection" class="flex items-center">
+                           <!-- Default content shown before JS loads -->
+                           <a href="../../auth/"
+                               class="text-white hover:text-red-300 transition-colors duration-300">Login</a>
+                           <a href="../../subscribe/"
+                               class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800">Subscribe</a>
+                       </div>
+                   </div>
+                   <div class="md:hidden">
+                       <button id="openMenu"
+                           class="text-white focus:outline-none">
+                           <i class="fas fa-bars text-2xl"></i>
+                       </button>
+                   </div>
+               </div>
+           </div>
+       </nav>
+
+       <!-- Tutorial Header -->
+       <section class="pt-32 pb-10 bg-gradient-to-br from-black to-red-900">
+           <div class="container mx-auto px-4">
+               <div class="text-center">
+                   <h1 class="text-4xl md:text-5xl mb-4 text-white"
+                       style="font-family: 'Minecraft', sans-serif;">Color Theory for <span class="text-red-500">Minecraft Skins</span></h1>
+                   <p class="text-lg md:text-xl mb-4 text-gray-300 max-w-3xl mx-auto">Understand color theory basics to create visually appealing and harmonious Minecraft skin designs</p>
+               </div>
+           </div>
+       </section>
+
+       <!-- Tutorial Topics Navigation -->
+       <section class="py-6 bg-gray-900 border-b border-gray-800">
+           <div class="container mx-auto px-4">
+               <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                   <a href="#basics" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                       <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                           <i class="fas fa-palette text-lg"></i>
+                       </div>
+                       <span>Color Basics</span>
+                   </a>
+                   <a href="#color-harmony" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                       <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                           <i class="fas fa-circle-notch text-lg"></i>
+                       </div>
+                       <span>Color Harmony</span>
+                   </a>
+                   <a href="#application" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                       <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                           <i class="fas fa-tshirt text-lg"></i>
+                       </div>
+                       <span>Application to Skins</span>
+                   </a>
+                   <a href="#palettes" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                       <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                           <i class="fas fa-swatchbook text-lg"></i>
+                       </div>
+                       <span>Palette Creation</span>
+                   </a>
+               </div>
+           </div>
+       </section>
+
+       <!-- Main Content -->
+       <section class="py-10 bg-black">
+           <div class="container mx-auto px-4">
+               <div class="max-w-4xl mx-auto">
+
+                   <!-- Introduction -->
+                   <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-8">
+                       <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">
+                           Why Color Theory Matters for Minecraft Skins
+                       </h2>
+                       <p class="text-gray-300 mb-4">
+                           Color is one of the most powerful tools in a skin creator's arsenal. The right color choices can make your Minecraft skin stand out, convey character personality, and create visual harmony. Understanding color theory isn't just for artists – it's an essential skill for creating professional-quality Minecraft skins that capture attention.
+                       </p>
+                       <p class="text-gray-300">
+                           In this tutorial, we'll explore the fundamentals of color theory and how to apply these principles specifically to Minecraft skin creation. You'll learn how to select colors that work together harmoniously, create effective contrast, and build cohesive color palettes that bring your character designs to life.
+                       </p>
+                   </div>
+
+                   <!-- Color Basics -->
+                   <div id="basics" class="mb-10 scroll-mt-20">
+                       <div class="flex items-center mb-4">
+                           <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                               <i class="fas fa-palette text-lg"></i>
+                           </div>
+                           <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                               Color Theory Basics
+                           </h2>
+                       </div>
+                       
+                       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                           <p class="text-gray-300 mb-4">Before diving into advanced color concepts, let's establish a foundation with the basic properties of color and how they work together.</p>
+                           
+                           <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800 mb-6">
+                               <h3 class="text-white font-bold mb-3">The Color Wheel</h3>
+                               
+                               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                                   <div>
+                                       <p class="text-gray-300 mb-3">The color wheel is a circular arrangement of colors based on their relationships. It's the foundation of color theory and helps us understand how colors interact with each other.</p>
+                                       
+                                       <h4 class="text-white font-bold mb-2">Primary Colors:</h4>
+                                       <div class="flex space-x-2 mb-3">
+                                           <div class="w-8 h-8 bg-red-600 rounded"></div>
+                                           <div class="w-8 h-8 bg-yellow-500 rounded"></div>
+                                           <div class="w-8 h-8 bg-blue-600 rounded"></div>
+                                       </div>
+                                       <p class="text-gray-300 text-sm mb-3">Red, yellow, and blue are primary colors that can't be created by mixing other colors.</p>
+                                       
+                                       <h4 class="text-white font-bold mb-2">Secondary Colors:</h4>
+                                       <div class="flex space-x-2 mb-3">
+                                           <div class="w-8 h-8 bg-orange-500 rounded"></div>
+                                           <div class="w-8 h-8 bg-green-500 rounded"></div>
+                                           <div class="w-8 h-8 bg-purple-600 rounded"></div>
+                                       </div>
+                                       <p class="text-gray-300 text-sm">Orange, green, and purple are created by mixing primary colors.</p>
+                                   </div>
+                                   <div>
+                                       <h4 class="text-white font-bold mb-2">Tertiary Colors:</h4>
+                                       <div class="flex flex-wrap gap-2 mb-3">
+                                           <div class="w-8 h-8 bg-red-500 rounded"></div>
+                                           <div class="w-8 h-8 bg-red-orange-500 rounded" style="background-color: #FF4500;"></div>
+                                           <div class="w-8 h-8 bg-orange-500 rounded"></div>
+                                           <div class="w-8 h-8 bg-yellow-orange-500 rounded" style="background-color: #FFAE42;"></div>
+                                           <div class="w-8 h-8 bg-yellow-500 rounded"></div>
+                                           <div class="w-8 h-8 bg-yellow-green-500 rounded" style="background-color: #9ACD32;"></div>
+                                           <div class="w-8 h-8 bg-green-500 rounded"></div>
+                                           <div class="w-8 h-8 bg-green-blue-500 rounded" style="background-color: #00A693;"></div>
+                                           <div class="w-8 h-8 bg-blue-500 rounded"></div>
+                                           <div class="w-8 h-8 bg-blue-purple-500 rounded" style="background-color: #8A2BE2;"></div>
+                                           <div class="w-8 h-8 bg-purple-500 rounded"></div>
+                                           <div class="w-8 h-8 bg-red-purple-500 rounded" style="background-color: #E30B5C;"></div>
+                                       </div>
+                                       <p class="text-gray-300 text-sm mb-4">Tertiary colors are created by mixing primary and secondary colors, giving us a full spectrum of options.</p>
+                                       
+                                       <div class="bg-gray-800 p-3 rounded-lg">
+                                           <p class="text-white text-sm font-bold">Minecraft Consideration:</p>
+                                           <p class="text-gray-300 text-sm">While color theory works with infinite color variations in traditional art, remember that Minecraft skins have pixel limitations. Choose colors that remain distinct even at the game's limited resolution.</p>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           
+                           <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                               <h3 class="text-white font-bold mb-3">Color Properties</h3>
+                               
+                               <div class="space-y-4">
+                                   <div class="flex items-start">
+                                       <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                       <div>
+                                           <h4 class="text-white font-bold">Hue</h4>
+                                           <p class="text-gray-300">Hue is the pure color itself – what we typically mean when we say "red," "blue," or "yellow." It's the most basic color characteristic and defines the color family.</p>
+                                           <div class="h-6 w-full bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 rounded mt-2"></div>
+                                       </div>
+                                   </div>
+                                   
+                                   <div class="flex items-start">
+                                       <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                       <div>
+                                           <h4 class="text-white font-bold">Saturation</h4>
+                                           <p class="text-gray-300">Saturation refers to the intensity or purity of a color. Highly saturated colors are vivid, while less saturated colors appear more muted or grayish.</p>
+                                           <div class="h-6 w-full bg-gradient-to-r from-blue-900 via-blue-700 via-blue-500 via-blue-300 to-gray-300 rounded mt-2"></div>
+                                       </div>
+                                   </div>
+                                   
+                                   <div class="flex items-start">
+                                       <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                       <div>
+                                           <h4 class="text-white font-bold">Value (Brightness)</h4>
+                                           <p class="text-gray-300">Value describes how light or dark a color is. Adding white creates tints (lighter versions), while adding black creates shades (darker versions).</p>
+                                           <div class="h-6 w-full bg-gradient-to-r from-black via-gray-700 via-gray-500 via-gray-300 to-white rounded mt-2"></div>
+                                       </div>
+                                   </div>
+                                   
+                                   <div class="flex items-start">
+                                       <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">4</div>
+                                       <div>
+                                           <h4 class="text-white font-bold">Temperature</h4>
+                                           <p class="text-gray-300">Colors can be categorized as warm (reds, oranges, yellows) or cool (blues, greens, purples). Temperature affects the mood and feeling of your design.</p>
+                                           <div class="grid grid-cols-2 gap-2 mt-2">
+                                               <div class="h-6 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 rounded relative">
+                                                   <span class="absolute inset-0 flex items-center justify-center text-xs text-white font-bold">Warm</span>
+                                               </div>
+                                               <div class="h-6 bg-gradient-to-r from-blue-600 via-cyan-500 to-green-500 rounded relative">
+                                                   <span class="absolute inset-0 flex items-center justify-center text-xs text-white font-bold">Cool</span>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-gray-800 p-3 rounded-lg mt-4">
+                                   <p class="text-white text-sm font-bold">Application in Minecraft:</p>
+                                   <p class="text-gray-300 text-sm">Understanding these properties helps you create depth in your skins. Use higher saturation for focal points, different values for shadow and highlight, and temperature to set the mood of your character design.</p>
+                               </div>
+                           </div>
+                           
+                           <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-blue-900 mt-6">
+                               <div class="flex items-start">
+                                   <i class="fas fa-info-circle text-blue-500 text-2xl mr-3 mt-1"></i>
+                                   <div>
+                                       <h3 class="text-white font-bold mb-1">Color Perception</h3>
+                                       <p class="text-gray-300">Remember that color perception is subjective and can be influenced by surrounding colors. A gray pixel may appear different when placed next to blue versus orange. This contextual effect is crucial in pixel art, where you have limited space to work with.</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Color Harmony -->
+                   <div id="color-harmony" class="mb-10 scroll-mt-20">
+                       <div class="flex items-center mb-4">
+                           <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                               <i class="fas fa-circle-notch text-lg"></i>
+                           </div>
+                           <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                               Color Harmony
+                           </h2>
+                       </div>
+                       
+                       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                           <p class="text-gray-300 mb-4">Color harmony refers to the pleasing arrangement of colors based on their relationships on the color wheel. Using harmonious color schemes creates visually appealing skins that feel cohesive and intentional.</p>
+                           
+                           <div class="space-y-6">
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Monochromatic Harmony</h3>
+                                   
+                                   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                       <div class="col-span-1 md:col-span-2">
+                                           <p class="text-gray-300 mb-3">Monochromatic color schemes use variations of a single hue by changing its saturation and value. This creates a cohesive, elegant look that's easy to work with.</p>
+                                           
+                                           <h4 class="text-white font-bold mb-2">Characteristics:</h4>
+                                           <ul class="space-y-1 text-gray-300 list-disc list-inside">
+                                               <li>Harmonious and unified appearance</li>
+                                               <li>Subtle and sophisticated</li>
+                                               <li>Creates a strong theme based on a single color</li>
+                                               <li>Easy to create and balance</li>
+                                           </ul>
+                                           
+                                           <div class="bg-gray-800 p-3 rounded-lg mt-3">
+                                               <p class="text-white text-sm font-bold">Minecraft Application:</p>
+                                               <p class="text-gray-300 text-sm">Perfect for themed skins like ghosts (blue monochrome), demons (red monochrome), or nature spirits (green monochrome). Use different values to define features clearly.</p>
+                                           </div>
+                                       </div>
+                                       <div>
+                                           <div class="flex flex-col space-y-2">
+                                               <div class="h-8 bg-blue-900 rounded"></div>
+                                               <div class="h-8 bg-blue-800 rounded"></div>
+                                               <div class="h-8 bg-blue-700 rounded"></div>
+                                               <div class="h-8 bg-blue-600 rounded"></div>
+                                               <div class="h-8 bg-blue-500 rounded"></div>
+                                               <div class="h-8 bg-blue-400 rounded"></div>
+                                               <div class="h-8 bg-blue-300 rounded"></div>
+                                           </div>
+                                           <p class="text-gray-400 text-xs text-center mt-2">Blue monochromatic scheme example</p>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Complementary Harmony</h3>
+                                   
+                                   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                       <div class="col-span-1 md:col-span-2">
+                                           <p class="text-gray-300 mb-3">Complementary color schemes use two colors directly opposite each other on the color wheel. This creates a high-contrast, vibrant look that immediately catches attention.</p>
+                                           
+                                           <h4 class="text-white font-bold mb-2">Characteristics:</h4>
+                                           <ul class="space-y-1 text-gray-300 list-disc list-inside">
+                                               <li>Maximum contrast and impact</li>
+                                               <li>Vibrant and energetic</li>
+                                               <li>Creates strong visual tension</li>
+                                               <li>Can be overwhelming if used in equal amounts</li>
+                                           </ul>
+                                           
+                                           <div class="bg-gray-800 p-3 rounded-lg mt-3">
+                                               <p class="text-white text-sm font-bold">Best Practice:</p>
+                                               <p class="text-gray-300 text-sm">Use one color as the dominant theme and the complementary color as an accent for details like eyes, accessories, or trim. The classic "hero" color scheme often uses blue with orange accents.</p>
+                                           </div>
+                                       </div>
+                                       <div>
+                                           <div class="flex flex-col space-y-3">
+                                               <div class="grid grid-cols-2 gap-2">
+                                                   <div class="h-12 bg-red-600 rounded"></div>
+                                                   <div class="h-12 bg-cyan-500 rounded"></div>
+                                               </div>
+                                               <div class="grid grid-cols-2 gap-2">
+                                                   <div class="h-12 bg-purple-600 rounded"></div>
+                                                   <div class="h-12 bg-yellow-400 rounded"></div>
+                                               </div>
+                                               <div class="grid grid-cols-2 gap-2">
+                                                   <div class="h-12 bg-blue-600 rounded"></div>
+                                                   <div class="h-12 bg-orange-500 rounded"></div>
+                                               </div>
+                                           </div>
+                                           <p class="text-gray-400 text-xs text-center mt-2">Complementary color pairs</p>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Analogous Harmony</h3>
+                                   
+                                   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                       <div class="col-span-1 md:col-span-2">
+                                           <p class="text-gray-300 mb-3">Analogous color schemes use colors that are adjacent to each other on the color wheel. This creates a harmonious, cohesive look with less contrast than complementary schemes.</p>
+                                           
+                                           <h4 class="text-white font-bold mb-2">Characteristics:</h4>
+                                           <ul class="space-y-1 text-gray-300 list-disc list-inside">
+                                               <li>Natural, harmonious appearance</li>
+                                               <li>Cohesive and pleasing to the eye</li>
+                                               <li>More subtle than complementary schemes</li>
+                                               <li>Creates a themed color story</li>
+                                           </ul>
+                                           
+                                           <div class="bg-gray-800 p-3 rounded-lg mt-3">
+                                               <p class="text-white text-sm font-bold">Minecraft Application:</p>
+                                               <p class="text-gray-300 text-sm">Excellent for elemental themed skins: fire (red-orange-yellow), water (blue-cyan-green), forest (yellow-green-blue-green), or sunset (purple-pink-red).</p>
+                                           </div>
+                                       </div>
+                                       <div>
+                                           <div class="flex flex-col space-y-3">
+                                               <div class="grid grid-cols-3 gap-1">
+                                                   <div class="h-8 bg-red-600 rounded-l"></div>
+                                                   <div class="h-8 bg-red-500 rounded-none"></div>
+                                                   <div class="h-8 bg-orange-500 rounded-r"></div>
+                                               </div>
+                                               <div class="grid grid-cols-3 gap-1">
+                                                   <div class="h-8 bg-yellow-500 rounded-l"></div>
+                                                   <div class="h-8 bg-yellow-600 rounded-none"></div>
+                                                   <div class="h-8 bg-green-500 rounded-r"></div>
+                                               </div>
+                                               <div class="grid grid-cols-3 gap-1">
+                                                   <div class="h-8 bg-blue-400 rounded-l"></div>
+                                                   <div class="h-8 bg-blue-500 rounded-none"></div>
+                                                   <div class="h-8 bg-purple-500 rounded-r"></div>
+                                               </div>
+                                           </div>
+                                           <p class="text-gray-400 text-xs text-center mt-2">Analogous color groupings</p>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Triadic Harmony</h3>
+                                   
+                                   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                       <div class="col-span-1 md:col-span-2">
+                                           <p class="text-gray-300 mb-3">Triadic schemes use three colors equally spaced around the color wheel. This creates a balanced, vibrant look with moderate contrast.</p>
+                                           
+                                           <h4 class="text-white font-bold mb-2">Characteristics:</h4>
+                                           <ul class="space-y-1 text-gray-300 list-disc list-inside">
+                                               <li>Balanced yet vibrant appearance</li>
+                                               <li>More complex than complementary schemes</li>
+                                               <li>Offers good contrast while maintaining harmony</li>
+                                               <li>Creates a dynamic, playful feeling</li>
+                                           </ul>
+                                           
+                                           <div class="bg-gray-800 p-3 rounded-lg mt-3">
+                                               <p class="text-white text-sm font-bold">Best Practice:</p>
+                                               <p class="text-gray-300 text-sm">Choose one color as the dominant theme (50-60%), a second for support (30-40%), and the third as an accent (10%). Classic triadic schemes include the primary colors (red, blue, yellow) and secondary colors (orange, green, purple).</p>
+                                           </div>
+                                       </div>
+                                       <div>
+                                           <div class="flex flex-col space-y-3">
+                                               <div class="grid grid-cols-3 gap-1">
+                                                   <div class="h-10 bg-red-600 rounded-l"></div>
+                                                   <div class="h-10 bg-blue-600 rounded-none"></div>
+                                                   <div class="h-10 bg-yellow-500 rounded-r"></div>
+                                               </div>
+                                               <div class="grid grid-cols-3 gap-1">
+                                                   <div class="h-10 bg-purple-600 rounded-l"></div>
+                                                   <div class="h-10 bg-green-500 rounded-none"></div>
+                                                   <div class="h-10 bg-orange-500 rounded-r"></div>
+                                               </div>
+                                           </div>
+                                           <p class="text-gray-400 text-xs text-center mt-2">Triadic color combinations</p>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Split-Complementary Harmony</h3>
+                                   
+                                   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                       <div class="col-span-1 md:col-span-2">
+                                           <p class="text-gray-300 mb-3">Split-complementary schemes use a base color and the two colors adjacent to its complement. This creates high contrast with more variety than a standard complementary scheme.</p>
+                                           
+                                           <h4 class="text-white font-bold mb-2">Characteristics:</h4>
+                                           <ul class="space-y-1 text-gray-300 list-disc list-inside">
+                                               <li>Strong visual contrast with more variety</li>
+                                               <li>More balanced than complementary schemes</li>
+                                               <li>Easier to work with while maintaining impact</li>
+                                               <li>Creates a sophisticated, dynamic look</li>
+                                           </ul>
+                                           
+                                           <div class="bg-gray-800 p-3 rounded-lg mt-3">
+                                               <p class="text-white text-sm font-bold">Minecraft Application:</p>
+                                               <p class="text-gray-300 text-sm">Great for complex character designs like wizards, royalty, or detailed warriors where you want contrast but need more colors to define different elements of the outfit or character.</p>
+                                           </div>
+                                       </div>
+                                       <div>
+                                           <div class="flex flex-col space-y-3">
+                                               <div class="grid grid-cols-3 gap-1">
+                                                   <div class="h-10 bg-blue-600 rounded-l"></div>
+                                                   <div class="h-10 bg-red-600 rounded-none"></div>
+                                                   <div class="h-10 bg-yellow-500 rounded-r"></div>
+                                               </div>
+                                               <div class="grid grid-cols-3 gap-1">
+                                                   <div class="h-10 bg-red-600 rounded-l"></div>
+                                                   <div class="h-10 bg-green-600 rounded-none"></div>
+                                                   <div class="h-10 bg-blue-400 rounded-r"></div>
+                                               </div>
+                                           </div>
+                                           <p class="text-gray-400 text-xs text-center mt-2">Split-complementary examples</p>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           
+                           <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-yellow-900 mt-6">
+                               <div class="flex items-start">
+                                   <i class="fas fa-lightbulb text-yellow-500 text-2xl mr-3 mt-1"></i>
+                                   <div>
+                                       <h3 class="text-white font-bold mb-1">Color Harmony Selection</h3>
+                                       <p class="text-gray-300">Different color harmonies create different emotional effects. Choose your harmony based on the character you're creating:</p>
+                                       <ul class="list-disc list-inside text-gray-300 mt-2 space-y-1">
+                                           <li><strong>Monochromatic:</strong> Elegant, subtle, themed characters</li>
+                                           <li><strong>Complementary:</strong> Heroes, villains, high-contrast characters</li>
+                                           <li><strong>Analogous:</strong> Natural, elemental, cohesive designs</li>
+                                           <li><strong>Triadic:</strong> Playful, dynamic, balanced characters</li>
+                                           <li><strong>Split-Complementary:</strong> Complex, nuanced designs with contrast</li>
+                                       </ul>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Application to Skins -->
+                   <div id="application" class="mb-10 scroll-mt-20">
+                       <div class="flex items-center mb-4">
+                           <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                               <i class="fas fa-tshirt text-lg"></i>
+                           </div>
+                           <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                               Applying Color Theory to Minecraft Skins
+                           </h2>
+                       </div>
+                       
+                       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                           <p class="text-gray-300 mb-4">Now that we understand color basics and harmony, let's explore how to apply these principles specifically to Minecraft skin creation.</p>
+                           
+                           <div class="space-y-6">
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Creating Focal Points</h3>
+                                   
+                                   <div class="grid grid-cols-1 gap-4 mb-4">
+                                       <div>
+                                           <p class="text-gray-300 mb-3">Use color to draw attention to the most important parts of your skin, typically the face and any special character features.</p>
+                                           
+                                           <h4 class="text-white font-bold mb-2">Techniques:</h4>
+                                           <ul class="space-y-1 text-gray-300 list-disc list-inside pl-4">
+                                               <li>Use higher saturation for important details like eyes, special markings, or weapons</li>
+                                               <li>Create contrast by placing complementary colors near each other for emphasis</li>
+                                               <li>Use warmer colors for areas you want to emphasize (they advance visually)</li>
+                                               <li>Place unique colors only in focal areas - don't repeat them elsewhere</li>
+                                               <li>Use color to highlight character-defining features</li>
+                                           </ul>
+                                           
+                                           <div class="bg-gray-800 p-3 rounded-lg mt-4">
+                                               <p class="text-white text-sm font-bold">For Example:</p>
+                                               <p class="text-gray-300 text-sm">For a warrior character, you might use a primarily blue color scheme with a vibrant red accent for the helmet crest or weapon, drawing attention to these key features.</p>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Color for Character Types</h3>
+                                   
+                                   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">Colors and Emotions:</h4>
+                                           <ul class="space-y-1 text-gray-300 text-sm mb-4">
+                                               <li><span class="inline-block w-4 h-4 bg-red-600 mr-2 align-middle"></span> <strong>Red:</strong> Power, passion, danger, strength</li>
+                                               <li><span class="inline-block w-4 h-4 bg-blue-600 mr-2 align-middle"></span> <strong>Blue:</strong> Trust, calm, wisdom, loyalty</li>
+                                               <li><span class="inline-block w-4 h-4 bg-green-600 mr-2 align-middle"></span> <strong>Green:</strong> Nature, growth, healing, envy</li>
+                                               <li><span class="inline-block w-4 h-4 bg-yellow-500 mr-2 align-middle"></span> <strong>Yellow:</strong> Joy, intellect, energy, caution</li>
+                                               <li><span class="inline-block w-4 h-4 bg-purple-600 mr-2 align-middle"></span> <strong>Purple:</strong> Royalty, mystery, magic, creativity</li>
+                                               <li><span class="inline-block w-4 h-4 bg-orange-500 mr-2 align-middle"></span> <strong>Orange:</strong> Enthusiasm, creativity, determination</li>
+                                               <li><span class="inline-block w-4 h-4 bg-black mr-2 align-middle"></span> <strong>Black:</strong> Power, elegance, death, mystery</li>
+                                               <li><span class="inline-block w-4 h-4 bg-white border border-gray-300 mr-2 align-middle"></span> <strong>White:</strong> Purity, innocence, cleanliness, simplicity</li>
+                                           </ul>
+                                       </div>
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">Character Archetypes:</h4>
+                                           <ul class="space-y-2 text-gray-300 text-sm">
+                                               <li><strong>Heroes/Protagonists:</strong> Blue main with red/yellow accents, balanced saturation, medium to high brightness</li>
+                                               <li><strong>Villains/Antagonists:</strong> Purple, red, or black main with green or dark blue accents, high contrast, often darker values</li>
+                                               <li><strong>Nature/Elemental:</strong> Analogous green/brown/blue schemes, moderate saturation, earthy tones</li>
+                                               <li><strong>Magical/Mystical:</strong> Purple main with blue or pink accents, higher saturation, glowing effects (light values)</li>
+                                               <li><strong>Technological/Futuristic:</strong> Blue/gray/white with bright cyan accents, lower saturation except for accents</li>
+                                               <li><strong>Historical/Medieval:</strong> Brown/tan/red with gold accents, lower saturation, muted tones</li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Creating Depth with Color</h3>
+                                   
+                                   <div class="grid grid-cols-1 gap-4 mb-4">
+                                       <div>
+                                           <p class="text-gray-300 mb-3">In Minecraft skins, we're limited by the pixel resolution, but color can create the illusion of depth and dimensionality.</p>
+                                           
+                                           <h4 class="text-white font-bold mb-2">Depth Techniques:</h4>
+                                           <ul class="space-y-1 text-gray-300 list-disc list-inside pl-4">
+                                               <li>Use darker values for recessed areas (shadows)</li>
+                                               <li>Use lighter values for protruding features (highlights)</li>
+                                               <li>Cool colors recede visually (appear farther away)</li>
+                                               <li>Warm colors advance visually (appear closer)</li>
+                                               <li>Decrease saturation for distant or shadowed elements</li>
+                                               <li>Increase saturation for elements you want to bring forward</li>
+                                           </ul>
+                                           
+                                           <div class="bg-gray-800 p-3 rounded-lg mt-4">
+                                               <p class="text-white text-sm font-bold">Minecraft Shading Tip:</p>
+                                               <p class="text-gray-300 text-sm">Don't just add black for shadows or white for highlights. Instead, shift both the value AND the hue: shadows tend toward purple/blue, while highlights often shift toward yellow/orange.</p>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Color Distribution Rules</h3>
+                                   
+                                   <div class="grid grid-cols-1 gap-4 mb-4">
+                                       <div>
+                                           <p class="text-gray-300 mb-3">How you distribute colors throughout your skin affects visual balance and cohesion.</p>
+                                           
+                                           <h4 class="text-white font-bold mb-2">The 60-30-10 Rule:</h4>
+                                           <ul class="space-y-1 text-gray-300 list-disc list-inside pl-4">
+                                               <li><strong>60% Primary Color:</strong> The main color of your skin (outfit, body, etc.)</li>
+                                               <li><strong>30% Secondary Color:</strong> Supporting color for variation and interest</li>
+                                               <li><strong>10% Accent Color:</strong> High-impact color for focal points and details</li>
+                                           </ul>
+                                           
+                                           <div class="h-8 w-full mt-3">
+                                               <div class="h-full w-3/5 bg-blue-700 inline-block"></div>
+                                               <div class="h-full w-3/10 bg-gray-700 inline-block"></div>
+                                               <div class="h-full w-1/10 bg-red-600 inline-block"></div>
+                                           </div>
+                                           <p class="text-gray-400 text-xs text-center mt-1">Visual representation of 60-30-10 distribution</p>
+                                           
+                                           <h4 class="text-white font-bold mt-4 mb-2">Color Repetition:</h4>
+                                           <p class="text-gray-300">Create visual unity by repeating important colors in different areas of your skin. For example, if you use red for a cape, include small red accents elsewhere (belt, emblem, etc.) to tie the design together.</p>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           
+                           <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-green-800 mt-6">
+                               <div class="flex items-start">
+                                   <i class="fas fa-check-circle text-green-500 text-2xl mr-3 mt-1"></i>
+                                   <div>
+                                       <h3 class="text-white font-bold mb-1">Color Checklist for Minecraft Skins</h3>
+                                       <ul class="list-disc list-inside text-gray-300">
+                                           <li>Choose a color harmony that matches your character concept</li>
+                                           <li>Apply the 60-30-10 rule for color distribution</li>
+                                           <li>Use color to create focal points on important features</li>
+                                           <li>Create depth with strategic value and temperature changes</li>
+                                           <li>Repeat key colors throughout the design for unity</li>
+                                           <li>Ensure sufficient contrast between adjacent elements</li>
+                                           <li>Test your skin in-game under different lighting conditions</li>
+                                       </ul>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Palette Creation -->
+                   <div id="palettes" class="mb-10 scroll-mt-20">
+                       <div class="flex items-center mb-4">
+                           <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                               <i class="fas fa-swatchbook text-lg"></i>
+                           </div>
+                           <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                               Creating Effective Color Palettes
+                           </h2>
+                       </div>
+                       
+                       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                           <p class="text-gray-300 mb-4">A well-planned color palette is the foundation of a great Minecraft skin. Here's how to create and use color palettes effectively:</p>
+                           
+                           <div class="space-y-6">
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Step-by-Step Palette Creation</h3>
+                                   
+                                   <div class="space-y-4">
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                           <div>
+                                               <h4 class="text-white font-bold">Start with a Concept</h4>
+                                               <p class="text-gray-300">Begin with a clear idea of your character. Are they a warrior, mage, explorer, monster? This concept should guide your color choices from the beginning.</p>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                           <div>
+                                               <h4 class="text-white font-bold">Choose a Harmony Type</h4>
+                                               <p class="text-gray-300">Select a color harmony that matches your concept (complementary, analogous, etc.). This will determine how your colors relate to each other.</p>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                           <div>
+                                               <h4 class="text-white font-bold">Select Base Colors</h4>
+                                               <p class="text-gray-300">Choose 3-5 main colors according to your harmony type. These will form the core of your palette.</p>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">4</div>
+                                           <div>
+                                               <h4 class="text-white font-bold">Create Variations</h4>
+                                               <p class="text-gray-300">For each base color, create 3-5 variations by adjusting value (lighter/darker) and saturation. This gives you shading options for each color area.</p>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">5</div>
+                                           <div>
+                                               <h4 class="text-white font-bold">Add Accent Colors</h4>
+                                               <p class="text-gray-300">Include 1-2 accent colors for emphasis. These should be high-impact colors that stand out from your main palette.</p>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">6</div>
+                                           <div>
+                                               <h4 class="text-white font-bold">Test and Refine</h4>
+                                               <p class="text-gray-300">Apply your palette to your skin and test it in-game. Adjust colors that don't work as expected or lack sufficient contrast.</p>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Example Palettes</h3>
+                                   
+                                   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">Warrior Knight</h4>
+                                           <div class="h-10 flex">
+                                               <div class="h-full flex-grow bg-blue-800"></div>
+                                               <div class="h-full flex-grow bg-blue-700"></div>
+                                               <div class="h-full flex-grow bg-blue-600"></div>
+                                               <div class="h-full flex-grow bg-gray-600"></div>
+                                               <div class="h-full flex-grow bg-gray-500"></div>
+                                               <div class="h-full flex-grow bg-gray-400"></div>
+                                               <div class="h-full flex-grow bg-red-600"></div>
+                                           </div>
+                                           <p class="text-gray-300 text-sm mt-2">Blue complementary palette with silver armor and red accent for emblem or details.</p>
+                                       </div>
+                                       
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">Forest Druid</h4>
+                                           <div class="h-10 flex">
+                                               <div class="h-full flex-grow bg-green-800"></div>
+                                               <div class="h-full flex-grow bg-green-700"></div>
+                                               <div class="h-full flex-grow bg-green-600"></div>
+                                               <div class="h-full flex-grow bg-yellow-800"></div>
+                                               <div class="h-full flex-grow bg-yellow-700"></div>
+                                               <div class="h-full flex-grow bg-blue-500"></div>
+                                               <div class="h-full flex-grow bg-purple-600"></div>
+                                           </div>
+                                           <p class="text-gray-300 text-sm mt-2">Analogous nature palette with green base, brown accents, and purple flower/crystal details.</p>
+                                       </div>
+                                       
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">Cyberpunk Character</h4>
+                                           <div class="h-10 flex">
+                                               <div class="h-full flex-grow bg-gray-900"></div>
+                                               <div class="h-full flex-grow bg-gray-800"></div>
+                                               <div class="h-full flex-grow bg-gray-700"></div>
+                                               <div class="h-full flex-grow bg-indigo-900"></div>
+                                               <div class="h-full flex-grow bg-indigo-800"></div>
+                                               <div class="h-full flex-grow bg-pink-600"></div>
+                                               <div class="h-full flex-grow bg-cyan-400"></div>
+                                           </div>
+                                           <p class="text-gray-300 text-sm mt-2">Dark base with neon accents - monochromatic gray/black with vibrant pink and cyan highlights.</p>
+                                       </div>
+                                       
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">Desert Nomad</h4>
+                                           <div class="h-10 flex">
+                                               <div class="h-full flex-grow bg-yellow-700"></div>
+                                               <div class="h-full flex-grow bg-yellow-600"></div>
+                                               <div class="h-full flex-grow bg-yellow-500"></div>
+                                               <div class="h-full flex-grow bg-red-800"></div>
+                                               <div class="h-full flex-grow bg-red-700"></div>
+                                               <div class="h-full flex-grow bg-blue-600"></div>
+                                               <div class="h-full flex-grow bg-white border border-gray-300"></div>
+                                           </div>
+                                           <p class="text-gray-300 text-sm mt-2">Warm desert palette with sand tones, dark red accents, and blue jewel highlights against white cloth.</p>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Palette Tools & Resources</h3>
+                                   
+                                   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">Online Color Tools:</h4>
+                                           <ul class="space-y-1 text-gray-300 text-sm">
+                                               <li><a href="https://coolors.co/" target="_blank" class="text-red-400 hover:text-red-300 underline">Coolors</a> - Generate and explore color schemes</li>
+                                               <li><a href="https://color.adobe.com/create/color-wheel" target="_blank" class="text-red-400 hover:text-red-300 underline">Adobe Color</a> - Interactive color wheel with harmony tools</li>
+                                               <li><a href="https://paletton.com/" target="_blank" class="text-red-400 hover:text-red-300 underline">Paletton</a> - Advanced color scheme designer</li>
+                                               <li><a href="https://lospec.com/palette-list" target="_blank" class="text-red-400 hover:text-red-300 underline">Lospec</a> - Pixel art specific palettes</li>
+                                           </ul>
+                                       </div>
+                                       
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">TurboDraft Premium Resources:</h4>
+                                           <ul class="space-y-1 text-gray-300 text-sm">
+                                               <li><a href="../../premium/color-palettes/" class="text-red-400 hover:text-red-300 underline">Themed Palette Collection</a> - 50+ pre-made skin palettes</li>
+                                               <li><a href="../../premium/color-harmony-tool/" class="text-red-400 hover:text-red-300 underline">Interactive Harmony Tool</a> - Custom palette generator</li>
+                                               <li><a href="../../premium/skin-color-guide/" class="text-red-400 hover:text-red-300 underline">Minecraft Color Guide</a> - Skin-specific color theory</li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                                   
+                                   <div class="bg-gray-800 p-3 rounded-lg mt-4">
+                                       <p class="text-white text-sm font-bold">Palette Storage Tip:</p>
+                                       <p class="text-gray-300 text-sm">When creating skins, save your color palette directly in your skin editor, or take a screenshot for reference. Having your colors easily accessible speeds up the creation process and ensures consistency.</p>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Common Color Mistakes to Avoid</h3>
+                                   
+                                   <div class="space-y-3">
+                                       <div class="flex items-start">
+                                           <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                           <div>
+                                               <h4 class="text-white font-bold">Using Too Many Colors</h4>
+                                               <p class="text-gray-300 text-sm">Limit your palette to 8-12 colors total (including variations). Too many colors create visual confusion and a chaotic appearance.</p>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                           <div>
+                                               <h4 class="text-white font-bold">Insufficient Contrast</h4>
+                                               <p class="text-gray-300 text-sm">Adjacent areas of your skin need enough contrast to be distinguishable. Test your skin at different zoom levels to ensure features remain visible.</p>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                           <div>
+                                               <h4 class="text-white font-bold">Inconsistent Shading</h4>
+                                               <p class="text-gray-300 text-sm">Keep your light source consistent across the entire skin. Don't have shadows on different sides for different body parts.</p>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                           <div>
+                                               <h4 class="text-white font-bold">Oversaturated Colors</h4>
+                                               <p class="text-gray-300 text-sm">Full saturation everywhere creates an amateur look. Reserve high saturation for focal points and use more muted tones for larger areas.</p>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                           <div>
+                                               <h4 class="text-white font-bold">Random Color Selection</h4>
+                                               <p class="text-gray-300 text-sm">Colors should have a purpose and relationship. Avoid picking colors arbitrarily without considering how they interact with each other.</p>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           
+                           <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-purple-900 mt-6">
+                               <div class="flex items-start">
+                                   <i class="fas fa-star text-purple-500 text-2xl mr-3 mt-1"></i>
+                                   <div>
+                                       <h3 class="text-white font-bold mb-1">Practice Exercise</h3>
+                                       <p class="text-gray-300">Create three different color palettes for the same character concept (e.g., a warrior, wizard, or explorer). Try different color harmonies for each palette. See how the mood and personality of your character shift based solely on color choices. This exercise will help you understand how powerful color can be in communicating character traits.</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Color Psychology & Symbolism -->
+                   <div class="mb-10">
+                       <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Color Psychology & Symbolism</h2>
+                       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                           <p class="text-gray-300 mb-4">Different colors evoke specific emotional responses and carry cultural meanings that can enhance your character designs:</p>
+                           
+                           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <div class="flex items-start mb-3">
+                                       <div class="w-8 h-8 bg-red-600 rounded-full mr-3"></div>
+                                       <h3 class="text-white font-bold">Red</h3>
+                                   </div>
+                                   <p class="text-gray-300 mb-2"><strong>Emotions:</strong> Passion, anger, danger, excitement, power</p>
+                                   <p class="text-gray-300"><strong>Character Types:</strong> Warriors, villains, leaders, passionate characters</p>
+                                   <p class="text-gray-300 mt-2 text-sm"><strong>Skin Design Tip:</strong> Use red for aggressive characters or as accents for heroes (cape, emblem). Pair with black for villains or gold/blue for heroes.</p>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <div class="flex items-start mb-3">
+                                       <div class="w-8 h-8 bg-blue-600 rounded-full mr-3"></div>
+                                       <h3 class="text-white font-bold">Blue</h3>
+                                   </div>
+                                   <p class="text-gray-300 mb-2"><strong>Emotions:</strong> Trust, peace, loyalty, wisdom, stability</p>
+                                   <p class="text-gray-300"><strong>Character Types:</strong> Heroes, wise figures, water-themed, technological</p>
+                                   <p class="text-gray-300 mt-2 text-sm"><strong>Skin Design Tip:</strong> Blue is a versatile protagonist color. Lighter blues feel approachable, while darker blues convey authority. Excellent base for armored characters.</p>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <div class="flex items-start mb-3">
+                                       <div class="w-8 h-8 bg-green-600 rounded-full mr-3"></div>
+                                       <h3 class="text-white font-bold">Green</h3>
+                                   </div>
+                                   <p class="text-gray-300 mb-2"><strong>Emotions:</strong> Nature, growth, healing, envy, prosperity</p>
+                                   <p class="text-gray-300"><strong>Character Types:</strong> Druids, elves, healers, aliens, poisonous beings</p>
+                                   <p class="text-gray-300 mt-2 text-sm"><strong>Skin Design Tip:</strong> Natural greens work for forest characters, while toxic/neon greens communicate poison or alienness. Pair with brown for nature themes.</p>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <div class="flex items-start mb-3">
+                                       <div class="w-8 h-8 bg-purple-600 rounded-full mr-3"></div>
+                                       <h3 class="text-white font-bold">Purple</h3>
+                                   </div>
+                                   <p class="text-gray-300 mb-2"><strong>Emotions:</strong> Royalty, magic, mystery, wisdom, luxury</p>
+                                   <p class="text-gray-300"><strong>Character Types:</strong> Wizards, royalty, mysterious figures, psychic characters</p>
+                                   <p class="text-gray-300 mt-2 text-sm"><strong>Skin Design Tip:</strong> Purple with gold creates a royal aesthetic. Combine with blue for magical characters or black for mysterious/dark magic users.</p>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <div class="flex items-start mb-3">
+                                       <div class="w-8 h-8 bg-yellow-500 rounded-full mr-3"></div>
+                                       <h3 class="text-white font-bold">Yellow</h3>
+                                   </div>
+                                   <p class="text-gray-300 mb-2"><strong>Emotions:</strong> Joy, energy, intellect, attention, caution</p>
+                                   <p class="text-gray-300"><strong>Character Types:</strong> Cheerful characters, scholars, warning-themed designs</p>
+                                   <p class="text-gray-300 mt-2 text-sm"><strong>Skin Design Tip:</strong> Use sparingly as a main color (can be overwhelming). Excellent for accents, glowing elements, or energetic highlights.</p>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <div class="flex items-start mb-3">
+                                       <div class="w-8 h-8 bg-gray-700 rounded-full mr-3"></div>
+                                       <h3 class="text-white font-bold">Gray/Silver</h3>
+                                   </div>
+                                   <p class="text-gray-300 mb-2"><strong>Emotions:</strong> Neutrality, balance, sophistication, technology</p>
+                                   <p class="text-gray-300"><strong>Character Types:</strong> Knights, robots, balanced characters, modern designs</p>
+                                   <p class="text-gray-300 mt-2 text-sm"><strong>Skin Design Tip:</strong> Gray is an excellent neutral base for armored characters. Add silver highlights for metallic effects. Pair with a vibrant accent color.</p>
+                               </div>
+                           </div>
+                           
+                           <div class="mt-6 bg-black bg-opacity-60 p-4 rounded-lg border border-blue-900">
+                               <div class="flex items-start">
+                                   <i class="fas fa-globe text-blue-500 text-2xl mr-3 mt-1"></i>
+                                   <div>
+                                       <h3 class="text-white font-bold mb-1">Cultural Color Considerations</h3>
+                                       <p class="text-gray-300">Remember that color symbolism varies across cultures. If you're creating a character inspired by a specific culture or historical period, research the traditional color associations for that culture to add authenticity to your design.</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Practical Examples -->
+                   <div class="mb-10">
+                       <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Practical Examples: Before & After</h2>
+                       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                           <p class="text-gray-300 mb-4">See how applying color theory principles can transform a Minecraft skin from basic to outstanding:</p>
+                           
+                           <div class="space-y-6">
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Example 1: Warrior Character</h3>
+                                   
+                                   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">Before: Random Colors</h4>
+                                           <div class="h-32 bg-gray-800 flex items-center justify-center">
+                                               <i class="fas fa-user text-gray-600 text-5xl"></i>
+                                           </div>
+                                           <ul class="text-gray-300 text-sm mt-3 space-y-1">
+                                               <li>• Mismatched red and green armor</li>
+                                               <li>• No clear color hierarchy</li>
+                                               <li>• Clashing accent colors</li>
+                                               <li>• Inconsistent shading</li>
+                                               <li>• No visual focal point</li>
+                                           </ul>
+                                       </div>
+                                       
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">After: Color Theory Applied</h4>
+                                           <div class="h-32 bg-gray-800 flex items-center justify-center">
+                                               <i class="fas fa-user-shield text-blue-600 text-5xl"></i>
+                                           </div>
+                                           <ul class="text-gray-300 text-sm mt-3 space-y-1">
+                                               <li>• Complementary scheme: Blue armor with orange accents</li>
+                                               <li>• 60-30-10 distribution (blue, silver, orange)</li>
+                                               <li>• Consistent shading with proper highlights</li>
+                                               <li>• Orange accents draw attention to key features</li>
+                                               <li>• Cohesive, professional appearance</li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Example 2: Magical Character</h3>
+                                   
+                                   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">Before: Flat Coloring</h4>
+                                           <div class="h-32 bg-gray-800 flex items-center justify-center">
+                                               <i class="fas fa-hat-wizard text-gray-600 text-5xl"></i>
+                                           </div>
+                                           <ul class="text-gray-300 text-sm mt-3 space-y-1">
+                                               <li>• Single purple tone throughout</li>
+                                               <li>• Lack of contrast between elements</li>
+                                               <li>• No color variation for depth</li>
+                                               <li>• Magical elements don't stand out</li>
+                                               <li>• Monotonous appearance</li>
+                                           </ul>
+                                       </div>
+                                       
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">After: Color Theory Applied</h4>
+                                           <div class="h-32 bg-gray-800 flex items-center justify-center">
+                                               <i class="fas fa-hat-wizard text-purple-600 text-5xl"></i>
+                                           </div>
+                                           <ul class="text-gray-300 text-sm mt-3 space-y-1">
+                                               <li>• Analogous scheme: Purple, blue, and magenta</li>
+                                               <li>• Cyan accents for magical effects</li>
+                                               <li>• Value variation creates depth</li>
+                                               <li>• Higher saturation for magical elements</li>
+                                               <li>• Dynamic, mystical appearance</li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           
+                           <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-green-800 mt-6">
+                               <div class="flex items-start">
+                                   <i class="fas fa-pencil-alt text-green-500 text-2xl mr-3 mt-1"></i>
+                                   <div>
+                                       <h3 class="text-white font-bold mb-1">Try It Yourself</h3>
+                                       <p class="text-gray-300">Choose an existing skin you've created or find online, and apply color theory principles to enhance it. Focus on creating a cohesive color harmony, establishing proper contrast, and using color strategically to highlight key features. Share your before and after results in our community to get feedback!</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                                      <!-- Related Tutorials -->
+                   <div>
+                       <h2 class="text-2xl text-white mb-6" style="font-family: 'Minecraft', sans-serif;">Related Tutorials</h2>
+                       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                           <a href="../java-edition/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+                               <div class="relative h-40 overflow-hidden">
+                                   <img src="../../assets/images/how_to_install_java_skins.jpg" alt="Java Edition Tutorial" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                   <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                                   <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+                                       Installation
+                                   </div>
+                               </div>
+                               <div class="p-4">
+                                   <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">Installing Skins in Java Edition</h3>
+                                   <p class="text-gray-400 text-sm">Learn how to install skins in the Java version of Minecraft.</p>
+                               </div>
+                           </a>
+                           
+                           <a href="../mobile-installation/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+                               <div class="relative h-40 overflow-hidden">
+                                   <img src="../../assets/images/mobile_installation.jpg" alt="Mobile Installation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                   <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                                   <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+                                       Mobile
+                                   </div>
+                               </div>
+                               <div class="p-4">
+                                   <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">Installing Skins on Mobile Devices</h3>
+                                   <p class="text-gray-400 text-sm">Step-by-step guide for installing skins on Android and iOS devices.</p>
+                               </div>
+                           </a>
+                           
+                           <a href="../create-skins/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+                               <div class="relative h-40 overflow-hidden">
+                                   <img src="../../assets/images/custom_skins.jpg" alt="Creating Custom Skins" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                   <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                                   <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+                                       Creation
+                                   </div>
+                               </div>
+                               <div class="p-4">
+                                   <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">Creating Custom Skins</h3>
+                                   <p class="text-gray-400 text-sm">Design your own unique Minecraft character with popular skin editors.</p>
+                               </div>
+                           </a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <!-- CTA Banner -->
+       <section class="py-10 bg-gradient-to-br from-red-900 to-black">
+           <div class="container mx-auto px-4">
+               <div class="max-w-4xl mx-auto bg-black bg-opacity-50 p-6 rounded-lg border border-red-800">
+                   <div class="flex flex-col md:flex-row items-center">
+                       <div class="text-center md:text-left md:pl-6">
+                           <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">
+                               Master Color Theory with Premium Resources
+                           </h2>
+                           <p class="text-gray-300 mb-6">
+                               Unlock our exclusive collection of color palettes, interactive tools, and advanced tutorials to take your Minecraft skin designs to professional levels!
+                           </p>
+                           <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                               <a href="../../premium/"
+                                   class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800 flex items-center justify-center">
+                                   <i class="fas fa-crown mr-2"></i>
+                                   <span>Get Premium Access</span>
+                               </a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <!-- Footer -->
+       <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+           <div class="container mx-auto px-4">
+               <div class="flex flex-col md:flex-row justify-between">
+                   <div class="mb-8 md:mb-0">
+                       <div class="flex items-center mb-4">
+                           <div
+                               class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:scale-110">
+                               <span class="text-2xl text-white"
+                                   style="font-family: 'Minecraft', sans-serif;">T</span>
+                           </div>
+                           <span class="text-2xl text-white"
+                               style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                   class="text-red-500">.org</span></span>
+                       </div>
+                       <p class="max-w-xs">Premium Minecraft skins for
+                           everyone. Free and subscription options available
+                           for all players.</p>
+                       <p class="mt-4 text-sm">© 2025 TurboDraft. Not
+                           affiliated with Mojang.</p>
+                   </div>
+
+                   <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                       <div>
+                           <h3 class="text-white text-lg mb-4"
+                               style="font-family: 'Minecraft', sans-serif;">Quick
+                               Links</h3>
+                           <ul class="space-y-2">
+                               <li><a href="../../"
+                                       class="hover:text-red-400 transition-colors duration-300">Home</a></li>
+                               <li><a href="../../skins/"
+                                       class="hover:text-red-400 transition-colors duration-300">Skins</a></li>
+                               <li><a href="../../premium/"
+                                       class="hover:text-red-400 transition-colors duration-300">Premium</a></li>
+                               <li><a href="../../features/"
+                                       class="hover:text-red-400 transition-colors duration-300">Features</a></li>
+                               <li><a href="../../about/"
+                                       class="hover:text-red-400 transition-colors duration-300">About
+                                       Us</a></li>
+                           </ul>
+                       </div>
+
+                       <div>
+                           <h3 class="text-white text-lg mb-4"
+                               style="font-family: 'Minecraft', sans-serif;">Resources</h3>
+                           <ul class="space-y-2">
+                               <li><a href="../"
+                                       class="hover:text-red-400 transition-colors duration-300">Tutorials</a></li>
+                               <li><a href="../../faq/"
+                                       class="hover:text-red-400 transition-colors duration-300">FAQ</a></li>
+                               <li><a href="../../contact/"
+                                       class="hover:text-red-400 transition-colors duration-300">Support</a></li>
+                               <li><a href="../../terms/"
+                                       class="hover:text-red-400 transition-colors duration-300">Terms
+                                       of Service</a></li>
+                               <li><a href="../../privacy/"
+                                       class="hover:text-red-400 transition-colors duration-300">Privacy
+                                       Policy</a></li>
+                           </ul>
+                       </div>
+
+                       <div>
+                           <h3 class="text-white text-lg mb-4"
+                               style="font-family: 'Minecraft', sans-serif;">Community</h3>
+                           <ul class="space-y-2">
+                               <li><a href="https://discord.gg/turbodraft"
+                                       target="_blank"
+                                       class="hover:text-red-400 transition-colors duration-300">Discord
+                                       Server</a></li>
+                               <li><a href="https://twitter.com/TurboDraft"
+                                       target="_blank"
+                                       class="hover:text-red-400 transition-colors duration-300">Twitter</a></li>
+                               <li><a href="https://instagram.com/TurboDraft"
+                                       target="_blank"
+                                       class="hover:text-red-400 transition-colors duration-300">Instagram</a></li>
+                               <li><a href="https://youtube.com/TurboDraft"
+                                       target="_blank"
+                                       class="hover:text-red-400 transition-colors duration-300">YouTube</a></li>
+                           </ul>
+                       </div>
+
+                       <div>
+                           <h3 class="text-white text-lg mb-4"
+                               style="font-family: 'Minecraft', sans-serif;">Contact</h3>
+                           <ul class="space-y-2">
+                               <li><a href="mailto:info@turbodraft.org"
+                                       class="hover:text-red-400 transition-colors duration-300">info@turbodraft.org</a></li>
+                               <li><a href="../../contact/"
+                                       class="hover:text-red-400 transition-colors duration-300">Contact
+                                       Form</a></li>
+                               
+                               
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+                   <p class="mb-4">Made with ❤️ for the Minecraft community.
+                       TurboDraft.org - bringing your Minecraft characters to
+                       life.</p>
+                   <div class="flex justify-center space-x-4">
+                       <a href="../../terms/"
+                           class="text-gray-500 hover:text-red-400 transition-colors duration-300">Terms</a>
+                       <span class="text-gray-700">•</span>
+                       <a href="../../privacy/"
+                           class="text-gray-500 hover:text-red-400 transition-colors duration-300">Privacy</a>
+                       <span class="text-gray-700">•</span>
+                       <a href="../../cookies/"
+                           class="text-gray-500 hover:text-red-400 transition-colors duration-300">Cookies</a>
+                   </div>
+               </div>
+           </div>
+       </footer>
+
+       <!-- JavaScript -->
+       <script>
+           // Mobile menu handling
+           document.getElementById('openMenu').addEventListener('click', function() {
+               const mobileMenu = document.getElementById('mobileMenu');
+               mobileMenu.classList.remove('translate-x-full');
+           });
+
+           document.getElementById('closeMenu').addEventListener('click', function() {
+               const mobileMenu = document.getElementById('mobileMenu');
+               mobileMenu.classList.add('translate-x-full');
+           });
+
+           // Add navbar scroll effect
+           window.addEventListener('scroll', function() {
+               const navbar = document.querySelector('nav');
+               if (window.scrollY > 50) {
+                   navbar.classList.add('py-2');
+                   navbar.classList.add('shadow-lg');
+                   navbar.classList.remove('py-4');
+                   navbar.classList.remove('bg-opacity-80');
+               } else {
+                   navbar.classList.remove('py-2');
+                   navbar.classList.remove('shadow-lg');
+                   navbar.classList.add('py-4');
+                   navbar.classList.add('bg-opacity-80');
+               }
+           });
+
+           // Smooth scrolling for anchor links
+           document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+               anchor.addEventListener('click', function(e) {
+                   e.preventDefault();
+                   
+                   const targetId = this.getAttribute('href');
+                   if (targetId === '#') return;
+                   
+                   const targetElement = document.querySelector(targetId);
+                   if (!targetElement) return;
+                   
+                   window.scrollTo({
+                       top: targetElement.offsetTop - 80,
+                       behavior: 'smooth'
+                   });
+               });
+           });
+       </script>
+   </body>
+</html>

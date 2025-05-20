@@ -21,10 +21,11 @@ function updateNavUserSection() {
     if (isLoggedIn && username) {
         // User is logged in - show username and premium indicator if applicable
         navUserSection.innerHTML = `
-            <a href="auth" class="text-white hover:text-red-300 transition-colors duration-300 flex items-center">
+            <a href="/auth/" class="text-white hover:text-red-300 transition-colors duration-300 flex items-center">
                 ${isPremium ? '<i class="fas fa-crown text-yellow-400 mr-2"></i>' : ''}
                 <span class="mr-1">${username}</span>
             </a>
+            <a href="/subscribe/" class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800 ml-4">Subscribe</a>
         `;
         
         // Update mobile menu if needed

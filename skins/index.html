@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TurboDraft.org - Premium Minecraft Skins</title>
+        <meta name="description" content="TurboDraft.org offers premium Minecraft skins for Java and Bedrock editions. Browse our collection of free and premium custom skins, download instantly, and stand out on any server. Visit TurboDraft.org for original designs and weekly skin drops.">
+        <meta name="keywords" content="TurboDraft.org, Minecraft skins, premium Minecraft skins, custom skins, Minecraft character, Java edition skins, Bedrock edition skins, free Minecraft skins, gaming skins, Minecraft customization, TurboDraft premium, skin downloads, weekly skin drops">
         <link
             href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
             rel="stylesheet">
@@ -17,6 +19,7 @@
             href="https://fonts.googleapis.com/css2?family=Minecraft&family=Montserrat:wght@400;600;700&display=swap"
             rel="stylesheet">
         <script src="../assets/js/auth.js"></script>
+        <link rel="icon" href="../assets/icon.webp">
         <script>
             tailwind.config = {
                 theme: {
@@ -47,7 +50,7 @@
         <div id="mobileMenu"
             class="fixed inset-0 bg-black bg-opacity-95 z-50 transform transition-transform duration-300 translate-x-full">
             <div class="container mx-auto px-4 py-6">
-                <div class="flex justify-between items-center mb-6">
+                <a href="../" class="flex justify-between items-center mb-6">
                     <div class="flex items-center">
                         <div
                             class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3">
@@ -62,7 +65,7 @@
                         class="text-white focus:outline-none">
                         <i class="fas fa-times text-2xl"></i>
                     </button>
-                </div>
+                </a>
 
                 <!-- Mobile menu user section will be inserted here by JS when logged in -->
 
@@ -110,7 +113,7 @@
             class="fixed w-full z-40 py-4 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg transition-all duration-300">
             <div class="container mx-auto px-4">
                 <div class="flex justify-between items-center">
-                    <div class="flex items-center">
+                    <a href="../" class="flex items-center">
                         <div
                             class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:transform hover:scale-110">
                             <span class="text-2xl text-white"
@@ -119,7 +122,7 @@
                         <span class="text-2xl text-white"
                             style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
                                 class="text-red-500">.org</span></span>
-                    </div>
+                    </a>
                     <div class="hidden md:flex space-x-8">
                         <a href="../"
                             class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
@@ -481,7 +484,7 @@
                                         class="hover:text-red-400 transition-colors duration-300">Tutorials</a></li>
                                 <li><a href="../faq/"
                                         class="hover:text-red-400 transition-colors duration-300">FAQ</a></li>
-                                <li><a href="../support/"
+                                <li><a href="../contact/"
                                         class="hover:text-red-400 transition-colors duration-300">Support</a></li>
                                 <li><a href="../terms/"
                                         class="hover:text-red-400 transition-colors duration-300">Terms

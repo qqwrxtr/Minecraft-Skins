@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TurboDraft.org - 3D Modeling for Minecraft Skins</title>
+        <meta name="description" content="TurboDraft.org offers premium Minecraft skins for Java and Bedrock editions. Browse our collection of free and premium custom skins, download instantly, and stand out on any server. Visit TurboDraft.org for original designs and weekly skin drops.">
+        <meta name="keywords" content="TurboDraft.org, Minecraft skins, premium Minecraft skins, custom skins, Minecraft character, Java edition skins, Bedrock edition skins, free Minecraft skins, gaming skins, Minecraft customization, TurboDraft premium, skin downloads, weekly skin drops">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Minecraft&family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet">
+        <script src="../../assets/js/auth.js"></script>
+        <link rel="icon" href="../../assets/icon.webp">
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        backgroundImage: {
+                            'card': "url('../../assets/images/bg_card.jpg')",
+                        },
+                    }
+                }
+            }
+        </script>
+    </head>
+
+    <body class="bg-black text-gray-200 font-sans">
+        <!-- Mobile Nav Menu (Hidden by default) -->
+        <div id="mobileMenu"
+            class="fixed inset-0 bg-black bg-opacity-95 z-50 transform transition-transform duration-300 translate-x-full">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex justify-between items-center mb-6">
+                    <div class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </div>
+                    <button id="closeMenu"
+                        class="text-white focus:outline-none">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+
+                <div class="flex flex-col space-y-6 text-center">
+                    <a href="../../"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Home</a>
+                    <a href="../../skins/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Skins</a>
+                    <a href="../../premium/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Premium</a>
+                    <a href="../../features/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Features</a>
+                    <a href="../"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Tutorials</a>
+                    <a href="../../about/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">About</a>
+                    <a href="../../subscribe/"
+                        class="mt-4 bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg">Subscribe
+                        Now</a>
+                </div>
+
+                <div class="mt-10 flex justify-center space-x-6">
+                    <a href="https://discord.gg/turbodraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://instagram.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://youtube.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav
+            class="fixed w-full z-40 py-4 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg transition-all duration-300">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:transform hover:scale-110">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="../../"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                        <a href="../../skins/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Skins</a>
+                        <a href="../../premium/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Premium</a>
+                        <a href="../../features/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Features</a>
+                        <a href="../"
+                            class="relative text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-red-500 after:transition-all after:duration-300">Tutorials</a>
+                        <a href="../../about/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">About</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-4">
+                        <!-- User section will be dynamically populated by auth.js -->
+                        <div id="navUserSection" class="flex items-center">
+                            <!-- Default content shown before JS loads -->
+                            <a href="../../auth/"
+                                class="text-white hover:text-red-300 transition-colors duration-300">Login</a>
+                            <a href="../../subscribe/"
+                                class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800">Subscribe</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="openMenu"
+                            class="text-white focus:outline-none">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Tutorial Header -->
+        <section class="pt-32 pb-10 bg-gradient-to-br from-black to-red-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl mb-4 text-white"
+                        style="font-family: 'Minecraft', sans-serif;">3D Modeling for <span class="text-red-500">Minecraft Skins</span></h1>
+                    <p class="text-lg md:text-xl mb-4 text-gray-300 max-w-3xl mx-auto">Learn how to use 3D modeling software to design and visualize Minecraft skins before creating the final pixel version</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorial Topics Navigation -->
+        <section class="py-6 bg-gray-900 border-b border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <a href="#basics" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                        <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                            <i class="fas fa-cube text-lg"></i>
+                        </div>
+                        <span>3D Modeling Basics</span>
+                    </a>
+                    <a href="#software" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                        <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                            <i class="fas fa-laptop-code text-lg"></i>
+                        </div>
+                        <span>Software Options</span>
+                    </a>
+                    <a href="#workflow" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                        <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                            <i class="fas fa-project-diagram text-lg"></i>
+                        </div>
+                        <span>3D to Pixel Workflow</span>
+                    </a>
+                    <a href="#examples" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                        <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                            <i class="fas fa-images text-lg"></i>
+                        </div>
+                        <span>Examples & Inspiration</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="py-10 bg-black">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    
+                    <!-- Prerequisites Notice -->
+                    <div class="bg-gray-900 border border-gray-800 rounded-lg p-4 mb-8">
+                        <h3 class="text-white font-bold mb-2">Before you begin:</h3>
+                        <p class="text-gray-300 mb-2">This is an <span class="text-red-400 font-bold">advanced tutorial</span> that assumes you already have:</p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-300">
+                            <li>Basic understanding of Minecraft skin structure</li>
+                            <li>Experience with creating standard Minecraft skins</li>
+                            <li>Familiarity with 3D concepts (coordinates, meshes, textures)</li>
+                            <li>Some patience for learning new software</li>
+                        </ul>
+                        <p class="mt-2 text-gray-300">If you're new to skin creation, we recommend starting with our <a href="../create-skins/" class="text-red-400 hover:text-red-300 underline">basic skin creation tutorial</a> first.</p>
+                    </div>
+
+                    <!-- 3D Modeling Basics -->
+                    <div id="basics" class="mb-10 scroll-mt-20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                                <i class="fas fa-cube text-lg"></i>
+                            </div>
+                            <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                                3D Modeling Basics for Minecraft Skins
+                            </h2>
+                        </div>
+                        
+                        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                            <p class="text-gray-300 mb-4">Using 3D modeling as part of your skin creation process can revolutionize your workflow, allowing you to visualize complex designs from all angles before committing to pixel art.</p>
+                            
+                            <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800 mb-6">
+                                <h3 class="text-white font-bold mb-3">Why Use 3D Modeling for Skins?</h3>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4 class="text-white font-bold mb-2">Advantages:</h4>
+                                        <ul class="space-y-1 text-gray-300">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                <span>See your design from all angles before pixel art stage</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                <span>Create complex shapes and proportions more easily</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                <span>Test lighting, shadows, and color schemes realistically</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                <span>Generate texture templates for precise pixel placement</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                <span>Iterate on designs more quickly</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-bold mb-2">Challenges to Consider:</h4>
+                                        <ul class="space-y-1 text-gray-300">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                                <span>Learning curve for 3D software</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                                <span>Additional step in the creation process</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                                <span>Translating 3D details to Minecraft's limited resolution</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                                <span>Some software has a cost or subscription</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-times text-red-500 mt-1 mr-2"></i>
+                                                <span>Hardware requirements for complex models</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                <h3 class="text-white font-bold mb-3">Understanding the Minecraft Character Model</h3>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                        <div>
+                                            <h4 class="text-white font-bold">Basic Structure</h4>
+                                            <p class="text-gray-300">Minecraft characters use a simple box-based model with specific proportions. The character consists of a head (8×8×8 pixels), torso (8×12×4), arms (4×12×4 each), and legs (4×12×4 each). Understanding these proportions is crucial for accurate 3D modeling.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                        <div>
+                                            <h4 class="text-white font-bold">Model Variants</h4>
+                                            <p class="text-gray-300">Minecraft offers two player models: Classic (Steve) with 4-pixel wide arms, and Slim (Alex) with 3-pixel wide arms. When 3D modeling, you'll need to decide which model to use as your base and adjust accordingly.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                        <div>
+                                            <h4 class="text-white font-bold">Overlay Layer</h4>
+                                            <p class="text-gray-300">Remember that Minecraft skins have two layers: the base layer and the overlay layer (for clothing, armor, accessories). In 3D modeling, these are typically handled as separate mesh layers or materials with transparency.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">4</div>
+                                        <div>
+                                            <h4 class="text-white font-bold">Movement Limitations</h4>
+                                            <p class="text-gray-300">Minecraft characters have limited range of motion - arms and legs can only swing forward and backward, and the head can only rotate. Keep these limitations in mind when designing your 3D model to ensure your skin works within the game's animation system.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-yellow-900 mt-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-lightbulb text-yellow-500 text-2xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h3 class="text-white font-bold mb-1">Design Philosophy</h3>
+                                        <p class="text-gray-300">When using 3D modeling for Minecraft skins, balance creativity with practicality. While you can create incredibly detailed 3D models, remember that you'll ultimately need to translate your design to Minecraft's limited pixel resolution. The best designs find clever ways to suggest complex details within these constraints.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Software Options -->
+                    <div id="software" class="mb-10 scroll-mt-20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                                <i class="fas fa-laptop-code text-lg"></i>
+                            </div>
+                            <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                                3D Software Options
+                            </h2>
+                        </div>
+                        
+                        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                            <p class="text-gray-300 mb-4">Several 3D modeling applications are well-suited for Minecraft skin creation. Here's a comparison to help you choose the right one for your needs and skill level:</p>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Minecraft-Specific 3D Tools</h3>
+                                    
+                                    <div class="grid grid-cols-1 gap-6 mb-4">
+                                        <div>
+                                            <h4 class="text-white font-bold mb-2 flex items-center">
+                                                <i class="fas fa-cubes text-blue-400 mr-2"></i>
+                                                Blockbench
+                                            </h4>
+                                            <p class="text-gray-300 mb-3">A free, specialized 3D modeling program designed specifically for Minecraft-style blocky models. Ideal for beginners and experienced creators alike.</p>
+                                            
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <div>
+                                                    <h5 class="text-white font-bold mb-1">Pros:</h5>
+                                                    <ul class="text-gray-300 text-sm space-y-1">
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-plus text-green-500 mr-1 mt-1"></i>
+                                                            <span>Free and open-source</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-plus text-green-500 mr-1 mt-1"></i>
+                                                            <span>Built-in Minecraft character templates</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-plus text-green-500 mr-1 mt-1"></i>
+                                                            <span>Easy texture painting and UV mapping</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-plus text-green-500 mr-1 mt-1"></i>
+                                                            <span>Web and desktop versions available</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-plus text-green-500 mr-1 mt-1"></i>
+                                                            <span>Minecraft skin import/export</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h5 class="text-white font-bold mb-1">Cons:</h5>
+                                                    <ul class="text-gray-300 text-sm space-y-1">
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-minus text-red-500 mr-1 mt-1"></i>
+                                                            <span>Limited advanced modeling features</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-minus text-red-500 mr-1 mt-1"></i>
+                                                            <span>Fewer rendering options than professional software</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-minus text-red-500 mr-1 mt-1"></i>
+                                                            <span>More limited for organic shapes</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <a href="https://www.blockbench.net/" target="_blank" class="inline-flex items-center bg-blue-900 hover:bg-blue-800 text-white py-1 px-3 rounded-lg transition-colors duration-200 mt-3 text-sm">
+                                                <span>Visit Website</span>
+                                                <i class="fas fa-external-link-alt ml-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Free Professional 3D Software</h3>
+                                    
+                                    <div class="space-y-6">
+                                        <div>
+                                            <h4 class="text-white font-bold mb-2 flex items-center">
+                                                <i class="fas fa-cube text-orange-400 mr-2"></i>
+                                                Blender
+                                            </h4>
+                                            <p class="text-gray-300 mb-3">A powerful, fully-featured open-source 3D creation suite. Offers the most professional features but has a steeper learning curve.</p>
+                                            
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <div>
+                                                    <h5 class="text-white font-bold mb-1">Pros:</h5>
+                                                    <ul class="text-gray-300 text-sm space-y-1">
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-plus text-green-500 mr-1 mt-1"></i>
+                                                            <span>Completely free and professional-grade</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-plus text-green-500 mr-1 mt-1"></i>
+                                                            <span>Advanced modeling, texturing, and rendering</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-plus text-green-500 mr-1 mt-1"></i>
+                                                            <span>Large community with many tutorials</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-plus text-green-500 mr-1 mt-1"></i>
+                                                            <span>Minecraft addons available</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-plus text-green-500 mr-1 mt-1"></i>
+                                                            <span>Skills transfer to other 3D projects</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h5 class="text-white font-bold mb-1">Cons:</h5>
+                                                    <ul class="text-gray-300 text-sm space-y-1">
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-minus text-red-500 mr-1 mt-1"></i>
+                                                            <span>Steep learning curve</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-minus text-red-500 mr-1 mt-1"></i>
+                                                            <span>Interface can be overwhelming</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-minus text-red-500 mr-1 mt-1"></i>
+                                                            <span>Requires manual setup for Minecraft characters</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-minus text-red-500 mr-1 mt-1"></i>
+                                                            <span>More resource-intensive than simpler options</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <a href="https://www.blender.org/" target="_blank" class="inline-flex items-center bg-orange-900 hover:bg-orange-800 text-white py-1 px-3 rounded-lg transition-colors duration-200 mt-3 text-sm">
+                                                <span>Visit Website</span>
+                                                <i class="fas fa-external-link-alt ml-1"></i>
+                                            </a>
+                                        </div>
+                                        
+                                        <div>
+                                            <h4 class="text-white font-bold mb-2 flex items-center">
+                                                <i class="fas fa-shapes text-purple-400 mr-2"></i>
+                                                Wings 3D
+                                            </h4>
+                                            <p class="text-gray-300 mb-3">A lightweight, focused 3D modeler with a simpler interface. Good middle ground between Blockbench and Blender.</p>
+                                            
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <div>
+                                                    <h5 class="text-white font-bold mb-1">Pros:</h5>
+                                                    <ul class="text-gray-300 text-sm space-y-1">
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-plus text-green-500 mr-1 mt-1"></i>
+                                                            <span>Free and open-source</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-plus text-green-500 mr-1 mt-1"></i>
+                                                            <span>More intuitive than Blender for beginners</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-plus text-green-500 mr-1 mt-1"></i>
+                                                            <span>Focus on subdivision modeling</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-plus text-green-500 mr-1 mt-1"></i>
+                                                            <span>Lightweight and runs on older hardware</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h5 class="text-white font-bold mb-1">Cons:</h5>
+                                                    <ul class="text-gray-300 text-sm space-y-1">
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-minus text-red-500 mr-1 mt-1"></i>
+                                                            <span>Less powerful than Blender</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-minus text-red-500 mr-1 mt-1"></i>
+                                                            <span>Limited rendering capabilities</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-minus text-red-500 mr-1 mt-1"></i>
+                                                            <span>No built-in Minecraft templates</span>
+                                                        </li>
+                                                        <li class="flex items-start">
+                                                            <i class="fas fa-minus text-red-500 mr-1 mt-1"></i>
+                                                            <span>Smaller community and fewer tutorials</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <a href="http://www.wings3d.com/" target="_blank" class="inline-flex items-center bg-purple-900 hover:bg-purple-800 text-white py-1 px-3 rounded-lg transition-colors duration-200 mt-3 text-sm">
+                                                <span>Visit Website</span>
+                                                <i class="fas fa-external-link-alt ml-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Premium Software Options</h3>
+                                    
+                                    <div class="space-y-4">
+                                        <p class="text-gray-300">If you're serious about 3D modeling and have a budget, these commercial options offer powerful features:</p>
+                                        
+                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                            <div class="bg-gray-800 p-3 rounded-lg">
+                                                <h4 class="text-white font-bold mb-1">ZBrush</h4>
+                                                <p class="text-gray-300 text-xs mb-2">Excellent for organic sculpting and fine details.</p>
+                                                <p class="text-blue-400 text-xs">Starting at $39.95/month</p>
+                                                <a href="https://pixologic.com/" target="_blank" class="text-red-400 hover:text-red-300 text-xs inline-flex items-center mt-2">
+                                                    <span>Learn More</span>
+                                                    <i class="fas fa-external-link-alt ml-1"></i>
+                                                </a>
+                                            </div>
+                                            
+                                            <div class="bg-gray-800 p-3 rounded-lg">
+                                                <h4 class="text-white font-bold mb-1">Maya</h4>
+                                                <p class="text-gray-300 text-xs mb-2">Industry standard with comprehensive tools.</p>
+                                                <p class="text-blue-400 text-xs">Starting at $225/month</p>
+                                                <a href="https://www.autodesk.com/products/maya/overview" target="_blank" class="text-red-400 hover:text-red-300 text-xs inline-flex items-center mt-2">
+                                                    <span>Learn More</span>
+                                                    <i class="fas fa-external-link-alt ml-1"></i>
+                                                </a>
+                                            </div>
+                                            
+                                            <div class="bg-gray-800 p-3 rounded-lg">
+                                                <h4 class="text-white font-bold mb-1">Cinema 4D</h4>
+                                                <p class="text-gray-300 text-xs mb-2">User-friendly with powerful rendering.</p>
+                                                <p class="text-blue-400 text-xs">Starting at $59.99/month</p>
+                                                <a href="https://www.maxon.net/en/cinema-4d" target="_blank" class="text-red-400 hover:text-red-300 text-xs inline-flex items-center mt-2">
+                                                    <span>Learn More</span>
+                                                    <i class="fas fa-external-link-alt ml-1"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-blue-900 mt-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-info-circle text-blue-500 text-2xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h3 class="text-white font-bold mb-1">Our Recommendation</h3>
+                                        <p class="text-gray-300">For most Minecraft skin creators, we recommend starting with <strong>Blockbench</strong>. It's specifically designed for Minecraft-style modeling, has a gentle learning curve, and includes everything you need to create great skin models. If you find yourself wanting more advanced features, Blender is an excellent free upgrade path.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3D to Pixel Workflow -->
+                    <div id="workflow" class="mb-10 scroll-mt-20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                                <i class="fas fa-project-diagram text-lg"></i>
+                            </div>
+                            <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                                3D to Pixel Workflow
+                            </h2>
+                        </div>
+                        
+                        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                            <p class="text-gray-300 mb-4">Creating a Minecraft skin using 3D modeling involves a specific workflow that bridges the gap between 3D design and pixel art. Here's our recommended process:</p>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 1: Planning & Base Model Setup</h3>
+                                    
+                                    <div class="grid grid-cols-1 gap-6 mb-4">
+                                        <div>
+                                            <p class="text-gray-300 mb-3">Start by planning your character and setting up a proper Minecraft character base model.</p>
+                                            
+                                            <h4 class="text-white font-bold mb-2">Key Tasks:</h4>
+                                            <ol class="space-y-1 text-gray-300 list-decimal list-inside pl-4">
+                                                <li>Sketch your character concept or gather reference images</li>
+                                                <li>Choose between Classic (Steve) or Slim (Alex) body type</li>
+                                                <li>Import a Minecraft character template into your 3D software</li>
+                                                <li>Verify all proportions match Minecraft's specifications</li>
+                                                <li>Set up proper scene lighting for visibility</li>
+                                            </ol>
+                                            
+                                            <div class="bg-gray-800 p-3 rounded-lg mt-4">
+                                                <p class="text-white text-sm font-bold">Pro Tip:</p>
+                                                <p class="text-gray-300 text-sm">In Blockbench, use the built-in player model template. In Blender, download a Minecraft character rig from BlenderMarket or create a simple box model using Minecraft's exact dimensions.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 2: Creating Your 3D Design</h3>
+                                    
+                                    <div class="grid grid-cols-1 gap-6 mb-4">
+                                        <div>
+                                            <p class="text-gray-300 mb-3">Model your character's features, accessories, and details in 3D while keeping Minecraft's style in mind.</p>
+                                            
+                                            <h4 class="text-white font-bold mb-2">Design Approaches:</h4>
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                                                <div class="bg-gray-800 p-3 rounded-lg">
+                                                    <h5 class="text-white text-sm font-bold mb-2">Box Modeling (Recommended)</h5>
+                                                    <ul class="text-gray-300 text-xs space-y-1">
+                                                        <li>Create features using simple cubes and boxes</li>
+                                                        <li>Stay true to Minecraft's blocky aesthetic</li>
+                                                        <li>Easier to translate to pixels later</li>
+                                                        <li>Works well for armor, clothing, accessories</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="bg-gray-800 p-3 rounded-lg">
+                                                    <h5 class="text-white text-sm font-bold mb-2">Sculpting Approach</h5>
+                                                    <ul class="text-gray-300 text-xs space-y-1">
+                                                        <li>Create more organic, detailed shapes</li>
+                                                        <li>Useful for complex characters</li>
+                                                        <li>Harder to translate to pixels</li>
+                                                        <li>Requires more interpretation later</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <h4 class="text-white font-bold mb-2">Remember These Constraints:</h4>
+                                            <ul class="space-y-1 text-gray-300 list-disc list-inside pl-4">
+                                                <li>All additions must fit within Minecraft's player model hitbox</li>
+                                                <li>Create separate geometry for base layer and overlay layer</li>
+                                                <li>Consider visibility from different angles and poses</li>
+                                                <li>Keep detail level appropriate for final pixel resolution</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 3: Texturing in 3D</h3>
+                                    
+                                    <div class="grid grid-cols-1 gap-6 mb-4">
+                                        <div>
+                                            <p class="text-gray-300 mb-3">Apply colors and basic textures to your 3D model to visualize the final appearance before converting to pixel art.</p>
+                                            
+                                            <h4 class="text-white font-bold mb-2">Texturing Techniques:</h4>
+                                            <ol class="space-y-1 text-gray-300 list-decimal list-inside pl-4">
+                                                <li>Use your software's UV mapping tools to unwrap your model</li>
+                                                <li>Paint directly on the 3D model or edit the UV texture</li>
+                                                <li>Apply material colors to different sections</li>
+                                                <li>Experiment with different color schemes</li>
+                                                <li>Add basic shading to define forms</li>
+                                            </ol>
+                                            
+                                            <div class="bg-gray-800 p-3 rounded-lg mt-4">
+                                                <p class="text-white text-sm font-bold">Key Consideration:</p>
+                                                <p class="text-gray-300 text-sm">At this stage, focus on color blocking and general appearance rather than pixel-perfect details. The goal is to establish the overall look of your skin before moving to pixel art.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 4: UV Template Export</h3>
+                                    
+                                    <div class="grid grid-cols-1 gap-6 mb-4">
+                                        <div>
+                                            <p class="text-gray-300 mb-3">Generate a UV template from your 3D model that matches Minecraft's skin layout to guide your pixel art.</p>
+                                            
+                                            <h4 class="text-white font-bold mb-2">Export Process:</h4>
+                                            <ol class="space-y-1 text-gray-300 list-decimal list-inside pl-4">
+                                                <li>Ensure your UV mapping matches Minecraft's skin template layout</li>
+                                                <li>Export a high-resolution render of your UV layout with shading</li>
+                                                <li>Also export a wireframe version showing boundaries</li>
+                                                <li>Resize to Minecraft's 64x64 pixel dimensions</li>
+                                                <li>Save as PNG for pixel art editing</li>
+                                            </ol>
+                                            
+                                            <div class="bg-gray-800 p-3 rounded-lg mt-4">
+                                                <p class="text-white text-sm font-bold">Software-Specific Tips:</p>
+                                                <ul class="text-gray-300 text-xs space-y-1">
+                                                    <li><strong>Blockbench:</strong> Use the built-in texture painter and export template</li>
+                                                    <li><strong>Blender:</strong> Use the UV Editor and Texture Paint mode, then export UV layout</li>
+                                                    <li><strong>Other 3D software:</strong> Look for "Export UV Layout" or "Render UV Template" options</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 5: Pixel Art Creation</h3>
+                                    
+                                    <div class="grid grid-cols-1 gap-6 mb-4">
+                                        <div>
+                                            <p class="text-gray-300 mb-3">Use your 3D model's UV template as a guide to create the final pixel art version of your skin.</p>
+                                            
+                                            <h4 class="text-white font-bold mb-2">Pixel Art Process:</h4>
+                                            <ol class="space-y-1 text-gray-300 list-decimal list-inside pl-4">
+                                                <li>Open your UV template in a pixel art editor (Aseprite, Photoshop, GIMP)</li>
+                                                <li>Create a new 64x64 pixel document with transparency</li>
+                                                <li>Use the template as a reference layer or guide</li>
+                                                <li>Hand-place pixels following your 3D design</li>
+                                                <li>Add pixel art details like dithering, highlights, and shadows</li>
+                                                <li>Create both base and overlay layers</li>
+                                            </ol>
+                                            
+                                            <div class="bg-gray-800 p-3 rounded-lg mt-4">
+                                                <p class="text-white text-sm font-bold">Art Refinement Tips:</p>
+                                                <ul class="text-gray-300 text-xs space-y-1">
+                                                    <li>Use anti-aliasing sparingly for smoother edges</li>
+                                                    <li>Add pixel-level details that weren't in the 3D model</li>
+                                                    <li>Consider Minecraft's lighting system when adding shadows</li>
+                                                    <li>Use limited color palettes for cohesive designs</li>
+                                                    <li>Check pixel alignment between different body parts</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 6: Testing and Refinement</h3>
+                                    
+                                    <div class="grid grid-cols-1 gap-6 mb-4">
+                                        <div>
+                                            <p class="text-gray-300 mb-3">Test your skin in a Minecraft skin viewer and make final adjustments.</p>
+                                            
+                                            <h4 class="text-white font-bold mb-2">Testing Process:</h4>
+                                            <ol class="space-y-1 text-gray-300 list-decimal list-inside pl-4">
+                                                <li>Save your pixel art as a PNG file</li>
+                                                <li>Upload to a Minecraft skin viewer</li>
+                                                <li>Check appearance from all angles</li>
+                                                <li>Test with animations (walking, running, etc.)</li>
+                                                <li>Make pixel-level adjustments as needed</li>
+                                                <li>Repeat until satisfied</li>
+                                                <li>Upload to your Minecraft account</li>
+                                            </ol>
+                                            
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                                                <div class="bg-gray-800 p-3 rounded-lg">
+                                                    <p class="text-white text-sm font-bold">Recommended Viewers:</p>
+                                                    <ul class="text-gray-300 text-xs space-y-1">
+                                                        <li><a href="https://minecraft.novaskin.me/skin-editor" target="_blank" class="text-red-400 hover:text-red-300">NovaSkin Editor</a></li>
+                                                        <li><a href="https://www.minecraftskins.com/skin-editor/" target="_blank" class="text-red-400 hover:text-red-300">MinecraftSkins.com</a></li>
+                                                        <li><a href="https://namemc.com/minecraft-skins" target="_blank" class="text-red-400 hover:text-red-300">NameMC Skin Viewer</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="bg-gray-800 p-3 rounded-lg">
+                                                    <p class="text-white text-sm font-bold">Common Adjustments:</p>
+                                                    <ul class="text-gray-300 text-xs space-y-1">
+                                                        <li>Fix seams between body parts</li>
+                                                        <li>Adjust colors that appear different in-game</li>
+                                                        <li>Fix overlay alignment issues</li>
+                                                        <li>Enhance visibility of important details</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-green-800 mt-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 text-2xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h3 class="text-white font-bold mb-1">Workflow Benefits</h3>
+                                        <p class="text-gray-300 mb-2">Following this 3D-to-pixel workflow provides several advantages over creating skins directly in pixel art:</p>
+                                        <ul class="list-disc list-inside text-gray-300">
+                                            <li>Better visualization of your character from all angles during design</li>
+                                            <li>More consistent proportions and design elements</li>
+                                            <li>Easier to experiment with complex shapes and accessories</li>
+                                            <li>The 3D model can be reused for different skin variations</li>
+                                            <li>The process builds both 3D modeling and pixel art skills</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Examples & Inspiration -->
+                    <div id="examples" class="mb-10 scroll-mt-20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                                <i class="fas fa-images text-lg"></i>
+                            </div>
+                            <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                                Examples & Inspiration
+                            </h2>
+                        </div>
+                        
+                        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                            <p class="text-gray-300 mb-4">Let's examine some examples of skins created using the 3D-to-pixel workflow to see what's possible with this technique:</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                                <div class="bg-black bg-opacity-40 rounded-lg overflow-hidden">
+                                    <div class="h-48 bg-gray-800 flex items-center justify-center">
+                                        <i class="fas fa-user-astronaut text-blue-500 text-5xl"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <h3 class="text-white font-bold">Sci-Fi Exosuit</h3>
+                                        <p class="text-gray-300 text-xs mt-1">Complex armor plating and helmet design created in Blender, with intricate details added during the pixel art stage.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg overflow-hidden">
+                                    <div class="h-48 bg-gray-800 flex items-center justify-center">
+                                        <i class="fas fa-dragon text-red-500 text-5xl"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <h3 class="text-white font-bold">Dragon Hybrid</h3>
+                                        <p class="text-gray-300 text-xs mt-1">Organic creature design with wings and scales modeled in ZBrush, showcasing how complex forms can be translated to pixels.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg overflow-hidden">
+                                    <div class="h-48 bg-gray-800 flex items-center justify-center">
+                                        <i class="fas fa-hat-wizard text-purple-500 text-5xl"></i>
+                                    </div>
+                                    <div class="p-4">
+                                        <h3 class="text-white font-bold">Arcane Mage</h3>
+                                        <p class="text-gray-300 text-xs mt-1">Flowing robes and magical accessories designed in Blockbench with custom UV mapping for intricate decorative patterns.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800 mb-6">
+                                <h3 class="text-white font-bold mb-3">Design Approaches to Try</h3>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <h4 class="text-white font-bold mb-2">Extended Features</h4>
+                                        <p class="text-gray-300 text-sm mb-2">Design elements that extend beyond the standard character silhouette:</p>
+                                        <ul class="text-gray-300 text-sm space-y-1">
+                                            <li>• Horns, antlers, or elaborate headpieces</li>
+                                            <li>• Wings, capes, or flowing garments</li>
+                                            <li>• Mechanical appendages or floating elements</li>
+                                            <li>• Oversized weapons or tools</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-bold mb-2">Asymmetrical Designs</h4>
+                                        <p class="text-gray-300 text-sm mb-2">Break the standard symmetry for interesting characters:</p>
+                                        <ul class="text-gray-300 text-sm space-y-1">
+                                            <li>• Battle-damaged armor on one side</li>
+                                            <li>• Cybernetic arm with normal arm</li>
+                                            <li>• Different elements for each side of the face</li>
+                                            <li>• Mixed material types across the body</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800 mb-6">
+                                <h3 class="text-white font-bold mb-3">Implementation Challenges & Solutions</h3>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                        <div>
+                                            <h4 class="text-white font-bold">Detail Simplification</h4>
+                                            <p class="text-gray-300 text-sm"><strong>Challenge:</strong> Your 3D model has more detail than can translate to pixels.</p>
+                                            <p class="text-gray-300 text-sm"><strong>Solution:</strong> Focus on silhouette and major forms first. Suggest fine details through careful use of shading and highlight pixels rather than trying to recreate every 3D element.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                        <div>
+                                            <h4 class="text-white font-bold">Overlay Alignment</h4>
+<p class="text-gray-300 text-sm"><strong>Challenge:</strong> Ensuring perfect alignment between base and overlay layers.</p>
+<p class="text-gray-300 text-sm"><strong>Solution:</strong> Create both layers in your 3D software with slight separation, then export both UV maps. When creating pixel art, work on both layers simultaneously and constantly check alignment in a skin viewer.</p>
+</div>
+</div>
+
+<div class="flex items-start">
+   <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+   <div>
+       <h4 class="text-white font-bold">Translating Curved Surfaces</h4>
+       <p class="text-gray-300 text-sm"><strong>Challenge:</strong> Smooth, curved surfaces in 3D become blocky in pixel art.</p>
+       <p class="text-gray-300 text-sm"><strong>Solution:</strong> Use careful anti-aliasing and strategic color placement to suggest curves. For complex curves, simplify into stepped layers rather than attempting perfect smoothness.</p>
+   </div>
+</div>
+
+<div class="flex items-start">
+   <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">4</div>
+   <div>
+       <h4 class="text-white font-bold">Texture Translation</h4>
+       <p class="text-gray-300 text-sm"><strong>Challenge:</strong> Complex textures from 3D (like leather, metal, fabric) don't directly convert to pixels.</p>
+       <p class="text-gray-300 text-sm"><strong>Solution:</strong> Create pixel-specific texture patterns that suggest the materials rather than trying to downscale 3D textures. Use established pixel art techniques like dithering and noise patterns.</p>
+   </div>
+</div>
+</div>
+</div>
+
+<div class="bg-black bg-opacity-60 p-4 rounded-lg border border-blue-900 mt-6">
+<div class="flex items-start">
+   <i class="fas fa-lightbulb text-blue-500 text-2xl mr-3 mt-1"></i>
+   <div>
+       <h3 class="text-white font-bold mb-1">Creative Challenge</h3>
+       <p class="text-gray-300">Try recreating your favorite character from games, movies, or comics using the 3D-to-pixel workflow. This provides great practice and lets you focus on the technical aspects while having a clear design reference. Share your creations in our <a href="https://discord.gg/turbodraft" target="_blank" class="text-red-400 hover:text-red-300 underline transition-colors duration-300">Discord community</a> to get feedback and tips from other skin creators!</p>
+   </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Advanced Techniques -->
+<div class="mb-10">
+<h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Advanced Techniques</h2>
+<div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+   <p class="text-gray-300 mb-4">Once you've mastered the basic 3D-to-pixel workflow, try these advanced techniques to take your skins to the next level:</p>
+   
+   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+       <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+           <div class="flex items-start mb-3">
+               <i class="fas fa-layer-group text-yellow-500 text-xl mr-3 mt-1"></i>
+               <h3 class="text-white font-bold">Multi-Layer 3D Modeling</h3>
+           </div>
+           <p class="text-gray-300 mb-2">Create multiple 3D model layers with different levels of detail.</p>
+           <p class="text-gray-300">Use separate meshes for the base character, clothing, armor, and accessories. This approach allows you to visualize how different elements will interact, and makes it easier to create both the base and overlay skin layers.</p>
+       </div>
+       
+       <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+           <div class="flex items-start mb-3">
+               <i class="fas fa-sun text-orange-500 text-xl mr-3 mt-1"></i>
+               <h3 class="text-white font-bold">Lighting Studies</h3>
+           </div>
+           <p class="text-gray-300 mb-2">Use 3D lighting to plan your skin's shading and highlights.</p>
+           <p class="text-gray-300">Set up multiple light sources in your 3D software and render your model from different angles. Use these renders as reference for adding shading in the pixel art stage, ensuring consistent lighting across the entire skin.</p>
+       </div>
+       
+       <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+           <div class="flex items-start mb-3">
+               <i class="fas fa-walking text-green-500 text-xl mr-3 mt-1"></i>
+               <h3 class="text-white font-bold">Animation Testing</h3>
+           </div>
+           <p class="text-gray-300 mb-2">Check how your design looks in motion before committing to pixels.</p>
+           <p class="text-gray-300">Use a rigged Minecraft character model to test how your design will look when walking, running, swimming, etc. This helps identify potential issues with overlapping elements or areas that might look strange during animation.</p>
+       </div>
+       
+       <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+           <div class="flex items-start mb-3">
+               <i class="fas fa-paint-brush text-purple-500 text-xl mr-3 mt-1"></i>
+               <h3 class="text-white font-bold">Material Studies</h3>
+           </div>
+           <p class="text-gray-300 mb-2">Create realistic material appearances even in pixel form.</p>
+           <p class="text-gray-300">Apply advanced materials (metal, fabric, leather, etc.) in your 3D software, then study how they render. Create pixel art "swatches" for each material type before applying them to your skin, ensuring consistent material representation.</p>
+       </div>
+   </div>
+   
+   <div class="mt-6 bg-black bg-opacity-60 p-4 rounded-lg border border-purple-900">
+       <div class="flex items-start">
+           <i class="fas fa-award text-purple-500 text-2xl mr-3 mt-1"></i>
+           <div>
+               <h3 class="text-white font-bold mb-1">Take It Further</h3>
+               <p class="text-gray-300">For the most dedicated skin creators, consider learning character rigging and animation in software like Blender. This allows you to create custom poses and animations for your 3D model before converting to pixel art, giving you unprecedented control over how your skin will look in different game scenarios.</p>
+           </div>
+       </div>
+   </div>
+</div>
+</div>
+
+<!-- Tools & Resources -->
+<div class="mb-10">
+<h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Tools & Resources</h2>
+<div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+   <p class="text-gray-300 mb-4">Here are some essential resources to help you master the 3D-to-pixel workflow:</p>
+   
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+       <div class="bg-black bg-opacity-40 p-3 rounded-lg border border-gray-800">
+           <h3 class="text-white font-bold mb-2">Templates & Models</h3>
+           <ul class="text-gray-300 text-sm space-y-2">
+               <li><a href="../../resources/downloads/minecraft-3d-base.blend" class="text-red-400 hover:text-red-300">Minecraft Character Base (Blender)</a></li>
+               <li><a href="../../resources/downloads/minecraft-skin-template-3d.bbmodel" class="text-red-400 hover:text-red-300">Character Template (Blockbench)</a></li>
+               <li><a href="../../resources/downloads/minecraft-uv-template-hd.png" class="text-red-400 hover:text-red-300">HD UV Template (PNG)</a></li>
+               <li><a href="../../resources/downloads/overlay-base-models.zip" class="text-red-400 hover:text-red-300">Base & Overlay Templates</a></li>
+           </ul>
+       </div>
+       
+       <div class="bg-black bg-opacity-40 p-3 rounded-lg border border-gray-800">
+           <h3 class="text-white font-bold mb-2">Tutorials & Guides</h3>
+           <ul class="text-gray-300 text-sm space-y-2">
+               <li><a href="../../tutorials/videos/blockbench-basics/" class="text-red-400 hover:text-red-300">Blockbench Basics (Video)</a></li>
+               <li><a href="../../tutorials/videos/blender-minecraft-modeling/" class="text-red-400 hover:text-red-300">Minecraft Modeling in Blender</a></li>
+               <li><a href="../../tutorials/videos/3d-to-pixel-workflow/" class="text-red-400 hover:text-red-300">3D to Pixel Art Process</a></li>
+               <li><a href="../../tutorials/videos/uv-mapping-guide/" class="text-red-400 hover:text-red-300">UV Mapping for Skins</a></li>
+           </ul>
+       </div>
+       
+       <div class="bg-black bg-opacity-40 p-3 rounded-lg border border-gray-800">
+           <h3 class="text-white font-bold mb-2">Community Resources</h3>
+           <ul class="text-gray-300 text-sm space-y-2">
+               <li><a href="https://discord.gg/turbodraft" target="_blank" class="text-red-400 hover:text-red-300">TurboDraft Discord</a></li>
+               <li><a href="https://www.reddit.com/r/MinecraftSkins/" target="_blank" class="text-red-400 hover:text-red-300">r/MinecraftSkins</a></li>
+               <li><a href="https://www.planetminecraft.com/forums/minecraft/skins/" target="_blank" class="text-red-400 hover:text-red-300">Planet Minecraft Forums</a></li>
+               <li><a href="../../gallery/3d-modeled-showcase/" class="text-red-400 hover:text-red-300">3D Modeled Skin Gallery</a></li>
+           </ul>
+       </div>
+   </div>
+   
+   <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+       <h3 class="text-white font-bold mb-3">Premium Resources</h3>
+       
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+           <div class="bg-gray-800 p-3 rounded-lg">
+               <h4 class="text-white font-bold mb-2">3D Skin Starter Pack</h4>
+               <p class="text-gray-300 text-sm mb-2">Our premium collection of resources for 3D skin modeling:</p>
+               <ul class="text-gray-300 text-xs space-y-1">
+                   <li>• 10 pre-made 3D character bases</li>
+                   <li>• 25 material presets (metal, fabric, leather, etc.)</li>
+                   <li>• Custom Blender & Blockbench templates</li>
+                   <li>• Step-by-step video tutorials</li>
+                   <li>• Advanced UV mapping guides</li>
+               </ul>
+               <div class="mt-3">
+                   <a href="../../premium/3d-skin-starter-pack/" class="bg-red-800 hover:bg-red-700 text-white text-xs py-1 px-3 rounded transition-colors duration-300">Learn More</a>
+               </div>
+           </div>
+           
+           <div class="bg-gray-800 p-3 rounded-lg">
+               <h4 class="text-white font-bold mb-2">Expert Video Masterclass</h4>
+               <p class="text-gray-300 text-sm mb-2">Comprehensive video course covering the complete workflow:</p>
+               <ul class="text-gray-300 text-xs space-y-1">
+                   <li>• 8+ hours of in-depth video instruction</li>
+                   <li>• From concept to final skin creation</li>
+                   <li>• Advanced 3D modeling techniques</li>
+                   <li>• Pixel art optimization strategies</li>
+                   <li>• Personal feedback from pro skin designers</li>
+               </ul>
+               <div class="mt-3">
+                   <a href="../../premium/3d-masterclass/" class="bg-red-800 hover:bg-red-700 text-white text-xs py-1 px-3 rounded transition-colors duration-300">Learn More</a>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+</div>
+
+<!-- Related Tutorials -->
+<div>
+<h2 class="text-2xl text-white mb-6" style="font-family: 'Minecraft', sans-serif;">Related Tutorials</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+   <a href="../pixel-art-basics/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+       <div class="relative h-40 overflow-hidden">
+           <img src="../../assets/images/pixel_art_basics.webp" alt="Pixel Art Basics" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+           <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+           <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+               Beginner
+           </div>
+       </div>
+       <div class="p-4">
+           <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">Pixel Art Basics</h3>
+           <p class="text-gray-400 text-sm">Master fundamental pixel art techniques for creating impressive Minecraft skins.</p>
+       </div>
+   </a>
+   
+   <a href="../create-skins/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+                                <div class="relative h-40 overflow-hidden">
+                                    <img src="../../assets/images/custom_skins.jpg" alt="Creating Custom Skins" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                                    <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+                                        Creation
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">Creating Custom Skins</h3>
+                                    <p class="text-gray-400 text-sm">Design your own unique Minecraft character with popular skin editors.</p>
+                                </div>
+                            </a>
+   
+   <a href="../custom-animations/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+       <div class="relative h-40 overflow-hidden">
+           <img src="../../assets/images/custom_animations.jpg" alt="Custom Animations" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+           <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+           <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+               Advanced
+           </div>
+       </div>
+       <div class="p-4">
+           <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">Creating Animated Skins</h3>
+           <p class="text-gray-400 text-sm">Discover how to create dynamic animated elements for your Minecraft skins.</p>
+       </div>
+   </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Banner -->
+<section class="py-10 bg-gradient-to-br from-red-900 to-black">
+<div class="container mx-auto px-4">
+<div class="max-w-4xl mx-auto bg-black bg-opacity-50 p-6 rounded-lg border border-red-800">
+<div class="flex flex-col md:flex-row items-center">
+   <div class=" text-center md:text-left md:pl-6">
+       <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">
+           Unlock Premium 3D Resources
+       </h2>
+       <p class="text-gray-300 mb-6">
+           Get access to our exclusive collection of 3D models, templates, and video tutorials to create professional-quality Minecraft skins!
+       </p>
+       <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+           <a href="../../premium/"
+               class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800 flex items-center justify-center">
+               <i class="fas fa-crown mr-2"></i>
+               <span>Get Premium Access</span>
+           </a>
+       </div>
+   </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row justify-between">
+<div class="mb-8 md:mb-0">
+   <div class="flex items-center mb-4">
+       <div
+           class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:scale-110">
+           <span class="text-2xl text-white"
+               style="font-family: 'Minecraft', sans-serif;">T</span>
+       </div>
+       <span class="text-2xl text-white"
+           style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+               class="text-red-500">.org</span></span>
+   </div>
+   <p class="max-w-xs">Premium Minecraft skins for
+       everyone. Free and subscription options available
+       for all players.</p>
+   <p class="mt-4 text-sm">© 2025 TurboDraft. Not
+       affiliated with Mojang.</p>
+</div>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+   <div>
+       <h3 class="text-white text-lg mb-4"
+           style="font-family: 'Minecraft', sans-serif;">Quick
+           Links</h3>
+       <ul class="space-y-2">
+           <li><a href="../../"
+                   class="hover:text-red-400 transition-colors duration-300">Home</a></li>
+           <li><a href="../../skins/"
+                   class="hover:text-red-400 transition-colors duration-300">Skins</a></li>
+           <li><a href="../../premium/"
+                   class="hover:text-red-400 transition-colors duration-300">Premium</a></li>
+           <li><a href="../../features/"
+                   class="hover:text-red-400 transition-colors duration-300">Features</a></li>
+           <li><a href="../../about/"
+                   class="hover:text-red-400 transition-colors duration-300">About
+                   Us</a></li>
+       </ul>
+   </div>
+
+   <div>
+       <h3 class="text-white text-lg mb-4"
+           style="font-family: 'Minecraft', sans-serif;">Resources</h3>
+       <ul class="space-y-2">
+           <li><a href="../"
+                   class="hover:text-red-400 transition-colors duration-300">Tutorials</a></li>
+           <li><a href="../../faq/"
+                   class="hover:text-red-400 transition-colors duration-300">FAQ</a></li>
+           <li><a href="../../contact/"
+                   class="hover:text-red-400 transition-colors duration-300">Support</a></li>
+           <li><a href="../../terms/"
+                   class="hover:text-red-400 transition-colors duration-300">Terms
+                   of Service</a></li>
+           <li><a href="../../privacy/"
+                   class="hover:text-red-400 transition-colors duration-300">Privacy
+                   Policy</a></li>
+       </ul>
+   </div>
+
+   <div>
+       <h3 class="text-white text-lg mb-4"
+           style="font-family: 'Minecraft', sans-serif;">Community</h3>
+       <ul class="space-y-2">
+           <li><a href="https://discord.gg/turbodraft"
+                   target="_blank"
+                   class="hover:text-red-400 transition-colors duration-300">Discord
+                   Server</a></li>
+           <li><a href="https://twitter.com/TurboDraft"
+                   target="_blank"
+                   class="hover:text-red-400 transition-colors duration-300">Twitter</a></li>
+           <li><a href="https://instagram.com/TurboDraft"
+                   target="_blank"
+                   class="hover:text-red-400 transition-colors duration-300">Instagram</a></li>
+           <li><a href="https://youtube.com/TurboDraft"
+                   target="_blank"
+                   class="hover:text-red-400 transition-colors duration-300">YouTube</a></li>
+       </ul>
+   </div>
+
+   <div>
+       <h3 class="text-white text-lg mb-4"
+           style="font-family: 'Minecraft', sans-serif;">Contact</h3>
+       <ul class="space-y-2">
+           <li><a href="mailto:info@turbodraft.org"
+                   class="hover:text-red-400 transition-colors duration-300">info@turbodraft.org</a></li>
+           <li><a href="../../contact/"
+                   class="hover:text-red-400 transition-colors duration-300">Contact
+                   Form</a></li>
+       </ul>
+   </div>
+</div>
+</div>
+
+<div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+<p class="mb-4">Made with ❤️ for the Minecraft community.
+   TurboDraft.org - bringing your Minecraft characters to
+   life.</p>
+<div class="flex justify-center space-x-4">
+   <a href="../../terms/"
+       class="text-gray-500 hover:text-red-400 transition-colors duration-300">Terms</a>
+   <span class="text-gray-700">•</span>
+   <a href="../../privacy/"
+       class="text-gray-500 hover:text-red-400 transition-colors duration-300">Privacy</a>
+   <span class="text-gray-700">•</span>
+   <a href="../../cookies/"
+       class="text-gray-500 hover:text-red-400 transition-colors duration-300">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+// Mobile menu handling
+document.getElementById('openMenu').addEventListener('click', function() {
+   const mobileMenu = document.getElementById('mobileMenu');
+   mobileMenu.classList.remove('translate-x-full');
+});
+
+document.getElementById('closeMenu').addEventListener('click', function() {
+   const mobileMenu = document.getElementById('mobileMenu');
+   mobileMenu.classList.add('translate-x-full');
+});
+
+// Add navbar scroll effect
+window.addEventListener('scroll', function() {
+   const navbar = document.querySelector('nav');
+   if (window.scrollY > 50) {
+       navbar.classList.add('py-2');
+       navbar.classList.add('shadow-lg');
+       navbar.classList.remove('py-4');
+       navbar.classList.remove('bg-opacity-80');
+   } else {
+       navbar.classList.remove('py-2');
+       navbar.classList.remove('shadow-lg');
+       navbar.classList.add('py-4');
+       navbar.classList.add('bg-opacity-80');
+   }
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+   anchor.addEventListener('click', function(e) {
+       e.preventDefault();
+       
+       const targetId = this.getAttribute('href');
+       if (targetId === '#') return;
+       
+       const targetElement = document.querySelector(targetId);
+       if (!targetElement) return;
+       
+       window.scrollTo({
+           top: targetElement.offsetTop - 80,
+           behavior: 'smooth'
+       });
+   });
+});
+</script>
+</body>
+</html>

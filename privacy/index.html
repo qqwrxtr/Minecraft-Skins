@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Privacy Policy - TurboDraft.org</title>
+        <meta name="description" content="TurboDraft.org offers premium Minecraft skins for Java and Bedrock editions. Browse our collection of free and premium custom skins, download instantly, and stand out on any server. Visit TurboDraft.org for original designs and weekly skin drops.">
+        <meta name="keywords" content="TurboDraft.org, Minecraft skins, premium Minecraft skins, custom skins, Minecraft character, Java edition skins, Bedrock edition skins, free Minecraft skins, gaming skins, Minecraft customization, TurboDraft premium, skin downloads, weekly skin drops">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+            rel="stylesheet">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Minecraft&family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet">
+        <script src="../assets/js/auth.js"></script>
+        <link rel="icon" href="../assets/icon.webp">
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        backgroundImage: {
+                            'pattern': "url('../assets/images/pattern.png')",
+                        },
+                        animation: {
+                            'float': 'float 6s ease-in-out infinite',
+                            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                            'bounce-slow': 'bounce 3s infinite',
+                        },
+                        keyframes: {
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-20px)' },
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    
+    <body class="bg-black text-gray-200 font-sans">
+        <!-- Mobile Nav Menu (Hidden by default) -->
+        <div id="mobileMenu"
+            class="fixed inset-0 bg-black bg-opacity-95 z-50 transform transition-transform duration-300 translate-x-full">
+            <div class="container mx-auto px-4 py-6">
+                <a href="../" class="flex justify-between items-center mb-6">
+                    <div class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </div>
+                    <button id="closeMenu"
+                        class="text-white focus:outline-none">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </a>
+                
+                <!-- Mobile menu user section will be inserted here by JS when logged in -->
+                
+                <div class="flex flex-col space-y-6 text-center">
+                    <a href="../"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Home</a>
+                    <a href="../skins/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Skins</a>
+                    <a href="../premium/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Premium</a>
+                    <a href="../features/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Features</a>
+                    <a href="../tutorials/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Tutorials</a>
+                    <a href="../about/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">About</a>
+                    <a href="../subscribe/"
+                        class="mt-4 bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg">Subscribe
+                        Now</a>
+                </div>
+                
+                <div class="mt-10 flex justify-center space-x-6">
+                    <a href="https://discord.gg/turbodraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://instagram.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://youtube.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav
+            class="fixed w-full z-40 py-4 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg transition-all duration-300">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <a href="../" class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:transform hover:scale-110">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </a>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="../"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                        <a href="../skins/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Skins</a>
+                        <a href="../premium/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Premium</a>
+                        <a href="../features/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Features</a>
+                        <a href="../tutorials/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Tutorials</a>
+                        <a href="../about/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">About</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-4">
+                        <!-- User section will be dynamically populated by auth.js -->
+                        <div id="navUserSection" class="flex items-center">
+                            <!-- Default content shown before JS loads -->
+                            <a href="../auth/"
+                                class="text-white hover:text-red-300 transition-colors duration-300">Login</a>
+                            <a href="../subscribe/"
+                                class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800 ml-3">Subscribe</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="openMenu"
+                            class="text-white focus:outline-none">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="pt-32 pb-16 relative overflow-hidden bg-gradient-to-br from-black to-red-900">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(#4a0000 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+            <!-- Floating blocks animation -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-20 left-10 w-16 h-16 bg-red-900 bg-opacity-20 animate-float"
+                    style="animation-delay: 0s;"></div>
+                <div class="absolute top-40 right-20 w-12 h-12 bg-red-800 bg-opacity-20 animate-float"
+                    style="animation-delay: 1s;"></div>
+                <div class="absolute bottom-20 left-1/4 w-20 h-20 bg-red-700 bg-opacity-20 animate-float"
+                    style="animation-delay: 2s;"></div>
+                <div class="absolute top-1/2 right-1/3 w-10 h-10 bg-red-600 bg-opacity-20 animate-float"
+                    style="animation-delay: 1.5s;"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center">
+                    <div class="mb-4 inline-block bg-red-900 bg-opacity-50 rounded-full px-4 py-1 transform transition-transform duration-300 hover:scale-105">
+                        <span class="text-xs font-semibold text-red-100">LEGAL INFORMATION</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight"
+                        style="font-family: 'Minecraft', sans-serif;">Privacy <span class="text-red-500">Policy</span></h1>
+                    <p class="text-lg md:text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
+                        Your privacy matters to us. Learn how we collect, use, and protect your information.
+                    </p>
+                    <div class="text-sm text-gray-400">
+                        Last Updated: May 15, 2025
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Content -->
+        <section class="py-16 bg-black relative">
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 20px 20px;"></div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="mx-auto">
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Introduction</h2>
+                                <p class="text-gray-300 mb-4">
+                                    TurboDraft.org ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at TurboDraft.org, including any other media form, media channel, mobile website, or mobile application related or connected to TurboDraft.org (collectively, the "Site").
+                                </p>
+                                <p class="text-gray-300 mb-4">
+                                    Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access the Site. By accessing the Site, registering an account, or making a purchase, you consent to the collection, use, and disclosure of your information as outlined in this Privacy Policy.
+                                </p>
+                                <p class="text-gray-300 mb-6">
+                                    We reserve the right to make changes to this Privacy Policy at any time and for any reason. We will alert you about any changes by updating the "Last Updated" date of this Privacy Policy. Any changes or modifications will be effective immediately upon posting the updated Privacy Policy on the Site. You are encouraged to periodically review this Privacy Policy to stay informed of updates.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Information We Collect -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Information We Collect</h2>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Personal Information</h3>
+                                <p class="text-gray-300 mb-4">
+                                    We may collect personal information that you voluntarily provide to us when you register on the Site, express interest in obtaining information about us or our products and services, participate in activities on the Site, or otherwise contact us. The personal information we collect may include:
+                                </p>
+                                <ul class="text-gray-300 list-disc pl-6 mb-6 space-y-2">
+                                    <li>Name</li>
+                                    <li>Email address</li>
+                                    <li>Username</li>
+                                    <li>Payment information (for premium subscriptions)</li>
+                                    <li>Contact preferences</li>
+                                </ul>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Automatically Collected Information</h3>
+                                <p class="text-gray-300 mb-4">
+                                    When you access our Site, we may automatically collect certain information, including:
+                                </p>
+                                <ul class="text-gray-300 list-disc pl-6 mb-6 space-y-2">
+                                    <li>Device information (type of device, operating system, browser type)</li>
+                                    <li>Usage information (pages visited, time spent on the Site)</li>
+                                    <li>IP address</li>
+                                    <li>Browser cookies and similar technologies</li>
+                                </ul>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Information from Third Parties</h3>
+                                <p class="text-gray-300 mb-4">
+                                    We may receive information about you from third-party sources, such as:
+                                </p>
+                                <ul class="text-gray-300 list-disc pl-6 mb-6 space-y-2">
+                                    <li>Payment processors (to confirm transactions)</li>
+                                    <li>Authentication services (if you log in using a third-party service)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How We Use Your Information -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="150">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">How We Use Your Information</h2>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    We may use the information we collect for various purposes, including:
+                                </p>
+                                <ul class="text-gray-300 list-disc pl-6 mb-6 space-y-2">
+                                    <li>Providing, maintaining, and improving our services</li>
+                                    <li>Processing transactions and sending related information</li>
+                                    <li>Responding to your inquiries and support requests</li>
+                                    <li>Sending administrative information, such as updates to our terms or privacy policy</li>
+                                    <li>Sending marketing and promotional communications (if you have opted in)</li>
+                                    <li>Personalizing your experience on our Site</li>
+                                    <li>Monitoring and analyzing usage patterns and trends</li>
+                                    <li>Protecting our Site from unauthorized access and preventing fraud</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Disclosure of Your Information -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Disclosure of Your Information</h2>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    We may share your information in the following situations:
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Service Providers</h3>
+                                <p class="text-gray-300 mb-4">
+                                    We may share your information with third-party vendors, service providers, contractors, or agents who perform services for us or on our behalf, such as payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Business Transfers</h3>
+                                <p class="text-gray-300 mb-4">
+                                    If we are involved in a merger, acquisition, or sale of all or a portion of our assets, your information may be transferred as part of that transaction.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Legal Requirements</h3>
+                                <p class="text-gray-300 mb-4">
+                                    We may disclose your information where we are legally required to do so to comply with applicable law, governmental requests, a judicial proceeding, court order, or legal process.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Protection of Rights</h3>
+                                <p class="text-gray-300 mb-4">
+                                    We may disclose your information where we believe it is necessary to investigate, prevent, or take action regarding potential violations of our policies, suspected fraud, situations involving potential threats to the safety of any person, or as evidence in litigation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cookies and Tracking Technologies -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="250">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Cookies and Tracking Technologies</h2>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    We use cookies and similar tracking technologies to collect and track information about your browsing activities on our Site. Cookies are small files that a site or its service provider transfers to your device's hard drive through your web browser that enables the site or service provider's systems to recognize your browser and capture and remember certain information.
+                                </p>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    We use cookies to:
+                                </p>
+                                <ul class="text-gray-300 list-disc pl-6 mb-6 space-y-2">
+                                    <li>Help remember and process items in your shopping cart</li>
+                                    <li>Understand and save your preferences for future visits</li>
+                                    <li>Compile aggregate data about site traffic and site interactions</li>
+                                    <li>Keep you logged in to your account</li>
+                                </ul>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies through your browser settings. Since each browser is different, look at your browser's Help Menu to learn the correct way to modify your cookies.
+                                </p>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    If you disable cookies, some features of our Site may not function properly.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Your Rights and Choices -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="300">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Your Rights and Choices</h2>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Account Information</h3>
+                                <p class="text-gray-300 mb-4">
+                                    You can review and update your account information by logging into your account settings. If you would like to delete your account, please contact us at privacy@turbodraft.org.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Marketing Communications</h3>
+                                <p class="text-gray-300 mb-4">
+                                    You can opt out of receiving promotional emails from us by following the unsubscribe instructions provided in those emails. Even if you opt out, we may still send you non-promotional emails, such as those about your account or our ongoing business relations.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Data Subject Rights</h3>
+                                <p class="text-gray-300 mb-4">
+                                    Depending on your location, you may have certain rights regarding your personal information, such as:
+                                </p>
+                                <ul class="text-gray-300 list-disc pl-6 mb-6 space-y-2">
+                                    <li>Right to access your personal information</li>
+                                    <li>Right to rectify inaccurate or incomplete information</li>
+                                    <li>Right to erasure of your personal information</li>
+                                    <li>Right to restrict processing of your personal information</li>
+                                    <li>Right to data portability</li>
+                                    <li>Right to object to processing of your personal information</li>
+                                </ul>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    To exercise these rights, please contact us at privacy@turbodraft.org.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Security -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="350">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Data Security</h2>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    We implement appropriate technical and organizational measures to protect the security of your personal information. However, please be aware that no method of transmission over the internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.
+                                </p>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    In the event of a data breach that affects your personal information, we will notify you in compliance with applicable laws.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Children's Privacy -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="400">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Children's Privacy</h2>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    Our Site is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at privacy@turbodraft.org, and we will delete such information from our systems.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- International Data Transfers -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="450">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">International Data Transfers</h2>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    We are based in the United States and may process, store, and transfer your personal information in the United States and other countries, which may have different data protection laws than those in your country of residence. By using our Site, you consent to the transfer of your information to the United States and other countries where we operate.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Us -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="500">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Contact Us</h2>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    If you have any questions or concerns about this Privacy Policy or our privacy practices, please contact us at:
+                                </p>
+                                
+                                <div class="bg-black bg-opacity-50 p-5 rounded-lg mt-4 inline-block">
+                                    <p class="text-white mb-1">Email: privacy@turbodraft.org</p>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <a href="../contact/" class="inline-flex items-center bg-red-700 hover:bg-red-600 text-white py-2 px-5 rounded-lg transition-colors duration-300">
+                                        <i class="fas fa-envelope mr-2"></i>
+                                        <span>Contact Us</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between">
+                    <div class="mb-8 md:mb-0">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:scale-110">
+                                <span class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">T</span>
+                            </div>
+                            <span class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">TurboDraft<span class="text-red-500">.org</span></span>
+                        </div>
+                        <p class="max-w-xs">Premium Minecraft skins for everyone. Free and subscription options available for all players.</p>
+                        <p class="mt-4 text-sm">© 2025 TurboDraft. Not affiliated with Mojang.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Quick Links</h3>
+                            <ul class="space-y-2">
+                                <li><a href="../" class="hover:text-red-400 transition-colors duration-300">Home</a></li>
+                                <li><a href="../skins/" class="hover:text-red-400 transition-colors duration-300">Skins</a></li>
+                                <li><a href="../premium/" class="hover:text-red-400 transition-colors duration-300">Premium</a></li>
+                                <li><a href="../features/" class="hover:text-red-400 transition-colors duration-300">Features</a></li>
+                                <li><a href="../about/" class="hover:text-red-400 transition-colors duration-300">About Us</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Resources</h3>
+                            <ul class="space-y-2">
+                                <li><a href="../tutorials/" class="hover:text-red-400 transition-colors duration-300">Tutorials</a></li>
+                                <li><a href="../faq/" class="hover:text-red-400 transition-colors duration-300">FAQ</a></li>
+                                <li><a href="../contact/" class="hover:text-red-400 transition-colors duration-300">Support</a></li>
+                                <li><a href="../terms/" class="hover:text-red-400 transition-colors duration-300">Terms of Service</a></li>
+                                <li><a href="../privacy/" class="hover:text-red-400 transition-colors duration-300">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Community</h3>
+                            <ul class="space-y-2">
+                                <li><a href="https://discord.gg/turbodraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">Discord Server</a></li>
+                                <li><a href="https://twitter.com/TurboDraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">Twitter</a></li>
+                                <li><a href="https://instagram.com/TurboDraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">Instagram</a></li>
+                                <li><a href="https://youtube.com/TurboDraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">YouTube</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Contact</h3>
+                            <ul class="space-y-2">
+                                <li><a href="mailto:info@turbodraft.org" class="hover:text-red-400 transition-colors duration-300">info@turbodraft.org</a></li>
+                                <li><a href="../contact/" class="hover:text-red-400 transition-colors duration-300">Contact Form</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+                    <p class="mb-4">Made with ❤️ for the Minecraft community. TurboDraft.org - bringing your Minecraft characters to life.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="../terms/" class="text-gray-500 hover:text-red-400 transition-colors duration-300">Terms</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="../privacy/" class="text-gray-500 hover:text-red-400 transition-colors duration-300">Privacy</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="../cookies/" class="text-gray-500 hover:text-red-400 transition-colors duration-300">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+        <script>
+            // Initialize AOS animation library
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+
+            // Mobile menu handling
+            document.getElementById('openMenu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.remove('translate-x-full');
+            });
+
+            document.getElementById('closeMenu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.add('translate-x-full');
+            });
+
+            // Add navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('py-2');
+                    navbar.classList.add('shadow-lg');
+                    navbar.classList.remove('py-4');
+                    navbar.classList.remove('bg-opacity-80');
+                } else {
+                    navbar.classList.remove('py-2');
+                    navbar.classList.remove('shadow-lg');
+                    navbar.classList.add('py-4');
+                    navbar.classList.add('bg-opacity-80');
+                }
+            });
+        </script>
+    </body>
+</html>

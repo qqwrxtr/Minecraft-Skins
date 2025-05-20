@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TurboDraft.org - Creating Custom Minecraft Skins</title>
+        <meta name="description" content="TurboDraft.org offers premium Minecraft skins for Java and Bedrock editions. Browse our collection of free and premium custom skins, download instantly, and stand out on any server. Visit TurboDraft.org for original designs and weekly skin drops.">
+        <meta name="keywords" content="TurboDraft.org, Minecraft skins, premium Minecraft skins, custom skins, Minecraft character, Java edition skins, Bedrock edition skins, free Minecraft skins, gaming skins, Minecraft customization, TurboDraft premium, skin downloads, weekly skin drops">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Minecraft&family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet">
+        <script src="../../assets/js/auth.js"></script>
+        <link rel="icon" href="../../assets/icon.webp">
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        backgroundImage: {
+                            'card': "url('../../assets/images/bg_card.jpg')",
+                        },
+                    }
+                }
+            }
+        </script>
+    </head>
+
+    <body class="bg-black text-gray-200 font-sans">
+        <!-- Mobile Nav Menu (Hidden by default) -->
+        <div id="mobileMenu"
+            class="fixed inset-0 bg-black bg-opacity-95 z-50 transform transition-transform duration-300 translate-x-full">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex justify-between items-center mb-6">
+                    <div class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </div>
+                    <button id="closeMenu"
+                        class="text-white focus:outline-none">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+
+                <div class="flex flex-col space-y-6 text-center">
+                    <a href="../../"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Home</a>
+                    <a href="../../skins/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Skins</a>
+                    <a href="../../premium/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Premium</a>
+                    <a href="../../features/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Features</a>
+                    <a href="../"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Tutorials</a>
+                    <a href="../../about/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">About</a>
+                    <a href="../../subscribe/"
+                        class="mt-4 bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg">Subscribe
+                        Now</a>
+                </div>
+
+                <div class="mt-10 flex justify-center space-x-6">
+                    <a href="https://discord.gg/turbodraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://instagram.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://youtube.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav
+            class="fixed w-full z-40 py-4 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg transition-all duration-300">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:transform hover:scale-110">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </div>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="../../"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                        <a href="../../skins/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Skins</a>
+                        <a href="../../premium/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Premium</a>
+                        <a href="../../features/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Features</a>
+                        <a href="../"
+                            class="relative text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-red-500 after:transition-all after:duration-300">Tutorials</a>
+                        <a href="../../about/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">About</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-4">
+                        <!-- User section will be dynamically populated by auth.js -->
+                        <div id="navUserSection" class="flex items-center">
+                            <!-- Default content shown before JS loads -->
+                            <a href="../../auth/"
+                                class="text-white hover:text-red-300 transition-colors duration-300">Login</a>
+                            <a href="../../subscribe/"
+                                class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800">Subscribe</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="openMenu"
+                            class="text-white focus:outline-none">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Tutorial Header -->
+        <section class="pt-32 pb-10 bg-gradient-to-br from-black to-red-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl mb-4 text-white"
+                        style="font-family: 'Minecraft', sans-serif;">Creating Custom <span class="text-red-500">Minecraft Skins</span></h1>
+                    <p class="text-lg md:text-xl mb-4 text-gray-300 max-w-3xl mx-auto">Learn how to design and create your own unique Minecraft character skins from scratch</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorial Steps Navigation -->
+        <section class="py-6 bg-gray-900 border-b border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <a href="#basics" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                        <div class="w-8 h-8 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">1</div>
+                        <span>Understanding Skin Basics</span>
+                    </a>
+                    <a href="#tools" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                        <div class="w-8 h-8 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">2</div>
+                        <span>Skin Creation Tools</span>
+                    </a>
+                    <a href="#designing" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                        <div class="w-8 h-8 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">3</div>
+                        <span>Designing Your Skin</span>
+                    </a>
+                    <a href="#exporting" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                        <div class="w-8 h-8 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">4</div>
+                        <span>Exporting & Using Your Skin</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="py-10 bg-black">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    
+                    <!-- Understanding Skin Basics -->
+                    <div id="basics" class="mb-12 scroll-mt-20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400 font-bold">1</div>
+                            <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                                Understanding Skin Basics
+                            </h2>
+                        </div>
+                        
+                        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+                            <p class="text-gray-300 mb-4">Before you start creating your custom Minecraft skin, it's important to understand how Minecraft skins work:</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Skin Dimensions</h3>
+                                    <p class="text-gray-300 mb-3">Minecraft skins are 64x64 pixel PNG images (newer format) or 64x32 pixels (legacy format). Most modern skins use the 64x64 format which allows for more detail.</p>
+                                    <div class="flex items-center bg-gray-800 p-2 rounded">
+                                        <i class="fas fa-ruler-combined text-red-400 mr-2"></i>
+                                        <span class="text-sm">Standard size: 64x64 pixels</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Skin Models</h3>
+                                    <p class="text-gray-300 mb-3">Minecraft has two character models:</p>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-male text-red-400 mt-1 mr-2"></i>
+                                            <div>
+                                                <span class="font-bold text-white">Classic (Steve)</span> - Has 4-pixel wide arms
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-female text-red-400 mt-1 mr-2"></i>
+                                            <div>
+                                                <span class="font-bold text-white">Slim (Alex)</span> - Has 3-pixel wide arms
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Skin Layout</h3>
+                                    <p class="text-gray-300 mb-3">Minecraft skin files are flat templates that are mapped onto a 3D model. Different parts of the image correspond to different body parts:</p>
+                                    <ul class="space-y-1 text-gray-300">
+                                        <li>• Head, torso, arms, and legs sections</li>
+                                        <li>• Overlay layer for additional details</li>
+                                        <li>• Each body part has front, back, sides, top and bottom</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Transparency</h3>
+                                    <p class="text-gray-300 mb-3">Minecraft skins support transparency, which allows you to create:</p>
+                                    <ul class="space-y-1 text-gray-300">
+                                        <li>• Partially transparent features</li>
+                                        <li>• Hidden body parts (making parts invisible)</li>
+                                        <li>• Layered effects with the overlay sections</li>
+                                    </ul>
+                                    <p class="text-gray-300">Note: Java and Bedrock editions handle transparency slightly differently.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-blue-900">
+                                <div class="flex items-start">
+                                    <i class="fas fa-info-circle text-blue-500 text-2xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h3 class="text-white font-bold mb-1">Skin Templates</h3>
+                                        <p class="text-gray-300">Using a skin template is the best way to start. These show exactly where each body part is located in the skin file. You can download blank templates below:</p>
+                                        <div class="flex space-x-3 mt-2">
+                                            <a href="#" class="inline-flex items-center bg-blue-800 hover:bg-blue-700 text-white py-1 px-3 rounded text-sm transition-colors duration-300">
+                                                <i class="fas fa-download mr-1"></i>
+                                                <span>Classic Template</span>
+                                            </a>
+                                            <a href="#" class="inline-flex items-center bg-blue-800 hover:bg-blue-700 text-white py-1 px-3 rounded text-sm transition-colors duration-300">
+                                                <i class="fas fa-download mr-1"></i>
+                                                <span>Slim Template</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skin Creation Tools -->
+                    <div id="tools" class="mb-12 scroll-mt-20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400 font-bold">2</div>
+                            <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                                Skin Creation Tools
+                            </h2>
+                        </div>
+                        
+                        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+                            <p class="text-gray-300 mb-4">There are several tools available for creating Minecraft skins. Here are the most popular options:</p>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <div class="flex items-start">
+                                        <div>
+                                            <h3 class="text-white font-bold mb-1">The Skindex Editor</h3>
+                                            <p class="text-gray-300 mb-2">An online editor with a user-friendly interface. Great for beginners and includes real-time 3D preview.</p>
+                                            <ul class="space-y-1 text-gray-300 text-sm">
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Browser-based (no download required)</li>
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Real-time 3D preview</li>
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Basic drawing tools</li>
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Template library</li>
+                                            </ul>
+                                            <a href="https://www.minecraftskins.com/skin-editor/" target="_blank" class="inline-flex items-center bg-red-800 hover:bg-red-700 text-white py-1 px-3 rounded mt-3 text-sm transition-colors duration-300">
+                                                <i class="fas fa-external-link-alt mr-1"></i>
+                                                <span>Open Skindex Editor</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <div class="flex items-start">
+                                        <div>
+                                            <h3 class="text-white font-bold mb-1">Nova Skin</h3>
+                                            <p class="text-gray-300 mb-2">Advanced editor with more tools and features. Better for detailed work and experienced skin creators.</p>
+                                            <ul class="space-y-1 text-gray-300 text-sm">
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Advanced drawing tools</li>
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Layer system</li>
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> High-quality 3D preview</li>
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Pose editor</li>
+                                            </ul>
+                                            <a href="https://minecraft.novaskin.me/" target="_blank" class="inline-flex items-center bg-red-800 hover:bg-red-700 text-white py-1 px-3 rounded mt-3 text-sm transition-colors duration-300">
+                                                <i class="fas fa-external-link-alt mr-1"></i>
+                                                <span>Open Nova Skin</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <div class="flex items-start">
+                                        <div>
+                                            <h3 class="text-white font-bold mb-1">Minecraft's Official Skin Creator</h3>
+                                            <p class="text-gray-300 mb-2">Available on the official Minecraft website. Simple but directly integrates with your Minecraft account.</p>
+                                            <ul class="space-y-1 text-gray-300 text-sm">
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Direct upload to your account</li>
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Basic editing tools</li>
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Official Minecraft templates</li>
+                                            </ul>
+                                            <a href="https://www.minecraft.net/en-us/profile/skin" target="_blank" class="inline-flex items-center bg-red-800 hover:bg-red-700 text-white py-1 px-3 rounded mt-3 text-sm transition-colors duration-300">
+                                                <i class="fas fa-external-link-alt mr-1"></i>
+                                                <span>Go to Official Creator</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <div class="flex items-start">
+                                        <div>
+                                            <h3 class="text-white font-bold mb-1">Graphics Software</h3>
+                                            <p class="text-gray-300 mb-2">For advanced users, any pixel-based graphics software can be used with skin templates.</p>
+                                            <ul class="space-y-1 text-gray-300 text-sm">
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> <strong>Photoshop:</strong> Professional but expensive</li>
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> <strong>GIMP:</strong> Free alternative with powerful features</li>
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> <strong>Aseprite:</strong> Pixel art focused software</li>
+                                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> <strong>Paint.NET:</strong> Simple but effective free option</li>
+                                            </ul>
+                                            <p class="text-gray-400 text-sm mt-2"><i>Use with downloaded blank templates for complete control.</i></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-yellow-900 mt-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-lightbulb text-yellow-500 text-2xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h3 class="text-white font-bold mb-1">Recommendation for Beginners</h3>
+                                        <p class="text-gray-300">If you're new to skin creation, we recommend starting with the Skindex Editor. It's easy to use, requires no downloads, and provides a real-time 3D preview to see your changes instantly.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Designing Your Skin -->
+                    <div id="designing" class="mb-12 scroll-mt-20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400 font-bold">3</div>
+                            <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                                Designing Your Skin
+                            </h2>
+                        </div>
+                        
+                        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+                            <p class="text-gray-300 mb-4">Now that you understand the basics and have chosen a tool, let's go through the process of designing your custom skin:</p>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 1: Choose Your Concept</h3>
+                                    <p class="text-gray-300 mb-3">Before you start drawing, decide what kind of character you want to create. Consider these questions:</p>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-palette text-red-400 mt-1 mr-2"></i>
+                                            <span>What style do you want? (Realistic, cartoon, fantasy, sci-fi, etc.)</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-tshirt text-red-400 mt-1 mr-2"></i>
+                                            <span>What kind of outfit will your character wear?</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-paint-brush text-red-400 mt-1 mr-2"></i>
+                                            <span>What color scheme will you use?</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-mask text-red-400 mt-1 mr-2"></i>
+                                            <span>Will you include special features like hats, capes, or accessories?</span>
+                                        </li>
+                                    </ul>
+                                    <p class="text-gray-300 mt-3">You can sketch your idea on paper first or find reference images to inspire your design.</p>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 2: Start with the Base</h3>
+                                    <p class="text-gray-300 mb-3">Begin by creating the base color for each body part:</p>
+                                    <ol class="space-y-2 text-gray-300 list-decimal list-inside pl-2">
+                                        <li>Choose your skin model (Classic/Steve or Slim/Alex)</li>
+                                        <li>Start with the head - this sets the tone for your character</li>
+                                        <li>Work on the torso next, establishing your main color scheme</li>
+                                        <li>Color the arms and legs, ensuring they match your overall design</li>
+                                        <li>Ensure all sides of each body part are colored (front, back, sides)</li>
+                                    </ol>
+                                    <div class="bg-gray-800 p-3 rounded-lg mt-3">
+                                        <p class="text-white text-sm font-bold">Pro Tip:</p>
+                                        <p class="text-gray-300 text-sm">Use the eyedropper/color picker tool to maintain consistent colors across your skin.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 3: Add Details</h3>
+                                    <p class="text-gray-300 mb-3">Once your base is complete, add details to bring your skin to life:</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm mb-2">Face Details</h4>
+                                            <ul class="space-y-1 text-gray-300 text-sm">
+                                                <li>• Eyes (experiment with different styles)</li>
+                                                <li>• Mouth/expression</li>
+                                                <li>• Eyebrows, nose, ears</li>
+                                                <li>• Hair details</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-white font-bold text-sm mb-2">Clothing Details</h4>
+                                            <ul class="space-y-1 text-gray-300 text-sm">
+                                                <li>• Seams, folds, buttons</li>
+                                                <li>• Texture patterns</li>
+                                                <li>• Belts, pockets, collars</li>
+                                                <li>• Logos or emblems</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-300">Use the overlay layer (second layer) for items that sit on top of the base skin, like jackets, armor pieces, or accessories.</p>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 4: Shading & Highlights</h3>
+                                    <p class="text-gray-300 mb-3">Good shading makes a skin stand out from amateur designs:</p>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-sun text-yellow-500 mt-1 mr-2"></i>
+                                            <div>
+                                                <span class="font-bold text-white">Light source</span> - Pick one direction for your light source and stick with it
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-adjust text-purple-400 mt-1 mr-2"></i>
+                                            <div>
+                                                <span class="font-bold text-white">Contrast</span> - Use darker colors for shadows and lighter colors for highlights
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-eye text-blue-400 mt-1 mr-2"></i>
+                                            <div>
+                                                <span class="font-bold text-white">Subtlety</span> - Avoid harsh transitions; use intermediate shades for smoother gradients
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="bg-gray-800 p-3 rounded-lg mt-3">
+                                        <p class="text-white text-sm font-bold">Shading Technique:</p>
+                                        <p class="text-gray-300 text-sm">For each color in your design, create a slightly darker version for shadows and a slightly lighter version for highlights. Apply these consistently across your skin.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 5: Check for Common Mistakes</h3>
+                                    <p class="text-gray-300 mb-3">Before finalizing your skin, check for these common issues:</p>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
+                                            <div>
+                                                <span class="font-bold text-white">Missing pixels</span> - Ensure all parts of the skin are colored (no transparent spots where there shouldn't be)
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
+                                            <div>
+                                                <span class="font-bold text-white">Misaligned details</span> - Make sure patterns and details line up across body parts
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-2"></i>
+                                            <div>
+                                                <span class="font-bold text-white">Inconsistent lighting</span> - Check that shadows and highlights follow the same light direction
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <p class="text-gray-300 mt-3">Use the 3D preview frequently to check how your skin looks from different angles.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-green-900 mt-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-magic text-green-500 text-2xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h3 class="text-white font-bold mb-1">Design Tips for Great Skins</h3>
+                                        <ul class="space-y-1 text-gray-300">
+                                            <li>• Use a limited color palette (4-8 colors) for a cohesive look</li>
+                                            <li>• Ensure good contrast between adjacent areas</li>
+                                            <li>• Start simple and add complexity gradually</li>
+                                            <li>• Use references for complex patterns or clothing styles</li>
+                                            <li>• Save frequently and create backups of your work</li>
+                                            <li>• Try different versions of the same concept</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Exporting & Using Your Skin -->
+                    <div id="exporting" class="mb-12 scroll-mt-20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400 font-bold">4</div>
+                            <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                                Exporting & Using Your Skin
+                            </h2>
+                        </div>
+                        
+                        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+                            <p class="text-gray-300 mb-4">Once you're satisfied with your skin design, it's time to export and use it in Minecraft:</p>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 1: Export Your Skin</h3>
+                                    <p class="text-gray-300 mb-3">Different skin editors have different export options, but the process is similar:</p>
+                                    <ol class="space-y-2 text-gray-300 list-decimal list-inside pl-2">
+                                        <li>Look for an "Export," "Save," or "Download" button</li>
+                                        <li>Save the file as a PNG image</li>
+                                        <li>Choose a recognizable name for your skin file</li>
+                                        <li>Remember where you save the file on your device</li>
+                                    </ol>
+                                    <div class="bg-gray-800 p-3 rounded-lg mt-3">
+                                        <p class="text-white text-sm font-bold">Important:</p>
+                                        <p class="text-gray-300 text-sm">Make sure your skin is saved as a PNG file with the correct dimensions (64x64 pixels). Some editors might offer different export options - always choose PNG format.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 2: Apply Your Skin in Minecraft</h3>
+                                    <p class="text-gray-300 mb-3">The process for applying your skin depends on which version of Minecraft you're using:</p>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                                        <div class="bg-gray-800 p-3 rounded-lg">
+                                            <h4 class="text-white font-bold mb-2 flex items-center">
+                                                Java Edition
+                                            </h4>
+                                            <ol class="space-y-1 text-gray-300 text-sm list-decimal list-inside">
+                                                <li>Go to minecraft.net and log in</li>
+                                                <li>Navigate to your profile page</li>
+                                                <li>Select the "Skin" tab</li>
+                                                <li>Upload your skin file</li>
+                                                <li>Choose Classic or Slim model</li>
+                                                <li>Save changes</li>
+                                            </ol>
+                                            <a href="../java-edition/" class="text-red-400 hover:text-red-300 text-sm inline-flex items-center mt-2">
+                                                <span>Detailed Java Edition guide</span>
+                                                <i class="fas fa-arrow-right ml-1"></i>
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="bg-gray-800 p-3 rounded-lg">
+                                            <h4 class="text-white font-bold mb-2 flex items-center">
+                                                Bedrock Edition
+                                            </h4>
+                                            <ol class="space-y-1 text-gray-300 text-sm list-decimal list-inside">
+                                                <li>Open Minecraft</li>
+                                                <li>Go to the Dressing Room</li>
+                                                <li>Select Classic Skins tab</li>
+                                                <li>Click the Import button</li>
+                                                <li>Choose your skin file</li>
+                                                <li>Select model type and confirm</li>
+                                            </ol>
+                                            <a href="../bedrock-edition/" class="text-red-400 hover:text-red-300 text-sm inline-flex items-center mt-2">
+                                                <span>Detailed Bedrock Edition guide</span>
+                                                <i class="fas fa-arrow-right ml-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="text-gray-300">For console editions, the process is different and usually requires using a Microsoft/Xbox account to sync your skin. See our console-specific guide for details.</p>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 3: Testing Your Skin</h3>
+                                    <p class="text-gray-300 mb-3">After applying your skin, it's time to see how it looks in the game:</p>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-gamepad text-red-400 mt-1 mr-2"></i>
+                                            <div>
+                                                <span class="font-bold text-white">Launch Minecraft</span> - Start the game with the same account you uploaded the skin to
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-eye text-red-400 mt-1 mr-2"></i>
+                                            <div>
+                                                <span class="font-bold text-white">Check in third-person view</span> - Press F5 to see your character from different angles
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-running text-red-400 mt-1 mr-2"></i>
+                                            <div>
+                                                <span class="font-bold text-white">Check animations</span> - Move, jump, and interact to see how your skin looks in motion
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-users text-red-400 mt-1 mr-2"></i>
+                                            <div>
+                                                <span class="font-bold text-white">Get feedback</span> - Join a multiplayer server to show off your skin and get opinions from others
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                    <h3 class="text-white font-bold mb-3">Step 4: Refining Your Skin</h3>
+                                    <p class="text-gray-300 mb-3">After seeing your skin in-game, you might want to make some adjustments:</p>
+                                    <ol class="space-y-2 text-gray-300 list-decimal list-inside pl-2">
+                                        <li>Take note of any issues or areas that could be improved</li>
+                                        <li>Return to your skin editor and open your skin file</li>
+                                        <li>Make your adjustments based on how it looked in-game</li>
+                                        <li>Re-export and apply the updated skin</li>
+                                        <li>Repeat until you're completely satisfied</li>
+                                    </ol>
+                                    <p class="text-gray-300 mt-3">Skin creation often involves multiple iterations to get things just right. Don't be afraid to experiment and refine your design!</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-blue-900 mt-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-share-alt text-blue-500 text-2xl mr-3 mt-1"></i>
+                                    <div>
+                                        <h3 class="text-white font-bold mb-1">Sharing Your Skin</h3>
+                                        <p class="text-gray-300 mb-2">Proud of your creation? Share it with the Minecraft community!</p>
+                                        <ul class="space-y-1 text-gray-300">
+                                            <li>• Upload to skin sharing sites like The Skindex or Planet Minecraft</li>
+                                            <li>• Share screenshots or renders on social media</li>
+                                            <li>• Join our <a href="https://discord.gg/turbodraft" target="_blank" class="text-red-400 hover:text-red-300 transition-colors duration-300">Discord community</a> to showcase your creation</li>
+                                            <li>• Consider submitting exceptional skins to our collection</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Common Skin Design Ideas -->
+                    <div class="mb-12">
+                        <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">
+                            Inspiration: Popular Skin Themes
+                        </h2>
+                        
+                        <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                            <p class="text-gray-300 mb-4">Need inspiration? Here are some popular skin themes to get your creativity flowing:</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                                <div class="bg-black bg-opacity-40 rounded-lg overflow-hidden">
+                                    <div class="h-40 overflow-hidden">
+                                        <img src="../../assets/skins/flames/preview.png" alt="Fantasy Theme" class="w-full h-full object-contain p-2">
+                                    </div>
+                                    <div class="p-3">
+                                        <h3 class="text-white font-bold">Fantasy</h3>
+                                        <p class="text-gray-400 text-sm">Warriors, mages, elves, dwarves, and mythical creatures</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg overflow-hidden">
+                                    <div class="h-40 overflow-hidden">
+                                        <img src="../../assets/skins/neon_skeleton/preview.png" alt="Sci-Fi Theme" class="w-full h-full object-contain p-2">
+                                    </div>
+                                    <div class="p-3">
+                                        <h3 class="text-white font-bold">Sci-Fi</h3>
+                                        <p class="text-gray-400 text-sm">Astronauts, aliens, robots, and futuristic soldiers</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-40 rounded-lg overflow-hidden">
+                                    <div class="h-40 overflow-hidden">
+                                        <img src="../../assets/skins/strawberry/preview.png" alt="Casual Theme" class="w-full h-full object-contain p-2">
+                                    </div>
+                                    <div class="p-3">
+                                        <h3 class="text-white font-bold">Casual</h3>
+                                        <p class="text-gray-400 text-sm">Modern outfits, hoodies, suits, and everyday wear</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                <div class="bg-black bg-opacity-30 p-2 rounded-lg">
+                                    <h4 class="text-white text-sm font-bold mb-1">Characters</h4>
+                                    <p class="text-gray-400 text-xs">Movie, game, and comic book characters</p>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-30 p-2 rounded-lg">
+                                    <h4 class="text-white text-sm font-bold mb-1">Historical</h4>
+                                    <p class="text-gray-400 text-xs">Knights, pirates, vikings, and ancient warriors</p>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-30 p-2 rounded-lg">
+                                    <h4 class="text-white text-sm font-bold mb-1">Monsters</h4>
+                                    <p class="text-gray-400 text-xs">Zombies, vampires, werewolves, and creepy creatures</p>
+                                </div>
+                                
+                                <div class="bg-black bg-opacity-30 p-2 rounded-lg">
+                                    <h4 class="text-white text-sm font-bold mb-1">Professions</h4>
+                                    <p class="text-gray-400 text-xs">Doctors, firefighters, astronauts, and chefs</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 text-center">
+                                <a href="../../skins/" class="inline-flex items-center bg-red-800 hover:bg-red-700 text-white py-2 px-4 rounded-lg transition-colors duration-300 transform hover:scale-105">
+                                    <i class="fas fa-th-large mr-2"></i>
+                                    <span>Browse Our Skin Collection for More Ideas</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Related Tutorials -->
+                    <div>
+                        <h2 class="text-2xl text-white mb-6" style="font-family: 'Minecraft', sans-serif;">Related Tutorials</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <a href="../java-edition/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+                                <div class="relative h-40 overflow-hidden">
+                                    <img src="../../assets/images/how_to_install_java_skins.jpg" alt="Java Edition Tutorial" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                                    <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+                                        Installation
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">Installing Skins in Java Edition</h3>
+                                    <p class="text-gray-400 text-sm">Learn how to install your custom skins in Minecraft Java Edition.</p>
+                                </div>
+                            </a>
+                            
+                            <a href="../bedrock-edition/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+                                <div class="relative h-40 overflow-hidden">
+                                    <img src="../../assets/images/how_to_install_bedrock_skins.jpg" alt="Bedrock Edition Tutorial" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                                    <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+                                        Installation
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">Installing Skins in Bedrock Edition</h3>
+                                    <p class="text-gray-400 text-sm">Follow this guide to add your custom skins to Minecraft Bedrock on any platform.</p>
+                                </div>
+                            </a>
+                            
+                            <a href="../pixel-art-basics/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+                                <div class="relative h-40 overflow-hidden">
+                                    <img src="../../assets/images/pixel_art_basics.webp" alt="Pixel Art Basics" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                                    <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+                                        Creation
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">Pixel Art Basics for Minecraft Skins</h3>
+                                    <p class="text-gray-400 text-sm">Master the fundamentals of pixel art to create better-looking Minecraft skins.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="py-10 bg-gradient-to-br from-red-900 to-black">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto bg-black bg-opacity-50 p-6 rounded-lg border border-red-800">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                            <img src="../../assets/images/Steve_(Minecraft).png" alt="Minecraft Character" class="h-36 object-contain transform transition-transform duration-500 hover:scale-110" />
+                        </div>
+                        <div class="md:w-2/3 text-center md:text-left md:pl-6">
+                            <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">
+                                Need Inspiration?
+                            </h2>
+                            <p class="text-gray-300 mb-6">
+                                Browse our collection of 500+ premium and free Minecraft skins to get ideas for your own creations or find the perfect skin ready to use!
+                            </p>
+                            <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                                <a href="../../skins/"
+                                    class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800 flex items-center justify-center">
+                                    <i class="fas fa-th-large mr-2"></i>
+                                    <span>Browse Skins</span>
+                                </a>
+                                <a href="../../premium/"
+                                    class="bg-transparent border-2 border-red-700 text-red-100 font-bold py-3 px-6 rounded-lg hover:bg-red-900 hover:border-red-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                                    <i class="fas fa-crown mr-2"></i>
+                                    <span>Premium Collection</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between">
+                    <div class="mb-8 md:mb-0">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:scale-110">
+                                <span class="text-2xl text-white"
+                                    style="font-family: 'Minecraft', sans-serif;">T</span>
+                            </div>
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                    class="text-red-500">.org</span></span>
+                        </div>
+                        <p class="max-w-xs">Premium Minecraft skins for
+                            everyone. Free and subscription options available
+                            for all players.</p>
+                        <p class="mt-4 text-sm">© 2025 TurboDraft. Not
+                            affiliated with Mojang.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Quick
+                                Links</h3>
+                            <ul class="space-y-2">
+                                <li><a href="../../"
+                                        class="hover:text-red-400 transition-colors duration-300">Home</a></li>
+                                <li><a href="../../skins/"
+                                        class="hover:text-red-400 transition-colors duration-300">Skins</a></li>
+                                <li><a href="../../premium/"
+                                        class="hover:text-red-400 transition-colors duration-300">Premium</a></li>
+                                <li><a href="../../features/"
+                                        class="hover:text-red-400 transition-colors duration-300">Features</a></li>
+                                <li><a href="../../about/"
+                                        class="hover:text-red-400 transition-colors duration-300">About
+                                        Us</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Resources</h3>
+                            <ul class="space-y-2">
+                                <li><a href="../"
+                                        class="hover:text-red-400 transition-colors duration-300">Tutorials</a></li>
+                                <li><a href="../../faq/"
+                                        class="hover:text-red-400 transition-colors duration-300">FAQ</a></li>
+                                <li><a href="../../contact/"
+                                        class="hover:text-red-400 transition-colors duration-300">Support</a></li>
+                                <li><a href="../../terms/"
+                                        class="hover:text-red-400 transition-colors duration-300">Terms
+                                        of Service</a></li>
+                                <li><a href="../../privacy/"
+                                        class="hover:text-red-400 transition-colors duration-300">Privacy
+                                        Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Community</h3>
+                            <ul class="space-y-2">
+                                <li><a href="https://discord.gg/turbodraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">Discord
+                                        Server</a></li>
+                                <li><a href="https://twitter.com/TurboDraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">Twitter</a></li>
+                                <li><a href="https://instagram.com/TurboDraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">Instagram</a></li>
+                                <li><a href="https://youtube.com/TurboDraft"
+                                        target="_blank"
+                                        class="hover:text-red-400 transition-colors duration-300">YouTube</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4"
+                                style="font-family: 'Minecraft', sans-serif;">Contact</h3>
+                            <ul class="space-y-2">
+                                <li><a href="mailto:info@turbodraft.org"
+                                        class="hover:text-red-400 transition-colors duration-300">info@turbodraft.org</a></li>
+                                <li><a href="../../contact/"
+                                        class="hover:text-red-400 transition-colors duration-300">Contact
+                                        Form</a></li>
+                                
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+                    <p class="mb-4">Made with ❤️ for the Minecraft community.
+                        TurboDraft.org - bringing your Minecraft characters to
+                        life.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="../../terms/"
+                            class="text-gray-500 hover:text-red-400 transition-colors duration-300">Terms</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="../../privacy/"
+                            class="text-gray-500 hover:text-red-400 transition-colors duration-300">Privacy</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="../../cookies/"
+                            class="text-gray-500 hover:text-red-400 transition-colors duration-300">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript -->
+        <script>
+            // Mobile menu handling
+            document.getElementById('openMenu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.remove('translate-x-full');
+            });
+
+            document.getElementById('closeMenu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.add('translate-x-full');
+            });
+
+            // Add navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('py-2');
+                    navbar.classList.add('shadow-lg');
+                    navbar.classList.remove('py-4');
+                    navbar.classList.remove('bg-opacity-80');
+                } else {
+                    navbar.classList.remove('py-2');
+                    navbar.classList.remove('shadow-lg');
+                    navbar.classList.add('py-4');
+                    navbar.classList.add('bg-opacity-80');
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (!targetElement) return;
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

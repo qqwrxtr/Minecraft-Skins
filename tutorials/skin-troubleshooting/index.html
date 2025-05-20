@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>TurboDraft.org - Skin Installation Troubleshooting</title>
+        <meta name="description" content="TurboDraft.org offers premium Minecraft skins for Java and Bedrock editions. Browse our collection of free and premium custom skins, download instantly, and stand out on any server. Visit TurboDraft.org for original designs and weekly skin drops.">
+        <meta name="keywords" content="TurboDraft.org, Minecraft skins, premium Minecraft skins, custom skins, Minecraft character, Java edition skins, Bedrock edition skins, free Minecraft skins, gaming skins, Minecraft customization, TurboDraft premium, skin downloads, weekly skin drops">
+       <link
+           href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+           rel="stylesheet">
+       <script src="https://cdn.tailwindcss.com"></script>
+       <link
+           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+           rel="stylesheet">
+       <link
+           href="https://fonts.googleapis.com/css2?family=Minecraft&family=Montserrat:wght@400;600;700&display=swap"
+           rel="stylesheet">
+       <script src="../../assets/js/auth.js"></script>
+        <link rel="icon" href="../../assets/icon.webp">
+       <script>
+           tailwind.config = {
+               theme: {
+                   extend: {
+                       backgroundImage: {
+                           'card': "url('../../assets/images/bg_card.jpg')",
+                       },
+                   }
+               }
+           }
+       </script>
+   </head>
+
+   <body class="bg-black text-gray-200 font-sans">
+       <!-- Mobile Nav Menu (Hidden by default) -->
+       <div id="mobileMenu"
+           class="fixed inset-0 bg-black bg-opacity-95 z-50 transform transition-transform duration-300 translate-x-full">
+           <div class="container mx-auto px-4 py-6">
+               <div class="flex justify-between items-center mb-6">
+                   <div class="flex items-center">
+                       <div
+                           class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3">
+                           <span class="text-2xl text-white"
+                               style="font-family: 'Minecraft', sans-serif;">T</span>
+                       </div>
+                       <span class="text-2xl text-white"
+                           style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                               class="text-red-500">.org</span></span>
+                   </div>
+                   <button id="closeMenu"
+                       class="text-white focus:outline-none">
+                       <i class="fas fa-times text-2xl"></i>
+                   </button>
+               </div>
+
+               <div class="flex flex-col space-y-6 text-center">
+                   <a href="../../"
+                       class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Home</a>
+                   <a href="../../skins/"
+                       class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Skins</a>
+                   <a href="../../premium/"
+                       class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Premium</a>
+                   <a href="../../features/"
+                       class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Features</a>
+                   <a href="../"
+                       class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Tutorials</a>
+                   <a href="../../about/"
+                       class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">About</a>
+                   <a href="../../subscribe/"
+                       class="mt-4 bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg">Subscribe
+                       Now</a>
+               </div>
+
+               <div class="mt-10 flex justify-center space-x-6">
+                   <a href="https://discord.gg/turbodraft" target="_blank"
+                       class="text-red-200 hover:text-white transition-colors duration-300">
+                       <i class="fab fa-discord text-2xl"></i>
+                   </a>
+                   <a href="https://twitter.com/TurboDraft" target="_blank"
+                       class="text-red-200 hover:text-white transition-colors duration-300">
+                       <i class="fab fa-twitter text-2xl"></i>
+                   </a>
+                   <a href="https://instagram.com/TurboDraft" target="_blank"
+                       class="text-red-200 hover:text-white transition-colors duration-300">
+                       <i class="fab fa-instagram text-2xl"></i>
+                   </a>
+                   <a href="https://youtube.com/TurboDraft" target="_blank"
+                       class="text-red-200 hover:text-white transition-colors duration-300">
+                       <i class="fab fa-youtube text-2xl"></i>
+                   </a>
+               </div>
+           </div>
+       </div>
+
+       <!-- Navigation -->
+       <nav
+           class="fixed w-full z-40 py-4 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg transition-all duration-300">
+           <div class="container mx-auto px-4">
+               <div class="flex justify-between items-center">
+                   <div class="flex items-center">
+                       <div
+                           class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:transform hover:scale-110">
+                           <span class="text-2xl text-white"
+                               style="font-family: 'Minecraft', sans-serif;">T</span>
+                       </div>
+                       <span class="text-2xl text-white"
+                           style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                               class="text-red-500">.org</span></span>
+                   </div>
+                   <div class="hidden md:flex space-x-8">
+                       <a href="../../"
+                           class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                       <a href="../../skins/"
+                           class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Skins</a>
+                       <a href="../../premium/"
+                           class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Premium</a>
+                       <a href="../../features/"
+                           class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Features</a>
+                       <a href="../"
+                           class="relative text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-red-500 after:transition-all after:duration-300">Tutorials</a>
+                       <a href="../../about/"
+                           class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">About</a>
+                   </div>
+                   <div class="hidden md:flex items-center space-x-4">
+                       <!-- User section will be dynamically populated by auth.js -->
+                       <div id="navUserSection" class="flex items-center">
+                           <!-- Default content shown before JS loads -->
+                           <a href="../../auth/"
+                               class="text-white hover:text-red-300 transition-colors duration-300">Login</a>
+                           <a href="../../subscribe/"
+                               class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800">Subscribe</a>
+                       </div>
+                   </div>
+                   <div class="md:hidden">
+                       <button id="openMenu"
+                           class="text-white focus:outline-none">
+                           <i class="fas fa-bars text-2xl"></i>
+                       </button>
+                   </div>
+               </div>
+           </div>
+       </nav>
+
+       <!-- Tutorial Header -->
+       <section class="pt-32 pb-10 bg-gradient-to-br from-black to-red-900">
+           <div class="container mx-auto px-4">
+               <div class="text-center">
+                   <h1 class="text-4xl md:text-5xl mb-4 text-white"
+                       style="font-family: 'Minecraft', sans-serif;">Skin Installation <span class="text-red-500">Troubleshooting</span></h1>
+                   <p class="text-lg md:text-xl mb-4 text-gray-300 max-w-3xl mx-auto">Solutions for common skin installation problems and errors across all Minecraft versions and platforms</p>
+               </div>
+           </div>
+       </section>
+
+       <!-- Platform Selection -->
+       <section class="py-6 bg-gray-900 border-b border-gray-800">
+           <div class="container mx-auto px-4">
+               <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                   <a href="#java" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                       <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                           <i class="fas fa-desktop text-lg"></i>
+                       </div>
+                       <span>Java Edition</span>
+                   </a>
+                   <a href="#bedrock" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                       <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                           <i class="fas fa-cubes text-lg"></i>
+                       </div>
+                       <span>Bedrock Edition</span>
+                   </a>
+                   <a href="#mobile" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                       <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                           <i class="fas fa-mobile-alt text-lg"></i>
+                       </div>
+                       <span>Mobile Devices</span>
+                   </a>
+                   <a href="#console" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                       <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                           <i class="fas fa-gamepad text-lg"></i>
+                       </div>
+                       <span>Consoles</span>
+                   </a>
+                   <a href="#general" class="flex items-center p-3 bg-black bg-opacity-40 rounded-lg border border-gray-800 hover:border-red-700 transition-colors duration-300">
+                       <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-3 text-red-400">
+                           <i class="fas fa-wrench text-lg"></i>
+                       </div>
+                       <span>General Issues</span>
+                   </a>
+               </div>
+           </div>
+       </section>
+
+       <!-- Main Content -->
+       <section class="py-10 bg-black">
+           <div class="container mx-auto px-4">
+               <div class="max-w-4xl mx-auto">
+                   
+                   <!-- Introduction -->
+                   <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-8">
+                       <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">
+                           Common Skin Installation Issues
+                       </h2>
+                       <p class="text-gray-300 mb-4">
+                           Having trouble getting your new Minecraft skin to appear? You're not alone! Skin installation issues are among the most common problems players face, regardless of which version or platform they use.
+                       </p>
+                       <p class="text-gray-300 mb-4">
+                           This comprehensive troubleshooting guide addresses the most common skin problems for every Minecraft version and platform. We'll walk you through specific solutions for Java Edition, Bedrock Edition, mobile devices, and consoles, plus general issues that can affect any version.
+                       </p>
+                       
+                       <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-yellow-900 mt-4">
+                           <div class="flex items-start">
+                               <i class="fas fa-lightbulb text-yellow-500 text-2xl mr-3 mt-1"></i>
+                               <div>
+                                   <h3 class="text-white font-bold mb-1">Before You Begin</h3>
+                                   <p class="text-gray-300">For the quickest results, jump to the section specific to your Minecraft version or device. If you're not sure what's causing your issue, start with the General Issues section, which covers problems that can affect all versions.</p>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Java Edition Issues -->
+                   <div id="java" class="mb-10 scroll-mt-20">
+                       <div class="flex items-center mb-4">
+                           <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                               <i class="fas fa-desktop text-lg"></i>
+                           </div>
+                           <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                               Java Edition Troubleshooting
+                           </h2>
+                       </div>
+                       
+                       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                           <p class="text-gray-300 mb-4">Java Edition skin issues typically revolve around account problems, file format issues, or connection errors. Here's how to fix the most common issues:</p>
+                           
+                           <div class="space-y-6">
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Skin Won't Upload to minecraft.net</h3>
+                                   
+                                   <div class="grid grid-cols-1 gap-4 mb-4">
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">Common Causes & Solutions:</h4>
+                                           
+                                           <div class="space-y-4">
+                                               <div class="flex items-start">
+                                                   <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                                   <div>
+                                                       <h5 class="text-white font-bold">Incorrect File Format</h5>
+                                                       <p class="text-gray-300 mb-2">Minecraft only accepts PNG files for skins.</p>
+                                                       <div class="bg-gray-800 p-3 rounded-lg">
+                                                           <p class="text-white text-sm font-bold">Solution:</p>
+                                                           <p class="text-gray-300 text-sm">Convert your skin file to PNG format using any image editor (like GIMP, Photoshop, or even Paint). Save with the .png extension.</p>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                               
+                                               <div class="flex items-start">
+                                                   <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                                   <div>
+                                                       <h5 class="text-white font-bold">Incorrect Image Dimensions</h5>
+                                                       <p class="text-gray-300 mb-2">Minecraft Java skins must be exactly 64×64 pixels (or 64×32 for legacy skins).</p>
+                                                       <div class="bg-gray-800 p-3 rounded-lg">
+                                                           <p class="text-white text-sm font-bold">Solution:</p>
+                                                           <p class="text-gray-300 text-sm">Resize your image to exactly 64×64 pixels. Don't use a skin that's too large or too small, as it will be rejected.</p>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                               
+                                               <div class="flex items-start">
+                                                   <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                                   <div>
+                                                       <h5 class="text-white font-bold">File Size Too Large</h5>
+                                                       <p class="text-gray-300 mb-2">Your skin file might exceed the maximum allowed size (usually 1MB).</p>
+                                                       <div class="bg-gray-800 p-3 rounded-lg">
+                                                           <p class="text-white text-sm font-bold">Solution:</p>
+                                                           <p class="text-gray-300 text-sm">Optimize your PNG file to reduce its size. Most skin files should be under 100KB. Tools like TinyPNG can compress your image without losing quality.</p>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                               
+                                               <div class="flex items-start">
+                                                   <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">4</div>
+                                                   <div>
+                                                       <h5 class="text-white font-bold">Microsoft Account Issues</h5>
+                                                       <p class="text-gray-300 mb-2">Problems with your Microsoft account login or permissions can prevent skin changes.</p>
+                                                       <div class="bg-gray-800 p-3 rounded-lg">
+                                                           <p class="text-white text-sm font-bold">Solution:</p>
+                                                           <p class="text-gray-300 text-sm">Log out of your Microsoft account on minecraft.net, clear your browser cookies, and log in again. Make sure you're using the same Microsoft account linked to your Minecraft Java Edition.</p>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Skin Uploaded Successfully But Doesn't Appear In-Game</h3>
+                                   
+                                   <div class="space-y-4">
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Game Cache Issues</h5>
+                                               <p class="text-gray-300 mb-2">Minecraft might be using a cached version of your skin.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Completely exit Minecraft and the launcher. Wait 5-10 minutes (for server synchronization), then restart the game. This forces the game to fetch your updated skin.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Different Account</h5>
+                                               <p class="text-gray-300 mb-2">You might be logged into a different Microsoft account in-game than the one you uploaded the skin to.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Check which account you're logged into in the Minecraft launcher. Log out and ensure you log back in with the same Microsoft account you used on minecraft.net.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Server Skin Settings</h5>
+                                               <p class="text-gray-300 mb-2">Some multiplayer servers override player skins or have skin restrictions.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Test your skin in singleplayer mode first. If it works there but not on a server, the server might be using custom skin settings or plugins. Contact the server administrators.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">4</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Network Connection</h5>
+                                               <p class="text-gray-300 mb-2">A poor internet connection might prevent the game from downloading your skin.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Check your internet connection. Try connecting to a different network if possible. You can also try setting your game to offline mode then back to online to force a reconnection.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Skin Shows Incorrectly or Has Missing Parts</h3>
+                                   
+                                   <div class="space-y-4">
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Wrong Model Type</h5>
+                                               <p class="text-gray-300 mb-2">You might have selected the wrong model type (Classic vs. Slim) for your skin.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Return to minecraft.net, go to your skin settings, and change the model type. Classic (Steve) has 4-pixel wide arms, while Slim (Alex) has 3-pixel wide arms. Make sure your skin is designed for the model you select.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Corrupted Skin File</h5>
+                                               <p class="text-gray-300 mb-2">Your skin file may have corrupt or missing data.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Download a fresh copy of your skin. If you made it yourself, try re-exporting it. Make sure it follows the proper template layout for Java Edition skins.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Transparency Issues</h5>
+                                               <p class="text-gray-300 mb-2">Improper transparency in your skin file can cause visual glitches.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Ensure transparency is properly set in your PNG file. Only the overlay layer (second skin layer) and unused parts of the template should have transparency. The base skin must not have fully transparent pixels where the character model needs to show.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           
+                           <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-green-800 mt-6">
+                               <div class="flex items-start">
+                                   <i class="fas fa-check-circle text-green-500 text-2xl mr-3 mt-1"></i>
+                                   <div>
+                                       <h3 class="text-white font-bold mb-1">Java Edition Quick Fix</h3>
+                                       <p class="text-gray-300">If you're still having issues after trying these solutions, try this reliable method: download a working skin from a site like MinecraftSkins.com, upload it to your account, then try your custom skin again. This often resolves persistent issues by "resetting" your skin profile.</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Bedrock Edition Issues -->
+                   <div id="bedrock" class="mb-10 scroll-mt-20">
+                       <div class="flex items-center mb-4">
+                           <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                               <i class="fas fa-cubes text-lg"></i>
+                           </div>
+                           <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                               Bedrock Edition Troubleshooting
+                           </h2>
+                       </div>
+                       
+                       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                           <p class="text-gray-300 mb-4">Bedrock Edition (Windows 10/11, Xbox, PlayStation, Switch, mobile) has its own unique skin system and common issues:</p>
+                           
+                           <div class="space-y-6">
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Custom Skin Won't Import</h3>
+                                   
+                                   <div class="space-y-4">
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Incompatible Skin Format</h5>
+                                               <p class="text-gray-300 mb-2">Bedrock Edition requires specific skin formats different from Java Edition.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Make sure your skin follows the Bedrock Edition template (differs slightly from Java). Bedrock skins should be 64×64 pixels for HD skins or 64×32 for classic skins, in PNG format. Use a Bedrock-specific skin editor or converter if needed.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Character Creator Conflict</h5>
+                                               <p class="text-gray-300 mb-2">If you've been using the Character Creator, there may be conflicts with custom skins.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Go to Dressing Room > Classic Skins tab > Default, and select a default skin first. Then try importing your custom skin again. This "resets" the character model.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">File Access Permissions</h5>
+                                               <p class="text-gray-300 mb-2">Bedrock Edition may lack permissions to access your file system on some platforms.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">On Windows 10/11, ensure Minecraft has file system permissions. Go to Windows Settings > Privacy > File system and ensure Minecraft has access. On other platforms, move your skin file to a location Minecraft can access (like Downloads or Pictures folders).</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Skin Shows as Alex or Steve Instead of Custom Skin</h3>
+                                   
+                                   <div class="space-y-4">
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Microsoft Account Sync Issues</h5>
+                                               <p class="text-gray-300 mb-2">Your custom skin settings might not be syncing properly with your Microsoft account.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Sign out of your Microsoft account in Minecraft Bedrock. Close the game completely, then reopen it and sign back in. This forces a fresh sync with your account data.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Skin Not Actually Applied</h5>
+                                               <p class="text-gray-300 mb-2">You may have imported the skin but not actually applied/equipped it.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Go to Dressing Room > Owned tab > find your imported skin and make sure to tap/click "Use" or "Equip" after selecting it. Some custom skins appear in the "Custom" category rather than "Owned".</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Skin Pack Override</h5>
+                                               <p class="text-gray-300 mb-2">A purchased skin pack or previous skin might be taking precedence.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Check if you have any active skin packs. Go to Dressing Room and look at which skin category is currently selected. Switch to "Custom" or "Owned" and find your uploaded skin.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Skin Shows for You But Not for Other Players</h3>
+                                   
+                                   <div class="space-y-4">
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Cloud Sync Delay</h5>
+                                               <p class="text-gray-300 mb-2">Your skin might still be syncing to Microsoft's servers.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Wait 15-30 minutes for full synchronization. You can also try playing singleplayer for a while, then rejoining the multiplayer server to force a skin refresh.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Server Custom Skin Settings</h5>
+                                               <p class="text-gray-300 mb-2">The server might have custom skin settings or be using a skin plugin.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Check with the server administrators about their skin settings. Some servers override player skins or disable custom skins entirely.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Other Players' Settings</h5>
+                                               <p class="text-gray-300 mb-2">Other players might have custom skins disabled in their settings.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Ask other players to check their Minecraft settings: Settings > Video > Show Only Trusted Skins should be turned OFF to see all custom skins.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           
+                           <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-blue-900 mt-6">
+                               <div class="flex items-start">
+                                   <i class="fas fa-info-circle text-blue-500 text-2xl mr-3 mt-1"></i>
+                                   <div>
+                                       <h3 class="text-white font-bold mb-1">Bedrock Edition Note</h3>
+                                       <p class="text-gray-300">Bedrock Edition has stricter content filtering than Java Edition. If your skin contains content that might be against Minecraft's guidelines (inappropriate or offensive elements), it may be automatically blocked even if you can see it locally. Ensure your skin complies with Minecraft's community guidelines.</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Mobile Devices Issues -->
+                   <div id="mobile" class="mb-10 scroll-mt-20">
+                       <div class="flex items-center mb-4">
+                           <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                               <i class="fas fa-mobile-alt text-lg"></i>
+                           </div>
+                           <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                               Mobile Devices Troubleshooting
+                           </h2>
+                       </div>
+                       
+                       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                           <p class="text-gray-300 mb-4">Mobile devices (iOS and Android) run Minecraft Bedrock Edition but have some platform-specific issues:</p>
+                           
+                           <div class="space-y-6">
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Can't Access File System to Import Skin</h3>
+                                   
+                                   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">iOS Solutions:</h4>
+                                           <div class="space-y-3">
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">Save your skin to the Photos app first, then import it. In Minecraft, go to Profile > Edit Character > Classic Skins > Import > Choose Photo.</p>
+                                                   </div>
+                                               </div>
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">If that doesn't work, try using the Files app. Save your skin file to Files, then in Minecraft import from Files instead of Photos.</p>
+                                                   </div>
+                                               </div>
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">For persistent issues, try using a skin manager app from the App Store, which can bypass some iOS restrictions.</p>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">Android Solutions:</h4>
+                                           <div class="space-y-3">
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">Ensure Minecraft has storage permissions. Go to Settings > Apps > Minecraft > Permissions and enable Storage access.</p>
+                                                   </div>
+                                               </div>
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">Save your skin file to an easily accessible location like Downloads or Pictures folder.</p>
+                                                   </div>
+                                               </div>
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">Try using a file manager app if the default file picker is causing issues.</p>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: App Crashes When Importing Skin</h3>
+                                   
+                                   <div class="space-y-4">
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Memory Issues</h5>
+                                               <p class="text-gray-300 mb-2">Mobile devices may have limited memory, causing crashes during skin imports.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Close all background apps before importing. Restart your device to clear memory. Make sure your skin file is optimized and not too large in file size. Try reducing the PNG file size if it's unusually large.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">App Cache Issues</h5>
+                                               <p class="text-gray-300 mb-2">Corrupted app cache can cause crashes when importing custom content.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm"><strong>Android:</strong> Go to Settings > Apps > Minecraft > Storage > Clear Cache (do not clear data as this will delete your worlds).<br><strong>iOS:</strong> Completely close Minecraft from the app switcher, then restart the app. For persistent issues, reinstall the app (backup your worlds first).</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Outdated App</h5>
+                                               <p class="text-gray-300 mb-2">Using an outdated version of Minecraft may cause compatibility issues.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Update Minecraft to the latest version from the App Store (iOS) or Google Play Store (Android). Older versions may have bugs related to skin importing.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Skin Works Locally But Not Online</h3>
+                                   
+                                   <p class="text-gray-300 mb-3">This common mobile issue occurs when your skin only appears on your device but not to other players:</p>
+                                   
+                                   <div class="space-y-4">
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Account Linking Issues</h5>
+                                               <p class="text-gray-300 mb-2">Your Microsoft account might not be properly linked to your Minecraft mobile account.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Sign out of your Microsoft account in Minecraft settings, then sign back in. Ensure you're signed in with the same Microsoft account across all devices. Check if you can see your custom skin on the Minecraft account page when logging in via a web browser.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Local-Only Custom Skin</h5>
+                                               <p class="text-gray-300 mb-2">Some skin import methods only apply the skin locally without uploading it to your Microsoft account.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Instead of using the in-game skin picker, try uploading your skin through the Minecraft website while logged into your Microsoft account. Alternatively, upload it via a desktop or laptop computer before playing on mobile.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Mobile Data Restrictions</h5>
+                                               <p class="text-gray-300 mb-2">Limited or restricted mobile data might prevent skin synchronization.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Connect to a stable Wi-Fi network when uploading or changing skins. Some mobile data plans restrict certain types of uploads or have limited bandwidth for synchronization.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           
+                           <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-yellow-900 mt-6">
+                               <div class="flex items-start">
+                                   <i class="fas fa-lightbulb text-yellow-500 text-2xl mr-3 mt-1"></i>
+                                   <div>
+                                       <h3 class="text-white font-bold mb-1">Mobile Workaround Tip</h3>
+                                       <p class="text-gray-300">If you're still having issues importing skins directly on your mobile device, try this reliable workaround: Use a computer to upload your skin to your Microsoft account via the Minecraft website. Then sign in with the same Microsoft account on your mobile device and your skin will sync automatically.</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Console Issues -->
+                   <div id="console" class="mb-10 scroll-mt-20">
+                       <div class="flex items-center mb-4">
+                           <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                               <i class="fas fa-gamepad text-lg"></i>
+                           </div>
+                           <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                               Console Troubleshooting
+                           </h2>
+                       </div>
+                       
+                       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                           <p class="text-gray-300 mb-4">Console versions (Xbox, PlayStation, Nintendo Switch) have the most limited skin customization options but can still use custom skins with these workarounds:</p>
+                           
+                           <div class="space-y-6">
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Unable to Import Custom Skins Directly</h3>
+                                   
+                                   <p class="text-gray-300 mb-3">Consoles don't support direct file imports like PC versions, but you can still use custom skins:</p>
+                                   
+                                   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">Xbox Solution:</h4>
+                                           <div class="space-y-3">
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">Use Microsoft account synchronization. Upload your skin on minecraft.net using a computer or mobile device.</p>
+                                                   </div>
+                                               </div>
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">Sign into the same Microsoft account on your Xbox.</p>
+                                                   </div>
+                                               </div>
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">Your skin should sync automatically. Restart the game if it doesn't appear.</p>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">PlayStation Solution:</h4>
+                                           <div class="space-y-3">
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">Link your PlayStation to a Microsoft account first (required).</p>
+                                                   </div>
+                                               </div>
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">Upload your skin through minecraft.net or the mobile app using the same Microsoft account.</p>
+                                                   </div>
+                                               </div>
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">Wait 10-15 minutes for synchronization, then restart Minecraft on PlayStation.</p>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div>
+                                           <h4 class="text-white font-bold mb-2">Nintendo Switch Solution:</h4>
+                                           <div class="space-y-3">
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">Link your Nintendo account to a Microsoft account (required).</p>
+                                                   </div>
+                                               </div>
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">Upload your skin through minecraft.net using a computer or mobile device.</p>
+                                                   </div>
+                                               </div>
+                                               <div class="flex items-start">
+                                                   <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                                   <div>
+                                                       <p class="text-gray-300">Switch has the longest sync time - wait up to 30 minutes, then restart Minecraft.</p>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Skin Not Syncing to Console</h3>
+                                   
+                                   <div class="space-y-4">
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Account Linking Problems</h5>
+                                               <p class="text-gray-300 mb-2">Your Microsoft account might not be properly linked to your console account.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Unlink and relink your Microsoft account to your console. For PlayStation and Switch, you may need to visit <a href="https://aka.ms/remoteconnect" target="_blank" class="text-red-400 hover:text-red-300">aka.ms/remoteconnect</a> and enter the code displayed in Minecraft to complete linking.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Sync Delay</h5>
+                                               <p class="text-gray-300 mb-2">Console synchronization can take much longer than other platforms.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Be patient and wait at least 30 minutes after uploading your skin online. For Nintendo Switch, sync can sometimes take hours. Try completely closing the game and restarting your console to force a fresh sync.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Network Issues</h5>
+                                               <p class="text-gray-300 mb-2">Console network settings might be restricting synchronization.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Ensure your console has a strong internet connection. Try switching from Wi-Fi to a wired connection if possible. Check if your network settings have any restrictions that might block Minecraft's synchronization services.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Can Only See Marketplace Skins</h3>
+                                   
+                                   <div class="space-y-4">
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Missing Custom Skin Category</h5>
+                                               <p class="text-gray-300 mb-2">The custom skin category might not be visible or selected.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">In the dressing room/character creator, cycle through all available tabs. Look specifically for tabs labeled "Custom", "Owned", or with your Microsoft account username. Your synced skin should appear in one of these categories rather than with the marketplace skins.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Non-Premium Account</h5>
+                                               <p class="text-gray-300 mb-2">Some console versions require a premium/paid Microsoft account for custom skins.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Ensure you're using a paid Microsoft account that owns Minecraft, not a free account. On consoles, there's no "demo" version that supports full customization features.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Regional Restrictions</h5>
+                                               <p class="text-gray-300 mb-2">Some regions have restrictions on custom content.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Check if your console region settings might be restricting custom content. Some countries have stricter content policies that limit custom skins. You might need to change your region settings (though this can affect other services).</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           
+                           <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-purple-900 mt-6">
+                               <div class="flex items-start">
+                                   <i class="fas fa-crown text-purple-500 text-2xl mr-3 mt-1"></i>
+                                   <div>
+                                       <h3 class="text-white font-bold mb-1">Console Pro Tip</h3>
+                                       <p class="text-gray-300">For the most reliable console skin experience, maintain the same Microsoft account across all your devices. Test your skin on a PC or mobile device first to ensure it's properly uploaded to your account, then let it sync to your console. Consoles are always the last platform to receive skin updates due to their more restrictive environments.</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- General Issues -->
+                   <div id="general" class="mb-10 scroll-mt-20">
+                       <div class="flex items-center mb-4">
+                           <div class="w-10 h-10 bg-red-900 bg-opacity-30 rounded-full flex items-center justify-center mr-4 text-red-400">
+                               <i class="fas fa-wrench text-lg"></i>
+                           </div>
+                           <h2 class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">
+                               General Troubleshooting
+                           </h2>
+                       </div>
+                       
+                       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                           <p class="text-gray-300 mb-4">These solutions address common skin installation problems that can affect any Minecraft version or platform:</p>
+                           
+                           <div class="space-y-6">
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Corrupted Skin Files</h3>
+                                   
+                                   <div class="space-y-4">
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Identifying Corruption</h5>
+                                               <p class="text-gray-300 mb-2">Corrupted PNG files might cause unpredictable skin behavior.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Symptoms:</p>
+                                                   <ul class="text-gray-300 text-sm list-disc list-inside">
+                                                       <li>Missing body parts in-game</li>
+                                                       <li>Black squares or artifacts</li>
+                                                       <li>Game crashes when applying skin</li>
+                                                       <li>Instant rejection during upload</li>
+                                                   </ul>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Solution: Fix Corrupted Files</h5>
+                                               <p class="text-gray-300 mb-2">Repair or replace corrupted skin files:</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <ul class="text-gray-300 text-sm space-y-2">
+                                                       <li>• <strong>Re-download:</strong> If you downloaded the skin, get a fresh copy from the original source</li>
+                                                       <li>• <strong>Re-export:</strong> If you created the skin, export it again from your editor as a new file</li>
+                                                       <li>• <strong>Verify in image editor:</strong> Open the skin in an image editor to check for visible corruption</li>
+                                                       <li>• <strong>Use a validator:</strong> Try a Minecraft skin validator tool (available online) to check your skin</li>
+                                                       <li>• <strong>Optimize:</strong> Run the file through a PNG optimizer tool like TinyPNG</li>
+                                                   </ul>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Account Problems</h3>
+                                   
+                                   <div class="space-y-4">
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Multiple Accounts Confusion</h5>
+                                               <p class="text-gray-300 mb-2">Using different accounts across devices can cause skin synchronization issues.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Create a list of all your Minecraft and Microsoft accounts. Verify which Microsoft account owns your Minecraft license. Make sure you're using the same owner account across all devices. For legacy accounts, ensure you've properly migrated to a Microsoft account.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Account Permissions</h5>
+                                               <p class="text-gray-300 mb-2">Restricted or child accounts may have limited customization abilities.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Check if your Microsoft account has any restrictions (especially for accounts managed by family settings). Child accounts often have limited ability to upload custom content. A parent/guardian account may need to adjust these settings.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Authentication Issues</h5>
+                                               <p class="text-gray-300 mb-2">Authentication problems can prevent skin changes from saving properly.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Sign out of your Microsoft account everywhere (website, launcher, game). Clear browser cookies and cache. Wait a few minutes, then sign back in to all services with the correct account details. Change your password if you suspect any security issues.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Policy Violations</h3>
+                                   
+                                   <div class="space-y-4">
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Content Filtering</h5>
+                                               <p class="text-gray-300 mb-2">Your skin might be rejected if it contains inappropriate content.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Possible Violations:</p>
+                                                   <ul class="text-gray-300 text-sm list-disc list-inside">
+                                                       <li>Inappropriate or offensive imagery</li>
+                                                       <li>Excessively violent content</li>
+                                                       <li>Adult content or suggestive elements</li>
+                                                       <li>Copyrighted materials</li>
+                                                       <li>Hate speech or symbols</li>
+                                                   </ul>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Solution: Content Compliance</h5>
+                                               <p class="text-gray-300 mb-2">Follow Minecraft's community guidelines for skins:</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Guidelines:</p>
+                                                   <ul class="text-gray-300 text-sm space-y-1">
+                                                       <li>• Keep skins appropriate for all ages</li>
+                                                       <li>• Avoid offensive content, hate symbols, or profanity</li>
+                                                       <li>• Don't use exact replicas of copyrighted characters</li>
+                                                       <li>• Bedrock Edition has stricter filtering than Java Edition</li>
+                                                       <li>• If your skin is rejected, modify the problematic elements</li>
+                                                   </ul>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <h3 class="text-white font-bold mb-3">Issue: Technical Problems</h3>
+                                   
+                                   <div class="space-y-4">
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">1</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Minecraft Service Outages</h5>
+                                               <p class="text-gray-300 mb-2">Minecraft skin servers might be experiencing downtime.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Check Minecraft service status on <a href="https://status.mojang.com/" target="_blank" class="text-red-400 hover:text-red-300">status.mojang.com</a> or Minecraft's social media accounts. If there's a known outage, you'll need to wait until services are restored. During major updates or high traffic periods, skin services might experience delays.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">2</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Outdated Game Version</h5>
+                                               <p class="text-gray-300 mb-2">Running an outdated version of Minecraft might cause skin issues.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Update to the latest version of Minecraft for your platform. Older versions may have bugs related to skin handling or might not support newer skin features. If playing on multiple versions, be aware that newer skins might not display correctly in much older game versions.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="flex items-start">
+                                           <div class="w-8 h-8 rounded-full bg-red-900 bg-opacity-50 flex items-center justify-center mr-3 text-red-400 text-sm flex-shrink-0 mt-0.5">3</div>
+                                           <div>
+                                               <h5 class="text-white font-bold">Network/Firewall Issues</h5>
+                                               <p class="text-gray-300 mb-2">Network restrictions might block skin downloads or uploads.</p>
+                                               <div class="bg-gray-800 p-3 rounded-lg">
+                                                   <p class="text-white text-sm font-bold">Solution:</p>
+                                                   <p class="text-gray-300 text-sm">Check if your network (especially school, work, or public networks) allows connections to Minecraft's servers. Some firewalls or parental controls might block these connections. Try using a different network if possible. For home networks, check router settings for any relevant restrictions.</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           
+                           <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-red-900 mt-6">
+                               <div class="flex items-start">
+                                   <i class="fas fa-exclamation-circle text-red-500 text-2xl mr-3 mt-1"></i>
+                                   <div>
+                                       <h3 class="text-white font-bold mb-1">When to Reset Everything</h3>
+                                       <p class="text-gray-300">If you've tried all applicable solutions and still can't get your skin to work, consider this "nuclear option": Completely sign out of all Minecraft/Microsoft services on all devices. Clear browser caches and cookies. Restart all devices. Then sign back in and try a fresh skin installation. This complete reset often resolves persistent issues that resist other solutions.</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Community Help -->
+                   <div class="mb-10">
+                       <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Getting Additional Help</h2>
+                       <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                           <p class="text-gray-300 mb-4">If you've tried all relevant troubleshooting steps and still can't resolve your skin issue, here's where to get additional assistance:</p>
+                           
+                           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <div class="flex items-start mb-3">
+                                       <i class="fas fa-users text-blue-500 text-xl mr-3 mt-1"></i>
+                                       <h3 class="text-white font-bold">Community Support</h3>
+                                   </div>
+                                   <p class="text-gray-300 mb-2">The Minecraft community can often provide quicker, experience-based help:</p>
+                                   <ul class="text-gray-300 space-y-1">
+                                       <li><a href="https://discord.gg/turbodraft" target="_blank" class="text-red-400 hover:text-red-300">TurboDraft Discord</a> - Our community experts can help with skin issues</li>
+                                       <li><a href="https://www.reddit.com/r/Minecraft/" target="_blank" class="text-red-400 hover:text-red-300">r/Minecraft</a> - Large community with experienced players</li>
+                                       <li><a href="https://www.minecraftforum.net/" target="_blank" class="text-red-400 hover:text-red-300">Minecraft Forums</a> - Dedicated support sections</li>
+                                       <li><a href="https://www.planetminecraft.com/forums/" target="_blank" class="text-red-400 hover:text-red-300">Planet Minecraft Forums</a> - Skin-focused community</li>
+                                   </ul>
+                                   <p class="text-gray-300 mt-3 text-sm italic">When asking for help, include: your Minecraft version, platform, exact error messages, and steps you've already tried.</p>
+                               </div>
+                               
+                               <div class="bg-black bg-opacity-40 rounded-lg p-4 border border-gray-800">
+                                   <div class="flex items-start mb-3">
+                                       <i class="fas fa-headset text-green-500 text-xl mr-3 mt-1"></i>
+                                       <h3 class="text-white font-bold">Official Support</h3>
+                                   </div>
+                                   <p class="text-gray-300 mb-2">For persistent issues, especially account-related problems:</p>
+                                   <ul class="text-gray-300 space-y-1">
+                                       <li><a href="https://help.minecraft.net/" target="_blank" class="text-red-400 hover:text-red-300">Minecraft Help Center</a> - Official knowledge base</li>
+                                       <li><a href="https://aka.ms/Minecraft-Support" target="_blank" class="text-red-400 hover:text-red-300">Minecraft Support</a> - Submit support tickets</li>
+                                       <li><a href="https://support.xbox.com/" target="_blank" class="text-red-400 hover:text-red-300">Xbox Support</a> - For Microsoft account issues</li>
+                                       <li><a href="https://twitter.com/MojangSupport" target="_blank" class="text-red-400 hover:text-red-300">@MojangSupport</a> - Twitter support account</li>
+                                   </ul>
+                                   <p class="text-gray-300 mt-3 text-sm italic">Official support may take longer to respond but can help with account-specific problems that community support cannot address.</p>
+                               </div>
+                           </div>
+                           
+                           <div class="bg-black bg-opacity-60 p-4 rounded-lg border border-indigo-900 mt-6">
+                               <div class="flex items-start">
+                                   <i class="fas fa-camera text-indigo-500 text-2xl mr-3 mt-1"></i>
+                                   <div>
+                                       <h3 class="text-white font-bold mb-1">Visual Documentation Tip</h3>
+                                       <p class="text-gray-300">When seeking help, consider including screenshots of the issue and your skin file. This visual information can dramatically improve the quality of assistance you receive. You can safely share screenshots of error messages and your skin, but never share account credentials or personal information.</p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <!-- Related Tutorials -->
+                   <div>
+                       <h2 class="text-2xl text-white mb-6" style="font-family: 'Minecraft', sans-serif;">Related Tutorials</h2>
+                       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                           <a href="../java-edition/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+                               <div class="relative h-40 overflow-hidden">
+                                   <img src="../../assets/images/how_to_install_java_skins.jpg" alt="Java Edition Tutorial" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                   <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                                   <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+                                       Installation
+                                   </div>
+                               </div>
+                               <div class="p-4">
+                                   <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">Installing Skins in Java Edition</h3>
+                                   <p class="text-gray-400 text-sm">Step-by-step guide for applying custom skins in Minecraft Java Edition.</p>
+                               </div>
+                           </a>
+                           
+                           <a href="../bedrock-edition/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+                               <div class="relative h-40 overflow-hidden">
+                                   <img src="../../assets/images/how_to_install_bedrock_skins.jpg" alt="Bedrock Edition Tutorial" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                   <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                                   <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+                                       Installation
+                                   </div>
+                               </div>
+                               <div class="p-4">
+                                   <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">Installing Skins in Bedrock Edition</h3>
+                                   <p class="text-gray-400 text-sm">Learn how to apply custom skins in Minecraft Bedrock Edition on Windows and mobile.</p>
+                               </div>
+                           </a>
+                           
+                           <a href="../console-edition/" class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group transition-all duration-300 hover:border-red-700 hover:scale-105">
+                               <div class="relative h-40 overflow-hidden">
+                                   <img src="../../assets/images/console_edition.jpg" alt="Console Edition Tutorial" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                   <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                                   <div class="absolute bottom-3 left-3 bg-red-800 text-white text-xs rounded-full px-2 py-1">
+                                       Installation
+                                   </div>
+                               </div>
+                               <div class="p-4">
+                                   <h3 class="text-lg text-white font-bold mb-1 group-hover:text-red-400 transition-colors duration-300">Using Custom Skins on Console Editions</h3>
+                                   <p class="text-gray-400 text-sm">How to get custom skins working on PlayStation, Xbox, and Nintendo Switch versions.</p>
+                               </div>
+                           </a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <!-- CTA Banner -->
+       <section class="py-10 bg-gradient-to-br from-red-900 to-black">
+           <div class="container mx-auto px-4">
+               <div class="max-w-4xl mx-auto bg-black bg-opacity-50 p-6 rounded-lg border border-red-800">
+                   <div class="flex flex-col md:flex-row items-center">
+                       <div class="text-center md:text-left md:pl-6">
+                           <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">
+                               Need Hassle-Free Skins?
+                           </h2>
+                           <p class="text-gray-300 mb-6">
+                               Browse our collection of 500+ premium and free Minecraft skins that work perfectly across all platforms! All skins are tested for compatibility and include installation instructions.
+                           </p>
+                           <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                               <a href="../../skins/"
+                                   class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800 flex items-center justify-center">
+                                   <i class="fas fa-th-large mr-2"></i>
+                                   <span>Browse Skins</span>
+                               </a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <!-- Footer -->
+       <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+           <div class="container mx-auto px-4">
+               <div class="flex flex-col md:flex-row justify-between">
+                   <div class="mb-8 md:mb-0">
+                       <div class="flex items-center mb-4">
+                           <div
+                               class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:scale-110">
+                               <span class="text-2xl text-white"
+                                   style="font-family: 'Minecraft', sans-serif;">T</span>
+                           </div>
+                           <span class="text-2xl text-white"
+                               style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                   class="text-red-500">.org</span></span>
+                       </div>
+                       <p class="max-w-xs">Premium Minecraft skins for
+                           everyone. Free and subscription options available
+                           for all players.</p>
+                       <p class="mt-4 text-sm">© 2025 TurboDraft. Not
+                           affiliated with Mojang.</p>
+                   </div>
+
+                   <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                       <div>
+                           <h3 class="text-white text-lg mb-4"
+                               style="font-family: 'Minecraft', sans-serif;">Quick
+                               Links</h3>
+                           <ul class="space-y-2">
+                               <li><a href="../../"
+                                       class="hover:text-red-400 transition-colors duration-300">Home</a></li>
+                               <li><a href="../../skins/"
+                                       class="hover:text-red-400 transition-colors duration-300">Skins</a></li>
+                               <li><a href="../../premium/"
+                                       class="hover:text-red-400 transition-colors duration-300">Premium</a></li>
+                               <li><a href="../../features/"
+                                       class="hover:text-red-400 transition-colors duration-300">Features</a></li>
+                               <li><a href="../../about/"
+                                       class="hover:text-red-400 transition-colors duration-300">About
+                                       Us</a></li>
+                           </ul>
+                       </div>
+
+                       <div>
+                           <h3 class="text-white text-lg mb-4"
+                               style="font-family: 'Minecraft', sans-serif;">Resources</h3>
+                           <ul class="space-y-2">
+                               <li><a href="../"
+                                       class="hover:text-red-400 transition-colors duration-300">Tutorials</a></li>
+                               <li><a href="../../faq/"
+                                       class="hover:text-red-400 transition-colors duration-300">FAQ</a></li>
+                               <li><a href="../../contact/"
+                                       class="hover:text-red-400 transition-colors duration-300">Support</a></li>
+                               <li><a href="../../terms/"
+                                       class="hover:text-red-400 transition-colors duration-300">Terms
+                                       of Service</a></li>
+                               <li><a href="../../privacy/"
+                                       class="hover:text-red-400 transition-colors duration-300">Privacy
+                                       Policy</a></li>
+                           </ul>
+                       </div>
+
+                       <div>
+                           <h3 class="text-white text-lg mb-4"
+                               style="font-family: 'Minecraft', sans-serif;">Community</h3>
+                           <ul class="space-y-2">
+                               <li><a href="https://discord.gg/turbodraft"
+                                       target="_blank"
+                                       class="hover:text-red-400 transition-colors duration-300">Discord
+                                       Server</a></li>
+                               <li><a href="https://twitter.com/TurboDraft"
+                                       target="_blank"
+                                       class="hover:text-red-400 transition-colors duration-300">Twitter</a></li>
+                               <li><a href="https://instagram.com/TurboDraft"
+                                       target="_blank"
+                                       class="hover:text-red-400 transition-colors duration-300">Instagram</a></li>
+                               <li><a href="https://youtube.com/TurboDraft"
+                                       target="_blank"
+                                       class="hover:text-red-400 transition-colors duration-300">YouTube</a></li>
+                           </ul>
+                       </div>
+
+                       <div>
+                           <h3 class="text-white text-lg mb-4"
+                               style="font-family: 'Minecraft', sans-serif;">Contact</h3>
+                           <ul class="space-y-2">
+                               <li><a href="mailto:info@turbodraft.org"
+                                       class="hover:text-red-400 transition-colors duration-300">info@turbodraft.org</a></li>
+                               <li><a href="../../contact/"
+                                       class="hover:text-red-400 transition-colors duration-300">Contact
+                                       Form</a></li>
+                               
+                               
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+                   <p class="mb-4">Made with ❤️ for the Minecraft community.
+                       TurboDraft.org - bringing your Minecraft characters to
+                       life.</p>
+                   <div class="flex justify-center space-x-4">
+                       <a href="../../terms/"
+                           class="text-gray-500 hover:text-red-400 transition-colors duration-300">Terms</a>
+                       <span class="text-gray-700">•</span>
+                       <a href="../../privacy/"
+                           class="text-gray-500 hover:text-red-400 transition-colors duration-300">Privacy</a>
+                       <span class="text-gray-700">•</span>
+                       <a href="../../cookies/"
+                           class="text-gray-500 hover:text-red-400 transition-colors duration-300">Cookies</a>
+                   </div>
+               </div>
+           </div>
+       </footer>
+
+       <!-- JavaScript -->
+       <script>
+           // Mobile menu handling
+           document.getElementById('openMenu').addEventListener('click', function() {
+               const mobileMenu = document.getElementById('mobileMenu');
+               mobileMenu.classList.remove('translate-x-full');
+           });
+
+           document.getElementById('closeMenu').addEventListener('click', function() {
+               const mobileMenu = document.getElementById('mobileMenu');
+               mobileMenu.classList.add('translate-x-full');
+           });
+
+           // Add navbar scroll effect
+           window.addEventListener('scroll', function() {
+               const navbar = document.querySelector('nav');
+               if (window.scrollY > 50) {
+                   navbar.classList.add('py-2');
+                   navbar.classList.add('shadow-lg');
+                   navbar.classList.remove('py-4');
+                   navbar.classList.remove('bg-opacity-80');
+               } else {
+                   navbar.classList.remove('py-2');
+                   navbar.classList.remove('shadow-lg');
+                   navbar.classList.add('py-4');
+                   navbar.classList.add('bg-opacity-80');
+               }
+           });
+
+           // Smooth scrolling for anchor links
+           document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+               anchor.addEventListener('click', function(e) {
+                   e.preventDefault();
+                   
+                   const targetId = this.getAttribute('href');
+                   if (targetId === '#') return;
+                   
+                   const targetElement = document.querySelector(targetId);
+                   if (!targetElement) return;
+                   
+                   window.scrollTo({
+                       top: targetElement.offsetTop - 80,
+                       behavior: 'smooth'
+                   });
+               });
+           });
+       </script>
+   </body>
+</html>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Terms and Conditions - TurboDraft.org</title>
+        <meta name="description" content="TurboDraft.org offers premium Minecraft skins for Java and Bedrock editions. Browse our collection of free and premium custom skins, download instantly, and stand out on any server. Visit TurboDraft.org for original designs and weekly skin drops.">
+        <meta name="keywords" content="TurboDraft.org, Minecraft skins, premium Minecraft skins, custom skins, Minecraft character, Java edition skins, Bedrock edition skins, free Minecraft skins, gaming skins, Minecraft customization, TurboDraft premium, skin downloads, weekly skin drops">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+            rel="stylesheet">
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Minecraft&family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet">
+        <script src="../assets/js/auth.js"></script>
+        <link rel="icon" href="../assets/icon.webp">
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        backgroundImage: {
+                            'pattern': "url('../assets/images/pattern.png')",
+                        },
+                        animation: {
+                            'float': 'float 6s ease-in-out infinite',
+                            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                            'bounce-slow': 'bounce 3s infinite',
+                        },
+                        keyframes: {
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-20px)' },
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    
+    <body class="bg-black text-gray-200 font-sans">
+        <!-- Mobile Nav Menu (Hidden by default) -->
+        <div id="mobileMenu"
+            class="fixed inset-0 bg-black bg-opacity-95 z-50 transform transition-transform duration-300 translate-x-full">
+            <div class="container mx-auto px-4 py-6">
+                <a href="../" class="flex justify-between items-center mb-6">
+                    <div class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </div>
+                    <button id="closeMenu"
+                        class="text-white focus:outline-none">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </a>
+                
+                <!-- Mobile menu user section will be inserted here by JS when logged in -->
+                
+                <div class="flex flex-col space-y-6 text-center">
+                    <a href="../"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Home</a>
+                    <a href="../skins/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Skins</a>
+                    <a href="../premium/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Premium</a>
+                    <a href="../features/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Features</a>
+                    <a href="../tutorials/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">Tutorials</a>
+                    <a href="../about/"
+                        class="text-gray-300 hover:text-white text-xl font-semibold py-2 border-b border-gray-800">About</a>
+                    <a href="../subscribe/"
+                        class="mt-4 bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-3 px-6 rounded-lg">Subscribe
+                        Now</a>
+                </div>
+                
+                <div class="mt-10 flex justify-center space-x-6">
+                    <a href="https://discord.gg/turbodraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://instagram.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://youtube.com/TurboDraft" target="_blank"
+                        class="text-red-200 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav
+            class="fixed w-full z-40 py-4 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg transition-all duration-300">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center">
+                    <a href="../" class="flex items-center">
+                        <div
+                            class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:transform hover:scale-110">
+                            <span class="text-2xl text-white"
+                                style="font-family: 'Minecraft', sans-serif;">T</span>
+                        </div>
+                        <span class="text-2xl text-white"
+                            style="font-family: 'Minecraft', sans-serif;">TurboDraft<span
+                                class="text-red-500">.org</span></span>
+                    </a>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="../"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                        <a href="../skins/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Skins</a>
+                        <a href="../premium/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Premium</a>
+                        <a href="../features/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Features</a>
+                        <a href="../tutorials/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">Tutorials</a>
+                        <a href="../about/"
+                            class="relative text-gray-300 hover:text-white font-semibold transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full">About</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-4">
+                        <!-- User section will be dynamically populated by auth.js -->
+                        <div id="navUserSection" class="flex items-center">
+                            <!-- Default content shown before JS loads -->
+                            <a href="../auth/"
+                                class="text-white hover:text-red-300 transition-colors duration-300">Login</a>
+                            <a href="../subscribe/"
+                                class="bg-gradient-to-r from-red-700 to-red-900 text-white font-bold py-2 px-5 rounded-lg transition-all duration-300 transform hover:scale-105 hover:from-red-600 hover:to-red-800 ml-3">Subscribe</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="openMenu"
+                            class="text-white focus:outline-none">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="pt-32 pb-16 relative overflow-hidden bg-gradient-to-br from-black to-red-900">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(#4a0000 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+            <!-- Floating blocks animation -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-20 left-10 w-16 h-16 bg-red-900 bg-opacity-20 animate-float"
+                    style="animation-delay: 0s;"></div>
+                <div class="absolute top-40 right-20 w-12 h-12 bg-red-800 bg-opacity-20 animate-float"
+                    style="animation-delay: 1s;"></div>
+                <div class="absolute bottom-20 left-1/4 w-20 h-20 bg-red-700 bg-opacity-20 animate-float"
+                    style="animation-delay: 2s;"></div>
+                <div class="absolute top-1/2 right-1/3 w-10 h-10 bg-red-600 bg-opacity-20 animate-float"
+                    style="animation-delay: 1.5s;"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center">
+                    <div class="mb-4 inline-block bg-red-900 bg-opacity-50 rounded-full px-4 py-1 transform transition-transform duration-300 hover:scale-105">
+                        <span class="text-xs font-semibold text-red-100">LEGAL INFORMATION</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight"
+                        style="font-family: 'Minecraft', sans-serif;">Terms and <span class="text-red-500">Conditions</span></h1>
+                    <p class="text-lg md:text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
+                        Please read these Terms and Conditions carefully before using our services.
+                    </p>
+                    <div class="text-sm text-gray-400">
+                        Last Updated: May 15, 2025
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms and Conditions Content -->
+        <section class="py-16 bg-black relative">
+            <div class="absolute inset-0"
+                style="background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 20px 20px;"></div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="mx-auto">
+                    <!-- Introduction -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Introduction</h2>
+                                <p class="text-gray-300 mb-4">
+                                    Welcome to TurboDraft.org. These Terms and Conditions govern your use of the TurboDraft.org website and all related services, including any content, functionality, and services offered through TurboDraft.org (collectively referred to as the "Service").
+                                </p>
+                                <p class="text-gray-300 mb-4">
+                                    By accessing or using our Service, you agree to be bound by these Terms and Conditions. If you do not agree to these Terms and Conditions, you should not access or use our Service.
+                                </p>
+                                <p class="text-gray-300 mb-4">
+                                    We may update these Terms and Conditions from time to time. We will notify you of any changes by posting the new Terms and Conditions on this page and updating the "Last Updated" date. You are advised to review these Terms and Conditions periodically for any changes. Changes to these Terms and Conditions are effective when they are posted on this page.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Definitions -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Definitions</h2>
+                                <p class="text-gray-300 mb-4">
+                                    Throughout these Terms and Conditions, the following terms shall have the meanings assigned to them:
+                                </p>
+                                
+                                <ul class="text-gray-300 list-disc pl-6 mb-6 space-y-3">
+                                    <li>
+                                        <span class="text-white font-semibold">"Service"</span> refers to the TurboDraft.org website and all related services, content, functionality, and services offered through TurboDraft.org.
+                                    </li>
+                                    <li>
+                                        <span class="text-white font-semibold">"User"</span> refers to any individual who accesses or uses the Service.
+                                    </li>
+                                    <li>
+                                        <span class="text-white font-semibold">"Subscriber"</span> refers to any User who has purchased a Premium subscription to the Service.
+                                    </li>
+                                    <li>
+                                        <span class="text-white font-semibold">"Content"</span> refers to any Minecraft skin, design, text, graphics, images, videos, information, and other material that may be created, uploaded, posted, or displayed on the Service.
+                                    </li>
+                                    <li>
+                                        <span class="text-white font-semibold">"Free Content"</span> refers to Content that is available to all Users without requiring a Premium subscription.
+                                    </li>
+                                    <li>
+                                        <span class="text-white font-semibold">"Premium Content"</span> refers to Content that is available only to Subscribers with an active Premium subscription.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Accounts -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="150">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">User Accounts</h2>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Account Creation</h3>
+                                <p class="text-gray-300 mb-4">
+                                    To access certain features of the Service, you may be required to create an account. When creating an account, you must provide accurate, current, and complete information. You are solely responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Account Security</h3>
+                                <p class="text-gray-300 mb-4">
+                                    You agree to notify us immediately of any unauthorized access to or use of your account. We are not liable for any loss or damage arising from your failure to comply with these account security obligations.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Age Restrictions</h3>
+                                <p class="text-gray-300 mb-4">
+                                    You must be at least 13 years of age to create an account and use the Service. If you are under the age of 18, you must have the consent of a parent or legal guardian to create an account and use the Service.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subscriptions and Payments -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Subscriptions and Payments</h2>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Subscription Plans</h3>
+                                <p class="text-gray-300 mb-4">
+                                    We offer various subscription plans that provide access to Premium Content and features. The details, including pricing and features, of each subscription plan are available on our website.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Payment Terms</h3>
+                                <p class="text-gray-300 mb-4">
+                                    By purchasing a subscription, you agree to pay the applicable fees as they become due. All payments are processed through secure third-party payment processors. You agree to provide accurate and complete payment information and authorize us to charge your chosen payment method for the subscription fees.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Automatic Renewal</h3>
+                                <p class="text-gray-300 mb-4">
+                                    Recurring subscriptions will automatically renew at the end of the subscription period unless cancelled before the renewal date. You will be charged the then-current subscription fee for the same subscription plan upon renewal.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Cancellation</h3>
+                                <p class="text-gray-300 mb-4">
+                                    You may cancel your subscription at any time by accessing your account settings or contacting our support team. Upon cancellation, you will continue to have access to Premium Content and features until the end of your current billing period. No refunds or credits will be provided for partial subscription periods.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Price Changes</h3>
+                                <p class="text-gray-300 mb-4">
+                                    We reserve the right to change our subscription fees at any time. If we change the subscription fee, we will notify you before charging your payment method with the new fee. By continuing to use the Service after a fee change, you consent to the new fee.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Refunds</h3>
+                                <p class="text-gray-300 mb-4">
+                                    We offer a 7-day money-back guarantee for new subscribers. If you are not satisfied with our Service within the first 7 days of your subscription, contact our support team for a full refund. After the initial 7-day period, all payments are non-refundable except as required by applicable law.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Intellectual Property -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="250">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Intellectual Property</h2>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Our Content</h3>
+                                <p class="text-gray-300 mb-4">
+                                    The Service and its original content (excluding User-submitted Content), features, and functionality are owned by TurboDraft.org and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">User License</h3>
+                                <p class="text-gray-300 mb-4">
+                                    Subject to your compliance with these Terms and Conditions, we grant you a limited, non-exclusive, non-transferable, non-sublicensable license to access and use the Service for personal, non-commercial purposes. This license does not include any resale or commercial use of the Service or its contents.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Minecraft Skins</h3>
+                                <p class="text-gray-300 mb-4">
+                                    All Minecraft skins available through the Service are either owned by TurboDraft.org or used with permission. By downloading a skin, you are granted a limited license to use the skin for personal, non-commercial purposes within the Minecraft game. You may not redistribute, sell, or claim the skin as your own creation.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Third-Party Rights</h3>
+                                <p class="text-gray-300 mb-4">
+                                    TurboDraft.org is not affiliated with Mojang AB or Microsoft Corporation. Minecraft is a trademark of Mojang AB, and we do not claim any ownership or endorsement by Mojang AB or Microsoft Corporation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Content -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="300">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">User Content</h2>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">User Submissions</h3>
+                                <p class="text-gray-300 mb-4">
+                                    Our Service may allow you to submit content, such as custom skin requests, feedback, or comments. By submitting content, you grant us a worldwide, non-exclusive, royalty-free, transferable license to use, reproduce, distribute, prepare derivative works of, display, and perform the content in connection with the Service.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Content Restrictions</h3>
+                                <p class="text-gray-300 mb-4">
+                                    You agree not to submit content that:
+                                </p>
+                                <ul class="text-gray-300 list-disc pl-6 mb-6 space-y-3">
+                                    <li>Is unlawful, harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, or otherwise objectionable</li>
+                                    <li>Infringes on any patent, trademark, trade secret, copyright, or other intellectual property right</li>
+                                    <li>Contains software viruses or any other malicious code</li>
+                                    <li>Impersonates any person or entity or falsely states or misrepresents your affiliation with a person or entity</li>
+                                    <li>Contains personal or identifying information about another person without their explicit consent</li>
+                                </ul>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Content Moderation</h3>
+                                <p class="text-gray-300 mb-4">
+                                    We reserve the right, but not the obligation, to review, monitor, and remove any content that violates these Terms and Conditions or is otherwise objectionable, at our sole discretion and without prior notice.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prohibited Activities -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="350">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Prohibited Activities</h2>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    You agree not to engage in any of the following prohibited activities:
+                                </p>
+                                <ul class="text-gray-300 list-disc pl-6 mb-6 space-y-3">
+                                    <li>Using the Service for any illegal purpose or in violation of any local, state, national, or international law</li>
+                                    <li>Harassing, threatening, or intimidating other users</li>
+                                    <li>Attempting to access accounts or private information of other users</li>
+                                    <li>Attempting to circumvent, disable, or interfere with security-related features of the Service</li>
+                                    <li>Engaging in unauthorized framing, linking, or deep-linking to the Service</li>
+                                    <li>Collecting or harvesting any information from the Service, including user account information</li>
+                                    <li>Using the Service in any manner that could disable, overburden, damage, or impair the Service</li>
+                                    <li>Using any robot, spider, or other automated device, process, or means to access the Service for any purpose</li>
+                                    <li>Introducing any viruses, Trojan horses, worms, logic bombs, or other harmful material to the Service</li>
+                                    <li>Sharing your account credentials with others or allowing others to access your account</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Disclaimers and Limitations of Liability -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="400">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Disclaimers and Limitations of Liability</h2>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">No Warranties</h3>
+                                <p class="text-gray-300 mb-4">
+                                    THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR COURSE OF PERFORMANCE.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Service Availability</h3>
+                                <p class="text-gray-300 mb-4">
+                                    We do not warrant that the Service will be uninterrupted, timely, secure, or error-free, or that defects, if any, will be corrected. We make no warranties or representations about the accuracy or completeness of the content on the Service.
+                                </p>
+                                
+                                <h3 class="text-xl text-red-400 mt-6 mb-3">Limitation of Liability</h3>
+                                <p class="text-gray-300 mb-4">
+                                    IN NO EVENT SHALL TURBODRAFT.ORG, ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, SUPPLIERS, OR AFFILIATES, BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM:
+                                </p>
+                                <ul class="text-gray-300 list-disc pl-6 mb-6 space-y-3">
+                                    <li>Your access to or use of or inability to access or use the Service</li>
+                                    <li>Any conduct or content of any third party on the Service</li>
+                                    <li>Any content obtained from the Service</li>
+                                    <li>Unauthorized access, use, or alteration of your transmissions or content</li>
+                                </ul>
+                                <p class="text-gray-300 mb-4">
+                                    In no event shall our total liability to you for all damages, losses, or causes of action exceed the amount you have paid to us in the last six (6) months, or, if you have not paid us, one hundred dollars ($100).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Termination -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="450">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Termination</h2>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    We may terminate or suspend your account and access to the Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms and Conditions.
+                                </p>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    Upon termination, your right to use the Service will immediately cease. If you wish to terminate your account, you may simply discontinue using the Service or contact us to request account deletion.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Governing Law -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="500">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Governing Law</h2>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    These Terms and Conditions shall be governed and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.
+                                </p>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    Our failure to enforce any right or provision of these Terms and Conditions will not be considered a waiver of those rights. If any provision of these Terms and Conditions is held to be invalid or unenforceable by a court, the remaining provisions of these Terms and Conditions will remain in effect.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Us -->
+                    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 mb-10" data-aos="fade-up" data-aos-delay="550">
+                        <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
+                        <div class="p-6 md:p-8">
+                            <div class="prose prose-lg prose-invert max-w-none">
+                                <h2 class="text-2xl text-white mb-4" style="font-family: 'Minecraft', sans-serif;">Contact Us</h2>
+                                
+                                <p class="text-gray-300 mb-4">
+                                    If you have any questions or concerns about these Terms and Conditions, please contact us at:
+                                </p>
+                                
+                                <div class="bg-black bg-opacity-50 p-5 rounded-lg mt-4 inline-block">
+                                    <p class="text-white mb-1">Email: legal@turbodraft.org</p>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <a href="../contact/" class="inline-flex items-center bg-red-700 hover:bg-red-600 text-white py-2 px-5 rounded-lg transition-colors duration-300">
+                                        <i class="fas fa-envelope mr-2"></i>
+                                        <span>Contact Us</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black text-gray-400 py-12 border-t border-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between">
+                    <div class="mb-8 md:mb-0">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-900 h-10 w-10 flex items-center justify-center rounded-lg shadow-lg mr-3 transition-transform duration-300 hover:scale-110">
+                                <span class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">T</span>
+                            </div>
+                            <span class="text-2xl text-white" style="font-family: 'Minecraft', sans-serif;">TurboDraft<span class="text-red-500">.org</span></span>
+                        </div>
+                        <p class="max-w-xs">Premium Minecraft skins for everyone. Free and subscription options available for all players.</p>
+                        <p class="mt-4 text-sm">© 2025 TurboDraft. Not affiliated with Mojang.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Quick Links</h3>
+                            <ul class="space-y-2">
+                                <li><a href="../" class="hover:text-red-400 transition-colors duration-300">Home</a></li>
+                                <li><a href="../skins/" class="hover:text-red-400 transition-colors duration-300">Skins</a></li>
+                                <li><a href="../premium/" class="hover:text-red-400 transition-colors duration-300">Premium</a></li>
+                                <li><a href="../features/" class="hover:text-red-400 transition-colors duration-300">Features</a></li>
+                                <li><a href="../about/" class="hover:text-red-400 transition-colors duration-300">About Us</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Resources</h3>
+                            <ul class="space-y-2">
+                                <li><a href="../tutorials/" class="hover:text-red-400 transition-colors duration-300">Tutorials</a></li>
+                                <li><a href="../faq/" class="hover:text-red-400 transition-colors duration-300">FAQ</a></li>
+                                <li><a href="../contact/" class="hover:text-red-400 transition-colors duration-300">Support</a></li>
+                                <li><a href="../terms/" class="hover:text-red-400 transition-colors duration-300">Terms of Service</a></li>
+                                <li><a href="../privacy/" class="hover:text-red-400 transition-colors duration-300">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Community</h3>
+                            <ul class="space-y-2">
+                                <li><a href="https://discord.gg/turbodraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">Discord Server</a></li>
+                                <li><a href="https://twitter.com/TurboDraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">Twitter</a></li>
+                                <li><a href="https://instagram.com/TurboDraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">Instagram</a></li>
+                                <li><a href="https://youtube.com/TurboDraft" target="_blank" class="hover:text-red-400 transition-colors duration-300">YouTube</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white text-lg mb-4" style="font-family: 'Minecraft', sans-serif;">Contact</h3>
+                            <ul class="space-y-2">
+                                <li><a href="mailto:info@turbodraft.org" class="hover:text-red-400 transition-colors duration-300">info@turbodraft.org</a></li>
+                                <li><a href="../contact/" class="hover:text-red-400 transition-colors duration-300">Contact Form</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+                    <p class="mb-4">Made with ❤️ for the Minecraft community. TurboDraft.org - bringing your Minecraft characters to life.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="../terms/" class="text-gray-500 hover:text-red-400 transition-colors duration-300">Terms</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="../privacy/" class="text-gray-500 hover:text-red-400 transition-colors duration-300">Privacy</a>
+                        <span class="text-gray-700">•</span>
+                        <a href="../cookies/" class="text-gray-500 hover:text-red-400 transition-colors duration-300">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+        <script>
+            // Initialize AOS animation library
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+
+            // Mobile menu handling
+            document.getElementById('openMenu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.remove('translate-x-full');
+            });
+
+            document.getElementById('closeMenu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.add('translate-x-full');
+            });
+
+            // Add navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('py-2');
+                    navbar.classList.add('shadow-lg');
+                    navbar.classList.remove('py-4');
+                    navbar.classList.remove('bg-opacity-80');
+                } else {
+                    navbar.classList.remove('py-2');
+                    navbar.classList.remove('shadow-lg');
+                    navbar.classList.add('py-4');
+                    navbar.classList.add('bg-opacity-80');
+                }
+            });
+        </script>
+    </body>
+</html>
